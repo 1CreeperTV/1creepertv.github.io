@@ -9,14 +9,8 @@ Anyways, let me give you all my socials network :
 
 Extras pages :
 - [h](https://1creepertv.github.io/h)
+- [CreeperTV's Mii :](https://1creepertv.github.io/mii)
 
-Here is some cool images :
-
-![CreeperTV](https://raw.githubusercontent.com/1CreeperTV/1creepertv.github.io/refs/heads/main/normal_faces.png)
-
-![CreeperTV Happy](https://raw.githubusercontent.com/1CreeperTV/1creepertv.github.io/refs/heads/main/smile_open_mouth.png)
-
-![CreeperTV Frustrated](https://raw.githubusercontent.com/1CreeperTV/1creepertv.github.io/refs/heads/main/frustrated.png)
 
 ![Speed](https://raw.githubusercontent.com/1CreeperTV/1creepertv.github.io/refs/heads/main/shocked-ishowspeed.gif)
 
