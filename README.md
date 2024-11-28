@@ -7,4 +7,4 @@ Anyways, let me give you all my socials network :
 
 Thanks and cya !
 (Fun fact : I created this website juste for my bsky username) 🤫
-[Mario Dance](https://raw.githubusercontent.com/1CreeperTV/1creepertv.github.io/refs/heads/main/mario-mario-dancing.gif)
+![Mario Dance](https://raw.githubusercontent.com/1CreeperTV/1creepertv.github.io/refs/heads/main/mario-mario-dancing.gif)
