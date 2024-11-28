@@ -1,4 +1,4 @@
-Welcome to CreeperTV's ![CreeperTV](https://raw.githubusercontent.com/1CreeperTV/1creepertv.github.io/refs/heads/main/normal_faces.png) useless website 🥳
+Welcome to CreeperTV's useless website 🥳 ![CreeperTV](https://raw.githubusercontent.com/1CreeperTV/1creepertv.github.io/refs/heads/main/normal_faces.png)
 (Fun fact : I created this website juste for my bsky username) 🤫
 
 Anyways, let me give you all my socials network :
