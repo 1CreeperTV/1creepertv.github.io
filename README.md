@@ -8,7 +8,7 @@ Anyways, let me give you all my socials network :
 - Discord : @1creepertv
 
 Extras pages :
-[h](https://1creepertv.github.io/h)
+- [h](https://1creepertv.github.io/h)
 
 Here is some cool images :
 
