@@ -2,7 +2,7 @@
 layout: none
 permalink: /mii
 ---
-Creeper's Mii
+CreeperTV's Mii
 
 ![CreeperTV](https://raw.githubusercontent.com/1CreeperTV/1creepertv.github.io/refs/heads/main/normal_faces.png)
 
