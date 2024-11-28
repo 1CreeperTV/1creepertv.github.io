@@ -1,10 +1,10 @@
-Welcome to CreeperTV's useless website 🥳
+Welcome to CreeperTV's ![CreeperTV](https://raw.githubusercontent.com/1CreeperTV/1creepertv.github.io/refs/heads/main/normal_faces.png) useless website 🥳
+(Fun fact : I created this website juste for my bsky username) 🤫
 
 Anyways, let me give you all my socials network :
 - [bsky](https://bsky.app/profile/1creepertv.github.io) : https://bsky.app/profile/1creepertv.github.io
 - [YouTube](https://www.youtube.com/@CreeperTV_) : https://www.youtube.com/@CreeperTV_
 - Discord : @1creepertv
 
-Thanks and cya !
-(Fun fact : I created this website juste for my bsky username) 🤫
+
 ![Mario Dance](https://raw.githubusercontent.com/1CreeperTV/1creepertv.github.io/refs/heads/main/mario-mario-dancing.gif)
