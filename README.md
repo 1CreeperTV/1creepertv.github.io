@@ -7,6 +7,9 @@ Anyways, let me give you all my socials network :
 - [YouTube](https://www.youtube.com/@CreeperTV_) : https://www.youtube.com/@CreeperTV_
 - Discord : @1creepertv
 
+Extras pages :
+[h](https://1creepertv.github.io/h)
+
 Here is some cool images :
 
 ![CreeperTV](https://raw.githubusercontent.com/1CreeperTV/1creepertv.github.io/refs/heads/main/normal_faces.png)
