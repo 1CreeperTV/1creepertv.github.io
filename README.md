@@ -9,7 +9,9 @@ Anyways, let me give you all my socials network :
 Here is some cool images :
 
 ![CreeperTV](https://raw.githubusercontent.com/1CreeperTV/1creepertv.github.io/refs/heads/main/normal_faces.png)
+
 ![Mario Dance](https://raw.githubusercontent.com/1CreeperTV/1creepertv.github.io/refs/heads/main/mario-mario-dancing.gif)
+
 ![Speed](https://raw.githubusercontent.com/1CreeperTV/1creepertv.github.io/refs/heads/main/shocked-ishowspeed.gif)
 
 Cya !
