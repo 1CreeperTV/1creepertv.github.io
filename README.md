@@ -10,7 +10,7 @@ Anyways, let me give you all my socials network :
 Extras pages :
 - [CreeperTV's Mii](https://1creepertv.github.io/mii)
 - [CreeperTV's Shitpost Room](https://1creepertv.github.io/shitpost)
-- [Kany West Fan Page](https://1creepertv.github.io/ye)
+- [Kanye West Fan Page](https://1creepertv.github.io/ye)
 - [h](https://1creepertv.github.io/h)
 
 
