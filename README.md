@@ -14,6 +14,6 @@ Extras pages :
 - [h](https://1creepertv.github.io/h)
 
 
-![Speed](https://raw.githubusercontent.com/1CreeperTV/1creepertv.github.io/refs/heads/main/shocked-ishowspeed.gif)
+[![Speed](https://raw.githubusercontent.com/1CreeperTV/1creepertv.github.io/refs/heads/main/shocked-ishowspeed.gif)](https://1creepertv.github.io/ishowspeed)
 
 Cya !
