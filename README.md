@@ -1,13 +1,10 @@
-Welcome to CreeperTV's useless website 🥳
+Bienvenue sur le site de CreeperTV, vous pourrez retrouver des ressources ici.
 
-(Fun fact : I created this website juste for my bsky username) 🤫
-
-Anyways, let me give you all my socials network :
-- [bsky](https://bsky.app/profile/1creepertv.github.io) : https://bsky.app/profile/1creepertv.github.io
+# Petit rappel de mes réseaux :
 - [YouTube](https://www.youtube.com/@CreeperTV_) : https://www.youtube.com/@CreeperTV_
-- Discord : @1creepertv
+- [Serveur Discord](https://discord.gg/T5c6haytqE)
 
-Extras pages :
+Téléchargements
 - [CreeperTV's Mii](https://1creepertv.github.io/mii)
 - [CreeperTV's Shitpost Room](https://1creepertv.github.io/shitpost)
 - [My Wii Menu Walkthrough](https://1creepertv.github.io/wii-menu-walkthrough)
