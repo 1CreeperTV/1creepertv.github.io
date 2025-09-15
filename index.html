@@ -72,6 +72,10 @@
     a:hover {
       text-decoration: underline;
     }
+
+    .audio-player {
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
@@ -92,6 +96,20 @@
       • <a href="https://discord.gg/AQ7w57CKk8">My Discord server</a>
     </p>
     <iframe src="https://discord.com/widget?id=1409245512904872141&theme=dark" width="250" height="325" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+    
+    <!-- Lecteur audio -->
+    <div class="audio-player">
+      <audio id="bg-music" controls>
+        <source src="https://github.com/1CreeperTV/1creepertv.github.io/raw/refs/heads/main/Images/06%20Concierge.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
   </div>
+
+  <script>
+    // Réduit le volume par défaut
+    const audio = document.getElementById("bg-music");
+    audio.volume = 0.3; // 30% du volume max
+  </script>
 </body>
 </html>
