@@ -76,6 +76,23 @@
     .audio-player {
       margin-top: 20px;
     }
+
+    /* Bouton pour activer le son si le navigateur bloque l'unmute automatique */
+    .sound-btn {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 9999;
+      background: rgba(0,0,0,0.75);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 10px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      display: none;
+    }
+    .sound-btn.show { display: block; }
   </style>
 </head>
 <body>
@@ -97,23 +114,90 @@
     </p>
     <iframe src="https://discord.com/widget?id=1409245512904872141&theme=dark" width="250" height="325" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
     
-    <!-- Lecteur audio -->
+    <!-- Lecteur audio : autoplay muted + loop + playsinline pour mobile -->
     <div class="audio-player">
-      <audio id="bg-music" autoplay muted loop>
+      <audio id="bg-music" controls autoplay muted loop playsinline>
         <source src="https://github.com/1CreeperTV/1creepertv.github.io/raw/refs/heads/main/Images/06%20Concierge.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
       </audio>
     </div>
   </div>
 
+  <!-- Bouton visible uniquement si l'unmute automatique est bloqué -->
+  <button id="enable-sound" class="sound-btn" aria-hidden="true">Enable sound</button>
+
   <script>
     const audio = document.getElementById("bg-music");
-    audio.volume = 0.3; // Volume souhaité (30%)
+    const btn = document.getElementById("enable-sound");
 
-    // Une fois que la lecture démarre, on enlève le "muted"
-    audio.onplay = () => {
+    // volume souhaité
+    audio.volume = 0.3; // 30%
+
+    // Essaie de jouer (muted d'abord pour contourner les blocages)
+    function tryAutoplayAndUnmute() {
+      // commence en muted pour autoriser autoplay
+      audio.muted = true;
+      const p = audio.play();
+      if (p !== undefined) {
+        p.then(() => {
+          // autoplay démarré muet. On tente d'enlever le muted.
+          // Note : certains navigateurs refuseront la désactivation du muted sans interaction.
+          setTimeout(() => {
+            try {
+              audio.muted = false;
+              audio.volume = 0.3;
+              // si toujours muet ou en pause, affiche le bouton
+              if (audio.muted || audio.paused) {
+                showEnableButton();
+              } else {
+                hideEnableButton();
+              }
+            } catch (e) {
+              showEnableButton();
+            }
+          }, 400); // petit délai avant tentative d'unmute
+        }).catch((err) => {
+          // l'autoplay a été refusé -> afficher le bouton pour forcer via interaction
+          showEnableButton();
+        });
+      } else {
+        // aucun play promise retourné, on montre le bouton par sécurité
+        showEnableButton();
+      }
+    }
+
+    function showEnableButton() {
+      btn.classList.add("show");
+      btn.setAttribute("aria-hidden", "false");
+    }
+
+    function hideEnableButton() {
+      btn.classList.remove("show");
+      btn.setAttribute("aria-hidden", "true");
+    }
+
+    // Clic sur le bouton : unmute et play (garanti par l'interaction utilisateur)
+    btn.addEventListener("click", () => {
       audio.muted = false;
-    };
+      audio.volume = 0.3;
+      audio.play().catch(()=>{});
+      hideEnableButton();
+    });
+
+    // Si l'utilisateur interagit n'importe où (click / touche / clavier), réessaye d'unmute
+    ["click","keydown","touchstart"].forEach(evt => {
+      window.addEventListener(evt, () => {
+        if (audio.muted) {
+          audio.muted = false;
+          audio.volume = 0.3;
+        }
+        if (audio.paused) audio.play().catch(()=>{});
+        hideEnableButton();
+      }, { once: true });
+    });
+
+    // Lancer la tentative au chargement
+    document.addEventListener("DOMContentLoaded", tryAutoplayAndUnmute);
   </script>
 </body>
 </html>
