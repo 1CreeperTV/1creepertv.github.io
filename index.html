@@ -36,9 +36,9 @@
       width: 100%;
       height: 100%;
       background: url("https://raw.githubusercontent.com/1CreeperTV/1creepertv.github.io/refs/heads/main/Images/background.jpg") no-repeat center center/cover;
-      opacity: 0.5; /* 50% d’opacité */
-      filter: blur(5px); /* flou */
-      z-index: -1; /* en arrière-plan */
+      opacity: 0.5;
+      filter: blur(5px);
+      z-index: -1;
     }
 
     .container {
@@ -46,8 +46,9 @@
       margin: 50px auto;
       padding: 20px;
       text-align: center;
-      background: rgba(0, 0, 0, 0.4); /* petit voile noir derrière le texte pour lisibilité */
+      background: rgba(0, 0, 0, 0.4);
       border-radius: 10px;
+      display: none; /* masqué tant que l'overlay est visible */
     }
 
     .logo {
@@ -77,31 +78,48 @@
       margin-top: 20px;
     }
 
-    /* Bouton pour activer le son si le navigateur bloque l'unmute automatique */
-    .sound-btn {
+    /* Overlay d’accueil */
+    #overlay {
       position: fixed;
-      right: 18px;
-      bottom: 18px;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
       z-index: 9999;
-      background: rgba(0,0,0,0.75);
-      color: #fff;
-      border: 1px solid rgba(255,255,255,0.08);
-      padding: 10px 14px;
-      border-radius: 8px;
+      color: white;
+      font-size: 28px;
+      font-weight: bold;
       cursor: pointer;
-      font-weight: 600;
-      display: none;
+      text-align: center;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
     }
-    .sound-btn.show { display: block; }
+
+    #overlay.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
   </style>
 </head>
 <body>
+  <!-- Overlay -->
+  <div id="overlay">
+    Click to enter
+  </div>
+
+  <!-- Contenu principal -->
   <div class="container">
     <img src="https://raw.githubusercontent.com/1CreeperTV/1creepertv.github.io/refs/heads/main/Images/CreeperT%C3%A9l%C3%A9vision.png" alt="Logo CreeperTV" class="logo">
 
     <h1>Welcome to CreeperTV's useless website!</h1>
     <p>
-     french content creator who loves playstation & nintendo (especially homebrew)
+      french content creator who loves playstation & nintendo (especially homebrew)
     </p>
     <p>
       • <a href="https://guns.lol/1creepertv">My guns.lol</a>
@@ -114,90 +132,26 @@
     </p>
     <iframe src="https://discord.com/widget?id=1409245512904872141&theme=dark" width="250" height="325" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
     
-    <!-- Lecteur audio : autoplay muted + loop + playsinline pour mobile -->
+    <!-- Lecteur audio (caché par défaut, autoplay au clic) -->
     <div class="audio-player">
-      <audio id="bg-music" controls autoplay muted loop playsinline>
+      <audio id="bg-music" loop>
         <source src="https://github.com/1CreeperTV/1creepertv.github.io/raw/refs/heads/main/Images/06%20Concierge.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
       </audio>
     </div>
   </div>
 
-  <!-- Bouton visible uniquement si l'unmute automatique est bloqué -->
-  <button id="enable-sound" class="sound-btn" aria-hidden="true">Enable sound</button>
-
   <script>
+    const overlay = document.getElementById("overlay");
+    const container = document.querySelector(".container");
     const audio = document.getElementById("bg-music");
-    const btn = document.getElementById("enable-sound");
 
-    // volume souhaité
-    audio.volume = 0.3; // 30%
-
-    // Essaie de jouer (muted d'abord pour contourner les blocages)
-    function tryAutoplayAndUnmute() {
-      // commence en muted pour autoriser autoplay
-      audio.muted = true;
-      const p = audio.play();
-      if (p !== undefined) {
-        p.then(() => {
-          // autoplay démarré muet. On tente d'enlever le muted.
-          // Note : certains navigateurs refuseront la désactivation du muted sans interaction.
-          setTimeout(() => {
-            try {
-              audio.muted = false;
-              audio.volume = 0.3;
-              // si toujours muet ou en pause, affiche le bouton
-              if (audio.muted || audio.paused) {
-                showEnableButton();
-              } else {
-                hideEnableButton();
-              }
-            } catch (e) {
-              showEnableButton();
-            }
-          }, 400); // petit délai avant tentative d'unmute
-        }).catch((err) => {
-          // l'autoplay a été refusé -> afficher le bouton pour forcer via interaction
-          showEnableButton();
-        });
-      } else {
-        // aucun play promise retourné, on montre le bouton par sécurité
-        showEnableButton();
-      }
-    }
-
-    function showEnableButton() {
-      btn.classList.add("show");
-      btn.setAttribute("aria-hidden", "false");
-    }
-
-    function hideEnableButton() {
-      btn.classList.remove("show");
-      btn.setAttribute("aria-hidden", "true");
-    }
-
-    // Clic sur le bouton : unmute et play (garanti par l'interaction utilisateur)
-    btn.addEventListener("click", () => {
-      audio.muted = false;
+    overlay.addEventListener("click", () => {
+      overlay.classList.add("hidden"); // masque overlay
+      container.style.display = "block"; // affiche contenu
       audio.volume = 0.3;
-      audio.play().catch(()=>{});
-      hideEnableButton();
+      audio.play().catch(()=>{}); // démarre musique
     });
-
-    // Si l'utilisateur interagit n'importe où (click / touche / clavier), réessaye d'unmute
-    ["click","keydown","touchstart"].forEach(evt => {
-      window.addEventListener(evt, () => {
-        if (audio.muted) {
-          audio.muted = false;
-          audio.volume = 0.3;
-        }
-        if (audio.paused) audio.play().catch(()=>{});
-        hideEnableButton();
-      }, { once: true });
-    });
-
-    // Lancer la tentative au chargement
-    document.addEventListener("DOMContentLoaded", tryAutoplayAndUnmute);
   </script>
 </body>
 </html>
