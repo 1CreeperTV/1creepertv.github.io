@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CreeperTV</title>
 
-  <!-- Favicon -->
-  <link rel="icon" href="https://raw.githubusercontent.com/1CreeperTV/1creepertv.github.io/refs/heads/main/Images/CreeperT%C3%A9l%C3%A9vision.png" type="image/png">
+  <link rel="icon" href="https://raw.githubusercontent.com/1CreeperTV/1creepertv.github.io/refs/heads/main/Images/CreeperT%C3%A9l%C3%A9vision.png" type="image/png" />
 
-  <!-- Open Graph meta tags for Discord embeds -->
-  <meta property="og:title" content="CreeperTV's website">
-  <meta property="og:description" content="Welcome to CreeperTV's useless website!">
-  <meta property="og:image" content="https://raw.githubusercontent.com/1CreeperTV/1creepertv.github.io/refs/heads/main/Images/CreeperTV.png">
-  <meta property="og:url" content="https://1creepertv.github.io/">
-  <meta property="og:type" content="website">
+  <meta property="og:title" content="CreeperTV's website" />
+  <meta property="og:description" content="Welcome to CreeperTV's useless website!" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/1CreeperTV/1creepertv.github.io/refs/heads/main/Images/CreeperTV.png" />
+  <meta property="og:url" content="https://1creepertv.github.io/" />
+  <meta property="og:type" content="website" />
 
   <style>
     body {
@@ -27,7 +25,6 @@
       overflow-x: hidden;
     }
 
-    /* Image de fond sombre + floue */
     body::before {
       content: "";
       position: fixed;
@@ -48,7 +45,7 @@
       text-align: center;
       background: rgba(0, 0, 0, 0.4);
       border-radius: 10px;
-      display: none; /* masqué tant que l'overlay est visible */
+      display: none;
     }
 
     .logo {
@@ -65,20 +62,28 @@
       color: #cccccc;
     }
 
-    a {
-      color: #00afff;
+    /* --- NEW BUTTON STYLE --- */
+    .button-link {
+      display: block;
+      width: 65%;
+      margin: 12px auto;
+      padding: 10px 16px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(6px);
+      border-radius: 12px;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
       text-decoration: none;
+      transition: 0.25s;
+      border: 1px solid rgba(255,255,255,0.2);
     }
 
-    a:hover {
-      text-decoration: underline;
+    .button-link:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: scale(1.03);
     }
 
-    .audio-player {
-      margin-top: 20px;
-    }
-
-    /* Overlay d’accueil */
     #overlay {
       position: fixed;
       top: 0;
@@ -108,35 +113,23 @@
   </style>
 </head>
 <body>
-  <!-- Overlay -->
-  <div id="overlay">
-    Click to enter
-  </div>
+  <div id="overlay">Click to enter</div>
 
-  <!-- Contenu principal -->
   <div class="container">
-    <img src="https://raw.githubusercontent.com/1CreeperTV/1creepertv.github.io/refs/heads/main/Images/CreeperTV.png" alt="Logo CreeperTV" class="logo">
+    <img src="https://raw.githubusercontent.com/1CreeperTV/1creepertv.github.io/refs/heads/main/Images/CreeperTV.png" class="logo" />
 
     <h1>Welcome to CreeperTV's useless website!</h1>
-    <p>
-      french content creator who loves playstation & nintendo (especially homebrew)
-    </p>
-    <p>
-      • <a href="https://guns.lol/1creepertv">My guns.lol</a>
-    </p>
-    <p>
-      • <a href="https://www.youtube.com/@CreeperTV_">My YouTube channel</a>
-    </p>
-    <p>
-      • <a href="https://discord.gg/AQ7w57CKk8">My Discord server</a>
-    </p>
+    <p>french content creator who loves playstation & nintendo (especially homebrew)</p>
+
+    <a class="button-link" href="https://guns.lol/1creepertv">My guns.lol</a>
+    <a class="button-link" href="https://www.youtube.com/@CreeperTV_">My YouTube channel</a>
+    <a class="button-link" href="https://discord.gg/AQ7w57CKk8">My Discord server</a>
+
     <iframe src="https://discord.com/widget?id=1409245512904872141&theme=dark" width="250" height="325" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-    
-    <!-- Lecteur audio (caché par défaut, autoplay au clic) -->
+
     <div class="audio-player">
       <audio id="bg-music" loop>
-        <source src="https://github.com/1CreeperTV/1creepertv.github.io/raw/refs/heads/main/Images/September%202013%20-%20Nintendo%20eShop%20Music.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
+        <source src="https://github.com/1CreeperTV/1creepertv.github.io/raw/refs/heads/main/Images/September%202013%20-%20Nintendo%20eShop%20Music.mp3" type="audio/mpeg" />
       </audio>
     </div>
   </div>
@@ -147,10 +140,10 @@
     const audio = document.getElementById("bg-music");
 
     overlay.addEventListener("click", () => {
-      overlay.classList.add("hidden"); // masque overlay
-      container.style.display = "block"; // affiche contenu
+      overlay.classList.add("hidden");
+      container.style.display = "block";
       audio.volume = 0.3;
-      audio.play().catch(()=>{}); // démarre musique
+      audio.play().catch(() => {});
     });
   </script>
 </body>
