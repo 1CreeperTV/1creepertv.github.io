@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>CreeperTV — Home</title>
   <link rel="icon" href="https://raw.githubusercontent.com/1CreeperTV/1creepertv.github.io/refs/heads/main/Images/CreeperT%C3%A9l%C3%A9vision.png" />
 
@@ -43,23 +43,6 @@
       min-height:100vh;
     }
 
-    /* Mobile fix: allow scroll */
-    @media (max-width:880px){
-      body{
-        display:block;
-        padding:16px;
-      }
-      .card{grid-template-columns:1fr; padding:16px; gap:18px}
-      .logo{width:58px;height:58px}
-      h1{font-size:18px}
-      p.lead{font-size:13px}
-      .links{gap:10px}
-      .btn{padding:9px 12px;font-size:14px}
-      .right{padding:0}
-      .card-right{padding:12px}
-      iframe{width:100% !important;height:260px !important}
-    }
-
     /* subtle blurred background image */
     .bg-img{
       position:fixed;inset:0;z-index:-2;background-image:url('https://raw.githubusercontent.com/1CreeperTV/1creepertv.github.io/refs/heads/main/Images/setup.jpg');
@@ -73,46 +56,79 @@
       box-shadow: 0 8px 30px rgba(0,0,0,0.6);
       backdrop-filter: blur(8px) saturate(1.05);
       display:grid;grid-template-columns: 1fr 340px;gap:26px;align-items:start;
-      opacity:0;transform:translateY(10px);animation:enter .6s cubic-bezier(.2,.9,.3,1) forwards
     }
 
-    @keyframes enter{to{opacity:1;transform:none}}
+    /* Mobile layout */
+    @media (max-width:880px){
+      body{align-items:flex-start !important;}
+      .card{grid-template-columns:1fr; padding:16px; gap:18px}
+      .logo{width:58px;height:58px}
+      h1{font-size:18px}
+      p.lead{font-size:13px}
+      .links{gap:10px}
+      .btn{padding:9px 12px;font-size:14px}
+      .right{padding:0}
+      .card-right{padding:12px}
+      iframe{width:100% !important;height:260px !important}
+}
 
-    .left{padding:6px 8px}
+
+    .left{
+      padding:6px 8px;
+    }
+
     .logo-wrap{display:flex;align-items:center;gap:14px}
     .logo{width:74px;height:74px;border-radius:14px;flex-shrink:0;box-shadow:0 6px 20px rgba(0,0,0,0.6)}
     h1{margin:6px 0 0;color:#fff;font-size:22px}
     p.lead{margin:8px 0 18px;color:var(--muted);font-size:14px}
 
-    .links{display:flex;flex-direction:column;gap:12px;margin-top:8px;}
-    .btn{display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:12px;text-decoration:none;color:inherit;
+    /* Buttons column */
+    .links{
+      display:flex;flex-direction:column;gap:12px;margin-top:8px;
+    }
+
+    .btn{
+      display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:12px;text-decoration:none;color:inherit;
       background:linear-gradient(180deg,var(--glass), rgba(255,255,255,0.02));
       border:1px solid rgba(255,255,255,0.06);
       transition:transform .18s ease, box-shadow .18s ease, background .18s;
       font-weight:600;font-size:15px;justify-content:center;
       backdrop-filter: blur(6px);
     }
+
     .btn .ico{width:20px;height:20px;display:inline-grid;place-items:center;opacity:0.95}
     .btn:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(0,0,0,0.6);}
+
     .btn.primary{
       background: linear-gradient(90deg,var(--accent), var(--accent-2));
       color: #1b0b00; border: none; box-shadow: 0 8px 28px rgba(255,138,0,0.12);
     }
+
     .btn.ghost{background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));}
 
+    /* small helper row */
     .meta{display:flex;gap:10px;align-items:center;margin-top:14px;font-size:13px;color:var(--muted)}
     .meta .chip{background:rgba(255,255,255,0.03);padding:8px 10px;border-radius:999px;border:1px solid rgba(255,255,255,0.02)}
 
+    /* right column */
     .right{display:flex;flex-direction:column;align-items:center;gap:14px;padding:6px}
     .card-right{width:100%;background:var(--glass);border-radius:12px;padding:14px;border:1px solid rgba(255,255,255,0.04)}
+
     .iframe-wrap{display:flex;justify-content:center}
 
+    /* footer */
     .footer{margin-top:14px;font-size:13px;color:rgba(255,255,255,0.45)}
 
+    /* small music toggle */
     .controls{display:flex;gap:10px;align-items:center}
     .toggle{color:#fff;cursor:pointer;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03)}
 
-  </style>
+    /* subtle entrance animation */
+    .card{opacity:0;transform:translateY(10px);animation:enter .6s cubic-bezier(.2,.9,.3,1) forwards}
+    @keyframes enter{to{opacity:1;transform:none}}
+
+    .overlay{pointer-events:none;}
+</style>
 </head>
 <body>
   <div class="bg-img" aria-hidden="true"></div>
@@ -174,6 +190,7 @@
     </aside>
   </main>
 
+  <!-- Hidden audio element -->
   <audio id="bgAudio" loop preload="none">
     <source src="https://github.com/1CreeperTV/1creepertv.github.io/raw/refs/heads/main/Images/September%202013%20-%20Nintendo%20eShop%20Music.mp3" type="audio/mpeg">
   </audio>
@@ -197,6 +214,7 @@
       }
     });
 
+    // Respect user's reduced motion preference
     if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
       document.documentElement.style.setProperty('--anim','none');
     }
