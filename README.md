@@ -1,5 +1,5 @@
 ## Salut, je suis 1CreeperTV (Loann JOUANNO) !
-**Je suis un créateur de contenu français avec une forte passion pour Nintendo, en particulier tout ce qui concerne le homebrew et le modding sur console.**
+*Je suis un créateur de contenu français avec une forte passion pour Nintendo, en particulier tout ce qui concerne le homebrew et le modding sur console.*
 
 ### Site Web
 Je possède aussi un site internet dédié à moi, donnant quelques détails sur moi et mes réseaux.
