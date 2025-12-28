@@ -43,7 +43,6 @@
       min-height:100vh;
     }
 
-    /* subtle blurred background image */
     .bg-img{
       position:fixed;inset:0;z-index:-2;background-image:url('https://raw.githubusercontent.com/CreeperTVii/creepertvii.github.io/refs/heads/main/Images/background2.png');
       background-size:cover;background-position:center;opacity:0.25;filter:blur(6px) saturate(1.05);
@@ -58,37 +57,26 @@
       display:grid;grid-template-columns: 1fr 340px;gap:26px;align-items:start;
     }
 
-    /* Mobile layout */
     @media (max-width:880px){
-      body{padding:12px !important; overflow-x:hidden;}
-      .btn{width:100%;width:100%;}
-      body{align-items:flex-start !important;}
+      body{padding:12px !important; overflow-x:hidden; align-items:flex-start !important;}
       .card{grid-template-columns:1fr; padding:16px; gap:18px}
       .logo{width:58px;height:58px}
       h1{font-size:18px}
       p.lead{font-size:13px}
       .links{gap:10px}
-      .btn{padding:9px 12px;font-size:14px}
+      .btn{padding:9px 12px;font-size:14px;width:100%}
       .right{padding:0}
       .card-right{padding:12px}
       iframe{width:100% !important;height:260px !important}
-}
-
-
-    .left{
-      padding:6px 8px;
     }
 
+    .left{padding:6px 8px}
     .logo-wrap{display:flex;align-items:center;gap:14px}
     .logo{width:74px;height:74px;border-radius:14px;flex-shrink:0;box-shadow:0 6px 20px rgba(0,0,0,0.6)}
     h1{margin:6px 0 0;color:#fff;font-size:22px}
     p.lead{margin:8px 0 18px;color:var(--muted);font-size:14px}
 
-    /* Buttons column */
-    .links{
-      display:flex;flex-direction:column;gap:12px;margin-top:8px;
-    }
-
+    .links{display:flex;flex-direction:column;gap:12px;margin-top:8px}
     .btn{
       display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:12px;text-decoration:none;color:inherit;
       background:linear-gradient(180deg,var(--glass), rgba(255,255,255,0.02));
@@ -97,95 +85,96 @@
       font-weight:600;font-size:15px;justify-content:center;
       backdrop-filter: blur(6px);
     }
+    .btn .ico{width:20px;height:20px;display:inline-grid;place-items:center}
+    .btn:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(0,0,0,0.6)}
+    .btn.primary{background: linear-gradient(90deg,var(--accent), var(--accent-2));color:#1b0b00;border:none}
+    .btn.ghost{background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015))}
 
-    .btn .ico{width:20px;height:20px;display:inline-grid;place-items:center;opacity:0.95}
-    .btn:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(0,0,0,0.6);}
-
-    .btn.primary{
-      background: linear-gradient(90deg,var(--accent), var(--accent-2));
-      color: #1b0b00; border: none; box-shadow: 0 8px 28px rgba(255,138,0,0.12);
-    }
-
-    .btn.ghost{background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));}
-
-    /* small helper row */
-    .meta{display:flex;gap:10px;align-items:center;margin-top:14px;font-size:13px;color:var(--muted)}
+    .meta{display:flex;gap:10px;align-items:center;margin-top:14px;font-size:13px}
     .meta .chip{background:rgba(255,255,255,0.03);padding:8px 10px;border-radius:999px;border:1px solid rgba(255,255,255,0.02)}
 
-    /* right column */
     .right{display:flex;flex-direction:column;align-items:center;gap:14px;padding:6px}
     .card-right{width:100%;background:var(--glass);border-radius:12px;padding:14px;border:1px solid rgba(255,255,255,0.04)}
-
     .iframe-wrap{display:flex;justify-content:center}
 
-    /* footer */
     .footer{margin-top:14px;font-size:13px;color:rgba(255,255,255,0.45)}
-
-    /* small music toggle */
     .controls{display:flex;gap:10px;align-items:center}
     .toggle{color:#fff;cursor:pointer;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03)}
 
-    /* subtle entrance animation */
     .card{opacity:0;transform:translateY(10px);animation:enter .6s cubic-bezier(.2,.9,.3,1) forwards}
     @keyframes enter{to{opacity:1;transform:none}}
+      
+    /* Welcome popup styles */
+    .welcome-overlay{
+      position:fixed;
+      inset:0;
+      z-index:10;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(0,0,0,0.85);
+      backdrop-filter:blur(6px);
+      transition:opacity .4s ease, visibility .4s ease;
+    }
+    .welcome-overlay.hide{
+      opacity:0;
+      visibility:hidden;
+    }
+    .welcome-box{
+      background:#0b0b0f;
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:18px;
+      padding:22px;
+      max-width:320px;
+      width:90%;
+      text-align:center;
+      box-shadow:0 20px 60px rgba(0,0,0,0.7);
+      animation:pop .35s cubic-bezier(.2,.9,.3,1);
+    }
+    .welcome-box h2{margin:0 0 10px;color:#fff}
+    .welcome-box p{font-size:14px;margin:0 0 18px;color:var(--muted)}
 
-    .overlay{pointer-events:none;}
-</style>
+    @keyframes pop{from{transform:scale(.95);opacity:0}to{transform:none;opacity:1}}
+
+  </style>
 </head>
 <body>
   <div class="bg-img" aria-hidden="true"></div>
 
-  <main class="card" role="main">
+  <!-- Welcome popup -->
+  <div id="welcome" class="welcome-overlay">
+    <div class="welcome-box">
+      <h2>Welcome 👋</h2>
+      <p>Welcome to CreeperTVii's website! Click OK to continue and enjoy the music 🎶</p>
+      <button id="welcomeOk" class="btn primary" style="width:100%">OK</button>
+    </div>
+  </div>
+
+  <main class="card">
     <section class="left">
       <div class="logo-wrap">
-        <img class="logo" src="https://raw.githubusercontent.com/CreeperTVii/creepertvii.github.io/refs/heads/main/Images/lv_0_2025112922-1764451316159.gif" alt="CreeperTV logo">
+        <img class="logo" src="https://raw.githubusercontent.com/CreeperTVii/creepertvii.github.io/refs/heads/main/Images/lv_0_2025112922-1764451316159.gif" alt="CreeperTVii logo">
         <div>
           <h1>CreeperTVii</h1>
-          <div style="color:var(--muted);font-size:13px">French creator • Nintendo • Homebrew</div>
+          <div style="font-size:13px">French creator • Nintendo • Homebrew</div>
         </div>
       </div>
 
       <p class="lead">Welcome to CreeperTVii's useless website!</p>
 
-      <div class="links" aria-label="Liens importants">
-        <!-- 1: guns.lol (jaune) -->
-        <a class="btn primary" href="https://guns.lol/creepertvii" target="_blank" rel="noopener noreferrer">
-          <span class="ico">🔫</span>
-          <span>My guns.lol</span>
-        </a>
-
-        <!-- 2: Discord (violet) -->
-        <a class="btn" style="background:linear-gradient(90deg,#6a4cff,#9a7bff); color:white; border:none; box-shadow:0 8px 28px rgba(120,90,255,0.25)" href="https://discord.gg/AQ7w57CKk8" target="_blank" rel="noopener noreferrer">
-          <span class="ico">💬</span>
-          <span>My Discord server</span>
-        </a>
-
-        <!-- 3: YouTube (rouge) -->
-        <a class="btn" style="background:linear-gradient(90deg,#ff4747,#ff7b7b); color:white; border:none; box-shadow:0 8px 28px rgba(255,80,80,0.25)" href="https://www.youtube.com/@CreeperTV_" target="_blank" rel="noopener noreferrer">
-          <span class="ico">🎥</span>
-          <span>My YouTube channel</span>
-        </a>
-
-        <!-- 4: GitHub (gris) -->
-        <a class="btn ghost" href="https://github.com/CreeperTVii" target="_blank" rel="noopener noreferrer">
-          <span class="ico">💻</span>
-          <span>My GitHub</span>
-        </a>
-
-        <!-- 5: PayPal (gris) -->
-        <a class="btn ghost" href="https://www.paypal.com/paypalme/1creepertv" target="_blank" rel="noopener noreferrer">
-          <span class="ico">💸</span>
-          <span>My PayPal</span>
-        </a>
+      <div class="links">
+        <a class="btn primary" href="https://guns.lol/creepertvii" target="_blank">🔫 My guns.lol</a>
+        <a class="btn" style="background:linear-gradient(90deg,#6a4cff,#9a7bff);color:white" href="https://discord.gg/AQ7w57CKk8" target="_blank">💬 My Discord server</a>
+        <a class="btn" style="background:linear-gradient(90deg,#ff4747,#ff7b7b);color:white" href="https://www.youtube.com/@CreeperTV_" target="_blank">🎥 My YouTube channel</a>
+        <a class="btn ghost" href="https://github.com/CreeperTVii" target="_blank">💻 My GitHub</a>
+        <a class="btn ghost" href="https://www.paypal.com/paypalme/1creepertv" target="_blank">💸 My PayPal</a>
       </div>
 
       <div class="meta">
         <div class="chip">Homebrew & Modding</div>
         <div class="chip">CreeperTVii</div>
         <div style="flex:1"></div>
-        <div class="controls">
-          <button id="playPause" class="toggle" aria-pressed="false">🔈 Play</button>
-        </div>
+        <div class="controls"><button id="playPause" class="toggle">🔈 Play</button></div>
       </div>
 
       <div class="footer">© CreeperTVii — Made in France :D</div>
@@ -193,48 +182,55 @@
 
     <aside class="right">
       <div class="card-right">
-        <div style="font-weight:700;margin-bottom:10px;color:#fff">Discord Widget</div>
+        <b style="color:#fff">Discord Widget</b>
         <div class="iframe-wrap">
-          <iframe src="https://discord.com/widget?id=1409245512904872141&theme=dark" width="260" height="300" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+          <iframe src="https://discord.com/widget?id=1409245512904872141&theme=dark" width="260" height="300" frameborder="0"></iframe>
         </div>
       </div>
 
       <div class="card-right" style="text-align:center">
-        <div style="font-weight:700;margin-bottom:8px;color:#fff">About</div>
-        <div style="color:var(--muted);font-size:13px">Hey :D My name is Loann, I'm 15 years old. I'm a French content creator with a strong passion for Nintendo, especially everything related to homebrew and console modding.</div>
+        <b style="color:#fff">About</b>
+        <div style="font-size:13px">Hey :D My name is Loann, I'm 15 years old. I'm a French content creator with a strong passion for Nintendo, especially everything related to homebrew and console modding.</div>
       </div>
-
     </aside>
   </main>
 
-  <!-- Hidden audio element -->
-  <audio id="bgAudio" loop preload="none">
+  <audio id="bgAudio" loop>
     <source src="https://github.com/CreeperTVii/creepertvii.github.io/raw/refs/heads/main/Images/Main%20Menu%20%20Mii%20Creator%20OST.mp3" type="audio/mpeg">
   </audio>
 
   <script>
-    const audio = document.getElementById('bgAudio');
-    const btn = document.getElementById('playPause');
-    let playing = false;
+  const audio = document.getElementById('bgAudio');
+  const btn = document.getElementById('playPause');
+  const popup = document.getElementById('welcome');
+  const okBtn = document.getElementById('welcomeOk');
 
-    btn.addEventListener('click', ()=>{
-      if(!playing){
-        audio.volume = 0.28; audio.play().catch(()=>{});
-        btn.textContent = '🔊 Playing';
-        btn.setAttribute('aria-pressed','true');
-        playing = true;
-      } else {
-        audio.pause();
-        btn.textContent = '🔈 Play';
-        btn.setAttribute('aria-pressed','false');
-        playing = false;
-      }
-    });
+  let playing = false;
 
-    // Respect user's reduced motion preference
-    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-      document.documentElement.style.setProperty('--anim','none');
+  // Play / pause button
+  btn.addEventListener('click', () => {
+    if (!playing) {
+      audio.volume = 0.28;
+      audio.play().catch(() => {});
+      btn.textContent = '🔊 Playing';
+      playing = true;
+    } else {
+      audio.pause();
+      btn.textContent = '🔈 Play';
+      playing = false;
     }
-  </script>
+  });
+
+  // Welcome popup logic
+  okBtn.addEventListener('click', () => {
+    popup.classList.add('hide');
+
+    audio.volume = 0.28;
+    audio.play().catch(() => {});
+
+    btn.textContent = '🔊 Playing';
+    playing = true;
+  });
+</script>
 </body>
 </html>
