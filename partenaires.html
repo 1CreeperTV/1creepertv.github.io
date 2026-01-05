@@ -292,7 +292,7 @@
             <a href="https://creepertvii.github.io/partenaires" class="nav-link active">Partenaires</a>
         </nav>
         <!-- Bouton Musique -->
-        <button id="playPause" class="toggle">🔈 Play</button>
+        <button id="playPause" class="toggle">🔈 Jouer</button>
     </div>
   </header>
 
@@ -347,7 +347,7 @@
 
   <footer class="container">
     <div class="footer-section">
-        © CreeperTVii — Design inspiré par le style Glassmorphism. Made with 🔥 in France.
+        © CreeperTVii — Made with 🔥 in France.
     </div>
   </footer>
 
@@ -367,19 +367,22 @@
     if (!playing) {
       audio.volume = 0.28;
       audio.play().then(() => {
-        btn.textContent = '🔊 Playing';
+        // Changement de 'Playing' à 'Lecture'
+        btn.textContent = '🔊 Lecture'; 
         btn.classList.add('playing');
         playing = true;
       }).catch(error => {
         console.warn("La lecture audio a été bloquée:", error);
-        btn.textContent = '🔇 Erreur';
+        // Changement de 'Erreur' à 'Erreur' (déjà en français)
+        btn.textContent = '🔇 Erreur'; 
         btn.classList.remove('playing');
         playing = false;
       });
       
     } else {
       audio.pause();
-      btn.textContent = '🔈 Play';
+      // Changement de 'Play' à 'Jouer'
+      btn.textContent = '🔈 Jouer';
       btn.classList.remove('playing');
       playing = false;
     }
@@ -389,7 +392,8 @@
   
   audio.addEventListener('pause', () => {
     if (playing) {
-        btn.textContent = '🔈 Play';
+        // Changement de 'Play' à 'Jouer'
+        btn.textContent = '🔈 Jouer';
         btn.classList.remove('playing');
         playing = false;
     }
@@ -397,10 +401,12 @@
 
   window.addEventListener('load', () => {
       if (audio.paused) {
-          btn.textContent = '🔈 Play';
+          // Changement de 'Play' à 'Jouer'
+          btn.textContent = '🔈 Jouer';
           btn.classList.remove('playing');
       } else {
-          btn.textContent = '🔊 Playing';
+          // Changement de 'Playing' à 'Lecture'
+          btn.textContent = '🔊 Lecture';
           btn.classList.add('playing');
           playing = true; 
       }
