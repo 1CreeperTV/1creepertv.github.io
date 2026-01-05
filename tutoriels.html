@@ -65,22 +65,6 @@
         max-width: 1200px;
         width: 100%;
     }
-    /* Nouveau style pour le logo Mii */
-    .mii-logo {
-        height: 50px; 
-        width: 50px;
-        min-width: 50px; /* Pour empêcher la contraction sur mobile */
-        border-radius: 50%;
-        object-fit: cover;
-        border: 2px solid var(--accent);
-        box-shadow: 0 0 10px rgba(255, 138, 0, 0.5);
-        transition: transform 0.2s;
-        margin-right: 30px; /* Ajoute un espace à droite du logo */
-    }
-    .mii-link:hover .mii-logo {
-        transform: scale(1.05);
-    }
-
     .nav-links {
         display: flex;
         gap: 30px;
@@ -233,33 +217,17 @@
         .category-title { font-size: 1.6rem; margin-top: 40px; }
     }
     @media (max-width: 500px) {
-        body { padding-top: 120px; } /* Augmenter le padding pour la barre empilée */
+        body { padding-top: 100px; }
         .video-card { border-radius: 12px; }
         .video-thumbnail { height: 160px; }
         .video-title { font-size: 1rem; }
         
         /* Ajustement de la nav sur mobile */
         .header { padding: 10px 15px; }
-        /* Empiler le contenu pour mobile: Logo/Links | Button */
-        .nav-content { 
-            flex-direction: column; 
-            gap: 10px; 
-            align-items: flex-start; /* Aligner le bloc de navigation à gauche */
-            width: 100%;
-        }
-        .nav-links {
-            gap: 20px; 
-            justify-content: flex-start;
-            width: 100%;
-            flex-wrap: wrap; /* Permet aux liens de passer à la ligne si trop nombreux */
-        }
-        .toggle { align-self: flex-end; } /* Positionner le bouton Lecture/Pause à droite */
+        .nav-content { flex-direction: column; gap: 10px; }
+        .nav-links { gap: 20px; }
+        .toggle { padding: 6px 10px; }
         .category-title { font-size: 1.4rem; margin-top: 30px; }
-
-        /* Réduction de la marge du logo sur mobile */
-        .mii-logo {
-            margin-right: 20px; 
-        }
     }
   </style>
 </head>
@@ -270,13 +238,6 @@
   <header class="header">
     <div class="nav-content">
         <nav class="nav-links">
-            <!-- LOGO MII AJOUTÉ -->
-            <a href="https://creepertvii.github.io" class="mii-link">
-                <img src="https://raw.githubusercontent.com/CreeperTVii/creepertvii.github.io/refs/heads/main/Images/lv_0_2025112922-1764451316159.gif" 
-                     alt="Logo Mii de CreeperTVii" 
-                     class="mii-logo">
-            </a>
-            <!-- FIN LOGO MII -->
             <!-- Lien 'Accueil' mis à jour vers l'URL fournie -->
             <a href="https://creepertvii.github.io" class="nav-link">Accueil</a>
             <a href="tutoriels.html" class="nav-link active">Tutoriels</a>
