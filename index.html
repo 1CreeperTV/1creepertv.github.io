@@ -207,7 +207,7 @@
         justify-content: center;
         align-items: center;
         margin-top: 20px;
-        min-height: 320px; /* Pour éviter le CLS lors du chargement */
+        min-height: 500px; /* Mise à jour de la hauteur minimale pour correspondre au widget */
     }
     .widget-container iframe {
         border-radius: 12px;
@@ -296,7 +296,7 @@
             <a href="https://creepertvii.github.io" class="nav-link active">Accueil</a>
             <a href="https://creepertvii.github.io/partenaires" class="nav-link">Partenaires</a>
         </nav>
-        <!-- Bouton Musique déplacé ici -->
+        <!-- Bouton Musique -->
         <button id="playPause" class="toggle">🔈 Play</button>
     </div>
   </header>
@@ -373,8 +373,8 @@
             </div>
 
             <div class="widget-container">
-                <!-- Le widget Discord pour afficher les membres et les salons -->
-                <iframe src="https://discord.com/widget?id=1409245512904872141&theme=dark" width="350" height="350" frameborder="0" allowtransparency="true" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+                <!-- Le widget Discord mis à jour avec height="500" -->
+                <iframe src="https://discord.com/widget?id=1409245512904872141&theme=dark" width="350" height="500" frameborder="0" allowtransparency="true" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
             </div>
         </div>
     </section>
@@ -398,8 +398,6 @@
   const audio = document.getElementById('bgAudio');
   const btn = document.getElementById('playPause');
   
-  // Le popup n'est plus là, donc ces variables et logique sont supprimées.
-
   let playing = false;
 
   // Fonction pour jouer/mettre en pause
@@ -415,6 +413,8 @@
         // En cas d'échec de lecture (ex: lecture auto bloquée)
         console.warn("La lecture audio a été bloquée:", error);
         btn.textContent = '🔇 Erreur'; // Afficher un message d'erreur si nécessaire
+        btn.classList.remove('playing');
+        playing = false;
       });
       
     } else {
