@@ -12,6 +12,7 @@
 
   <!-- Métadonnées pour le partage (Discord/OG) -->
   <meta property="og:title" content="CreeperTVii's Modding Server - L'Homebrew Nintendo" />
+  <!-- CORRECTION APPORTÉE ICI : CreeperTV -> CreeperTVii -->
   <meta property="og:description" content="Serveur centré sur les consoles Nintendo (Wii, Wii U, 3DS), l'homebrew, le support technique et le chill avec la communauté de CreeperTVii." />
   <meta property="og:image" content="https://raw.githubusercontent.com/CreeperTVii/creepertvii.github.io/refs/heads/main/Images/lv_0_2025112922-1764451316159.gif" />
   <meta property="og:url" content="https://creepertvii.github.io/" />
@@ -55,43 +56,26 @@
         top: 0;
         left: 0;
         width: 100%;
-        padding: 10px 20px; 
+        padding: 15px 20px;
         z-index: 10;
         backdrop-filter: blur(8px);
-        background: rgba(8, 6, 10, 0.7); 
+        background: rgba(8, 6, 10, 0.7); /* Fond légèrement opaque */
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         display: flex;
         justify-content: center;
     }
     .nav-content {
         display: flex;
-        justify-content: space-between; /* Pour mettre le Mii/Liens à gauche et le bouton à droite */
+        justify-content: space-between; /* Pour séparer les liens et le bouton */
         align-items: center;
         max-width: 1200px;
         width: 100%;
-    }
-    /* Nouveau conteneur pour le Mii et les liens, aligné à gauche */
-    .nav-left {
-        display: flex;
-        align-items: center;
     }
     .nav-links {
         display: flex;
         gap: 30px;
         align-items: center;
         justify-content: flex-start;
-        /* Supprime le margin-left qui forçait un espacement inutile */
-        margin-left: 0; 
-    }
-    /* Style pour l'image Mii dans la navigation */
-    .nav-logo {
-        height: 40px; 
-        width: 40px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin-right: 20px; /* Ajoute un espace entre le Mii et les liens */
-        border: 2px solid var(--accent);
-        box-shadow: 0 0 10px rgba(255,138,0,0.5);
     }
     .nav-link {
         color: var(--muted);
@@ -116,7 +100,6 @@
         transition: background 0.2s;
         font-weight: 600;
         font-size: 14px;
-        white-space: nowrap; /* Empêche le wrap sur mobile */
     }
     .toggle:hover{background:rgba(255,255,255,0.1)}
     .toggle.playing{background: var(--accent); color: #1b0b00; font-weight: 700; border: none;}
@@ -288,12 +271,6 @@
         .hero { padding: 100px 10px 50px; }
         .container { padding: 15px 10px; }
         .section-glass { padding: 20px; margin-bottom: 25px; border-radius: 18px; }
-        /* Sur mobile, on change la nav en colonne */
-        .nav-content { flex-direction: column; gap: 10px; }
-        .nav-left { width: 100%; justify-content: space-between; } /* Mii à gauche, liens groupés à droite */
-        .nav-links { gap: 15px; }
-        .nav-logo { margin-right: 0; }
-        .toggle { order: 3; margin-top: 5px; } /* Bouton sous les liens */
     }
     @media (max-width: 500px) {
         .hero-title { font-size: 2rem; }
@@ -302,11 +279,11 @@
         .links-grid { grid-template-columns: 1fr; }
         .stat-card h3 { font-size: 2rem; }
         
-        /* Ajustement de la nav sur très petit mobile */
+        /* Ajustement de la nav sur mobile */
+        .header { padding: 10px 15px; }
         .nav-content { flex-direction: column; gap: 10px; }
-        .nav-left { flex-direction: column; align-items: center; } /* Mii en haut des liens */
-        .nav-logo { margin-bottom: 10px; }
-        .nav-links { justify-content: center; flex-wrap: wrap; }
+        .nav-links { gap: 20px; }
+        .toggle { padding: 6px 10px; }
     }
   </style>
 </head>
@@ -316,21 +293,14 @@
   <!-- Barre de navigation fixe -->
   <header class="header">
     <div class="nav-content">
-        <div class="nav-left">
-            <!-- IMAGE DU MII -->
-            <img src="https://raw.githubusercontent.com/CreeperTVii/creepertvii.github.io/refs/heads/main/Images/Mii.png" alt="Mii de CreeperTVii" class="nav-logo">
-            
-            <!-- LIENS DE NAVIGATION -->
-            <nav class="nav-links">
-                <a href="https://creepertvii.github.io" class="nav-link active">Accueil</a>
-                <a href="https://creepertvii.github.io/tutoriels" class="nav-link">Tutoriels</a>
-                <a href="https://creepertvii.github.io/partenaires" class="nav-link">Partenaires</a>
-                <!-- Lien Recrutements -->
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfEg7LoYSrYfpLTJtsjqrD-HpKyacXSRK33qL-GQPIOG6M9BA/viewform" target="_blank" class="nav-link">Recrutements</a>
-            </nav>
-        </div>
-
-        <!-- Bouton Musique : Aligné à droite -->
+        <nav class="nav-links">
+            <a href="https://creepertvii.github.io" class="nav-link active">Accueil</a>
+            <a href="https://creepertvii.github.io/tutoriels" class="nav-link">Tutoriels</a>
+            <a href="https://creepertvii.github.io/partenaires" class="nav-link">Partenaires</a>
+            <!-- Lien Recrutements -->
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfEg7LoYSrYfpLTJtsjqrD-HpKyacXSRK33qL-GQPIOG6M9BA/viewform" target="_blank" class="nav-link">Recrutements</a>
+        </nav>
+        <!-- Bouton Musique : Le texte par défaut est maintenant en français -->
         <button id="playPause" class="toggle">🔈 Jouer</button>
     </div>
   </header>
