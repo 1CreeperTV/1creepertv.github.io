@@ -44,7 +44,7 @@
       background-size:cover;background-position:center;opacity:0.2;filter:blur(6px) saturate(1.05);
     }
 
-    /* --- Barre de navigation fixe (Styles importés) --- */
+    /* --- Barre de navigation fixe (Styles mis à jour) --- */
     .header {
         position: fixed;
         top: 0;
@@ -56,24 +56,32 @@
         background: rgba(8, 6, 10, 0.7);
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         display: flex;
-        justify-content: center;
+        justify-content: center; /* Centrer le nav-content */
     }
+    
+    /* Utilise space-between pour séparer les éléments de gauche (Logo + Liens) et l'élément de droite (Bouton Audio) */
     .nav-content {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-between; 
         align-items: center;
         max-width: 1200px;
         width: 100%;
     }
     
-    /* NOUVEAU: Conteneur pour le logo et les liens */
-    .nav-left {
+    /* NOUVEAU: Conteneur de Gauche (Logo + Liens de Navigation) */
+    .nav-left-group {
         display: flex;
         align-items: center;
-        gap: 30px; /* Espace entre le logo et le premier lien */
+        gap: 40px; /* Espace entre le logo et le groupe de liens */
     }
 
-    /* NOUVEAU: Style du logo Mii */
+    /* Le logo Mii */
+    .nav-logo-link {
+        display: flex;
+        align-items: center;
+    }
+
+    /* Style du logo Mii */
     .nav-logo {
         height: 40px; 
         width: 40px;
@@ -87,11 +95,11 @@
         transform: scale(1.05);
     }
 
+    /* Conteneur pour les liens de navigation */
     .nav-links {
         display: flex;
         gap: 30px;
         align-items: center;
-        /* justify-content: flex-start; n'est plus nécessaire car enveloppé */
     }
     .nav-link {
         color: var(--muted);
@@ -109,7 +117,8 @@
         color: var(--accent);
         border-bottom: 2px solid var(--accent);
     }
-    /* Bouton Musique dans la nav */
+    
+    /* Bouton Musique (Reste seul à droite dans le nav-content) */
     .toggle{
         color:#fff;cursor:pointer;padding:8px 12px;border-radius:999px;
         background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.05); 
@@ -280,25 +289,46 @@
         text-align: center;
     }
     
-    /* RESPONSIVE (Importé) */
+    /* RESPONSIVE (Mise à jour pour l'alignement mixte) */
     @media (max-width: 900px) {
         .container { padding-top: 80px; }
         .main-header h1 { font-size: 2.5rem; }
         .main-header .subtitle { font-size: 1rem; }
         .section-glass { padding: 20px; margin-bottom: 25px; border-radius: 18px; }
         .partners { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+
+        .nav-content { justify-content: space-between; }
+        .nav-left-group { gap: 20px; }
     }
     @media (max-width: 500px) {
         /* Ajustement de la nav sur mobile */
         .header { padding: 10px 15px; }
-        .nav-content { flex-direction: column; gap: 10px; }
-        /* Ajustement pour le nouveau conteneur logo + liens */
-        .nav-left { 
-            gap: 15px; 
-            width: 100%; /* Permet aux éléments de se centrer ou d'utiliser l'espace */
-            justify-content: space-around; /* Centre mieux les liens/logo sur mobile */
+        
+        /* En mode colonne, on utilise un alignement flex-start (gauche) */
+        .nav-content { 
+            flex-direction: column; 
+            gap: 10px; 
+            align-items: flex-start; /* Aligne les deux blocs principaux à gauche */
         }
-        .nav-links { gap: 20px; }
+        
+        /* Le groupe Logo + Liens prend toute la largeur */
+        .nav-left-group {
+            width: 100%;
+            justify-content: space-between; /* Logo à gauche, Liens au centre */
+            gap: 15px;
+            order: -1; /* Place le logo et les liens en haut */
+        }
+        
+        /* Cache le bouton Musique sur le même niveau que le logo/liens pour le placer en bas */
+        .toggle {
+             order: 1; /* Place le bouton tout en bas */
+             align-self: flex-end; /* Le place à droite */
+             margin-top: 5px;
+        }
+
+        /* Les liens peuvent s'enrouler ou scroll s'il y en a trop */
+        .nav-links { flex-wrap: wrap; gap: 15px; }
+        
         .nav-logo { height: 32px; width: 32px; } /* Logo plus petit sur mobile */
         .toggle { padding: 6px 10px; }
         
@@ -312,15 +342,18 @@
 <body>
   <div class="bg-img" aria-hidden="true"></div>
 
-  <!-- Barre de navigation fixe (Copiée de l'index) -->
+  <!-- Barre de navigation fixe (Logo + Liens à Gauche / Bouton Audio à Droite) -->
   <header class="header">
     <div class="nav-content">
-        <!-- NOUVEAU: Conteneur gauche (Logo + Liens) -->
-        <div class="nav-left">
-            <!-- NOUVEAU: Logo Mii -->
-            <a href="https://creepertvii.github.io" class="logo-link">
+        
+        <!-- Conteneur de Gauche : Logo + Liens de Navigation -->
+        <div class="nav-left-group">
+            <!-- Logo Mii -->
+            <a href="https://creepertvii.github.io" class="nav-logo-link">
                 <img src="https://raw.githubusercontent.com/CreeperTVii/creepertvii.github.io/refs/heads/main/Images/Mii.png" alt="Logo CreeperTVii Mii" class="nav-logo">
             </a>
+            
+            <!-- Liens de Navigation -->
             <nav class="nav-links">
                 <a href="https://creepertvii.github.io" class="nav-link">Accueil</a>
                 <a href="https://creepertvii.github.io/tutoriels" class="nav-link">Tutoriels</a>
@@ -328,8 +361,10 @@
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSfEg7LoYSrYfpLTJtsjqrD-HpKyacXSRK33qL-GQPIOG6M9BA/viewform" class="nav-link" target="_blank">Recrutements</a>
             </nav>
         </div>
-        <!-- Bouton Musique -->
+        
+        <!-- Bouton Musique (Seul élément à l'extrême droite) -->
         <button id="playPause" class="toggle">🔈 Jouer</button>
+
     </div>
   </header>
 
@@ -394,7 +429,7 @@
   </audio>
 
   <script>
-  // Script de contrôle audio (Copié de l'index)
+  // Script de contrôle audio (Copié de l'index et mis à jour en français)
   const audio = document.getElementById('bgAudio');
   const btn = document.getElementById('playPause');
   
@@ -404,13 +439,13 @@
     if (!playing) {
       audio.volume = 0.28;
       audio.play().then(() => {
-        // Changement de 'Playing' à 'Lecture'
+        // Mise à jour en français
         btn.textContent = '🔊 Lecture'; 
         btn.classList.add('playing');
         playing = true;
       }).catch(error => {
         console.warn("La lecture audio a été bloquée:", error);
-        // Changement de 'Erreur' à 'Erreur' (déjà en français)
+        // Mise à jour en français
         btn.textContent = '🔇 Erreur'; 
         btn.classList.remove('playing');
         playing = false;
@@ -418,7 +453,7 @@
       
     } else {
       audio.pause();
-      // Changement de 'Play' à 'Jouer'
+      // Mise à jour en français
       btn.textContent = '🔈 Jouer';
       btn.classList.remove('playing');
       playing = false;
@@ -429,7 +464,7 @@
   
   audio.addEventListener('pause', () => {
     if (playing) {
-        // Changement de 'Play' à 'Jouer'
+        // Mise à jour en français
         btn.textContent = '🔈 Jouer';
         btn.classList.remove('playing');
         playing = false;
@@ -438,11 +473,12 @@
 
   window.addEventListener('load', () => {
       if (audio.paused) {
-          // Changement de 'Play' à 'Jouer'
+          // Mise à jour en français
           btn.textContent = '🔈 Jouer';
           btn.classList.remove('playing');
       } else {
-          // Changement de 'Playing' à 'Lecture'
+          // Si pour une raison quelconque la lecture a commencé
+          // Mise à jour en français
           btn.textContent = '🔊 Lecture';
           btn.classList.add('playing');
           playing = true; 
