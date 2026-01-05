@@ -207,7 +207,7 @@
         justify-content: center;
         align-items: center;
         margin-top: 20px;
-        min-height: 500px; /* Mise à jour de la hauteur minimale pour correspondre au widget */
+        min-height: 500px; 
     }
     .widget-container iframe {
         border-radius: 12px;
@@ -296,8 +296,8 @@
             <a href="https://creepertvii.github.io" class="nav-link active">Accueil</a>
             <a href="https://creepertvii.github.io/partenaires" class="nav-link">Partenaires</a>
         </nav>
-        <!-- Bouton Musique -->
-        <button id="playPause" class="toggle">🔈 Play</button>
+        <!-- Bouton Musique : Le texte par défaut est maintenant en français -->
+        <button id="playPause" class="toggle">🔈 Jouer</button>
     </div>
   </header>
 
@@ -338,7 +338,7 @@
         <div class="section-glass">
             <h2 class="section-title">À Propos du Serveur</h2>
             <p style="text-align: center; max-width: 800px; margin: 0 auto 30px; font-size: 1.1rem; color: var(--muted);">
-                Ce serveur est la communauté officielle de CreeperTVii, principalement axée sur le **modding, l'Homebrew et le Jailbreak** des consoles Nintendo, notamment la **Wii, la Wii U et la 3DS**. Que vous ayez besoin d'aide ou juste de chiller, vous êtes au bon endroit !
+                Ce serveur est la communauté officielle de CreeperTVii, principalement axée sur le modding, l'Homebrew et le Jailbreak des consoles Nintendo, notamment la Wii, la Wii U et la 3DS. Que vous ayez besoin d'aide ou juste de chiller, vous êtes au bon endroit !
             </p>
 
             <div class="tags-list">
@@ -359,7 +359,7 @@
             
             <div class="stats-grid">
                 <div class="stat-card">
-                    <h3 style="color: #5865F2;">999+</h3>
+                    <h3 style="color: #5865F2;">500+</h3>
                     <p>Membres (estimation)</p>
                 </div>
                 <div class="stat-card">
@@ -367,13 +367,14 @@
                     <p>Support (communautaire)</p>
                 </div>
                 <div class="stat-card">
-                    <h3 style="color: #FF0000;">HD</h3>
-                    <p>Contenu YouTube</p>
+                    <!-- Mise à jour demandée : CreeperBot ON en vert -->
+                    <h3 style="color: #4ADE80;">ON</h3>
+                    <p>CreeperBot</p>
                 </div>
             </div>
 
             <div class="widget-container">
-                <!-- Le widget Discord mis à jour avec height="500" -->
+                <!-- Le widget Discord avec height="500" -->
                 <iframe src="https://discord.com/widget?id=1409245512904872141&theme=dark" width="350" height="500" frameborder="0" allowtransparency="true" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
             </div>
         </div>
@@ -384,7 +385,7 @@
 
   <footer class="container">
     <div class="footer-section">
-        © CreeperTVii — Design inspiré par le style Glassmorphism. Made with 🔥 in France.
+        © CreeperTVii — Made with 🔥 in France.
     </div>
   </footer>
 
@@ -406,20 +407,23 @@
       // Tente de jouer l'audio. Nécessite l'interaction utilisateur.
       audio.volume = 0.28; // Volume ajusté
       audio.play().then(() => {
-        btn.textContent = '🔊 Playing';
+        // Mise à jour en français
+        btn.textContent = '🔊 Lecture'; 
         btn.classList.add('playing');
         playing = true;
       }).catch(error => {
         // En cas d'échec de lecture (ex: lecture auto bloquée)
         console.warn("La lecture audio a été bloquée:", error);
-        btn.textContent = '🔇 Erreur'; // Afficher un message d'erreur si nécessaire
+        // Mise à jour en français
+        btn.textContent = '🔇 Erreur'; 
         btn.classList.remove('playing');
         playing = false;
       });
       
     } else {
       audio.pause();
-      btn.textContent = '🔈 Play';
+      // Mise à jour en français
+      btn.textContent = '🔈 Jouer'; 
       btn.classList.remove('playing');
       playing = false;
     }
@@ -431,7 +435,8 @@
   // Mise à jour de l'état du bouton si l'audio se met en pause par un autre moyen
   audio.addEventListener('pause', () => {
     if (playing) { // Si l'état interne était 'playing' mais l'audio s'est arrêté
-        btn.textContent = '🔈 Play';
+        // Mise à jour en français
+        btn.textContent = '🔈 Jouer'; 
         btn.classList.remove('playing');
         playing = false;
     }
@@ -440,11 +445,13 @@
   // Assure que le bouton affiche le bon état au chargement
   window.addEventListener('load', () => {
       if (audio.paused) {
-          btn.textContent = '🔈 Play';
+          // Mise à jour en français
+          btn.textContent = '🔈 Jouer'; 
           btn.classList.remove('playing');
       } else {
           // Si pour une raison quelconque la lecture a commencé
-          btn.textContent = '🔊 Playing';
+          // Mise à jour en français
+          btn.textContent = '🔊 Lecture'; 
           btn.classList.add('playing');
           playing = true; 
       }
