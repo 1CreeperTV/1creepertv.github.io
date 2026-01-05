@@ -21,7 +21,8 @@
     body{
       margin:0;
       font-family:Inter,system-ui,sans-serif;
-      background:var(--bg);
+      /* Le fond principal reste sombre */
+      background:var(--bg); 
       color:var(--muted);
       min-height:100vh;
       padding:24px;
@@ -35,19 +36,25 @@
       position:fixed;
       inset:0;
       z-index:-1;
+      /* --- CODE AJOUTÉ : Image de fond fournie par l'utilisateur --- */
       background-image:url('https://github.com/CreeperTVii/creepertvii.github.io/blob/main/Images/background2.png?raw=true');
       background-size:cover;
       background-position:center;
-      opacity:0.28;
-      filter:blur(8px) saturate(1.05);
+      /* Légère opacité et flou pour un effet esthétique */
+      opacity:0.28; 
+      filter:blur(8px) saturate(1.05); 
+      /* Assurez-vous que l'image ne se répète pas */
+      background-repeat: no-repeat;
     }
 
     .bg-img::after{
       content:"";
       position:absolute;
       inset:0;
+      /* Assurez un léger voile sombre par dessus l'image pour la lisibilité */
       background:rgba(0,0,0,0.45);
     }
+    /* ---------------------------------------------------------------- */
 
     .container{width:100%;max-width:900px}
 
@@ -127,11 +134,13 @@
   </style>
 </head>
 <body>
+  <!-- L'élément .bg-img affiche l'image de fond et ses effets -->
   <div class="bg-img" aria-hidden="true"></div>
 
   <main class="container">
     <h1>🤝 Nos partenaires</h1>
-    <div class="subtitle">Trusted communities</div>
+    <!-- Le texte a été changé ici -->
+    <div class="subtitle">Voici nos partenaires de confiance</div>
 
     <section class="partners">
       <div class="partner-card">
