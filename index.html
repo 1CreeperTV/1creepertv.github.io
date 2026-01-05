@@ -3,14 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>CreeperTVii — Home</title>
-  <link rel="icon" href="https://raw.githubusercontent.com/CreeperTVii/creepertvii.github.io/refs/heads/main/Images/Mii.png" />
+  <title>CreeperTVii's Modding Server</title>
+  <link rel="icon" href="https://raw.githubusercontent.com/CreeperTVii/creepertvii.github.io/refs/heads/main/Images/lv_0_2025112922-1764451316159.gif" />
 
   <!-- Polices -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
 
-  <meta property="og:title" content="CreeperTVii's website" />
-  <meta property="og:description" content="I'm a French content creator who loves Nintendo, especially homebrew." />
+  <!-- Métadonnées pour le partage (Discord/OG) -->
+  <meta property="og:title" content="CreeperTVii's Modding Server - L'Homebrew Nintendo" />
+  <meta property="og:description" content="Serveur centré sur les consoles Nintendo (Wii, Wii U, 3DS), l'homebrew, le support technique et le chill avec la communauté de CreeperTV." />
   <meta property="og:image" content="https://raw.githubusercontent.com/CreeperTVii/creepertvii.github.io/refs/heads/main/Images/lv_0_2025112922-1764451316159.gif" />
   <meta property="og:url" content="https://creepertvii.github.io/" />
 
@@ -19,217 +21,433 @@
       --bg:#08060a;
       --glass: rgba(255,255,255,0.06);
       --glass-strong: rgba(255,255,255,0.09);
-      --accent: #ff8a00;
-      --accent-2: #ffd66b;
+      --accent: #ff8a00; /* Orange vif */
+      --accent-2: #ffd66b; /* Jaune doux */
       --muted: #cfcfd6;
+      --light-text: #fff;
       --radius: 16px;
     }
 
     *{box-sizing:border-box}
-    html,body{height:100%;}
+    html{scroll-behavior: smooth;}
     body{
       margin:0;
-      font-family:Inter,system-ui,Segoe UI,Roboto,Arial,"Noto Sans",sans-serif;
-      background: radial-gradient(1200px 600px at 10% 10%, rgba(255,138,0,0.06), transparent),
-                  radial-gradient(900px 400px at 90% 90%, rgba(255,214,107,0.04), transparent),
+      font-family:'Inter', system-ui, Segoe UI, Roboto, Arial, "Noto Sans", sans-serif;
+      /* Dégradé de fond personnalisé (grand, pour le défilement) */
+      background: radial-gradient(1800px 900px at 10% 10%, rgba(255,138,0,0.1), transparent),
+                  radial-gradient(1500px 700px at 90% 60%, rgba(255,214,107,0.06), transparent),
                   var(--bg);
       color:var(--muted);
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
-      padding:32px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
+      padding: 0;
       min-height:100vh;
     }
 
     .bg-img{
       position:fixed;inset:0;z-index:-2;background-image:url('https://raw.githubusercontent.com/CreeperTVii/creepertvii.github.io/refs/heads/main/Images/background2.png');
-      background-size:cover;background-position:center;opacity:0.25;filter:blur(6px) saturate(1.05);
+      background-size:cover;background-position:center;opacity:0.2;filter:blur(6px) saturate(1.05);
     }
 
-    .card{
-      width:100%;max-width:980px;padding:28px;border-radius:20px;
-      background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border:1px solid rgba(255,255,255,0.04);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.6);
-      backdrop-filter: blur(8px) saturate(1.05);
-      display:grid;grid-template-columns: 1fr 340px;gap:26px;align-items:start;
+    /* Barre de navigation fixe */
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 15px 20px;
+        z-index: 10;
+        backdrop-filter: blur(8px);
+        background: rgba(8, 6, 10, 0.7); /* Fond légèrement opaque */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        display: flex;
+        justify-content: center;
+    }
+    .nav-content {
+        display: flex;
+        justify-content: space-between; /* Pour séparer les liens et le bouton */
+        align-items: center;
+        max-width: 1200px;
+        width: 100%;
+    }
+    .nav-links {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .nav-link {
+        color: var(--muted);
+        text-decoration: none;
+        font-weight: 600;
+        padding: 5px 0;
+        transition: color 0.2s, border-bottom 0.2s;
+        border-bottom: 2px solid transparent;
+    }
+    .nav-link:hover {
+        color: var(--accent-2);
+        border-bottom: 2px solid var(--accent);
+    }
+    .nav-link.active {
+        color: var(--accent);
+        border-bottom: 2px solid var(--accent);
+    }
+    /* Bouton Musique dans la nav */
+    .toggle{
+        color:#fff;cursor:pointer;padding:8px 12px;border-radius:999px;
+        background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.05); 
+        transition: background 0.2s;
+        font-weight: 600;
+        font-size: 14px;
+    }
+    .toggle:hover{background:rgba(255,255,255,0.1)}
+    .toggle.playing{background: var(--accent); color: #1b0b00; font-weight: 700; border: none;}
+
+
+    /* Conteneur principal pour le contenu défilant */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
+    
+    .section-glass {
+      padding: 30px;
+      margin-bottom: 40px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      border: 1px solid rgba(255,255,255,0.05);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+      backdrop-filter: blur(10px) saturate(1.2);
     }
 
-    @media (max-width:880px){
-      body{padding:12px !important; overflow-x:hidden; align-items:flex-start !important;}
-      .card{grid-template-columns:1fr; padding:16px; gap:18px}
-      .logo{width:58px;height:58px}
-      h1{font-size:18px}
-      p.lead{font-size:13px}
-      .links{gap:10px}
-      .btn{padding:9px 12px;font-size:14px;width:100%}
-      .right{padding:0}
-      .card-right{padding:12px}
-      iframe{width:100% !important;height:260px !important}
+    /* HEADER / HERO SECTION (Première vue) */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      /* Ajustement du padding top pour compenser la barre fixe */
+      padding: 120px 20px 80px; 
+      min-height: 80vh;
+      justify-content: center;
+    }
+    .hero-title {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 4.5rem;
+        font-weight: 900;
+        color: var(--light-text);
+        margin: 0;
+        line-height: 1;
+        text-shadow: 0 0 10px rgba(255,138,0,0.5);
+    }
+    .hero-subtitle {
+        font-size: 1.5rem;
+        color: var(--accent-2);
+        margin: 10px 0 30px;
+        font-weight: 600;
+    }
+    .logo-hero {
+        width: 120px;
+        height: 120px;
+        border-radius: 20px;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.8);
+        margin-bottom: 20px;
+        border: 4px solid var(--accent);
     }
 
-    .left{padding:6px 8px}
-    .logo-wrap{display:flex;align-items:center;gap:14px}
-    .logo{width:74px;height:74px;border-radius:14px;flex-shrink:0;box-shadow:0 6px 20px rgba(0,0,0,0.6)}
-    h1{margin:6px 0 0;color:#fff;font-size:22px}
-    p.lead{margin:8px 0 18px;color:var(--muted);font-size:14px}
-
-    .links{display:flex;flex-direction:column;gap:12px;margin-top:8px}
+    /* BOUTONS (Liens) */
+    .links-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        max-width: 800px;
+        margin: 30px auto 0;
+    }
     .btn{
-      display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:12px;text-decoration:none;color:inherit;
+      display:flex;align-items:center;gap:12px;padding:14px 20px;border-radius:14px;text-decoration:none;color:inherit;
       background:linear-gradient(180deg,var(--glass), rgba(255,255,255,0.02));
       border:1px solid rgba(255,255,255,0.06);
-      transition:transform .18s ease, box-shadow .18s ease, background .18s;
-      font-weight:600;font-size:15px;justify-content:center;
+      transition:transform .2s ease, box-shadow .2s ease, background .2s;
+      font-weight:700;font-size:16px;justify-content:center;
       backdrop-filter: blur(6px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
     }
     .btn .ico{width:20px;height:20px;display:inline-grid;place-items:center}
-    .btn:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(0,0,0,0.6)}
+    .btn:hover{transform:translateY(-4px);box-shadow:0 15px 40px rgba(0,0,0,0.7)}
+    .btn.discord{background:linear-gradient(90deg,#5865F2,#7984f4);color:white;border:none}
+    .btn.youtube{background:linear-gradient(90deg,#FF0000,#ff4747);color:white;border:none}
     .btn.primary{background: linear-gradient(90deg,var(--accent), var(--accent-2));color:#1b0b00;border:none}
-    .btn.ghost{background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015))}
 
-    .meta{display:flex;gap:10px;align-items:center;margin-top:14px;font-size:13px}
-    .meta .chip{background:rgba(255,255,255,0.03);padding:8px 10px;border-radius:999px;border:1px solid rgba(255,255,255,0.02)}
-
-    .right{display:flex;flex-direction:column;align-items:center;gap:14px;padding:6px}
-    .card-right{width:100%;background:var(--glass);border-radius:12px;padding:14px;border:1px solid rgba(255,255,255,0.04)}
-    .iframe-wrap{display:flex;justify-content:center}
-
-    .footer{margin-top:14px;font-size:13px;color:rgba(255,255,255,0.45)}
-    .controls{display:flex;gap:10px;align-items:center}
-    .toggle{color:#fff;cursor:pointer;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03)}
-
-    .card{opacity:0;transform:translateY(10px);animation:enter .6s cubic-bezier(.2,.9,.3,1) forwards}
-    @keyframes enter{to{opacity:1;transform:none}}
-      
-    /* Welcome popup styles */
-    .welcome-overlay{
-      position:fixed;
-      inset:0;
-      z-index:10;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:rgba(0,0,0,0.85);
-      backdrop-filter:blur(6px);
-      transition:opacity .4s ease, visibility .4s ease;
+    /* WIDGET ET STATS */
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
     }
-    .welcome-overlay.hide{
-      opacity:0;
-      visibility:hidden;
+    .stat-card {
+        text-align: center;
     }
-    .welcome-box{
-      background:#0b0b0f;
-      border:1px solid rgba(255,255,255,0.08);
-      border-radius:18px;
-      padding:22px;
-      max-width:320px;
-      width:90%;
-      text-align:center;
-      box-shadow:0 20px 60px rgba(0,0,0,0.7);
-      animation:pop .35s cubic-bezier(.2,.9,.3,1);
+    .stat-card h3 {
+        color: var(--accent);
+        font-size: 2.5rem;
+        margin: 0;
+        line-height: 1;
+        font-weight: 900;
     }
-    .welcome-box h2{margin:0 0 10px;color:#fff}
-    .welcome-box p{font-size:14px;margin:0 0 18px;color:var(--muted)}
+    .stat-card p {
+        margin: 5px 0 0;
+        font-size: 1rem;
+        color: var(--muted);
+        font-weight: 600;
+    }
+    .widget-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        min-height: 320px; /* Pour éviter le CLS lors du chargement */
+    }
+    .widget-container iframe {
+        border-radius: 12px;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+    }
 
-    @keyframes pop{from{transform:scale(.95);opacity:0}to{transform:none;opacity:1}}
+    /* TAGS */
+    .tags-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    .tags-list .chip{
+      background:rgba(255,255,255,0.1); 
+      color: var(--accent-2); 
+      padding:10px 16px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,0.06);
+      font-weight:600;
+      font-size: 14px;
+      white-space: nowrap;
+      transition: background 0.3s;
+    }
+    .tags-list .chip:hover {
+        background: rgba(255, 138, 0, 0.15);
+    }
 
+    /* Titres de section */
+    .section-title {
+        color: var(--light-text);
+        font-size: 2rem;
+        font-weight: 800;
+        margin-bottom: 25px;
+        text-align: center;
+        border-bottom: 2px solid var(--accent);
+        display: inline-block;
+        padding-bottom: 5px;
+        margin-left: auto;
+        margin-right: auto;
+        width: auto;
+    }
+
+    /* Footer */
+    .footer-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 13px;
+        color: rgba(255,255,255,0.45);
+        padding: 20px 0 10px;
+        text-align: center;
+    }
+    
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+        .hero-title { font-size: 3rem; }
+        .hero-subtitle { font-size: 1.2rem; }
+        .hero { padding: 100px 10px 50px; }
+        .container { padding: 15px 10px; }
+        .section-glass { padding: 20px; margin-bottom: 25px; border-radius: 18px; }
+    }
+    @media (max-width: 500px) {
+        .hero-title { font-size: 2rem; }
+        .hero-subtitle { font-size: 1rem; }
+        .logo-hero { width: 80px; height: 80px; }
+        .links-grid { grid-template-columns: 1fr; }
+        .stat-card h3 { font-size: 2rem; }
+        
+        /* Ajustement de la nav sur mobile */
+        .header { padding: 10px 15px; }
+        .nav-content { flex-direction: column; gap: 10px; }
+        .nav-links { gap: 20px; }
+        .toggle { padding: 6px 10px; }
+    }
   </style>
 </head>
 <body>
   <div class="bg-img" aria-hidden="true"></div>
 
-  <!-- Welcome popup -->
-  <div id="welcome" class="welcome-overlay">
-    <div class="welcome-box">
-      <h2>Welcome 👋</h2>
-      <p>Welcome to CreeperTVii's website! Click OK to continue and enjoy the music 🎶</p>
-      <button id="welcomeOk" class="btn primary" style="width:100%">OK</button>
+  <!-- Barre de navigation fixe -->
+  <header class="header">
+    <div class="nav-content">
+        <nav class="nav-links">
+            <a href="https://creepertvii.github.io" class="nav-link active">Accueil</a>
+            <a href="https://creepertvii.github.io/partenaires" class="nav-link">Partenaires</a>
+        </nav>
+        <!-- Bouton Musique déplacé ici -->
+        <button id="playPause" class="toggle">🔈 Play</button>
     </div>
-  </div>
+  </header>
 
-  <main class="card">
-    <section class="left">
-      <div class="logo-wrap">
-        <img class="logo" src="https://raw.githubusercontent.com/CreeperTVii/creepertvii.github.io/refs/heads/main/Images/lv_0_2025112922-1764451316159.gif" alt="CreeperTVii logo">
-        <div>
-          <h1>CreeperTVii</h1>
-          <div style="font-size:13px">French creator • Nintendo • Homebrew</div>
+  <main>
+    <!-- SECTION 1: HERO / ACCUEIL -->
+    <section class="hero">
+        <img class="logo-hero" src="https://raw.githubusercontent.com/CreeperTVii/creepertvii.github.io/refs/heads/main/Images/lv_0_2025112922-1764451316159.gif" alt="Logo du serveur CreeperTVii's Modding Server">
+        <h1 class="hero-title">CreeperTVii's</h1>
+        <h1 class="hero-title" style="color: var(--accent);">Modding Server</h1>
+        <p class="hero-subtitle">Support • Homebrew • Nintendo • Chill</p>
+
+        <div class="links-grid">
+            <!-- Lien principal : Rejoindre le serveur Discord -->
+            <a class="btn discord" href="https://discord.gg/AQ7w57CKk8" target="_blank">
+                <svg class="ico" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.43 2.14a1 1 0 0 1 1.14 0l.54.38a1 1 0 0 0 .54.12h.74a1 1 0 0 1 1 1v.74a1 1 0 0 0 .12.54l.38.54a1 1 0 0 1 0 1.14l-.38.54a1 1 0 0 0-.12.54v.74a1 1 0 0 1-1 1h-.74a1 1 0 0 0-.54.12l-.54.38a1 1 0 0 1-1.14 0l-.54-.38a1 1 0 0 0-.54-.12H9.74a1 1 0 0 1-1-1v-.74a1 1 0 0 0-.12-.54l-.38-.54a1 1 0 0 1 0-1.14l.38-.54a1 1 0 0 0 .12-.54v-.74a1 1 0 0 1 1-1h.74a1 1 0 0 0 .54-.12l.54-.38ZM18 10a6 6 0 0 0-6 6 6 6 0 0 0-6-6 6 6 0 0 0-6 6 6 6 0 0 0 6 6 6 6 0 0 0 6-6 6 6 0 0 0 6-6Z"/></svg>
+                Rejoindre le serveur
+            </a>
+            <!-- Lien vers la chaîne YouTube -->
+            <a class="btn youtube" href="https://www.youtube.com/@CreeperTV_" target="_blank">
+                <svg class="ico" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-2-2C18.9 4 12 4 12 4s-6.9 0-8.54.42a2.78 2.78 0 0 0-2 2c0 2.22 0 11.16 0 13.38a2.78 2.78 0 0 0 2 2c1.64.42 8.54.42 8.54.42s6.9 0 8.54-.42a2.78 2.78 0 0 0 2-2c0-2.22 0-11.16 0-13.38Z"/><path d="m10 15 5-3-5-3v6Z"/></svg>
+                Chaîne YouTube
+            </a>
+            <!-- Lien vers GitHub -->
+            <a class="btn ghost" href="https://github.com/CreeperTVii" target="_blank">
+                <svg class="ico" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.44-.78-3.5l.77-2.93c-.28-.08-1.1-.38-2.02.34-1-.24-2.2-.38-3.4-.38-1.2 0-2.4.14-3.4.38-.92-.72-1.74-1-2.02-.34l.77 2.93c-.51 1.06-.86 2.25-.78 3.5 0 3.5 3 5.5 6 5.5-.39.23-.74.63-1 1v4"/></svg>
+                GitHub
+            </a>
+            <!-- Lien vers PayPal -->
+            <a class="btn ghost" href="https://www.paypal.com/paypalme/1creepertv" target="_blank">
+                <svg class="ico" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 8h2c2.2 0 4 1.8 4 4s-1.8 4-4 4h-4l-5 4V4l5 4Z"/><path d="M10 4V2.5A2.5 2.5 0 0 1 12.5 0H14a.5.5 0 0 1 .5.5V4"/></svg>
+                Soutien
+            </a>
         </div>
-      </div>
+    </section>
+    
+    <!-- SECTION 2: À PROPOS & TAGS -->
+    <section class="container">
+        <div class="section-glass">
+            <h2 class="section-title">À Propos du Serveur</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 30px; font-size: 1.1rem; color: var(--muted);">
+                Ce serveur est la communauté officielle de CreeperTVii, principalement axée sur le **modding, l'Homebrew et le Jailbreak** des consoles Nintendo, notamment la **Wii, la Wii U et la 3DS**. Que vous ayez besoin d'aide ou juste de chiller, vous êtes au bon endroit !
+            </p>
 
-      <p class="lead">Welcome to CreeperTVii's useless website!</p>
-
-      <div class="links">
-        <a class="btn primary" href="https://guns.lol/creepertvii" target="_blank">🔫 My guns.lol</a>
-        <a class="btn" style="background:linear-gradient(90deg,#6a4cff,#9a7bff);color:white" href="https://discord.gg/AQ7w57CKk8" target="_blank">💬 My Discord server</a>
-        <a class="btn" style="background:linear-gradient(90deg,#ff4747,#ff7b7b);color:white" href="https://www.youtube.com/@CreeperTV_" target="_blank">🎥 My YouTube channel</a>
-        <a class="btn ghost" href="https://github.com/CreeperTVii" target="_blank">💻 My GitHub</a>
-        <a class="btn ghost" href="https://www.paypal.com/paypalme/1creepertv" target="_blank">💸 My PayPal</a>
-      </div>
-
-      <div class="meta">
-        <div class="chip">Homebrew & Modding</div>
-        <div class="chip">CreeperTVii</div>
-        <div style="flex:1"></div>
-        <div class="controls"><button id="playPause" class="toggle">🔈 Play</button></div>
-      </div>
-
-      <div class="footer">© CreeperTVii — Made in France :D</div>
+            <div class="tags-list">
+                <div class="chip">🎮 Wii/WiiU/3DS</div>
+                <div class="chip">🛠️ Homebrew & Modding</div>
+                <div class="chip">💬 Support & Aide</div>
+                <div class="chip">💻 Jailbreak</div>
+                <div class="chip">✨ Chill & Actif</div>
+                <div class="chip">📢 Annonces CreeperTV</div>
+            </div>
+        </div>
     </section>
 
-    <aside class="right">
-      <div class="card-right">
-        <b style="color:#fff">Discord Widget</b>
-        <div class="iframe-wrap">
-          <iframe src="https://discord.com/widget?id=1409245512904872141&theme=dark" width="260" height="300" frameborder="0"></iframe>
-        </div>
-      </div>
+    <!-- SECTION 3: WIDGET & STATS -->
+    <section class="container">
+        <div class="section-glass">
+            <h2 class="section-title">Activité & Communauté</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3 style="color: #5865F2;">999+</h3>
+                    <p>Membres (estimation)</p>
+                </div>
+                <div class="stat-card">
+                    <h3>24/7</h3>
+                    <p>Support (communautaire)</p>
+                </div>
+                <div class="stat-card">
+                    <h3 style="color: #FF0000;">HD</h3>
+                    <p>Contenu YouTube</p>
+                </div>
+            </div>
 
-      <div class="card-right" style="text-align:center">
-        <b style="color:#fff">About</b>
-        <div style="font-size:13px">Hey :D My name is Loann, I'm 15 years old. I'm a French content creator with a strong passion for Nintendo, especially everything related to homebrew and console modding.</div>
-      </div>
-    </aside>
+            <div class="widget-container">
+                <!-- Le widget Discord pour afficher les membres et les salons -->
+                <iframe src="https://discord.com/widget?id=1409245512904872141&theme=dark" width="350" height="350" frameborder="0" allowtransparency="true" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+            </div>
+        </div>
+    </section>
+
+
   </main>
 
+  <footer class="container">
+    <div class="footer-section">
+        © CreeperTVii — Design inspiré par le style Glassmorphism. Made with 🔥 in France.
+    </div>
+  </footer>
+
+  <!-- Audio de fond -->
   <audio id="bgAudio" loop>
     <source src="https://github.com/CreeperTVii/creepertvii.github.io/raw/refs/heads/main/Images/06.%20Purchase%20Software%20(3DS).mp3" type="audio/mpeg">
   </audio>
 
   <script>
+  // Variables d'éléments
   const audio = document.getElementById('bgAudio');
   const btn = document.getElementById('playPause');
-  const popup = document.getElementById('welcome');
-  const okBtn = document.getElementById('welcomeOk');
+  
+  // Le popup n'est plus là, donc ces variables et logique sont supprimées.
 
   let playing = false;
 
-  // Play / pause button
-  btn.addEventListener('click', () => {
+  // Fonction pour jouer/mettre en pause
+  function toggleAudio() {
     if (!playing) {
-      audio.volume = 0.28;
-      audio.play().catch(() => {});
-      btn.textContent = '🔊 Playing';
-      playing = true;
+      // Tente de jouer l'audio. Nécessite l'interaction utilisateur.
+      audio.volume = 0.28; // Volume ajusté
+      audio.play().then(() => {
+        btn.textContent = '🔊 Playing';
+        btn.classList.add('playing');
+        playing = true;
+      }).catch(error => {
+        // En cas d'échec de lecture (ex: lecture auto bloquée)
+        console.warn("La lecture audio a été bloquée:", error);
+        btn.textContent = '🔇 Erreur'; // Afficher un message d'erreur si nécessaire
+      });
+      
     } else {
       audio.pause();
       btn.textContent = '🔈 Play';
+      btn.classList.remove('playing');
       playing = false;
+    }
+  }
+
+  // Événement pour le bouton Play / Pause
+  btn.addEventListener('click', toggleAudio);
+  
+  // Mise à jour de l'état du bouton si l'audio se met en pause par un autre moyen
+  audio.addEventListener('pause', () => {
+    if (playing) { // Si l'état interne était 'playing' mais l'audio s'est arrêté
+        btn.textContent = '🔈 Play';
+        btn.classList.remove('playing');
+        playing = false;
     }
   });
 
-  // Welcome popup logic
-  okBtn.addEventListener('click', () => {
-    popup.classList.add('hide');
-
-    audio.volume = 0.28;
-    audio.play().catch(() => {});
-
-    btn.textContent = '🔊 Playing';
-    playing = true;
+  // Assure que le bouton affiche le bon état au chargement
+  window.addEventListener('load', () => {
+      if (audio.paused) {
+          btn.textContent = '🔈 Play';
+          btn.classList.remove('playing');
+      } else {
+          // Si pour une raison quelconque la lecture a commencé
+          btn.textContent = '🔊 Playing';
+          btn.classList.add('playing');
+          playing = true; 
+      }
   });
 </script>
 </body>
