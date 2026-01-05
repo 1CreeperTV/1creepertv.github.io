@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Tutoriels - CreeperTVii's Modding Server</title>
+  <link rel="icon" href="https://raw.githubusercontent.com/CreeperTVii/creepertvii.github.io/refs/heads/main/Images/lv_0_2025112922-1764451316159.gif" />
+
+  <!-- Polices -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+  
+  <style>
+    /* VARIABLES (Copie du style de la page d'accueil) */
+    :root{
+      --bg:#08060a;
+      --glass: rgba(255,255,255,0.06);
+      --glass-strong: rgba(255,255,255,0.09);
+      --accent: #ff8a00; /* Orange vif */
+      --accent-2: #ffd66b; /* Jaune doux */
+      --muted: #cfcfd6;
+      --light-text: #fff;
+      --radius: 16px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior: smooth;}
+    body{
+      margin:0;
+      font-family:'Inter', system-ui, Segoe UI, Roboto, Arial, "Noto Sans", sans-serif;
+      /* Dégradé de fond personnalisé (grand, pour le défilement) */
+      background: radial-gradient(1800px 900px at 10% 10%, rgba(255,138,0,0.1), transparent),
+                  radial-gradient(1500px 700px at 90% 60%, rgba(255,214,107,0.06), transparent),
+                  var(--bg);
+      color:var(--muted);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding-top: 80px; /* Espace pour la barre de navigation fixe */
+      min-height:100vh;
+    }
+
+    .bg-img{
+      position:fixed;inset:0;z-index:-2;background-image:url('https://raw.githubusercontent.com/CreeperTVii/creepertvii.github.io/refs/heads/main/Images/background2.png');
+      background-size:cover;background-position:center;opacity:0.2;filter:blur(6px) saturate(1.05);
+    }
+
+    /* Barre de navigation fixe */
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 15px 20px;
+        z-index: 10;
+        backdrop-filter: blur(8px);
+        background: rgba(8, 6, 10, 0.7); /* Fond légèrement opaque */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        display: flex;
+        justify-content: center;
+    }
+    .nav-content {
+        display: flex;
+        justify-content: space-between; 
+        align-items: center;
+        max-width: 1200px;
+        width: 100%;
+    }
+    .nav-links {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .nav-link {
+        color: var(--muted);
+        text-decoration: none;
+        font-weight: 600;
+        padding: 5px 0;
+        transition: color 0.2s, border-bottom 0.2s;
+        border-bottom: 2px solid transparent;
+    }
+    .nav-link:hover {
+        color: var(--accent-2);
+        border-bottom: 2px solid var(--accent);
+    }
+    .nav-link.active {
+        color: var(--accent);
+        border-bottom: 2px solid var(--accent);
+    }
+    /* Bouton Musique dans la nav */
+    .toggle{
+        color:#fff;cursor:pointer;padding:8px 12px;border-radius:999px;
+        background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.05); 
+        transition: background 0.2s;
+        font-weight: 600;
+        font-size: 14px;
+    }
+    .toggle:hover{background:rgba(255,255,255,0.1)}
+    .toggle.playing{background: var(--accent); color: #1b0b00; font-weight: 700; border: none;}
+
+    /* Conteneur principal pour le contenu défilant */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
+    
+    .section-glass {
+      padding: 30px;
+      margin-bottom: 40px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      border: 1px solid rgba(255,255,255,0.05);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+      backdrop-filter: blur(10px) saturate(1.2);
+    }
+    
+    /* Titres de section */
+    .section-title {
+        color: var(--light-text);
+        font-size: 2.5rem;
+        font-weight: 900;
+        font-family: 'Montserrat', sans-serif;
+        margin-bottom: 40px;
+        text-align: center;
+        /* Ajout d'une ligne d'accentuation sous le titre */
+        display: block;
+        padding-bottom: 10px;
+        margin-top: 0;
+        color: var(--accent);
+    }
+
+    /* GRILLE DE TUTORIELS (Conteneur principal pour les sections) */
+    .tutorial-grid {
+        display: block; /* S'assure qu'il agit comme un conteneur vertical */
+    }
+
+    /* Titre de Catégorie (Wii, 3DS, etc.) */
+    .category-title {
+        color: var(--accent-2); /* Jaune doux */
+        font-size: 1.8rem;
+        font-weight: 800;
+        margin-top: 50px;
+        margin-bottom: 25px;
+        padding-bottom: 5px;
+        border-bottom: 3px solid rgba(255, 138, 0, 0.2); /* Ligne orange légère */
+        text-align: left; /* Aligner à gauche */
+    }
+    
+    /* GRILLE spécifique pour chaque catégorie (celle qui contient les cartes) */
+    .category-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-bottom: 40px; /* Espace après la grille de catégorie */
+    }
+
+    .video-card {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+        border-radius: 18px;
+        overflow: hidden;
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.08);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .video-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(255, 138, 0, 0.3);
+    }
+    .video-thumbnail {
+        width: 100%;
+        height: 180px; /* Hauteur fixe pour les miniatures */
+        object-fit: cover;
+        /* Remplacer par un dégradé si l'image ne charge pas */
+        background: linear-gradient(45deg, #1b0b00, #331a00); 
+    }
+    .video-info {
+        padding: 15px;
+    }
+    .video-title {
+        color: var(--light-text);
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin: 0 0 5px 0;
+        line-height: 1.3;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* Limiter à 2 lignes */
+        -webkit-box-orient: vertical;
+    }
+    .video-meta {
+        font-size: 0.9rem;
+        color: var(--accent-2);
+        font-weight: 600;
+    }
+
+    /* Footer */
+    .footer-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 13px;
+        color: rgba(255,255,255,0.45);
+        padding: 20px 0 10px;
+        text-align: center;
+    }
+    
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+        .container { padding: 15px 10px; }
+        .section-title { font-size: 2rem; margin-bottom: 30px; }
+        .category-grid { gap: 20px; }
+        .category-title { font-size: 1.6rem; margin-top: 40px; }
+    }
+    @media (max-width: 500px) {
+        body { padding-top: 100px; }
+        .video-card { border-radius: 12px; }
+        .video-thumbnail { height: 160px; }
+        .video-title { font-size: 1rem; }
+        
+        /* Ajustement de la nav sur mobile */
+        .header { padding: 10px 15px; }
+        .nav-content { flex-direction: column; gap: 10px; }
+        .nav-links { gap: 20px; }
+        .toggle { padding: 6px 10px; }
+        .category-title { font-size: 1.4rem; margin-top: 30px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-img" aria-hidden="true"></div>
+
+  <!-- Barre de navigation fixe (Copie de la page d'accueil) -->
+  <header class="header">
+    <div class="nav-content">
+        <nav class="nav-links">
+            <a href="index (1).html" class="nav-link">Accueil</a>
+            <a href="tutoriels.html" class="nav-link active">Tutoriels</a>
+            <a href="https://creepertvii.github.io/partenaires" class="nav-link">Partenaires</a>
+        </nav>
+        <button id="playPause" class="toggle">🔈 Jouer</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="container">
+      <div class="section-glass" style="margin-top: 50px;">
+        <h2 class="section-title">Mes Tutoriels Modding & Homebrew</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 30px; font-size: 1.1rem; color: var(--muted);">
+            Retrouvez ici tous mes guides et tutoriels vidéo pour le modding et l'homebrew sur les consoles Nintendo et PlayStation 3. Cliquez pour accéder directement à la vidéo !
+        </p>
+
+        <!-- GRILLE DE VIDÉOS GÉNÉRÉE PAR JS -->
+        <div id="tutorialGrid" class="tutorial-grid">
+            <!-- Les catégories (Wii, Wii U, 3DS, PS3) et les cartes vidéo seront insérées ici par JavaScript -->
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    <div class="footer-section">
+        © CreeperTVii — Made with 🔥 in France.
+    </div>
+  </footer>
+
+  <!-- Audio de fond (Copie de la page d'accueil) -->
+  <audio id="bgAudio" loop>
+    <source src="https://github.com/CreeperTVii/creepertvii.github.io/raw/refs/heads/main/Images/06.%20Purchase%20Software%20(3DS).mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    // --- Système de tutoriels ---
+    // Les données de tes tutoriels sont stockées dans ce tableau.
+    // NOTE: Les dates sont fictives et servent uniquement à assurer un tri chronologique dans l'ordre fourni.
+    const tutorialsData = [
+        // --- Wii Tutorials (13 vidéos) ---
+        { title: "Comment hacker sa Nintendo Wii en 2025+ [Tutoriel Guide complet FR]", channel: "CreeperTVii1", videoId: "c6xCFiRjsis", date: "01/01/2024", category: "Wii" },
+        { title: "Comment INSTALLER et JOUER au mod Insane Kart Wii ISO sur Dolphin TUTO FR", channel: "CreeperTVii1", videoId: "tCNoTWjzhUw", date: "02/01/2024", category: "Wii" },
+        { title: "Comment Télecharger et Jouer au mod Newer Super Mario Bros Wii sans le disque original TUTO FR !", channel: "CreeperTVii1", videoId: "6bmOVybghAk", date: "03/01/2024", category: "Wii" },
+        { title: "Comment avoir la chaîne boutique Wii en 2025 avec WiiMart ! TUTO FR", channel: "CreeperTVii1", videoId: "JdtjVrESXKo", date: "04/01/2024", category: "Wii" },
+        { title: "Comment Télécharger/Installer les cIOS sur Wii avec D2X cIOS Installer ! TUTO FR", channel: "CreeperTVii1", videoId: "1Sy-v7fUjvE", date: "05/01/2024", category: "Wii" },
+        { title: "Comment Télécharger & Utiliser Wii Backup Manager en 2025+ TUTO FR", channel: "CreeperTVii1", videoId: "_QabrNDg2IQ", date: "06/01/2024", category: "Wii" },
+        { title: "Comment changer la musique de fond du Homebrew Browser sur la Wii/vWii ! TUTO FR", channel: "CreeperTVii1", videoId: "9vuXsl8xupE", date: "07/01/2024", category: "Wii" },
+        { title: "Comment convertir un jeu Wii RVZ en un jeu ISO ! TUTO FR", channel: "CreeperTVii1", videoId: "fGWE1yNl-CU", date: "08/01/2024", category: "Wii" },
+        { title: "Comment installer Retro Rewind sur Wii/vWii TUTO FR (Mod Mario Kart Wii)", channel: "CreeperTVii1", videoId: "T0M5xRKM-Gw", date: "09/01/2024", category: "Wii" },
+        { title: "Comment faire des backups/restaurer ses sauvegardes Wii avec SaveGame Manager GX !", channel: "CreeperTVii1", videoId: "J6hDtuuGGVw", date: "10/01/2024", category: "Wii" },
+        { title: "Comment installer WiiLink (Riiconnect24) sur Wii et vWii en 2024 !", channel: "CreeperTVii1", videoId: "rJvUcm5qBJw", date: "11/01/2024", category: "Wii" },
+        { title: "Comment jouer à des jeux Nintendo 64 sur Wii/vWii FR !", channel: "CreeperTVii1", videoId: "sctO7lCDJao", date: "12/01/2024", category: "Wii" },
+        { title: "Comment installer CTGP revolution sur sa Wii en 2024 ! | Tuto FR", channel: "CreeperTVii1", videoId: "Gz3_tA1Zegg", date: "13/01/2024", category: "Wii" },
+        
+        // --- Wii U Tutorials (9 vidéos - MISE À JOUR) ---
+        { title: "Comment regarder YouTube sur sa Wii U à nouveau TUTO FR", channel: "CreeperTVii1", videoId: "OUAcMpcs5_g", date: "14/01/2024", category: "Wii U" },
+        { title: "Comment mettre un custom thème sur sa Wii U 2025+ TUTO FR", channel: "CreeperTVii1", videoId: "_EinQz49IKw", date: "15/01/2024", category: "Wii U" },
+        { title: "Comment jailbreak sa Nintendo Wii U avec Aroma en 2025+ TUTO FR", channel: "CreeperTVii1", videoId: "OxT05k1SqHQ", date: "16/01/2024", category: "Wii U" },
+        // Nouvelle vidéo insérée ici :
+        { title: "Comment dump la NAND de sa vWii (pour jouer en Online sur Dolphin) TUTO FR", channel: "CreeperTVii1", videoId: "nwYTfqblIbc", date: "16/01/2024-B", category: "Wii U" },
+        { title: "Comment installer Pretendo sur une Wii U jailbreakée FR !", channel: "CreeperTVii1", videoId: "ofkOrJD3UeA", date: "17/01/2024", category: "Wii U" },
+        { title: "Comment mettre à jour Aroma sur Wii U (Aroma Updater)", channel: "CreeperTVii1", videoId: "clvwfb__X68", date: "18/01/2024", category: "Wii U" },
+        { title: "[Guide complet] Comment hacker sa vWii en 2024 FR !", channel: "CreeperTVii1", videoId: "7uv4BUUPlMc", date: "19/01/2024", category: "Wii U" },
+        { title: "Comment installer Homebrew Channel sur vWii ! (Wii U)", channel: "CreeperTVii1", videoId: "5m2L5Rvhydo", date: "20/01/2024", category: "Wii U" },
+        { title: "Comment installer Mario Kart Generations sur Wii U 2024 FR !", channel: "CreeperTVii1", videoId: "qAXKx9lXoD0", date: "21/01/2024", category: "Wii U" },
+
+        // --- 3DS Tutorials (5 vidéos) ---
+        { title: "Comment avoir des pièces de jeux en illimité/maximum sur la 3DS/2DS TUTO FR !", channel: "CreeperTVii1", videoId: "qvyArpPLPsA", date: "22/01/2024", category: "3DS" },
+        { title: "Comment installer homebrew launcher sur son menu home 3DS/2DS ! TUTO", channel: "CreeperTVii1", videoId: "Z-Bc9iDSqoE", date: "23/01/2024", category: "3DS" },
+        { title: "Comment installer et utiliser Twilight menu ++ sur 3DS/2DS", channel: "CreeperTVii1", videoId: "iI36QqS5MfA", date: "24/01/2024", category: "3DS" },
+        { title: "Comment Installer/Utiliser Universal Updater sur 3DS/2DS !", channel: "CreeperTVii1", videoId: "BlYOklbZECg", date: "25/01/2024", category: "3DS" },
+        { title: "Comment installer Pretendo sur votre Nintendo 3DS/2DS en 2024 ! TUTO JOUER EN LIGNE après AVRIL 2024", channel: "CreeperTVii1", videoId: "g6O4VFdtLMo", date: "26/01/2024", category: "3DS" },
+        
+        // --- PS3 Tutorials (4 vidéos) ---
+        { title: "Comment jailbreak sa PS3 avec le HEN en 4.92 (Téléchargement du HEN officiel)", channel: "CreeperTVii1", videoId: "v_SdUsID4P4", date: "27/01/2024", category: "PS3" },
+        { title: "Comment installer des PKG/Homebrews sur sa PS3 (Multiman, Webman MOD, PKGi etc)", channel: "CreeperTVii1", videoId: "3XrVse48MuQ", date: "28/01/2024", category: "PS3" },
+        { title: "Comment télécharger des jeux PS3 grâce à PKGi (Télécharger PKGi)", channel: "CreeperTVii1", videoId: "XpEb1IWz8gc", date: "29/01/2024", category: "PS3" },
+        { title: "Comment jouer en ligne à la PS3 jailbreak (PSN) sans être sur la dernière version du firmware TUTO", channel: "CreeperTVii1", videoId: "rQMU0hq9wtw", date: "30/01/2024", category: "PS3" }
+    ];
+
+    // Fonction pour générer le HTML d'une carte vidéo
+    function createVideoCard(video) {
+        // La miniature YouTube a un format standard: https://img.youtube.com/vi/<ID_VIDEO>/mqdefault.jpg
+        const thumbnailUrl = `https://img.youtube.com/vi/${video.videoId}/mqdefault.jpg`;
+        const videoUrl = `https://www.youtube.com/watch?v=${video.videoId}`;
+
+        // Construction de la carte vidéo
+        const cardHtml = `
+            <a href="${videoUrl}" target="_blank" class="video-card">
+                <!-- Utilisez onerror pour cacher l'image en cas d'erreur de chargement (pour les placeholders sans ID valide) -->
+                <img src="${thumbnailUrl}" alt="Miniature pour ${video.title}" class="video-thumbnail" onerror="this.style.display='none';">
+                <div class="video-info">
+                    <h3 class="video-title">${video.title}</h3>
+                    <!-- Affiche uniquement la chaîne, la date a été retirée sur votre demande. -->
+                    <p class="video-meta">${video.channel}</p>
+                </div>
+            </a>
+        `;
+        return cardHtml;
+    }
+
+    // Fonction pour traduire les catégories (selon votre demande)
+    function translateCategory(category) {
+        const translations = {
+            "Wii": "Tutoriels Wii",
+            "Wii U": "Tutoriels Wii U",
+            "3DS": "Tutoriels 3DS",
+            "PS3": "Tutoriels PS3",
+            "Autres": "Autres Tutoriels"
+        };
+        return translations[category] || category;
+    }
+
+    // Fonction principale pour insérer les cartes, groupées par catégorie
+    function renderTutorials() {
+        const gridContainer = document.getElementById('tutorialGrid');
+        gridContainer.innerHTML = ''; // Nettoyer l'ancien contenu
+
+        // 1. Grouper les vidéos par catégorie
+        const categorizedData = tutorialsData.reduce((acc, video) => {
+            const category = video.category || "Autres"; // 'Autres' si catégorie manquante
+            if (!acc[category]) {
+                acc[category] = [];
+            }
+            acc[category].push(video);
+            return acc;
+        }, {});
+
+        // 2. Définir l'ordre des catégories
+        const categoryOrder = ["Wii", "Wii U", "3DS", "PS3", "Autres"];
+
+        // 3. Rendre chaque catégorie
+        categoryOrder.forEach(category => {
+            const videos = categorizedData[category];
+            if (videos && videos.length > 0) {
+                
+                // Créer le titre de la catégorie traduit
+                const categoryTitle = document.createElement('h3');
+                categoryTitle.className = 'category-title';
+                categoryTitle.textContent = translateCategory(category); // Utilisation de la fonction de traduction
+
+                // L'ajouter au conteneur principal
+                gridContainer.appendChild(categoryTitle);
+
+                // Créer la grille pour les vidéos de cette catégorie
+                const categoryGrid = document.createElement('div');
+                categoryGrid.className = 'category-grid'; 
+                
+                // Rendre les cartes vidéo
+                // Tri par date (DU PLUS ANCIEN AU PLUS RÉCENT)
+                videos.sort((a, b) => {
+                    // Fonction de tri complexe pour gérer les dates et les sous-dates (ex: "16/01/2024-B")
+                    const parseDate = (dateStr) => {
+                        const parts = dateStr.split('-');
+                        const datePart = parts[0];
+                        const subPart = parts.length > 1 ? parts[1] : 'A'; // 'A' par défaut
+                        
+                        const [day, month, year] = datePart.split('/');
+                        // Crée une date objet et ajoute un poids pour le tri secondaire (sous-partie)
+                        const primaryDate = new Date(`${year}-${month}-${day}`).getTime();
+                        const secondaryWeight = subPart.charCodeAt(0) - 'A'.charCodeAt(0);
+                        
+                        return primaryDate + secondaryWeight;
+                    };
+
+                    const dateA = parseDate(a.date);
+                    const dateB = parseDate(b.date);
+                    // Tri ascendant (dateA - dateB)
+                    return dateA - dateB; 
+                });
+                
+                categoryGrid.innerHTML = videos.map(createVideoCard).join('');
+                
+                // Ajouter la grille de catégorie au conteneur principal
+                gridContainer.appendChild(categoryGrid);
+            }
+        });
+    }
+
+    // Lance le rendu au chargement du DOM
+    document.addEventListener('DOMContentLoaded', renderTutorials);
+
+
+    // --- Système Audio (Copie de la page d'accueil) ---
+    const audio = document.getElementById('bgAudio');
+    const btn = document.getElementById('playPause');
+    
+    let playing = false;
+
+    function toggleAudio() {
+        if (!playing) {
+            audio.volume = 0.28;
+            audio.play().then(() => {
+                btn.textContent = '🔊 Lecture'; 
+                btn.classList.add('playing');
+                playing = true;
+            }).catch(error => {
+                console.warn("La lecture audio a été bloquée:", error);
+                btn.textContent = '🔇 Erreur'; 
+                btn.classList.remove('playing');
+                playing = false;
+            });
+        } else {
+            audio.pause();
+            btn.textContent = '🔈 Jouer'; 
+            btn.classList.remove('playing');
+            playing = false;
+        }
+    }
+
+    btn.addEventListener('click', toggleAudio);
+    
+    audio.addEventListener('pause', () => {
+        if (playing) { 
+            btn.textContent = '🔈 Jouer'; 
+            btn.classList.remove('playing');
+            playing = false;
+        }
+    });
+
+    window.addEventListener('load', () => {
+        if (audio.paused) {
+            btn.textContent = '🔈 Jouer'; 
+            btn.classList.remove('playing');
+        } else {
+            btn.textContent = '🔊 Lecture'; 
+            btn.classList.add('playing');
+            playing = true; 
+        }
+    });
+  </script>
+</body>
+</html>
