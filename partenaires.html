@@ -3,179 +3,408 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>CreeperTVii — Partners</title>
+  <title>CreeperTVii — Partenaires</title>
   <link rel="icon" href="https://raw.githubusercontent.com/CreeperTVii/creepertvii.github.io/refs/heads/main/Images/Mii.png" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Polices - Importées depuis la page d'accueil -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
 
   <style>
     :root{
       --bg:#08060a;
       --glass: rgba(255,255,255,0.06);
-      --muted:#cfcfd6;
-      --radius:16px;
+      --glass-strong: rgba(255,255,255,0.09);
+      --accent: #ff8a00; /* Orange vif */
+      --accent-2: #ffd66b; /* Jaune doux */
+      --muted: #cfcfd6;
+      --light-text: #fff;
+      --radius: 16px;
     }
 
     *{box-sizing:border-box}
-
+    html{scroll-behavior: smooth;}
     body{
       margin:0;
-      font-family:Inter,system-ui,sans-serif;
-      /* Le fond principal reste sombre */
-      background:var(--bg); 
+      font-family:'Inter', system-ui, Segoe UI, Roboto, Arial, "Noto Sans", sans-serif;
+      /* Dégradé de fond personnalisé */
+      background: radial-gradient(1800px 900px at 10% 10%, rgba(255,138,0,0.1), transparent),
+                  radial-gradient(1500px 700px at 90% 60%, rgba(255,214,107,0.06), transparent),
+                  var(--bg);
       color:var(--muted);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding: 0;
       min-height:100vh;
-      padding:24px;
-      display:flex;
-      justify-content:center;
-      position:relative;
-      overflow-x:hidden;
     }
 
+    /* Image de fond avec filtres comme sur la page d'accueil */
     .bg-img{
-      position:fixed;
-      inset:0;
-      z-index:-1;
-      /* --- CODE AJOUTÉ : Image de fond fournie par l'utilisateur --- */
-      background-image:url('https://github.com/CreeperTVii/creepertvii.github.io/blob/main/Images/background2.png?raw=true');
-      background-size:cover;
-      background-position:center;
-      /* Légère opacité et flou pour un effet esthétique */
-      opacity:0.28; 
-      filter:blur(8px) saturate(1.05); 
-      /* Assurez-vous que l'image ne se répète pas */
-      background-repeat: no-repeat;
+      position:fixed;inset:0;z-index:-2;background-image:url('https://raw.githubusercontent.com/CreeperTVii/creepertvii.github.io/refs/heads/main/Images/background2.png');
+      background-size:cover;background-position:center;opacity:0.2;filter:blur(6px) saturate(1.05);
     }
 
-    .bg-img::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      /* Assurez un léger voile sombre par dessus l'image pour la lisibilité */
-      background:rgba(0,0,0,0.45);
+    /* --- Barre de navigation fixe (Styles importés) --- */
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 15px 20px;
+        z-index: 10;
+        backdrop-filter: blur(8px);
+        background: rgba(8, 6, 10, 0.7);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        display: flex;
+        justify-content: center;
     }
-    /* ---------------------------------------------------------------- */
+    .nav-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        width: 100%;
+    }
+    .nav-links {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .nav-link {
+        color: var(--muted);
+        text-decoration: none;
+        font-weight: 600;
+        padding: 5px 0;
+        transition: color 0.2s, border-bottom 0.2s;
+        border-bottom: 2px solid transparent;
+    }
+    .nav-link:hover {
+        color: var(--accent-2);
+        border-bottom: 2px solid var(--accent);
+    }
+    .nav-link.active {
+        color: var(--accent);
+        border-bottom: 2px solid var(--accent);
+    }
+    /* Bouton Musique dans la nav */
+    .toggle{
+        color:#fff;cursor:pointer;padding:8px 12px;border-radius:999px;
+        background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.05); 
+        transition: background 0.2s;
+        font-weight: 600;
+        font-size: 14px;
+    }
+    .toggle:hover{background:rgba(255,255,255,0.1)}
+    .toggle.playing{background: var(--accent); color: #1b0b00; font-weight: 700; border: none;}
+    /* ----------------------------------------------------------------- */
 
-    .container{width:100%;max-width:900px}
+    /* Conteneur principal (Importé) */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 30px 20px;
+      padding-top: 100px; /* Espace pour la barre de navigation fixe */
+    }
+    
+    /* Style Glassmorphism pour les sections (Importé) */
+    .section-glass {
+      padding: 30px;
+      margin-bottom: 40px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      border: 1px solid rgba(255,255,255,0.05);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+      backdrop-filter: blur(10px) saturate(1.2);
+    }
 
-    h1{color:#fff;margin-bottom:6px}
-    .subtitle{font-size:14px;margin-bottom:22px}
+    /* Titres de section (Importé) */
+    .section-title {
+        color: var(--light-text);
+        font-size: 2rem;
+        font-weight: 800;
+        margin-bottom: 25px;
+        text-align: center;
+        border-bottom: 2px solid var(--accent);
+        display: inline-block;
+        padding-bottom: 5px;
+        margin-left: auto;
+        margin-right: auto;
+        width: auto;
+    }
 
+    .main-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .main-header h1 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 3rem;
+        font-weight: 900;
+        color: var(--light-text);
+        margin: 0;
+        line-height: 1;
+    }
+    .main-header .subtitle {
+        font-size: 1.1rem;
+        color: var(--accent-2);
+        margin: 10px 0 0;
+        font-weight: 600;
+    }
+
+
+    /* --- Styles des partenaires (Adaptés) --- */
     .partners{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:18px;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); /* Légèrement plus large pour l'esthétique */
+      gap:25px; /* Écart plus grand */
       margin-top:20px;
     }
 
     .partner-card{
-      background:rgba(255,255,255,0.04);
-      border:1px solid rgba(255,255,255,0.06);
-      border-radius:16px;
-      padding:16px;
+      /* Réutilisation du style glass pour unifier */
+      background:linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); 
+      border:1px solid rgba(255,255,255,0.05);
+      border-radius:20px; /* Arrondi légèrement plus prononcé */
+      padding:25px;
       text-align:center;
-      transition:transform .25s ease, box-shadow .25s ease;
+      transition:transform .3s ease, box-shadow .3s ease, border-color .3s;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      backdrop-filter: blur(4px);
     }
 
     .partner-card:hover{
-      transform:translateY(-6px);
-      box-shadow:0 14px 40px rgba(0,0,0,.6);
+      transform:translateY(-8px);
+      box-shadow:0 18px 45px rgba(0,0,0,.7);
+      border-color: var(--accent); /* Ajout d'un effet de bordure orange */
     }
 
     .partner-logo{
-      width:72px;
-      height:72px;
-      border-radius:14px;
+      width:90px; /* Logo plus grand */
+      height:90px;
+      border-radius:18px;
       object-fit:cover;
-      margin-bottom:10px;
-      box-shadow:0 6px 20px rgba(0,0,0,.6);
+      margin-bottom:15px;
+      box-shadow:0 8px 25px rgba(0,0,0,.8);
+      border: 3px solid var(--accent-2); /* Ajout d'une bordure accentuée */
     }
 
-    .partner-card h3{margin:6px 0;color:#fff}
-    .owner{font-size:13px;opacity:.85;margin-bottom:8px}
+    .partner-card h3{margin:6px 0 0;color:var(--light-text); font-weight: 800; font-size: 1.4rem;}
+    .owner{font-size:14px;color:var(--muted); margin-bottom:15px; font-weight: 600;}
 
     .tags{
       display:flex;
       flex-wrap:wrap;
-      gap:6px;
+      gap:8px;
       justify-content:center;
-      margin-bottom:10px;
+      margin-bottom:15px;
     }
 
+    /* Style des tags amélioré (similaire aux chips de la page d'accueil) */
     .tags span{
-      font-size:11px;
-      padding:4px 8px;
+      font-size:12px;
+      padding:6px 12px;
       border-radius:999px;
-      background:rgba(255,255,255,0.05);
+      background:rgba(255,255,255,0.1);
+      color: var(--accent-2);
+      border: 1px solid rgba(255,255,255,0.06);
+      font-weight: 600;
+      white-space: nowrap;
     }
-
+    
+    /* Style des boutons (Importé et adapté) */
     .btn{
       display:block;
       width:100%;
-      margin-top:6px;
-      padding:10px 12px;
-      border-radius:12px;
+      margin-top:10px;
+      padding:14px 12px; /* Padding augmenté */
+      border-radius:14px;
       text-decoration:none;
-      color:#fff;
-      font-weight:600;
-      background:linear-gradient(90deg,#5865F2,#7289DA);
-      transition:transform .2s ease, box-shadow .2s ease, filter .2s ease;
+      color:white;
+      font-weight:700;
+      font-size: 16px;
+      transition:transform .2s ease, box-shadow .2s ease, background .2s;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      border: none;
     }
 
     .btn:hover{
-      transform:translateY(-4px) scale(1.02);
-      box-shadow:0 10px 28px rgba(0,0,0,0.6);
-      filter:brightness(1.1);
+      transform:translateY(-4px) scale(1.01);
+      box-shadow:0 15px 40px rgba(0,0,0,0.7);
+    }
+    
+    /* Boutons Discord et Secondary adaptés aux couleurs de la page d'accueil */
+    .btn.discord-main{background:linear-gradient(90deg,#5865F2,#7984f4);}
+    .btn.secondary{
+      background: linear-gradient(180deg,var(--glass), rgba(255,255,255,0.02));
+      color: var(--muted);
+      border:1px solid rgba(255,255,255,0.06);
+    }
+    .btn.secondary:hover {
+        background: var(--glass-strong);
+        color: var(--light-text);
     }
 
-    .btn.secondary{background:linear-gradient(90deg,#444,#666)}
 
-    @media(max-width:600px){body{padding:16px}}
+    /* Footer (Importé) */
+    .footer-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 13px;
+        color: rgba(255,255,255,0.45);
+        padding: 20px 0 10px;
+        text-align: center;
+    }
+    
+    /* RESPONSIVE (Importé) */
+    @media (max-width: 900px) {
+        .container { padding-top: 80px; }
+        .main-header h1 { font-size: 2.5rem; }
+        .main-header .subtitle { font-size: 1rem; }
+        .section-glass { padding: 20px; margin-bottom: 25px; border-radius: 18px; }
+        .partners { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+    }
+    @media (max-width: 500px) {
+        /* Ajustement de la nav sur mobile */
+        .header { padding: 10px 15px; }
+        .nav-content { flex-direction: column; gap: 10px; }
+        .nav-links { gap: 20px; }
+        .toggle { padding: 6px 10px; }
+        
+        .main-header h1 { font-size: 2rem; }
+        .partner-logo { width: 70px; height: 70px; border-radius: 14px; }
+        .partner-card { padding: 20px; border-radius: 16px; }
+        .btn { font-size: 15px; padding: 12px 10px; }
+    }
   </style>
 </head>
 <body>
-  <!-- L'élément .bg-img affiche l'image de fond et ses effets -->
   <div class="bg-img" aria-hidden="true"></div>
 
+  <!-- Barre de navigation fixe (Copiée de l'index) -->
+  <header class="header">
+    <div class="nav-content">
+        <nav class="nav-links">
+            <!-- Mise à jour des classes 'active' -->
+            <a href="https://creepertvii.github.io" class="nav-link">Accueil</a>
+            <a href="https://creepertvii.github.io/partenaires" class="nav-link active">Partenaires</a>
+        </nav>
+        <!-- Bouton Musique -->
+        <button id="playPause" class="toggle">🔈 Play</button>
+    </div>
+  </header>
+
   <main class="container">
-    <h1>🤝 Nos partenaires</h1>
-    <!-- Le texte a été changé ici -->
-    <div class="subtitle">Voici nos partenaires de confiance</div>
+    <div class="main-header">
+        <h1>🤝 Nos Partenaires</h1>
+        <p class="subtitle">Des communautés et projets de confiance qui partagent notre passion pour le modding et l'entraide.</p>
+    </div>
 
-    <section class="partners">
-      <div class="partner-card">
-        <img src="https://github.com/CreeperTVii/creepertvii.github.io/blob/main/Images/Partenaires/ad2e93e3097c5d7c4dff1dd0c9c99396.png?raw=true" class="partner-logo">
-        <h3>LB'XMB</h3>
-        <p class="owner">Owner : <b>LoupBlank</b></p>
-        <div class="tags"><span>#Jailbreak</span><span>#Communauté</span><span>#Ressources</span><span>#Entraide</span></div>
-        <a class="btn" href="https://discord.gg/zH5VSDYYyy" target="_blank">💬 Discord</a>
-        <a class="btn secondary" href="https://lbxmb.fr" target="_blank">🌐 Site web</a>
-      </div>
+    <!-- Section des partenaires dans un conteneur Glassmorphism -->
+    <section class="section-glass">
+        <div class="partners">
+            <!-- Carte Partenaire 1 -->
+            <div class="partner-card">
+              <img src="https://github.com/CreeperTVii/creepertvii.github.io/blob/main/Images/Partenaires/ad2e93e3097c5d7c4dff1dd0c9c99396.png?raw=true" class="partner-logo" alt="[Logo LB'XMB]">
+              <h3>LB'XMB</h3>
+              <p class="owner">Owner : <b>LoupBlank</b></p>
+              <div class="tags"><span>#Jailbreak</span><span>#Communauté</span><span>#Ressources</span><span>#Entraide</span></div>
+              <a class="btn discord-main" href="https://discord.gg/zH5VSDYYyy" target="_blank">💬 Rejoindre Discord</a>
+              <a class="btn secondary" href="https://lbxmb.fr" target="_blank">🌐 Visiter le Site</a>
+            </div>
 
-      <div class="partner-card">
-        <img src="https://github.com/CreeperTVii/creepertvii.github.io/blob/main/Images/Partenaires/12eebed03077766831c7ed3f5b9ccac5.png?raw=true" class="partner-logo">
-        <h3>Stelare</h3>
-        <p class="owner">Owner : <b>benjamincm</b></p>
-        <div class="tags"><span>#Support</span><span>#Guides</span><span>#Site-web</span><span>#Jailbreak</span></div>
-        <a class="btn" href="https://discord.gg/6vJSyhngck" target="_blank">💬 Discord</a>
-      </div>
+            <!-- Carte Partenaire 2 -->
+            <div class="partner-card">
+              <img src="https://github.com/CreeperTVii/creepertvii.github.io/blob/main/Images/Partenaires/12eebed03077766831c7ed3f5b9ccac5.png?raw=true" class="partner-logo" alt="[Logo Stelare]">
+              <h3>Stelare</h3>
+              <p class="owner">Owner : <b>benjamincm</b></p>
+              <div class="tags"><span>#Support</span><span>#Guides</span><span>#Site-web</span><span>#Jailbreak</span></div>
+              <a class="btn discord-main" href="https://discord.gg/6vJSyhngck" target="_blank">💬 Rejoindre Discord</a>
+            </div>
 
-      <div class="partner-card">
-        <img src="https://github.com/CreeperTVii/creepertvii.github.io/blob/main/Images/Partenaires/5e7eb99ac0efa4748024ff206a151e92.png?raw=true" class="partner-logo">
-        <h3>NDS Shop</h3>
-        <p class="owner">Owner : <b>Rinzler & CreeperTVii</b></p>
-        <div class="tags"><span>#Universal-DB</span><span>#Shop</span><span>#3DS</span></div>
-        <a class="btn" href="https://discord.gg/e5jh4btyGF" target="_blank">💬 Discord</a>
-      </div>
+            <!-- Carte Partenaire 3 -->
+            <div class="partner-card">
+              <img src="https://github.com/CreeperTVii/creepertvii.github.io/blob/main/Images/Partenaires/5e7eb99ac0efa4748024ff206a151e92.png?raw=true" class="partner-logo" alt="[Logo NDS Shop]">
+              <h3>NDS Shop</h3>
+              <p class="owner">Owner : <b>Rinzler & CreeperTVii</b></p>
+              <div class="tags"><span>#Universal-DB</span><span>#Shop</span><span>#3DS</span></div>
+              <a class="btn discord-main" href="https://discord.gg/e5jh4btyGF" target="_blank">💬 Rejoindre Discord</a>
+            </div>
 
-      <div class="partner-card">
-        <img src="https://github.com/CreeperTVii/creepertvii.github.io/blob/main/Images/Partenaires/780a67d2bff041d4f097e3811729d7cf.png?raw=true" class="partner-logo">
-        <h3>Vintage Players</h3>
-        <p class="owner">Owner : <b>"Lolo" Vintage Players</b></p>
-        <div class="tags"><span>#Rétro</span><span>#Bons-plans</span><span>#Japon</span><span>#Modding</span></div>
-        <a class="btn" href="https://discord.gg/faWh6X9BNa" target="_blank">💬 Discord</a>
-      </div>
+            <!-- Carte Partenaire 4 -->
+            <div class="partner-card">
+              <img src="https://github.com/CreeperTVii/creepertvii.github.io/blob/main/Images/Partenaires/780a67d2bff041d4f097e3811729d7cf.png?raw=true" class="partner-logo" alt="[Logo Vintage Players]">
+              <h3>Vintage Players</h3>
+              <p class="owner">Owner : <b>"Lolo" Vintage Players</b></p>
+              <div class="tags"><span>#Rétro</span><span>#Bons-plans</span><span>#Japon</span><span>#Modding</span></div>
+              <a class="btn discord-main" href="https://discord.gg/faWh6X9BNa" target="_blank">💬 Rejoindre Discord</a>
+            </div>
+        </div>
     </section>
   </main>
+
+  <footer class="container">
+    <div class="footer-section">
+        © CreeperTVii — Design inspiré par le style Glassmorphism. Made with 🔥 in France.
+    </div>
+  </footer>
+
+  <!-- Audio de fond (Copié de l'index) -->
+  <audio id="bgAudio" loop>
+    <source src="https://github.com/CreeperTVii/creepertvii.github.io/raw/refs/heads/main/Images/06.%20Purchase%20Software%20(3DS).mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+  // Script de contrôle audio (Copié de l'index)
+  const audio = document.getElementById('bgAudio');
+  const btn = document.getElementById('playPause');
+  
+  let playing = false;
+
+  function toggleAudio() {
+    if (!playing) {
+      audio.volume = 0.28;
+      audio.play().then(() => {
+        btn.textContent = '🔊 Playing';
+        btn.classList.add('playing');
+        playing = true;
+      }).catch(error => {
+        console.warn("La lecture audio a été bloquée:", error);
+        btn.textContent = '🔇 Erreur';
+        btn.classList.remove('playing');
+        playing = false;
+      });
+      
+    } else {
+      audio.pause();
+      btn.textContent = '🔈 Play';
+      btn.classList.remove('playing');
+      playing = false;
+    }
+  }
+
+  btn.addEventListener('click', toggleAudio);
+  
+  audio.addEventListener('pause', () => {
+    if (playing) {
+        btn.textContent = '🔈 Play';
+        btn.classList.remove('playing');
+        playing = false;
+    }
+  });
+
+  window.addEventListener('load', () => {
+      if (audio.paused) {
+          btn.textContent = '🔈 Play';
+          btn.classList.remove('playing');
+      } else {
+          btn.textContent = '🔊 Playing';
+          btn.classList.add('playing');
+          playing = true; 
+      }
+  });
+</script>
 </body>
 </html>
