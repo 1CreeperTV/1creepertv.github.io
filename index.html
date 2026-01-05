@@ -12,7 +12,6 @@
 
   <!-- Métadonnées pour le partage (Discord/OG) -->
   <meta property="og:title" content="CreeperTVii's Modding Server - L'Homebrew Nintendo" />
-  <!-- CORRECTION APPORTÉE ICI : CreeperTV -> CreeperTVii -->
   <meta property="og:description" content="Serveur centré sur les consoles Nintendo (Wii, Wii U, 3DS), l'homebrew, le support technique et le chill avec la communauté de CreeperTVii." />
   <meta property="og:image" content="https://raw.githubusercontent.com/CreeperTVii/creepertvii.github.io/refs/heads/main/Images/lv_0_2025112922-1764451316159.gif" />
   <meta property="og:url" content="https://creepertvii.github.io/" />
@@ -56,7 +55,7 @@
         top: 0;
         left: 0;
         width: 100%;
-        padding: 15px 20px;
+        padding: 10px 20px; /* Réduit un peu le padding vertical */
         z-index: 10;
         backdrop-filter: blur(8px);
         background: rgba(8, 6, 10, 0.7); /* Fond légèrement opaque */
@@ -66,7 +65,7 @@
     }
     .nav-content {
         display: flex;
-        justify-content: space-between; /* Pour séparer les liens et le bouton */
+        justify-content: space-between; 
         align-items: center;
         max-width: 1200px;
         width: 100%;
@@ -75,7 +74,19 @@
         display: flex;
         gap: 30px;
         align-items: center;
+        /* Ajout de la marge à gauche pour le logo */
         justify-content: flex-start;
+        margin-left: 20px; 
+    }
+    /* Style pour l'image Mii dans la navigation */
+    .nav-logo {
+        height: 40px; /* Taille du Mii */
+        width: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 15px;
+        border: 2px solid var(--accent);
+        box-shadow: 0 0 10px rgba(255,138,0,0.5);
     }
     .nav-link {
         color: var(--muted);
@@ -271,6 +282,7 @@
         .hero { padding: 100px 10px 50px; }
         .container { padding: 15px 10px; }
         .section-glass { padding: 20px; margin-bottom: 25px; border-radius: 18px; }
+        .nav-links { margin-left: 0; }
     }
     @media (max-width: 500px) {
         .hero-title { font-size: 2rem; }
@@ -282,7 +294,9 @@
         /* Ajustement de la nav sur mobile */
         .header { padding: 10px 15px; }
         .nav-content { flex-direction: column; gap: 10px; }
-        .nav-links { gap: 20px; }
+        /* Masque le Mii sur les très petits écrans si ça devient trop serré */
+        .nav-logo { display: none; } 
+        .nav-links { gap: 15px; }
         .toggle { padding: 6px 10px; }
     }
   </style>
@@ -293,6 +307,9 @@
   <!-- Barre de navigation fixe -->
   <header class="header">
     <div class="nav-content">
+        <!-- IMAGE DU MII AJOUTÉE ICI -->
+        <img src="https://raw.githubusercontent.com/CreeperTVii/creepertvii.github.io/refs/heads/main/Images/Mii.png" alt="Mii de CreeperTVii" class="nav-logo">
+        
         <nav class="nav-links">
             <a href="https://creepertvii.github.io" class="nav-link active">Accueil</a>
             <a href="https://creepertvii.github.io/tutoriels" class="nav-link">Tutoriels</a>
