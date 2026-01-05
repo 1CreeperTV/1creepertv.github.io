@@ -65,11 +65,33 @@
         max-width: 1200px;
         width: 100%;
     }
+    
+    /* NOUVEAU: Conteneur pour le logo et les liens */
+    .nav-left {
+        display: flex;
+        align-items: center;
+        gap: 30px; /* Espace entre le logo et le premier lien */
+    }
+
+    /* NOUVEAU: Style du logo Mii */
+    .nav-logo {
+        height: 40px; 
+        width: 40px;
+        border-radius: 50%; /* Cercle */
+        object-fit: cover;
+        border: 2px solid var(--accent); /* Bordure accentuée */
+        box-shadow: 0 0 15px rgba(255, 138, 0, 0.4); /* Petit effet de lueur */
+        transition: transform 0.2s;
+    }
+    .nav-logo:hover {
+        transform: scale(1.05);
+    }
+
     .nav-links {
         display: flex;
         gap: 30px;
         align-items: center;
-        justify-content: flex-start;
+        /* justify-content: flex-start; n'est plus nécessaire car enveloppé */
     }
     .nav-link {
         color: var(--muted);
@@ -270,7 +292,14 @@
         /* Ajustement de la nav sur mobile */
         .header { padding: 10px 15px; }
         .nav-content { flex-direction: column; gap: 10px; }
+        /* Ajustement pour le nouveau conteneur logo + liens */
+        .nav-left { 
+            gap: 15px; 
+            width: 100%; /* Permet aux éléments de se centrer ou d'utiliser l'espace */
+            justify-content: space-around; /* Centre mieux les liens/logo sur mobile */
+        }
         .nav-links { gap: 20px; }
+        .nav-logo { height: 32px; width: 32px; } /* Logo plus petit sur mobile */
         .toggle { padding: 6px 10px; }
         
         .main-header h1 { font-size: 2rem; }
@@ -286,15 +315,19 @@
   <!-- Barre de navigation fixe (Copiée de l'index) -->
   <header class="header">
     <div class="nav-content">
-        <nav class="nav-links">
-            <!-- Mise à jour des classes 'active' -->
-            <a href="https://creepertvii.github.io" class="nav-link">Accueil</a>
-            <!-- Lien Tutoriels -->
-            <a href="https://creepertvii.github.io/tutoriels" class="nav-link">Tutoriels</a>
-            <a href="https://creepertvii.github.io/partenaires" class="nav-link active">Partenaires</a>
-            <!-- NOUVEAU LIEN AJOUTÉ : Recrutements -->
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfEg7LoYSrYfpLTJtsjqrD-HpKyacXSRK33qL-GQPIOG6M9BA/viewform" class="nav-link" target="_blank">Recrutements</a>
-        </nav>
+        <!-- NOUVEAU: Conteneur gauche (Logo + Liens) -->
+        <div class="nav-left">
+            <!-- NOUVEAU: Logo Mii -->
+            <a href="https://creepertvii.github.io" class="logo-link">
+                <img src="https://raw.githubusercontent.com/CreeperTVii/creepertvii.github.io/refs/heads/main/Images/Mii.png" alt="Logo CreeperTVii Mii" class="nav-logo">
+            </a>
+            <nav class="nav-links">
+                <a href="https://creepertvii.github.io" class="nav-link">Accueil</a>
+                <a href="https://creepertvii.github.io/tutoriels" class="nav-link">Tutoriels</a>
+                <a href="https://creepertvii.github.io/partenaires" class="nav-link active">Partenaires</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfEg7LoYSrYfpLTJtsjqrD-HpKyacXSRK33qL-GQPIOG6M9BA/viewform" class="nav-link" target="_blank">Recrutements</a>
+            </nav>
+        </div>
         <!-- Bouton Musique -->
         <button id="playPause" class="toggle">🔈 Jouer</button>
     </div>
