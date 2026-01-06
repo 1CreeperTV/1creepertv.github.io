@@ -118,7 +118,7 @@
     
     /* Titres de section */
     .section-title {
-        color: var(--light-text);
+        color: var(--light-text); /* Modification: S'assure que le titre est bien blanc */
         font-size: 2.5rem;
         font-weight: 900;
         font-family: 'Montserrat', sans-serif;
@@ -128,7 +128,6 @@
         display: block;
         padding-bottom: 10px;
         margin-top: 0;
-        color: var(--accent);
     }
 
     /* GRILLE DE TUTORIELS (Conteneur principal pour les sections) */
@@ -285,7 +284,7 @@
         // --- Wii Tutorials (13 vidéos) ---
         { title: "Comment hacker sa Nintendo Wii en 2025+ [Tutoriel Guide complet FR]", channel: "CreeperTVii1", videoId: "c6xCFiRjsis", date: "01/01/2024", category: "Wii" },
         { title: "Comment INSTALLER et JOUER au mod Insane Kart Wii ISO sur Dolphin TUTO FR", channel: "CreeperTVii1", videoId: "tCNoTWjzhUw", date: "02/01/2024", category: "Wii" },
-        { title: "Comment Télecharger et Jouer au mod Newer Super Mario Bros Wii sans le disque original TUTO FR !", channel: "CreeperTVii1", videoId: "6bmOVybghAk", date: "03/01/2024", category: "Wii" },
+        { title: "Comment Télecharger et Jouer au mod Newer Super Mario Bros Wii sans le disque original TUTO FR", channel: "CreeperTVii1", videoId: "6bmOVybghAk", date: "03/01/2024", category: "Wii" },
         { title: "Comment avoir la chaîne boutique Wii en 2025 avec WiiMart ! TUTO FR", channel: "CreeperTVii1", videoId: "JdtjVrESXKo", date: "04/01/2024", category: "Wii" },
         { title: "Comment Télécharger/Installer les cIOS sur Wii avec D2X cIOS Installer ! TUTO FR", channel: "CreeperTVii1", videoId: "1Sy-v7fUjvE", date: "05/01/2024", category: "Wii" },
         { title: "Comment Télécharger & Utiliser Wii Backup Manager en 2025+ TUTO FR", channel: "CreeperTVii1", videoId: "_QabrNDg2IQ", date: "06/01/2024", category: "Wii" },
@@ -325,18 +324,14 @@
 
     // Fonction pour générer le HTML d'une carte vidéo
     function createVideoCard(video) {
-        // La miniature YouTube a un format standard: https://img.youtube.com/vi/<ID_VIDEO>/mqdefault.jpg
         const thumbnailUrl = `https://img.youtube.com/vi/${video.videoId}/mqdefault.jpg`;
         const videoUrl = `https://www.youtube.com/watch?v=${video.videoId}`;
 
-        // Construction de la carte vidéo
         const cardHtml = `
             <a href="${videoUrl}" target="_blank" class="video-card">
-                <!-- Utilisez onerror pour cacher l'image en cas d'erreur de chargement (pour les placeholders sans ID valide) -->
                 <img src="${thumbnailUrl}" alt="Miniature pour ${video.title}" class="video-thumbnail" onerror="this.style.display='none';">
                 <div class="video-info">
                     <h3 class="video-title">${video.title}</h3>
-                    <!-- Affiche uniquement la chaîne, la date a été retirée sur votre demande. -->
                     <p class="video-meta">${video.channel}</p>
                 </div>
             </a>
@@ -344,7 +339,6 @@
         return cardHtml;
     }
 
-    // Fonction pour traduire les catégories (selon votre demande)
     function translateCategory(category) {
         const translations = {
             "Wii": "Tutoriels Wii",
@@ -356,14 +350,12 @@
         return translations[category] || category;
     }
 
-    // Fonction principale pour insérer les cartes, groupées par catégorie
     function renderTutorials() {
         const gridContainer = document.getElementById('tutorialGrid');
-        gridContainer.innerHTML = ''; // Nettoyer l'ancien contenu
+        gridContainer.innerHTML = ''; 
 
-        // 1. Grouper les vidéos par catégorie
         const categorizedData = tutorialsData.reduce((acc, video) => {
-            const category = video.category || "Autres"; // 'Autres' si catégorie manquante
+            const category = video.category || "Autres"; 
             if (!acc[category]) {
                 acc[category] = [];
             }
@@ -371,37 +363,28 @@
             return acc;
         }, {});
 
-        // 2. Définir l'ordre des catégories
         const categoryOrder = ["Wii", "Wii U", "3DS", "PS3", "Autres"];
 
-        // 3. Rendre chaque catégorie
         categoryOrder.forEach(category => {
             const videos = categorizedData[category];
             if (videos && videos.length > 0) {
                 
-                // Créer le titre de la catégorie traduit
                 const categoryTitle = document.createElement('h3');
                 categoryTitle.className = 'category-title';
-                categoryTitle.textContent = translateCategory(category); // Utilisation de la fonction de traduction
+                categoryTitle.textContent = translateCategory(category); 
 
-                // L'ajouter au conteneur principal
                 gridContainer.appendChild(categoryTitle);
 
-                // Créer la grille pour les vidéos de cette catégorie
                 const categoryGrid = document.createElement('div');
                 categoryGrid.className = 'category-grid'; 
                 
-                // Rendre les cartes vidéo
-                // Tri par date (DU PLUS ANCIEN AU PLUS RÉCENT)
                 videos.sort((a, b) => {
-                    // Fonction de tri complexe pour gérer les dates et les sous-dates (ex: "16/01/2024-B")
                     const parseDate = (dateStr) => {
                         const parts = dateStr.split('-');
                         const datePart = parts[0];
-                        const subPart = parts.length > 1 ? parts[1] : 'A'; // 'A' par défaut
+                        const subPart = parts.length > 1 ? parts[1] : 'A'; 
                         
                         const [day, month, year] = datePart.split('/');
-                        // Crée une date objet et ajoute un poids pour le tri secondaire (sous-partie)
                         const primaryDate = new Date(`${year}-${month}-${day}`).getTime();
                         const secondaryWeight = subPart.charCodeAt(0) - 'A'.charCodeAt(0);
                         
@@ -410,23 +393,18 @@
 
                     const dateA = parseDate(a.date);
                     const dateB = parseDate(b.date);
-                    // Tri ascendant (dateA - dateB)
                     return dateA - dateB; 
                 });
                 
                 categoryGrid.innerHTML = videos.map(createVideoCard).join('');
                 
-                // Ajouter la grille de catégorie au conteneur principal
                 gridContainer.appendChild(categoryGrid);
             }
         });
     }
 
-    // Lance le rendu au chargement du DOM
     document.addEventListener('DOMContentLoaded', renderTutorials);
 
-
-    // --- Système Audio (Copie de la page d'accueil) ---
     const audio = document.getElementById('bgAudio');
     const btn = document.getElementById('playPause');
     
