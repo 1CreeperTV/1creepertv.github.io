@@ -224,7 +224,12 @@
         /* Ajustement de la nav sur mobile */
         .header { padding: 10px 15px; }
         .nav-content { flex-direction: column; gap: 10px; }
-        .nav-links { gap: 20px; }
+        .nav-links { 
+            gap: 20px; 
+            /* CORRECTION: Ajout de flex-wrap pour que les liens passent à la ligne sur les très petits écrans,
+               ce qui corrige le débordement et la coupure de texte. */
+            flex-wrap: wrap; 
+        }
         .toggle { padding: 6px 10px; }
         .category-title { font-size: 1.4rem; margin-top: 30px; }
     }
