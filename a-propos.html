@@ -398,10 +398,11 @@
 
     document.addEventListener('DOMContentLoaded', renderStaff);
 
-    // --- Gestion de l'audio (Copie du style existant) ---
+    // --- Gestion de l'audio ---
     const audio = document.getElementById('bgAudio');
     const btn = document.getElementById('playPause');
     
+    // Initialisé à false pour s'assurer que l'état initial est "non en cours de lecture"
     let playing = false;
 
     function toggleAudio() {
@@ -428,6 +429,7 @@
     btn.addEventListener('click', toggleAudio);
     
     audio.addEventListener('pause', () => {
+        // Met à jour l'état et le bouton si l'audio est mis en pause par un événement extérieur
         if (playing) { 
             btn.textContent = '🔈 Jouer'; 
             btn.classList.remove('playing');
@@ -435,19 +437,34 @@
         }
     });
 
-    window.addEventListener('load', () => {
-        // Tente de jouer l'audio automatiquement au chargement si ce n'est pas bloqué
-        audio.volume = 0.28;
-        audio.play().then(() => {
+    // Ancien code qui tentait de lancer l'audio au chargement, supprimé pour éviter l'autoplay
+    // window.addEventListener('load', () => {
+    //     audio.volume = 0.28;
+    //     audio.play().then(() => {
+    //         btn.textContent = '🔊 Lecture'; 
+    //         btn.classList.add('playing');
+    //         playing = true;
+    //     }).catch(error => {
+    //         btn.textContent = '🔈 Jouer'; 
+    //         btn.classList.remove('playing');
+    //         playing = false;
+    //     });
+    // });
+    
+    // Ajouté pour s'assurer que si l'audio se lance par miracle (clic utilisateur initial), le bouton se met à jour.
+    audio.addEventListener('play', () => {
+        if (!playing) { 
             btn.textContent = '🔊 Lecture'; 
             btn.classList.add('playing');
             playing = true;
-        }).catch(error => {
-            // Si l'autoplay est bloqué, laisse le bouton sur "Jouer"
-            btn.textContent = '🔈 Jouer'; 
-            btn.classList.remove('playing');
-            playing = false;
-        });
+        }
+    });
+    
+    // S'assurer que le bouton est dans son état initial correct au chargement du DOM (avant l'événement 'load')
+    document.addEventListener('DOMContentLoaded', () => {
+        btn.textContent = '🔈 Jouer'; 
+        btn.classList.remove('playing');
+        playing = false;
     });
   </script>
 </body>
