@@ -270,7 +270,14 @@
         /* Ajustement de la nav sur mobile */
         .header { padding: 10px 15px; }
         .nav-content { flex-direction: column; gap: 10px; }
-        .nav-links { gap: 20px; }
+        
+        /* CORRECTION DU BUG DÉBORDEMENT: Ajout de flex-wrap */
+        .nav-links { 
+            gap: 10px 20px; /* Ajustement du gap pour l'espace entre les liens */
+            flex-wrap: wrap; /* Permet aux liens de passer à la ligne */
+            justify-content: center; /* Centre les liens sur petit écran */
+        }
+        
         .toggle { padding: 6px 10px; }
         
         .main-header h1 { font-size: 2rem; }
