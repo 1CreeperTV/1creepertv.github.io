@@ -26,6 +26,7 @@
       --role-admin: #e04b4b; /* Rouge Administratif */
       --role-mod: #5c62ec; /* Bleu Modération */
       --role-helper: #66cc66; /* Vert Helpeur */
+      --role-fun: #8c8c8c; /* Gris pour le rôle "Fun" demandé */
     }
 
     *{box-sizing:border-box}
@@ -164,6 +165,7 @@
     .role-Administrateur { border-left: 5px solid var(--role-admin); }
     .role-Modérateur { border-left: 5px solid var(--role-mod); }
     .role-Helpeur { border-left: 5px solid var(--role-helper); }
+    .role-Fun { border-left: 5px solid var(--role-fun); } /* Nouveau style pour le rôle "Fun" */
     
     /* Photo de profil */
     .staff-photo {
@@ -179,6 +181,7 @@
     .staff-member-card.role-Administrateur .staff-photo { border-color: var(--role-admin); box-shadow: 0 0 15px var(--role-admin); }
     .staff-member-card.role-Modérateur .staff-photo { border-color: var(--role-mod); box-shadow: 0 0 15px var(--role-mod); }
     .staff-member-card.role-Helpeur .staff-photo { border-color: var(--role-helper); box-shadow: 0 0 15px var(--role-helper); }
+    .staff-member-card.role-Fun .staff-photo { border-color: var(--role-fun); box-shadow: 0 0 15px var(--role-fun); } /* Nouveau style pour la photo "Fun" */
 
 
     /* Nom du membre */
@@ -203,6 +206,11 @@
         color: var(--role-helper); /* Vert Helpeur */
         font-weight: 600; /* Rendu plus visible */
         font-style: italic;
+    }
+    /* Rôle Secondaire pour le membre "Fun" (s'il n'a pas de rôle principal) */
+    .staff-member-card.role-Fun .staff-secondary-role {
+        color: var(--role-fun); /* Utiliser le gris pour le texte secondaire */
+        font-weight: 700; /* Rendre le texte plus gras pour qu'il agisse comme rôle principal */
     }
 
     /* Footer */
@@ -329,11 +337,19 @@
         
         // Adhene38 est désormais Helpeur
         { name: "Adhene38", role: "Helpeur", secondaryRole: null, 
-          image: "https://github.com/CreeperTVii/creepertvii.github.io/blob/main/Images/Staff/adhene38.png?raw=true" }
+          image: "https://github.com/CreeperTVii/creepertvii.github.io/blob/main/Images/Staff/adhene38.png?raw=true" },
+        
+        // NOUVEAU MEMBRE AJOUTÉ (pour le fun !)
+        // Rôle principal mis à null et rôle secondaire utilisé pour le texte.
+        { name: "LoupBlank", role: null, secondaryRole: "Car c'est un bg mdr", 
+          image: "https://github.com/CreeperTVii/creepertvii.github.io/blob/main/Images/Staff/loupblank.png?raw=true",
+          customRole: "Fun" /* Rôle personnalisé pour la couleur */ }
     ];
 
-    // Fonction pour normaliser le rôle pour la classe CSS (ex: "Administrateur & Helpeur" devient "Administrateur")
-    function getCssRole(role) {
+    // Fonction pour normaliser le rôle pour la classe CSS 
+    function getCssRole(member) {
+        // Utiliser le rôle principal ou le rôle personnalisé (Fun)
+        const role = member.customRole || member.role;
         if (!role) return '';
         const mainRole = role.split(/[&,]/)[0].trim();
         return mainRole.replace(/\s/g, ''); // Enlève les espaces
@@ -341,16 +357,25 @@
     
     // Fonction pour générer le HTML d'une carte de membre du staff
     function createStaffCard(member) {
-        const cssClass = getCssRole(member.role);
+        const cssClass = getCssRole(member);
         
-        // Détermine la couleur d'accentuation pour le rôle principal
-        let roleColor = 'var(--muted)';
-        if (member.role.includes('Créateur')) roleColor = 'var(--role-creator)';
-        else if (member.role.includes('Administrateur')) roleColor = 'var(--role-admin)';
-        else if (member.role.includes('Modérateur')) roleColor = 'var(--role-mod)';
-        else if (member.role.includes('Helpeur')) roleColor = 'var(--role-helper)';
+        // Détermine la couleur d'accentuation pour le rôle (utilise customRole si présent)
+        let roleColor = 'var(--accent-2)'; // Par défaut: Jaune doux
+        if (member.customRole === 'Fun') roleColor = 'var(--role-fun)';
+        else if (member.role && member.role.includes('Créateur')) roleColor = 'var(--role-creator)';
+        else if (member.role && member.role.includes('Administrateur')) roleColor = 'var(--role-admin)';
+        else if (member.role && member.role.includes('Modérateur')) roleColor = 'var(--role-mod)';
+        else if (member.role && member.role.includes('Helpeur')) roleColor = 'var(--role-helper)';
+        // Sinon, si le rôle principal est null, on utilise la couleur pour le rôle secondaire
+        else if (!member.role && member.secondaryRole) roleColor = 'var(--role-fun)';
 
 
+        // Affiche le rôle principal seulement s'il existe
+        const primaryRoleHtml = member.role 
+            ? `<p class="staff-role" style="color: ${roleColor};">${member.role}</p>` 
+            : ''; 
+
+        // Rôle secondaire. Si pas de rôle principal, il prend le style Fun (gris)
         const secondaryRoleHtml = member.secondaryRole 
             ? `<p class="staff-secondary-role">${member.secondaryRole}</p>` 
             : '';
@@ -361,7 +386,7 @@
             <div class="staff-member-card role-${cssClass}">
                 <img src="${member.image}" alt="Photo de ${member.name}" class="staff-photo">
                 <h3 class="staff-name">${member.name}</h3>
-                <p class="staff-role" style="color: ${roleColor};">${member.role}</p>
+                ${primaryRoleHtml}
                 ${secondaryRoleHtml}
             </div>
         `;
@@ -373,20 +398,24 @@
         const gridContainer = document.getElementById('staffGrid');
         gridContainer.innerHTML = ''; 
 
-        // Ordre des Rangs : Créateur > Administrateur > Modérateur > Helpeur
-        const rankOrder = ["Créateur", "Administrateur", "Modérateur", "Helpeur", "Membre de l'équipe"];
+        // Ordre des Rangs : Créateur > Administrateur > Modérateur > Helpeur > Fun
+        const rankOrder = ["Créateur", "Administrateur", "Modérateur", "Helpeur", "Fun"];
         
         // Fonction de tri personnalisée
         staffData.sort((a, b) => {
-            const roleA = getCssRole(a.role);
-            const roleB = getCssRole(b.role);
+            // Détermine le rôle à utiliser pour le classement (customRole > role)
+            const roleA = a.customRole || a.role;
+            const roleB = b.customRole || b.role;
             
             // On trouve l'index du rôle dans l'ordre de priorité
-            const indexA = rankOrder.indexOf(a.role.split(/[&,]/)[0].trim());
-            const indexB = rankOrder.indexOf(b.role.split(/[&,]/)[0].trim());
+            const indexA = roleA ? rankOrder.indexOf(roleA.split(/[&,]/)[0].trim()) : rankOrder.length;
+            const indexB = roleB ? rankOrder.indexOf(roleB.split(/[&,]/)[0].trim()) : rankOrder.length;
             
             // Tri par rang
             if (indexA !== indexB) {
+                // Si l'un des rôles n'est pas dans la liste (index -1), il va à la fin.
+                if (indexA === -1) return 1;
+                if (indexB === -1) return -1;
                 return indexA - indexB;
             }
             // Tri alphabétique si les rangs sont égaux
@@ -437,20 +466,6 @@
         }
     });
 
-    // Ancien code qui tentait de lancer l'audio au chargement, supprimé pour éviter l'autoplay
-    // window.addEventListener('load', () => {
-    //     audio.volume = 0.28;
-    //     audio.play().then(() => {
-    //         btn.textContent = '🔊 Lecture'; 
-    //         btn.classList.add('playing');
-    //         playing = true;
-    //     }).catch(error => {
-    //         btn.textContent = '🔈 Jouer'; 
-    //         btn.classList.remove('playing');
-    //         playing = false;
-    //     });
-    // });
-    
     // Ajouté pour s'assurer que si l'audio se lance par miracle (clic utilisateur initial), le bouton se met à jour.
     audio.addEventListener('play', () => {
         if (!playing) { 
