@@ -282,7 +282,12 @@
         /* Ajustement de la nav sur mobile */
         .header { padding: 10px 15px; }
         .nav-content { flex-direction: column; gap: 10px; }
-        .nav-links { gap: 20px; }
+        /* CORRECTION DU BUG DE DÉBORDEMENT: Ajout de flex-wrap pour que les liens passent à la ligne */
+        .nav-links { 
+            gap: 20px; 
+            flex-wrap: wrap; /* Permet le retour à la ligne des liens si l'espace manque */
+            justify-content: center; /* Centre les liens sur petit écran */
+        }
         .toggle { padding: 6px 10px; }
     }
   </style>
