@@ -3,19 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>CreeperTVii's Modding Server</title>
-  <link rel="icon" href="https://raw.githubusercontent.com/CreeperTVii/creepertvii.github.io/refs/heads/main/Images/Mii.png" />
+  <title>CreeperTV's Modding Server</title>
+  <link rel="icon" href="https://raw.githubusercontent.com/1CreeperTV/1creepertv.github.io/refs/heads/main/Images/Mii.png" />
 
   <!-- Polices -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
 
   <!-- Métadonnées pour le partage (Discord/OG) -->
-  <meta property="og:title" content="CreeperTVii's Modding Server - L'Homebrew Nintendo" />
-  <!-- CORRECTION APPORTÉE ICI : CreeperTV -> CreeperTVii -->
-  <meta property="og:description" content="Serveur centré sur les consoles Nintendo (Wii, Wii U, 3DS), l'homebrew, le support technique et le chill avec la communauté de CreeperTVii." />
-  <meta property="og:image" content="https://raw.githubusercontent.com/CreeperTVii/creepertvii.github.io/refs/heads/main/Images/lv_0_2025112922-1764451316159.gif" />
-  <meta property="og:url" content="https://creepertvii.github.io/" />
+  <meta property="og:title" content="1CreeperTV's Modding Server - L'Homebrew Nintendo" />
+  <meta property="og:description" content="Serveur centré sur les consoles Nintendo (Wii, Wii U, 3DS), l'homebrew, le support technique et le chill avec la communauté de 1CreeperTV." />
+  <meta property="og:image" content="https://raw.githubusercontent.com/1CreeperTV/1creepertv.github.io/refs/heads/main/Images/lv_0_2025112922-1764451316159.gif" />
+  <meta property="og:url" content="https://1creepertv.github.io/" />
 
   <style>
     :root{
@@ -34,7 +33,6 @@
     body{
       margin:0;
       font-family:'Inter', system-ui, Segoe UI, Roboto, Arial, "Noto Sans", sans-serif;
-      /* Dégradé de fond personnalisé (grand, pour le défilement) */
       background: radial-gradient(1800px 900px at 10% 10%, rgba(255,138,0,0.1), transparent),
                   radial-gradient(1500px 700px at 90% 60%, rgba(255,214,107,0.06), transparent),
                   var(--bg);
@@ -46,11 +44,10 @@
     }
 
     .bg-img{
-      position:fixed;inset:0;z-index:-2;background-image:url('https://raw.githubusercontent.com/CreeperTVii/creepertvii.github.io/refs/heads/main/Images/background2.png');
+      position:fixed;inset:0;z-index:-2;background-image:url('https://raw.githubusercontent.com/1CreeperTV/1creepertv.github.io/refs/heads/main/Images/background2.png');
       background-size:cover;background-position:center;opacity:0.2;filter:blur(6px) saturate(1.05);
     }
 
-    /* Barre de navigation fixe */
     .header {
         position: fixed;
         top: 0;
@@ -59,14 +56,14 @@
         padding: 15px 20px;
         z-index: 10;
         backdrop-filter: blur(8px);
-        background: rgba(8, 6, 10, 0.7); /* Fond légèrement opaque */
+        background: rgba(8, 6, 10, 0.7);
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         display: flex;
         justify-content: center;
     }
     .nav-content {
         display: flex;
-        justify-content: space-between; /* Pour séparer les liens et le bouton */
+        justify-content: space-between;
         align-items: center;
         max-width: 1200px;
         width: 100%;
@@ -93,7 +90,6 @@
         color: var(--accent);
         border-bottom: 2px solid var(--accent);
     }
-    /* Bouton Musique dans la nav */
     .toggle{
         color:#fff;cursor:pointer;padding:8px 12px;border-radius:999px;
         background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.05); 
@@ -104,8 +100,6 @@
     .toggle:hover{background:rgba(255,255,255,0.1)}
     .toggle.playing{background: var(--accent); color: #1b0b00; font-weight: 700; border: none;}
 
-
-    /* Conteneur principal pour le contenu défilant */
     .container {
       width: 100%;
       max-width: 1200px;
@@ -123,13 +117,11 @@
       backdrop-filter: blur(10px) saturate(1.2);
     }
 
-    /* HEADER / HERO SECTION (Première vue) */
     .hero {
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
-      /* Ajustement du padding top pour compenser la barre fixe */
       padding: 120px 20px 80px; 
       min-height: 80vh;
       justify-content: center;
@@ -158,7 +150,6 @@
         border: 4px solid var(--accent);
     }
 
-    /* BOUTONS (Liens) */
     .links-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -181,7 +172,6 @@
     .btn.youtube{background:linear-gradient(90deg,#FF0000,#ff4747);color:white;border:none}
     .btn.primary{background: linear-gradient(90deg,var(--accent), var(--accent-2));color:#1b0b00;border:none}
 
-    /* WIDGET ET STATS */
     .stats-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -215,7 +205,6 @@
         box-shadow: 0 8px 30px rgba(0,0,0,0.5);
     }
 
-    /* TAGS */
     .tags-list {
         display: flex;
         flex-wrap: wrap;
@@ -238,7 +227,6 @@
         background: rgba(255, 138, 0, 0.15);
     }
 
-    /* Titres de section */
     .section-title {
         color: var(--light-text);
         font-size: 2rem;
@@ -253,7 +241,6 @@
         width: auto;
     }
 
-    /* Footer */
     .footer-section {
         display: flex;
         justify-content: center;
@@ -264,7 +251,6 @@
         text-align: center;
     }
     
-    /* RESPONSIVE */
     @media (max-width: 900px) {
         .hero-title { font-size: 3rem; }
         .hero-subtitle { font-size: 1.2rem; }
@@ -278,15 +264,12 @@
         .logo-hero { width: 80px; height: 80px; }
         .links-grid { grid-template-columns: 1fr; }
         .stat-card h3 { font-size: 2rem; }
-        
-        /* Ajustement de la nav sur mobile */
         .header { padding: 10px 15px; }
         .nav-content { flex-direction: column; gap: 10px; }
-        /* CORRECTION DU BUG DE DÉBORDEMENT: Ajout de flex-wrap pour que les liens passent à la ligne */
         .nav-links { 
             gap: 20px; 
-            flex-wrap: wrap; /* Permet le retour à la ligne des liens si l'espace manque */
-            justify-content: center; /* Centre les liens sur petit écran */
+            flex-wrap: wrap;
+            justify-content: center;
         }
         .toggle { padding: 6px 10px; }
     }
@@ -295,20 +278,16 @@
 <body>
   <div class="bg-img" aria-hidden="true"></div>
 
-  <!-- Barre de navigation fixe -->
+  <!-- Barre de navigation mise à jour avec 1creepertv.github.io -->
   <header class="header">
     <div class="nav-content">
         <nav class="nav-links">
-            <a href="https://creepertvii.github.io" class="nav-link active">Accueil</a>
-            <a href="https://creepertvii.github.io/tutoriels" class="nav-link">Tutoriels</a>
-            <a href="https://creepertvii.github.io/partenaires" class="nav-link">Partenaires</a>
-            <!-- Début: Ajout du lien "À Propos" demandé par l'utilisateur -->
-            <a href="https://creepertvii.github.io/a-propos" class="nav-link">À Propos</a>
-            <!-- Fin: Ajout du lien "À Propos" -->
-            <!-- Lien Recrutements -->
-            <a href="https://creepertvii.github.io/recrutements" class="nav-link">Recrutements</a>
+            <a href="https://1creepertv.github.io" class="nav-link active">Accueil</a>
+            <a href="https://1creepertv.github.io/tutoriels" class="nav-link">Tutoriels</a>
+            <a href="https://1creepertv.github.io/partenaires" class="nav-link">Partenaires</a>
+            <a href="https://1creepertv.github.io/a-propos" class="nav-link">À Propos</a>
+            <a href="https://1creepertv.github.io/recrutements" class="nav-link">Recrutements</a>
         </nav>
-        <!-- Bouton Musique : Le texte par défaut est maintenant en français -->
         <button id="playPause" class="toggle">🔈 Jouer</button>
     </div>
   </header>
@@ -316,28 +295,25 @@
   <main>
     <!-- SECTION 1: HERO / ACCUEIL -->
     <section class="hero">
-        <img class="logo-hero" src="https://raw.githubusercontent.com/CreeperTVii/creepertvii.github.io/refs/heads/main/Images/lv_0_2025112922-1764451316159.gif" alt="Logo du serveur CreeperTVii's Modding Server">
-        <h1 class="hero-title">CreeperTVii's</h1>
+        <img class="logo-hero" src="https://raw.githubusercontent.com/1CreeperTV/1creepertv.github.io/refs/heads/main/Images/lv_0_2025112922-1764451316159.gif" alt="Logo du serveur 1CreeperTV's Modding Server">
+        <h1 class="hero-title">1CreeperTV's</h1>
         <h1 class="hero-title" style="color: var(--accent);">Modding Server</h1>
         <p class="hero-subtitle">Support • Homebrew • Nintendo • Chill</p>
 
         <div class="links-grid">
-            <!-- Lien principal : Rejoindre le serveur Discord -->
             <a class="btn discord" href="https://discord.gg/AQ7w57CKk8" target="_blank">
                 <svg class="ico" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.43 2.14a1 1 0 0 1 1.14 0l.54.38a1 1 0 0 0 .54.12h.74a1 1 0 0 1 1 1v.74a1 1 0 0 0 .12.54l.38.54a1 1 0 0 1 0 1.14l-.38.54a1 1 0 0 0-.12.54v.74a1 1 0 0 1-1 1h-.74a1 1 0 0 0-.54.12l-.54.38a1 1 0 0 1-1.14 0l-.54-.38a1 1 0 0 0-.54-.12H9.74a1 1 0 0 1-1-1v-.74a1 1 0 0 0-.12-.54l-.38-.54a1 1 0 0 1 0-1.14l.38-.54a1 1 0 0 0 .12-.54v-.74a1 1 0 0 1 1-1h.74a1 1 0 0 0 .54-.12l.54-.38ZM18 10a6 6 0 0 0-6 6 6 6 0 0 0-6-6 6 6 0 0 0-6 6 6 6 0 0 0 6 6 6 6 0 0 0 6-6 6 6 0 0 0 6-6Z"/></svg>
                 Rejoindre le serveur
             </a>
-            <!-- Lien vers la chaîne YouTube -->
-            <a class="btn youtube" href="https://www.youtube.com/@CreeperTV_" target="_blank">
+            <a class="btn youtube" href="https://www.youtube.com/@CreeperTVii" target="_blank">
                 <svg class="ico" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-2-2C18.9 4 12 4 12 4s-6.9 0-8.54.42a2.78 2.78 0 0 0-2 2c0 2.22 0 11.16 0 13.38a2.78 2.78 0 0 0 2 2c1.64.42 8.54.42 8.54.42s6.9 0 8.54-.42a2.78 2.78 0 0 0 2-2c0-2.22 0-11.16 0-13.38Z"/><path d="m10 15 5-3-5-3v6Z"/></svg>
                 Chaîne YouTube
             </a>
-            <!-- Lien vers GitHub -->
-            <a class="btn ghost" href="https://github.com/CreeperTVii" target="_blank">
+            <!-- Lien GitHub mis à jour -->
+            <a class="btn ghost" href="https://github.com/1CreeperTV" target="_blank">
                 <svg class="ico" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.44-.78-3.5l.77-2.93c-.28-.08-1.1-.38-2.02.34-1-.24-2.2-.38-3.4-.38-1.2 0-2.4.14-3.4.38-.92-.72-1.74-1-2.02-.34l.77 2.93c-.51 1.06-.86 2.25-.78 3.5 0 3.5 3 5.5 6 5.5-.39.23-.74.63-1 1v4"/></svg>
                 GitHub
             </a>
-            <!-- Mise à jour du lien pour le soutien (Adhésion YouTube) -->
             <a class="btn ghost" href="https://www.youtube.com/channel/UCiIV7UGqOtvL_L73iX_UI9Q/join" target="_blank">
                 <svg class="ico" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 8h2c2.2 0 4 1.8 4 4s-1.8 4-4 4h-4l-5 4V4l5 4Z"/><path d="M10 4V2.5A2.5 2.5 0 0 1 12.5 0H14a.5.5 0 0 1 .5.5V4"/></svg>
                 Soutien
@@ -350,16 +326,14 @@
         <div class="section-glass">
             <h2 class="section-title">À Propos du Serveur</h2>
             <p style="text-align: center; max-width: 800px; margin: 0 auto 30px; font-size: 1.1rem; color: var(--muted);">
-                Ce serveur est la communauté officielle de CreeperTVii, principalement axée sur le modding, l'Homebrew et le Jailbreak des consoles Nintendo, notamment la Wii, la Wii U et la 3DS. Que vous ayez besoin d'aide ou juste de chiller, vous êtes au bon endroit !
+                Ce serveur est la communauté officielle de CreeperTV, principalement axée sur le modding, l'Homebrew et le Jailbreak des consoles Nintendo, notamment la Wii, la Wii U et la 3DS. Que vous ayez besoin d'aide ou juste de chiller, vous êtes au bon endroit !
             </p>
 
             <div class="tags-list">
                 <div class="chip">🎮 Wii/WiiU/3DS</div>
-                <!-- Tag mis à jour de "Homebrew & Modding" à "Homebrew & Jailbreak" -->
                 <div class="chip">🛠️ Homebrew & Jailbreak</div>
                 <div class="chip">💬 Support & Aide</div>
                 <div class="chip">✨ Chill & Actif</div>
-                <!-- Les tags "💻 Jailbreak" et "📢 Annonces CreeperTV" ont été retirés -->
             </div>
         </div>
     </section>
@@ -385,83 +359,65 @@
             </div>
 
             <div class="widget-container">
-                <!-- Le widget Discord avec height="500" -->
                 <iframe src="https://discord.com/widget?id=1409245512904872141&theme=dark" width="350" height="500" frameborder="0" allowtransparency="true" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
             </div>
         </div>
     </section>
 
-
   </main>
 
   <footer class="container">
     <div class="footer-section">
-        © CreeperTVii — Made with 🔥 in France.
+        © CreeperTV — Made with 🔥 in France.
     </div>
   </footer>
 
-  <!-- Audio de fond -->
+  <!-- Audio de fond mis à jour -->
   <audio id="bgAudio" loop>
-    <source src="https://github.com/CreeperTVii/creepertvii.github.io/raw/refs/heads/main/Images/06.%20Purchase%20Software%20(3DS).mp3" type="audio/mpeg">
+    <source src="https://github.com/1CreeperTV/1creepertv.github.io/raw/refs/heads/main/Images/06.%20Purchase%20Software%20(3DS).mp3" type="audio/mpeg">
   </audio>
 
   <script>
-  // Variables d'éléments
   const audio = document.getElementById('bgAudio');
   const btn = document.getElementById('playPause');
-  
   let playing = false;
 
-  // Fonction pour jouer/mettre en pause
   function toggleAudio() {
     if (!playing) {
-      // Tente de jouer l'audio. Nécessite l'interaction utilisateur.
-      audio.volume = 0.28; // Volume ajusté
+      audio.volume = 0.28;
       audio.play().then(() => {
-        // Mise à jour en français
         btn.textContent = '🔊 Lecture'; 
         btn.classList.add('playing');
         playing = true;
       }).catch(error => {
-        // En cas d'échec de lecture (ex: lecture auto bloquée)
         console.warn("La lecture audio a été bloquée:", error);
-        // Mise à jour en français
         btn.textContent = '🔇 Erreur'; 
         btn.classList.remove('playing');
         playing = false;
       });
-      
     } else {
       audio.pause();
-      // Mise à jour en français
       btn.textContent = '🔈 Jouer'; 
       btn.classList.remove('playing');
       playing = false;
     }
   }
 
-  // Événement pour le bouton Play / Pause
   btn.addEventListener('click', toggleAudio);
   
-  // Mise à jour de l'état du bouton si l'audio se met en pause par un autre moyen
   audio.addEventListener('pause', () => {
-    if (playing) { // Si l'état interne était 'playing' mais l'audio s'est arrêté
-        // Mise à jour en français
+    if (playing) {
         btn.textContent = '🔈 Jouer'; 
         btn.classList.remove('playing');
         playing = false;
     }
   });
 
-  // Assure que le bouton affiche le bon état au chargement
   window.addEventListener('load', () => {
       if (audio.paused) {
-          // Mise à jour en français
           btn.textContent = '🔈 Jouer'; 
           btn.classList.remove('playing');
       } else {
-          // Si pour une raison quelconque la lecture a commencé
-          // Mise à jour en français
           btn.textContent = '🔊 Lecture'; 
           btn.classList.add('playing');
           playing = true; 
