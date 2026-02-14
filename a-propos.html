@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
   
   <style>
-    /* VARIABLES (Copie du style existant) */
+    /* VARIABLES */
     :root{
       --bg:#08060a;
       --glass: rgba(255,255,255,0.06);
@@ -21,12 +21,12 @@
       --muted: #cfcfd6;
       --light-text: #fff;
       --radius: 16px;
-      /* Couleurs de Rôle (pour l'accentuation de la bordure/du titre si nécessaire) */
+      /* Couleurs de Rôle */
       --role-creator: #ff8a00;
-      --role-admin: #e04b4b; /* Rouge Administratif */
-      --role-mod: #5c62ec; /* Bleu Modération */
-      --role-helper: #66cc66; /* Vert Helpeur */
-      --role-fun: #8c8c8c; /* Gris pour le rôle "Fun" demandé */
+      --role-admin: #e04b4b; 
+      --role-mod: #5c62ec; 
+      --role-helper: #66cc66; 
+      --role-fun: #8c8c8c; 
     }
 
     *{box-sizing:border-box}
@@ -34,14 +34,13 @@
     body{
       margin:0;
       font-family:'Inter', system-ui, Segoe UI, Roboto, Arial, "Noto Sans", sans-serif;
-      /* Dégradé de fond personnalisé (grand, pour le défilement) */
       background: radial-gradient(1800px 900px at 10% 10%, rgba(255,138,0,0.1), transparent),
                   radial-gradient(1500px 700px at 90% 60%, rgba(255,214,107,0.06), transparent),
                   var(--bg);
       color:var(--muted);
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
-      padding-top: 80px; /* Espace pour la barre de navigation fixe */
+      padding-top: 80px; 
       min-height:100vh;
     }
 
@@ -50,7 +49,6 @@
       background-size:cover;background-position:center;opacity:0.2;filter:blur(6px) saturate(1.05);
     }
 
-    /* Barre de navigation fixe */
     .header {
         position: fixed;
         top: 0;
@@ -93,7 +91,6 @@
         color: var(--accent);
         border-bottom: 2px solid var(--accent);
     }
-    /* Bouton Musique dans la nav */
     .toggle{
         color:#fff;cursor:pointer;padding:8px 12px;border-radius:999px;
         background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.05); 
@@ -104,7 +101,6 @@
     .toggle:hover{background:rgba(255,255,255,0.1)}
     .toggle.playing{background: var(--accent); color: #1b0b00; font-weight: 700; border: none;}
 
-    /* Conteneur principal pour le contenu défilant */
     .container {
       width: 100%;
       max-width: 1200px;
@@ -122,7 +118,6 @@
       backdrop-filter: blur(10px) saturate(1.2);
     }
     
-    /* Titres de section */
     .section-title {
         color: var(--light-text);
         font-size: 2.5rem;
@@ -135,7 +130,6 @@
         margin-top: 0;
     }
 
-    /* Grille du Staff */
     .staff-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -153,38 +147,34 @@
         box-shadow: 0 8px 25px rgba(0,0,0,0.5);
     }
     
-    /* Hover pour toutes les cartes */
     .staff-member-card:hover {
         transform: translateY(-5px);
         box-shadow: 0 15px 40px rgba(255, 138, 0, 0.3);
         border-color: var(--accent);
     }
 
-    /* Styles pour les rangs (ajustement de la bordure ou du fond si besoin) */
     .role-Créateur { border-left: 5px solid var(--role-creator); }
     .role-Administrateur { border-left: 5px solid var(--role-admin); }
     .role-Modérateur { border-left: 5px solid var(--role-mod); }
     .role-Helpeur { border-left: 5px solid var(--role-helper); }
-    .role-Fun { border-left: 5px solid var(--role-fun); } /* Nouveau style pour le rôle "Fun" */
+    .role-Fun { border-left: 5px solid var(--role-fun); } 
     
-    /* Photo de profil */
     .staff-photo {
         width: 120px;
         height: 120px;
         border-radius: 50%;
         object-fit: cover;
         margin-bottom: 15px;
-        border: 4px solid var(--accent); /* Accentuation de l'image */
+        border: 4px solid var(--accent); 
         box-shadow: 0 0 15px rgba(255, 138, 0, 0.5);
     }
-    /* Rangs spécifiques */
+
     .staff-member-card.role-Administrateur .staff-photo { border-color: var(--role-admin); box-shadow: 0 0 15px var(--role-admin); }
     .staff-member-card.role-Modérateur .staff-photo { border-color: var(--role-mod); box-shadow: 0 0 15px var(--role-mod); }
     .staff-member-card.role-Helpeur .staff-photo { border-color: var(--role-helper); box-shadow: 0 0 15px var(--role-helper); }
-    .staff-member-card.role-Fun .staff-photo { border-color: var(--role-fun); box-shadow: 0 0 15px var(--role-fun); } /* Nouveau style pour la photo "Fun" */
+    .staff-member-card.role-Fun .staff-photo { border-color: var(--role-fun); box-shadow: 0 0 15px var(--role-fun); }
 
 
-    /* Nom du membre */
     .staff-name {
         color: var(--light-text);
         font-size: 1.5rem;
@@ -192,28 +182,24 @@
         margin: 0 0 5px 0;
         font-family: 'Montserrat', sans-serif;
     }
-    /* Rôle Principal */
     .staff-role {
         font-size: 1rem;
-        color: var(--accent-2); /* Jaune doux pour le rôle principal */
+        color: var(--accent-2); 
         font-weight: 600;
         margin-bottom: 10px;
     }
     
-    /* Rôle Secondaire (Helpeur, etc.) - MODIFIÉ POUR ÊTRE VERT */
     .staff-secondary-role {
         font-size: 0.9rem;
-        color: var(--role-helper); /* Vert Helpeur */
-        font-weight: 600; /* Rendu plus visible */
+        color: var(--role-helper); 
+        font-weight: 600; 
         font-style: italic;
     }
-    /* Rôle Secondaire pour le membre "Fun" (s'il n'a pas de rôle principal) */
     .staff-member-card.role-Fun .staff-secondary-role {
-        color: var(--role-fun); /* Utiliser le gris pour le texte secondaire */
-        font-weight: 700; /* Rendre le texte plus gras pour qu'il agisse comme rôle principal */
+        color: var(--role-fun); 
+        font-weight: 700; 
     }
 
-    /* Footer */
     .footer-section {
         display: flex;
         justify-content: center;
@@ -224,7 +210,6 @@
         text-align: center;
     }
     
-    /* RESPONSIVE */
     @media (max-width: 900px) {
         .container { padding: 15px 10px; }
         .section-title { font-size: 2rem; margin-bottom: 30px; }
@@ -232,13 +217,11 @@
     }
     @media (max-width: 600px) {
         .staff-grid {
-            /* Passe à une seule colonne sur mobile très petit */
             grid-template-columns: 1fr;
         }
     }
     @media (max-width: 500px) {
         body { padding-top: 100px; }
-        /* Ajustement de la nav sur mobile */
         .header { padding: 10px 15px; }
         .nav-content { flex-direction: column; gap: 10px; }
         .nav-links { 
@@ -256,14 +239,13 @@
 <body>
   <div class="bg-img" aria-hidden="true"></div>
 
-  <!-- Barre de navigation fixe (Adaptation pour la nouvelle page) -->
   <header class="header">
     <div class="nav-content">
         <nav class="nav-links">
             <a href="https://1creepertv.github.io" class="nav-link">Accueil</a>
             <a href="https://1creepertv.github.io/tutoriels" class="nav-link">Tutoriels</a>
             <a href="https://1creepertv.github.io/partenaires" class="nav-link">Partenaires</a>
-            <a href="a-propos.html" class="nav-link active">À Propos</a> <!-- Lien actif vers cette page -->
+            <a href="a-propos.html" class="nav-link active">À Propos</a>
             <a href="https://1creepertv.github.io/recrutements" class="nav-link">Recrutements</a>
         </nav>
         <button id="playPause" class="toggle">🔈 Jouer</button>
@@ -278,7 +260,6 @@
             Découvrez les membres dévoués du staff qui veillent sur la communauté Loannnnnn sur Discord et vous aident dans toutes vos requêtes de modding !
         </p>
 
-        <!-- GRILLE DU STAFF -->
         <div id="staffGrid" class="staff-grid">
             <!-- Les cartes des membres du staff seront générées ici par JavaScript -->
         </div>
@@ -293,7 +274,6 @@
     </div>
   </footer>
 
-  <!-- Audio de fond (Copie du style existant) -->
   <audio id="bgAudio" loop>
     <source src="https://github.com/1CreeperTV/1creepertv.github.io/raw/refs/heads/main/Images/06.%20Purchase%20Software%20(3DS).mp3" type="audio/mpeg">
   </audio>
@@ -308,20 +288,20 @@
         // ADMINISTRATEURS
         { name: "Abdelali221", role: "Administrateur", secondaryRole: null, 
           image: "https://github.com/1CreeperTV/1creepertv.github.io/blob/main/Images/Staff/abdelali221.png?raw=true" },
-        { name: "Piggreen", role: "Administrateur", secondaryRole: "Helpeur", // Rôle secondaire Helpeur
+        { name: "Piggreen", role: "Administrateur", secondaryRole: "Helpeur", 
           image: "https://github.com/1CreeperTV/1creepertv.github.io/blob/main/Images/Staff/piggreen.png?raw=true" },
         { name: "Katsu", role: "Administrateur", secondaryRole: null, 
           image: "https://github.com/1CreeperTV/1creepertv.github.io/blob/main/Images/Staff/katsu.png?raw=true" },
-        { name: "YTK", role: "Administrateur", secondaryRole: "Helpeur", // Rôle secondaire Helpeur
-          image: "https://github.com/1CreeperTV/1creepertv.github.io/blob/main/Images/Staff/ytk.gif?raw=true" },
 
         // MODÉRATEURS
-        { name: "Possemelius", role: "Modérateur", secondaryRole: "Helpeur", // Rôle secondaire Helpeur
+        { name: "Possemelius", role: "Modérateur", secondaryRole: "Helpeur", 
           image: "https://github.com/1CreeperTV/1creepertv.github.io/blob/main/Images/Staff/possemelius.png?raw=true" },
         { name: "Kader Channel", role: "Modérateur", secondaryRole: null, 
           image: "https://github.com/1CreeperTV/1creepertv.github.io/blob/main/Images/Staff/kaderchannel.png?raw=true" },
         { name: "MOMO", role: "Modérateur", secondaryRole: "Helpeur", 
           image: "https://github.com/1CreeperTV/1creepertv.github.io/blob/main/Images/Staff/momo.png?raw=true" },
+        { name: "Captaincat200", role: "Modérateur", secondaryRole: null, 
+          image: "https://raw.githubusercontent.com/1CreeperTV/1creepertv.github.io/refs/heads/main/Images/Staff/captaincat.png" },
 
         // HELPEURS
         { name: "Benjamin", role: "Helpeur", secondaryRole: null, 
@@ -332,56 +312,36 @@
           image: "https://github.com/1CreeperTV/1creepertv.github.io/blob/main/Images/Staff/toto14gamer.png?raw=true" },
         { name: "Dolard128", role: "Helpeur", secondaryRole: null, 
           image: "https://github.com/1CreeperTV/1creepertv.github.io/blob/main/Images/Staff/dolard128.png?raw=true" },
-        { name: "Skyzen", role: "Helpeur", secondaryRole: null, 
-          image: "https://github.com/1CreeperTV/1creepertv.github.io/blob/main/Images/Staff/skyzen.png?raw=true" },
-        
-        // Adhene38 est désormais Helpeur
-        { name: "Adhene38", role: "Helpeur", secondaryRole: null, 
-          image: "https://github.com/1CreeperTV/1creepertv.github.io/blob/main/Images/Staff/adhene38.png?raw=true" },
-        
-        // NOUVEAU MEMBRE AJOUTÉ (pour le fun !)
-        // Rôle principal mis à null et rôle secondaire utilisé pour le texte.
-        { name: "LoupBlank", role: null, secondaryRole: "Car c'est un bg mdr", 
-          image: "https://github.com/1CreeperTV/1creepertv.github.io/blob/main/Images/Staff/loupblank.png?raw=true",
-          customRole: "Fun" /* Rôle personnalisé pour la couleur */ }
+        { name: "LoupBlank", role: "Helpeur", secondaryRole: null, 
+          image: "https://raw.githubusercontent.com/1CreeperTV/1creepertv.github.io/refs/heads/main/Images/Staff/loupblank.png" }
     ];
 
-    // Fonction pour normaliser le rôle pour la classe CSS 
     function getCssRole(member) {
-        // Utiliser le rôle principal ou le rôle personnalisé (Fun)
         const role = member.customRole || member.role;
         if (!role) return '';
         const mainRole = role.split(/[&,]/)[0].trim();
-        return mainRole.replace(/\s/g, ''); // Enlève les espaces
+        return mainRole.replace(/\s/g, '');
     }
     
-    // Fonction pour générer le HTML d'une carte de membre du staff
     function createStaffCard(member) {
         const cssClass = getCssRole(member);
         
-        // Détermine la couleur d'accentuation pour le rôle (utilise customRole si présent)
-        let roleColor = 'var(--accent-2)'; // Par défaut: Jaune doux
+        let roleColor = 'var(--accent-2)'; 
         if (member.customRole === 'Fun') roleColor = 'var(--role-fun)';
         else if (member.role && member.role.includes('Créateur')) roleColor = 'var(--role-creator)';
         else if (member.role && member.role.includes('Administrateur')) roleColor = 'var(--role-admin)';
         else if (member.role && member.role.includes('Modérateur')) roleColor = 'var(--role-mod)';
         else if (member.role && member.role.includes('Helpeur')) roleColor = 'var(--role-helper)';
-        // Sinon, si le rôle principal est null, on utilise la couleur pour le rôle secondaire
         else if (!member.role && member.secondaryRole) roleColor = 'var(--role-fun)';
 
-
-        // Affiche le rôle principal seulement s'il existe
         const primaryRoleHtml = member.role 
             ? `<p class="staff-role" style="color: ${roleColor};">${member.role}</p>` 
             : ''; 
 
-        // Rôle secondaire. Si pas de rôle principal, il prend le style Fun (gris)
         const secondaryRoleHtml = member.secondaryRole 
             ? `<p class="staff-secondary-role">${member.secondaryRole}</p>` 
             : '';
 
-        // J'utilise le style pour le rôle pour s'assurer que si un membre a plusieurs rôles, 
-        // c'est le rôle principal (le premier) qui donne le style de la carte.
         const cardHtml = `
             <div class="staff-member-card role-${cssClass}">
                 <img src="${member.image}" alt="Photo de ${member.name}" class="staff-photo">
@@ -393,32 +353,24 @@
         return cardHtml;
     }
 
-    // Fonction de rendu principal
     function renderStaff() {
         const gridContainer = document.getElementById('staffGrid');
         gridContainer.innerHTML = ''; 
 
-        // Ordre des Rangs : Créateur > Administrateur > Modérateur > Helpeur > Fun
         const rankOrder = ["Créateur", "Administrateur", "Modérateur", "Helpeur", "Fun"];
         
-        // Fonction de tri personnalisée
         staffData.sort((a, b) => {
-            // Détermine le rôle à utiliser pour le classement (customRole > role)
             const roleA = a.customRole || a.role;
             const roleB = b.customRole || b.role;
             
-            // On trouve l'index du rôle dans l'ordre de priorité
             const indexA = roleA ? rankOrder.indexOf(roleA.split(/[&,]/)[0].trim()) : rankOrder.length;
             const indexB = roleB ? rankOrder.indexOf(roleB.split(/[&,]/)[0].trim()) : rankOrder.length;
             
-            // Tri par rang
             if (indexA !== indexB) {
-                // Si l'un des rôles n'est pas dans la liste (index -1), il va à la fin.
                 if (indexA === -1) return 1;
                 if (indexB === -1) return -1;
                 return indexA - indexB;
             }
-            // Tri alphabétique si les rangs sont égaux
             return a.name.localeCompare(b.name);
         });
 
@@ -427,11 +379,9 @@
 
     document.addEventListener('DOMContentLoaded', renderStaff);
 
-    // --- Gestion de l'audio ---
     const audio = document.getElementById('bgAudio');
     const btn = document.getElementById('playPause');
     
-    // Initialisé à false pour s'assurer que l'état initial est "non en cours de lecture"
     let playing = false;
 
     function toggleAudio() {
@@ -458,7 +408,6 @@
     btn.addEventListener('click', toggleAudio);
     
     audio.addEventListener('pause', () => {
-        // Met à jour l'état et le bouton si l'audio est mis en pause par un événement extérieur
         if (playing) { 
             btn.textContent = '🔈 Jouer'; 
             btn.classList.remove('playing');
@@ -466,7 +415,6 @@
         }
     });
 
-    // Ajouté pour s'assurer que si l'audio se lance par miracle (clic utilisateur initial), le bouton se met à jour.
     audio.addEventListener('play', () => {
         if (!playing) { 
             btn.textContent = '🔊 Lecture'; 
@@ -475,7 +423,6 @@
         }
     });
     
-    // S'assurer que le bouton est dans son état initial correct au chargement du DOM (avant l'événement 'load')
     document.addEventListener('DOMContentLoaded', () => {
         btn.textContent = '🔈 Jouer'; 
         btn.classList.remove('playing');
