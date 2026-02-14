@@ -786,17 +786,10 @@
         submitButton.textContent = 'Envoyer ma Candidature';
         loadingSpinner.classList.add('hidden');
     }
-
-    // Ajout des listeners pour tous les champs importants
-    motivationTextarea.addEventListener('input', validateForm);
-    dobInput.addEventListener('input', validateForm);
-    domaineCheckboxes.forEach(cb => {
-        cb.addEventListener('change', validateForm);
-    });
-    // Ajout d'un listener général pour les autres champs
-    form.querySelectorAll('input:not([type="checkbox"]), select, textarea:not(#motivation)').forEach(element => {
-        element.addEventListener('input', validateForm);
-    });
+    // Validation globale: couvre tous les champs (texte, textarea, select, checkboxes)
+    // et evite les cas ou le bouton reste gris faute d'evenement sur un champ donne.
+    form.addEventListener('input', validateForm);
+    form.addEventListener('change', validateForm);
     
     form.addEventListener('submit', handleFormSubmit);
 
@@ -856,3 +849,4 @@
 </script>
 </body>
 </html>
+
