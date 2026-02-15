@@ -70,6 +70,25 @@
         max-width: 1200px;
         width: 100%;
     }
+    .nav-home {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        flex-shrink: 0;
+    }
+    .nav-home img {
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+        border: 2px solid rgba(255, 138, 0, 0.55);
+        box-shadow: 0 4px 16px rgba(0,0,0,0.45);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .nav-home:hover img {
+        transform: translateY(-1px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.55);
+    }
     .nav-links {
         display: flex;
         gap: 30px;
@@ -225,7 +244,8 @@
         body { padding-top: var(--header-offset, 88px); }
         .header { padding: 10px 15px; }
         .nav-content { flex-direction: column; gap: 10px; }
-        .nav-links { 
+        
+    .nav-links { 
             gap: 20px; 
             flex-wrap: wrap; 
             justify-content: center; 
@@ -240,6 +260,27 @@
       .header, .section-glass, .btn { backdrop-filter: none; }
       .widget-container iframe { width: min(100%, 350px); max-width: 100%; }
     }
+      @media (max-width: 700px) {
+      .header { padding: 8px 10px; }
+      .nav-content {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        gap: 8px;
+        align-items: center;
+      }
+      .nav-home img { width: 28px; height: 28px; border-radius: 8px; }
+      .nav-links {
+        min-width: 0;
+        gap: 10px;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        scrollbar-width: none;
+      }
+      .nav-links::-webkit-scrollbar { display: none; }
+      .nav-link { font-size: 13px; white-space: nowrap; }
+      .toggle { padding: 5px 8px; font-size: 12px; }
+    }
   </style>
 </head>
 <body>
@@ -247,6 +288,9 @@
 
   <header class="header">
     <div class="nav-content">
+        <a class="nav-home" href="https://loannnnnn2659.github.io" aria-label="Accueil">
+            <img src="https://raw.githubusercontent.com/loannnnnn2659/loannnnnn2659.github.io/refs/heads/main/Images/Mii.png" alt="Icone du site">
+        </a>
         <nav class="nav-links">
             <a href="https://loannnnnn2659.github.io" class="nav-link">Accueil</a>
             <a href="https://loannnnnn2659.github.io/tutoriels" class="nav-link">Tutoriels</a>
