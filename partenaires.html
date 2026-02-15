@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CreeperTV - Partenaires</title>
   <link rel="icon" href="https://raw.githubusercontent.com/loannnnnn2659/loannnnnn2659.github.io/refs/heads/main/Images/Mii.png" />
 
@@ -36,6 +36,7 @@
       -moz-osx-font-smoothing:grayscale;
       padding: 0;
       min-height:100vh;
+      min-height:100svh;
     }
 
     /* Image de fond avec filtres comme sur la page d'accueil */
@@ -105,7 +106,7 @@
       max-width: 1200px;
       margin: 0 auto;
       padding: 30px 20px;
-      padding-top: 100px; /* Espace pour la barre de navigation fixe */
+      padding-top: calc(var(--header-offset, 88px) + 20px); /* Espace adaptatif pour la barre de navigation fixe */
     }
     
     /* Style Glassmorphism pour les sections (Importé) */
@@ -260,7 +261,7 @@
     
     /* RESPONSIVE (Importé) */
     @media (max-width: 900px) {
-        .container { padding-top: 80px; }
+        .container { padding-top: calc(var(--header-offset, 88px) + 12px); }
         .main-header h1 { font-size: 2.5rem; }
         .main-header .subtitle { font-size: 1rem; }
         .section-glass { padding: 20px; margin-bottom: 25px; border-radius: 18px; }
@@ -284,6 +285,11 @@
         .partner-logo { width: 70px; height: 70px; border-radius: 14px; }
         .partner-card { padding: 20px; border-radius: 16px; }
         .btn { font-size: 15px; padding: 12px 10px; }
+    }
+      @media (max-width: 900px) {
+      .bg-img { filter: blur(2px) saturate(1.02); opacity: 0.16; }
+      .header, .section-glass, .btn { backdrop-filter: none; }
+      .widget-container iframe { width: min(100%, 350px); max-width: 100%; }
     }
   </style>
 </head>
@@ -424,6 +430,22 @@
           playing = true; 
       }
   });
+</script>
+<script>
+(function () {
+  const root = document.documentElement;
+  const header = document.querySelector('.header');
+  if (!header) return;
+
+  const syncHeaderOffset = () => {
+    root.style.setProperty('--header-offset', ${header.offsetHeight + 8}px);
+  };
+
+  syncHeaderOffset();
+  window.addEventListener('resize', syncHeaderOffset);
+  window.addEventListener('orientationchange', syncHeaderOffset);
+  window.addEventListener('load', syncHeaderOffset);
+})();
 </script>
 </body>
 </html>
