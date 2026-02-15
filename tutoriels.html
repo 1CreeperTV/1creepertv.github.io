@@ -137,6 +137,25 @@
     }
     
     /* Titres de section */
+
+    .main-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .main-header h1 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 3rem;
+        font-weight: 900;
+        color: var(--light-text);
+        margin: 0;
+        line-height: 1;
+    }
+    .main-header .subtitle {
+        font-size: 1.1rem;
+        color: var(--accent-2);
+        margin: 10px 0 0;
+        font-weight: 600;
+    }
     .section-title {
         color: var(--light-text);
         font-size: 2.5rem;
@@ -228,12 +247,15 @@
     
     /* RESPONSIVE */
     @media (max-width: 900px) {
+        .main-header h1 { font-size: 2.5rem; }
+        .main-header .subtitle { font-size: 1rem; }
         .container { padding: 15px 10px; }
         .section-title { font-size: 2rem; margin-bottom: 30px; }
         .category-grid { gap: 20px; }
         .category-title { font-size: 1.6rem; margin-top: 40px; }
     }
     @media (max-width: 500px) {
+        .main-header h1 { font-size: 2rem; }
         body { padding-top: var(--header-offset, 88px); }
         .video-card { border-radius: 12px; }
         .video-thumbnail { height: 160px; }
@@ -250,6 +272,8 @@
         .category-title { font-size: 1.4rem; margin-top: 30px; }
     }
       @media (max-width: 900px) {
+        .main-header h1 { font-size: 2.5rem; }
+        .main-header .subtitle { font-size: 1rem; }
       .bg-img { filter: blur(2px) saturate(1.02); opacity: 0.16; }
       .header, .section-glass, .btn { backdrop-filter: none; }
       .widget-container iframe { width: min(100%, 350px); max-width: 100%; }
@@ -297,13 +321,14 @@
     </div>
   </header>
 
-  <main>
-    <section class="container">
-      <div class="section-glass" style="margin-top: 50px;">
-        <h2 class="section-title">Mes Tutoriels Modding & Homebrew</h2>
-        <p style="text-align: center; max-width: 800px; margin: 0 auto 30px; font-size: 1.1rem; color: var(--muted);">
-            Retrouvez ici tous mes guides et tutoriels vidéo pour le modding et l'homebrew sur les consoles Nintendo et PlayStation 3. Cliquez pour accéder directement à la vidéo !
-        </p>
+  <main class="container">
+    <div class="main-header">
+        <h1>📚 Mes Tutoriels</h1>
+        <p class="subtitle">Retrouvez ici tous mes guides et tutoriels vidéo pour le modding et l'homebrew.</p>
+    </div>
+
+    <section class="section-glass">
+        <h2 class="section-title">Tutoriels Modding & Homebrew</h2>
 
         <div id="tutorialGrid" class="tutorial-grid">
             <!-- Injecté par JS -->

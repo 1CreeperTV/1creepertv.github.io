@@ -138,6 +138,25 @@
       backdrop-filter: blur(10px) saturate(1.2);
     }
     
+
+    .main-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .main-header h1 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 3rem;
+        font-weight: 900;
+        color: var(--light-text);
+        margin: 0;
+        line-height: 1;
+    }
+    .main-header .subtitle {
+        font-size: 1.1rem;
+        color: var(--accent-2);
+        margin: 10px 0 0;
+        font-weight: 600;
+    }
     .section-title {
         color: var(--light-text);
         font-size: 2.5rem;
@@ -231,6 +250,8 @@
     }
     
     @media (max-width: 900px) {
+        .main-header h1 { font-size: 2.5rem; }
+        .main-header .subtitle { font-size: 1rem; }
         .container { padding: 15px 10px; }
         .section-title { font-size: 2rem; margin-bottom: 30px; }
         .staff-grid { gap: 20px; }
@@ -241,6 +262,7 @@
         }
     }
     @media (max-width: 500px) {
+        .main-header h1 { font-size: 2rem; }
         body { padding-top: var(--header-offset, 88px); }
         .header { padding: 10px 15px; }
         .nav-content { flex-direction: column; gap: 10px; }
@@ -256,6 +278,8 @@
         .staff-name { font-size: 1.3rem; }
     }
       @media (max-width: 900px) {
+        .main-header h1 { font-size: 2.5rem; }
+        .main-header .subtitle { font-size: 1rem; }
       .bg-img { filter: blur(2px) saturate(1.02); opacity: 0.16; }
       .header, .section-glass, .btn { backdrop-filter: none; }
       .widget-container iframe { width: min(100%, 350px); max-width: 100%; }
@@ -302,13 +326,14 @@
     </div>
   </header>
 
-  <main>
-    <section class="container">
-      <div class="section-glass" style="margin-top: 50px;">
+  <main class="container">
+    <div class="main-header">
+        <h1>👥 À Propos</h1>
+        <p class="subtitle">Découvrez les membres dévoués du staff et l'équipe qui fait vivre la communauté.</p>
+    </div>
+
+    <section class="section-glass">
         <h2 class="section-title">Notre Équipe</h2>
-        <p style="text-align: center; max-width: 800px; margin: 0 auto 30px; font-size: 1.1rem; color: var(--muted);">
-            Découvrez les membres dévoués du staff qui veillent sur la communauté CreeperTV sur Discord et vous aident dans toutes vos requêtes de modding !
-        </p>
 
         <div id="staffGrid" class="staff-grid">
             <!-- Les cartes des membres du staff seront générées ici par JavaScript -->
