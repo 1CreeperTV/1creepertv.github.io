@@ -305,6 +305,39 @@
       .nav-link { font-size: 13px; white-space: nowrap; }
       .toggle { padding: 5px 8px; font-size: 12px; }
     }
+  
+    .back-to-top {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 60;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      color: #1b0b00;
+      font-weight: 800;
+      font-size: 13px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+      opacity: 0;
+      transform: translateY(8px);
+      pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+    .back-to-top.show {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    @media (max-width: 700px) {
+      .back-to-top {
+        right: 12px;
+        bottom: 12px;
+        font-size: 12px;
+        padding: 8px 10px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -348,6 +381,7 @@
         © CreeperTV — Made with 🔥 in France.
     </div>
   </footer>
+  <button id="backToTop" class="back-to-top" aria-label="Retour en haut" title="Retour en haut">&uarr;</button>
 
   <audio id="bgAudio" loop>
     <source src="https://github.com/loannnnnn2659/loannnnnn2659.github.io/raw/refs/heads/main/Images/06.%20Purchase%20Software%20(3DS).mp3" type="audio/mpeg">
@@ -518,6 +552,28 @@
   window.addEventListener('resize', syncHeaderOffset);
   window.addEventListener('orientationchange', syncHeaderOffset);
   window.addEventListener('load', syncHeaderOffset);
+})();
+</script>
+<script>
+(function () {
+  const topBtn = document.getElementById('backToTop');
+  if (!topBtn) return;
+
+  const syncBtn = () => {
+    if (window.scrollY > 280) {
+      topBtn.classList.add('show');
+    } else {
+      topBtn.classList.remove('show');
+    }
+  };
+
+  topBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  window.addEventListener('scroll', syncBtn, { passive: true });
+  window.addEventListener('load', syncBtn);
+  syncBtn();
 })();
 </script>
 </body>
