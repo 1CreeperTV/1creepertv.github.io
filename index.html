@@ -194,22 +194,26 @@
 
     .stats-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 12px;
     }
     .stat-card {
         text-align: center;
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 14px;
+        padding: 14px 10px;
     }
     .stat-card h3 {
         color: var(--accent);
-        font-size: 2.5rem;
+        font-size: 1.7rem;
         margin: 0;
         line-height: 1;
         font-weight: 900;
     }
     .stat-card p {
-        margin: 5px 0 0;
-        font-size: 1rem;
+        margin: 6px 0 0;
+        font-size: 0.9rem;
         color: var(--muted);
         font-weight: 600;
     }
@@ -429,11 +433,15 @@
             <div class="stats-grid">
                 <div class="stat-card">
                     <h3 style="color: #5865F2;">600+</h3>
-                    <p>Membres (estimation)</p>
+                    <p>Membres</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="onlineCount">...</h3>
+                    <p>En ligne</p>
                 </div>
                 <div class="stat-card">
                     <h3>24/7</h3>
-                    <p>Support (communautaire)</p>
+                    <p>Support</p>
                 </div>
                 <div class="stat-card">
                     <h3 style="color: #4ADE80;">ON</h3>
@@ -522,6 +530,29 @@
   window.addEventListener('resize', syncHeaderOffset);
   window.addEventListener('orientationchange', syncHeaderOffset);
   window.addEventListener('load', syncHeaderOffset);
+})();
+</script>
+<script>
+(function () {
+  const onlineEl = document.getElementById('onlineCount');
+  const WIDGET_API = 'https://discord.com/api/guilds/1409245512904872141/widget.json';
+
+  async function refreshDiscordStats() {
+    try {
+      const res = await fetch(WIDGET_API, { cache: 'no-store' });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+
+      if (onlineEl) {
+        onlineEl.textContent = typeof data.presence_count === 'number' ? `${data.presence_count}` : 'N/A';
+      }
+    } catch (_) {
+      if (onlineEl && onlineEl.textContent === '...') onlineEl.textContent = 'N/A';
+    }
+  }
+
+  refreshDiscordStats();
+  setInterval(refreshDiscordStats, 60000);
 })();
 </script>
 <script>
