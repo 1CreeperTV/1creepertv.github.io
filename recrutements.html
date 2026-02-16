@@ -375,23 +375,11 @@
         transform: translateY(12px) scale(0.98);
         opacity: 0.96;
         transition: transform 0.22s ease, opacity 0.22s ease;
-        scrollbar-width: thin;
-        scrollbar-color: rgba(255, 138, 0, 0.9) rgba(255,255,255,0.08);
+        scrollbar-width: none;
     }
     .rules-modal-card::-webkit-scrollbar {
-        width: 10px;
-    }
-    .rules-modal-card::-webkit-scrollbar-track {
-        background: rgba(255,255,255,0.08);
-        border-radius: 999px;
-    }
-    .rules-modal-card::-webkit-scrollbar-thumb {
-        background: linear-gradient(180deg, var(--accent), var(--accent-2));
-        border-radius: 999px;
-        border: 2px solid rgba(8, 6, 10, 0.45);
-    }
-    .rules-modal-card::-webkit-scrollbar-thumb:hover {
-        background: linear-gradient(180deg, #ff9c1f, #ffe08c);
+        width: 0;
+        height: 0;
     }
     .rules-modal.show .rules-modal-card {
         transform: translateY(0) scale(1);
