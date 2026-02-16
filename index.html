@@ -221,12 +221,58 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 20px;
-        min-height: 500px; 
+        margin-top: 16px;
     }
-    .widget-container iframe {
+    .discord-widget-card {
+        width: 100%;
+        max-width: 760px;
+        display: grid;
+        grid-template-columns: 92px 1fr auto;
+        gap: 14px;
+        align-items: center;
+        background: linear-gradient(135deg, rgba(88,101,242,0.18), rgba(255,255,255,0.04));
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 18px;
+        padding: 14px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+    }
+    .discord-widget-icon {
+        width: 92px;
+        height: 92px;
+        border-radius: 16px;
+        object-fit: cover;
+        border: 2px solid rgba(255,255,255,0.14);
+    }
+    .discord-widget-title {
+        margin: 0 0 6px;
+        color: var(--light-text);
+        font-size: 1.2rem;
+        font-weight: 800;
+    }
+    .discord-widget-text {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+    .discord-widget-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        background: linear-gradient(90deg,#5865F2,#7984f4);
+        color: #fff;
         border-radius: 12px;
-        box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+        padding: 10px 14px;
+        font-weight: 800;
+        border: 0;
+        white-space: nowrap;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+        transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .discord-widget-btn:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.55);
     }
 
     .tags-list {
@@ -301,7 +347,16 @@
       @media (max-width: 900px) {
       .bg-img { filter: blur(2px) saturate(1.02); opacity: 0.16; }
       .header, .section-glass, .btn { backdrop-filter: none; }
-      .widget-container iframe { width: min(100%, 350px); max-width: 100%; }
+      .discord-widget-card {
+        grid-template-columns: 68px 1fr;
+        gap: 10px;
+        padding: 12px;
+      }
+      .discord-widget-icon { width: 68px; height: 68px; border-radius: 12px; }
+      .discord-widget-btn {
+        grid-column: 1 / -1;
+        width: 100%;
+      }
     }
       @media (max-width: 700px) {
       .header { padding: 8px 10px; }
@@ -450,7 +505,14 @@
             </div>
 
             <div class="widget-container">
-                <iframe src="https://discord.com/widget?id=1409245512904872141&theme=dark" width="350" height="500" frameborder="0" allowtransparency="true" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+                <div class="discord-widget-card">
+                    <img class="discord-widget-icon" src="https://raw.githubusercontent.com/1creepertv/1creepertv.github.io/refs/heads/main/Images/Mii%20%26%20Backgrounds/lv_0_2025112922-1764451316159.gif" alt="Logo du serveur Discord">
+                    <div>
+                        <h3 class="discord-widget-title">Rejoins le serveur Discord</h3>
+                        <p class="discord-widget-text">Entraide modding, homebrew, astuces et communauté active chaque jour.</p>
+                    </div>
+                    <a id="discordJoinBtn" class="discord-widget-btn" href="https://discord.gg/AQ7w57CKk8" target="_blank" rel="noopener noreferrer">Rejoindre</a>
+                </div>
             </div>
         </div>
     </section>
@@ -535,6 +597,7 @@
 <script>
 (function () {
   const onlineEl = document.getElementById('onlineCount');
+  const joinBtn = document.getElementById('discordJoinBtn');
   const WIDGET_API = 'https://discord.com/api/guilds/1409245512904872141/widget.json';
 
   async function refreshDiscordStats() {
@@ -545,6 +608,9 @@
 
       if (onlineEl) {
         onlineEl.textContent = typeof data.presence_count === 'number' ? `${data.presence_count}` : 'N/A';
+      }
+      if (joinBtn && typeof data.instant_invite === 'string' && data.instant_invite.trim() !== '') {
+        joinBtn.href = data.instant_invite;
       }
     } catch (_) {
       if (onlineEl && onlineEl.textContent === '...') onlineEl.textContent = 'N/A';
