@@ -297,6 +297,44 @@
         background: rgba(255, 138, 0, 0.15);
     }
 
+    .latest-videos-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 16px;
+    }
+    .latest-video-card {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+        border-radius: 16px;
+        overflow: hidden;
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.08);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.45);
+        transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    .latest-video-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 15px 40px rgba(255, 138, 0, 0.25);
+        border-color: rgba(255, 138, 0, 0.55);
+    }
+    .latest-video-thumb {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        background: linear-gradient(45deg, #1b0b00, #331a00);
+    }
+    .latest-video-body {
+        padding: 12px;
+    }
+    .latest-video-title {
+        margin: 0;
+        color: var(--light-text);
+        font-size: 1rem;
+        line-height: 1.35;
+        font-weight: 700;
+    }
+
     .section-title {
         color: var(--light-text);
         font-size: 2rem;
@@ -333,6 +371,7 @@
         .hero-subtitle { font-size: 1rem; }
         .logo-hero { width: 80px; height: 80px; }
         .links-grid { grid-template-columns: 1fr; }
+        .latest-videos-grid { grid-template-columns: 1fr; }
         .stat-card h3 { font-size: 2rem; }
         .header { padding: 10px 15px; }
         .nav-content { flex-direction: column; gap: 10px; }
@@ -481,6 +520,36 @@
     </section>
 
     <!-- SECTION 3: WIDGET & STATS -->
+    <section class="container">
+        <div class="section-glass">
+            <h2 class="section-title">3 Dernières Vidéos</h2>
+
+            <div class="latest-videos-grid">
+                <a class="latest-video-card" href="https://www.youtube.com/watch?v=c6xCFiRjsis" target="_blank" rel="noopener noreferrer">
+                    <img class="latest-video-thumb" src="https://img.youtube.com/vi/c6xCFiRjsis/mqdefault.jpg" alt="Miniature: Comment jailbreak sa Wii en 2025+">
+                    <div class="latest-video-body">
+                        <p class="latest-video-title">Comment jailbreak sa Wii en 2025+</p>
+                    </div>
+                </a>
+
+                <a class="latest-video-card" href="https://www.youtube.com/watch?v=OUAcMpcs5_g" target="_blank" rel="noopener noreferrer">
+                    <img class="latest-video-thumb" src="https://img.youtube.com/vi/OUAcMpcs5_g/mqdefault.jpg" alt="Miniature: Comment regarder YouTube sur sa Wii U">
+                    <div class="latest-video-body">
+                        <p class="latest-video-title">Comment regarder YouTube sur sa Wii U</p>
+                    </div>
+                </a>
+
+                <a class="latest-video-card" href="https://www.youtube.com/watch?v=_EinQz49IKw" target="_blank" rel="noopener noreferrer">
+                    <img class="latest-video-thumb" src="https://img.youtube.com/vi/_EinQz49IKw/mqdefault.jpg" alt="Miniature: Comment mettre un custom thème sur sa Wii U">
+                    <div class="latest-video-body">
+                        <p class="latest-video-title">Comment mettre un custom thème sur sa Wii U</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: WIDGET & STATS -->
     <section class="container">
         <div class="section-glass">
             <h2 class="section-title">Activité & Communauté</h2>
