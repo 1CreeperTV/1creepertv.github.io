@@ -335,6 +335,109 @@
         margin-left: 5px;
         font-weight: 700;
     }
+    .rules-link {
+        color: var(--accent);
+        text-decoration: underline;
+        text-underline-offset: 2px;
+        font-weight: 700;
+        cursor: pointer;
+    }
+    .rules-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 1200;
+        background: rgba(8, 6, 10, 0.9);
+        backdrop-filter: blur(3px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 18px;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.22s ease, visibility 0.22s ease;
+    }
+    .rules-modal.show {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+    .rules-modal-card {
+        width: min(900px, 100%);
+        max-height: 82vh;
+        overflow: auto;
+        border-radius: 16px;
+        background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+        border: 1px solid rgba(255,255,255,0.16);
+        box-shadow: 0 16px 50px rgba(0,0,0,0.6);
+        padding: 18px 18px 14px;
+        color: var(--light-text);
+        transform: translateY(12px) scale(0.98);
+        opacity: 0.96;
+        transition: transform 0.22s ease, opacity 0.22s ease;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 138, 0, 0.9) rgba(255,255,255,0.08);
+    }
+    .rules-modal-card::-webkit-scrollbar {
+        width: 10px;
+    }
+    .rules-modal-card::-webkit-scrollbar-track {
+        background: rgba(255,255,255,0.08);
+        border-radius: 999px;
+    }
+    .rules-modal-card::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, var(--accent), var(--accent-2));
+        border-radius: 999px;
+        border: 2px solid rgba(8, 6, 10, 0.45);
+    }
+    .rules-modal-card::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(180deg, #ff9c1f, #ffe08c);
+    }
+    .rules-modal.show .rules-modal-card {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    .rules-modal-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 8px;
+    }
+    .rules-modal-title {
+        margin: 0;
+        font-size: 1.35rem;
+        font-weight: 900;
+        color: var(--accent-2);
+    }
+    .rules-close {
+        border: 0;
+        background: rgba(255,255,255,0.12);
+        color: #fff;
+        width: 32px;
+        height: 32px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 18px;
+        line-height: 1;
+        font-weight: 700;
+    }
+    .rules-block h4 {
+        margin: 14px 0 8px;
+        color: var(--accent);
+        font-size: 1.02rem;
+    }
+    .rules-block ul { margin: 0; padding-left: 18px; }
+    .rules-block li {
+        margin: 0 0 8px;
+        color: var(--muted);
+        line-height: 1.45;
+    }
+    .rules-end {
+        margin-top: 12px;
+        color: var(--accent-2);
+        font-weight: 700;
+    }
 
     /* Style du bouton d'envoi */
     .btn-submit {
@@ -599,7 +702,7 @@
 
                 <div class="form-group">
                     <input type="checkbox" id="chk_reglement" name="commitments" value="Reglement" required>
-                    <label for="chk_reglement">Je connais et respecte le règlement du serveur. <span class="required-star">*</span></label>
+                    <label for="chk_reglement">Je connais et respecte le <span class="rules-link" id="openRulesModal" role="button" tabindex="0">règlement</span> du serveur. <span class="required-star">*</span></label>
                 </div>
                 
                 <div class="form-group">
@@ -643,6 +746,37 @@
 
   <!-- Notification Box -->
   <div id="notification" class="notification-box"></div>
+  <div id="rulesModal" class="rules-modal" aria-hidden="true">
+    <div class="rules-modal-card" role="dialog" aria-modal="true" aria-labelledby="rulesTitle">
+      <div class="rules-modal-head">
+        <h3 id="rulesTitle" class="rules-modal-title">Règlement du serveur</h3>
+        <button type="button" id="closeRulesModal" class="rules-close" aria-label="Fermer">×</button>
+      </div>
+      <div class="rules-block">
+        <h4>I. Le savoir-vivre</h4>
+        <ul>
+          <li><b>Respect avant tout</b> : pas d'insultes, de haine, de harcèlement ou de propos discriminatoires. Pas de diffusion d'informations personnelles sans accord. Les comportements toxiques, dramas et conflits sont interdits.</li>
+          <li><b>Évitez les sujets sensibles</b> : pas de politique, religion, contenu sexuel, drague, gore ou tout sujet choquant (NSFW, etc). Ne ramenez pas de conflits externes ou de dramas sur le serveur.</li>
+          <li><b>Pas de spam ni de pub sauvage</b> : le flood, le spam et la pub non autorisée (y compris en MP) sont interdits. La publicité n'est tolérée que si le staff l'autorise ou dans le salon dédié.</li>
+        </ul>
+        <h4>II. Sécurité</h4>
+        <ul>
+          <li><b>Profil approprié</b> : vos pseudos, avatars, pronoms, bios et statuts doivent rester corrects, respectueux et adaptés à tous.</li>
+          <li><b>Pas de piratage</b> : toute forme de piratage est strictement interdite. Cela inclut notamment le partage ou la demande de fichiers, de liens, de ROMs, de cracks, de clés, ainsi que la mention ou la diffusion de noms de sites permettant d'en obtenir.</li>
+          <li><b>Pas de doubles comptes ni de bypass</b> : un seul compte par personne est autorisé. Toute tentative de contourner les règles ou les sanctions entraînera une exclusion.</li>
+          <li><b>Respect des règles Discord</b> : vous devez suivre les Conditions d'Utilisation et les Community Guidelines de Discord.</li>
+        </ul>
+        <h4>III. Discussions & salons</h4>
+        <ul>
+          <li><b>Respectez les salons</b> : utilisez chaque salon pour son sujet prévu. Lisez les descriptions pour ne pas vous tromper.</li>
+          <li><b>Clarté dans vos messages</b> : soyez précis dans vos demandes ou discussions pour éviter les malentendus.</li>
+          <li><b>Pas de pings inutiles</b> : mentionnez les membres ou le staff uniquement si c'est réellement nécessaire.</li>
+          <li><b>Autorité de la modération</b> : l'équipe de modération a toujours le dernier mot. Toute contestation de sanction devra obligatoirement passer par un ticket ; aucune contestation ne sera acceptée en messages privés ou dans les salons publics.</li>
+        </ul>
+      </div>
+      <p class="rules-end">Amusez-vous bien sur le serveur et assurez-vous d'avoir bien lu le règlement !</p>
+    </div>
+  </div>
 
   <!-- Audio de fond (Copié de l'index) -->
   <audio id="bgAudio" loop>
@@ -938,6 +1072,48 @@
 
     // Validation initiale
     document.addEventListener('DOMContentLoaded', validateForm);
+
+    // Popup règlement
+    const rulesModal = document.getElementById('rulesModal');
+    const openRulesModalBtn = document.getElementById('openRulesModal');
+    const closeRulesModalBtn = document.getElementById('closeRulesModal');
+
+    function openRulesModal() {
+        if (!rulesModal) return;
+        rulesModal.classList.add('show');
+        rulesModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeRulesModal() {
+        if (!rulesModal) return;
+        rulesModal.classList.remove('show');
+        rulesModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+    }
+
+    if (openRulesModalBtn) {
+        openRulesModalBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            openRulesModal();
+        });
+        openRulesModalBtn.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openRulesModal();
+            }
+        });
+    }
+    if (closeRulesModalBtn) closeRulesModalBtn.addEventListener('click', closeRulesModal);
+    if (rulesModal) {
+        rulesModal.addEventListener('click', (e) => {
+            if (e.target === rulesModal) closeRulesModal();
+        });
+    }
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeRulesModal();
+    });
 </script>
 <script>
 (function () {
@@ -946,7 +1122,7 @@
   if (!header) return;
 
   const syncHeaderOffset = () => {
-    root.style.setProperty('--header-offset', ${header.offsetHeight + 8}px);
+    root.style.setProperty('--header-offset', `${header.offsetHeight + 8}px`);
   };
 
   syncHeaderOffset();
@@ -979,4 +1155,3 @@
 </script>
 </body>
 </html>
-
