@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pig Mario Bros Wii - Ressources</title>
+  <link rel="icon" href="https://raw.githubusercontent.com/1creepertv/1creepertv.github.io/refs/heads/main/Images/Mii%20%26%20Backgrounds/Mii.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#08060a;
+      --accent: #ff8a00;
+      --accent-2: #ffd66b;
+      --muted: #cfcfd6;
+      --light-text: #fff;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:'Inter', system-ui, Segoe UI, Roboto, Arial, "Noto Sans", sans-serif;
+      background: radial-gradient(1800px 900px at 10% 10%, rgba(255,138,0,0.1), transparent),
+                  radial-gradient(1500px 700px at 90% 60%, rgba(255,214,107,0.06), transparent),
+                  var(--bg);
+      color:var(--muted);
+      min-height:100vh;
+      min-height:100svh;
+    }
+
+    .bg-img{
+      position:fixed;inset:0;z-index:-2;background-image:url('https://raw.githubusercontent.com/1creepertv/1creepertv.github.io/refs/heads/main/Images/Mii%20%26%20Backgrounds/background2.png');
+      background-size:cover;background-position:center;opacity:0.2;filter:blur(6px) saturate(1.05);
+    }
+
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 15px 20px;
+      z-index: 10;
+      backdrop-filter: blur(8px);
+      background: rgba(8, 6, 10, 0.7);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      display: flex;
+      justify-content: center;
+    }
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      width: 100%;
+    }
+    .nav-home {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .nav-home img {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      border: 2px solid rgba(255, 138, 0, 0.55);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.45);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .nav-home:hover img {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.55);
+    }
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    .nav-link {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 5px 0;
+      transition: color 0.2s, border-bottom 0.2s;
+      border-bottom: 2px solid transparent;
+    }
+    .nav-link:hover {
+      color: var(--accent-2);
+      border-bottom: 2px solid var(--accent);
+    }
+    .nav-link.active {
+      color: var(--accent);
+      border-bottom: 2px solid var(--accent);
+    }
+    .toggle{
+      color:#fff;cursor:pointer;padding:8px 12px;border-radius:999px;
+      background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.05);
+      transition: background 0.2s;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .toggle:hover{background:rgba(255,255,255,0.1)}
+    .toggle.playing{background: var(--accent); color: #1b0b00; font-weight: 700; border: none;}
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 30px 20px;
+      padding-top: calc(var(--header-offset, 88px) + 20px);
+    }
+
+    .section-glass {
+      padding: 30px;
+      margin-bottom: 24px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      border: 1px solid rgba(255,255,255,0.05);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+      backdrop-filter: blur(10px) saturate(1.2);
+    }
+
+    .mod-logo {
+      width:min(380px, 100%);
+      display:block;
+      margin:0 auto 20px;
+    }
+    .title {
+      margin:0 0 8px;
+      font-family: 'Montserrat', sans-serif;
+      color:var(--light-text);
+      font-size:2.3rem;
+      text-align:center;
+      line-height:1.1;
+    }
+    .subtitle {
+      text-align:center;
+      margin:0 0 22px;
+      color:var(--accent-2);
+      font-weight:600;
+    }
+    .description {
+      margin:0;
+      line-height:1.7;
+      font-size:1.02rem;
+    }
+
+    .mod-meta {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+      gap:12px;
+      margin:20px 0;
+    }
+    .meta-item {
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:12px;
+      padding:12px;
+    }
+    .meta-item strong {
+      color:var(--light-text);
+      display:block;
+      margin-bottom:4px;
+    }
+
+    .actions {
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:18px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+      color:#1b0b00;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      padding:12px 16px;
+      border-radius:12px;
+      font-weight:700;
+      border:none;
+      transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+    }
+    .btn.secondary{
+      background:rgba(255,255,255,0.04);
+      color:var(--muted);
+      border:1px solid rgba(255,255,255,0.1);
+    }
+    .btn:hover{
+      transform: translateY(-4px);
+      box-shadow: 0 14px 32px rgba(0,0,0,0.5);
+      filter: brightness(1.04);
+    }
+
+    .gallery {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+      gap:14px;
+    }
+    .gallery img {
+      width:100%;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,0.1);
+      box-shadow:0 8px 24px rgba(0,0,0,0.45);
+      background:#0d0a10;
+    }
+
+    .footer-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      padding: 20px 0 10px;
+      text-align: center;
+    }
+
+    @media (max-width: 700px) {
+      .header { padding: 8px 10px; }
+      .nav-content {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        gap: 8px;
+        align-items: center;
+      }
+      .nav-home img { width: 28px; height: 28px; border-radius: 8px; }
+      .nav-links {
+        min-width: 0;
+        gap: 10px;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        scrollbar-width: none;
+      }
+      .nav-links::-webkit-scrollbar { display: none; }
+      .nav-link { font-size: 13px; white-space: nowrap; }
+      .toggle { padding: 5px 8px; font-size: 12px; }
+      .container { padding: 20px 12px; padding-top: calc(var(--header-offset, 88px) + 12px); }
+      .section-glass { padding: 20px; border-radius: 18px; }
+      .title { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-img" aria-hidden="true"></div>
+
+  <header class="header">
+    <div class="nav-content">
+      <a class="nav-home" href="https://1creepertv.github.io" aria-label="Accueil">
+        <img src="https://raw.githubusercontent.com/1creepertv/1creepertv.github.io/refs/heads/main/Images/Mii%20%26%20Backgrounds/Mii.png" alt="Icone du site">
+      </a>
+      <nav class="nav-links">
+        <a href="https://1creepertv.github.io" class="nav-link">Accueil</a>
+        <a href="https://1creepertv.github.io/tutoriels" class="nav-link">Tutoriels</a>
+        <a href="https://1creepertv.github.io/partenaires" class="nav-link">Partenaires</a>
+        <a href="https://1creepertv.github.io/ressources" class="nav-link active">Ressources</a>
+        <a href="https://1creepertv.github.io/a-propos" class="nav-link">À Propos</a>
+        <a href="https://1creepertv.github.io/recrutements" class="nav-link">Recrutements</a>
+      </nav>
+      <button id="playPause" class="toggle">🔈 Jouer</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section-glass">
+      <img class="mod-logo" src="../Images/Ressources%20mods/Pig%20Mario%20Bros%20Wii/wiiMario_Title_logo_local_00.tpl-0-removebg-preview_1.png" alt="Logo Pig Mario Bros Wii">
+      <h1 class="title">Pig Mario Bros Wii</h1>
+      <p class="subtitle">Aventure personnalisee en cours de developpement</p>
+
+      <p class="description">
+        Bienvenue dans mon aventure. Plonge dans une experience entierement revisitée avec de nombreux contenus personnalisés:
+        musiques custom pour une ambiance unique, niveaux inedits a explorer, cartes du monde personnalisees,
+        et bien d'autres surprises a decouvrir.
+      </p>
+
+      <div class="mod-meta">
+        <div class="meta-item">
+          <strong>Auteur</strong>
+          Communaute CreeperTV
+        </div>
+        <div class="meta-item">
+          <strong>Statut</strong>
+          En cours de developpement
+        </div>
+        <div class="meta-item">
+          <strong>Telechargement</strong>
+          Pas encore disponible publiquement
+        </div>
+      </div>
+
+      <div class="actions">
+        <a class="btn" href="https://www.youtube.com/watch?v=aa9wlJVfmzw" target="_blank" rel="noopener noreferrer">Voir le trailer</a>
+        <a class="btn secondary" href="../ressources.html">Retour a la liste</a>
+      </div>
+    </section>
+
+    <section class="section-glass">
+      <h2 style="margin-top:0;color:var(--light-text);font-size:1.6rem;">Images d'apercu</h2>
+      <div class="gallery">
+        <img src="../Images/Ressources%20mods/Pig%20Mario%20Bros%20Wii/wiiMario_Title_logo_local_00.tpl-0-removebg-preview_1.png" alt="Apercu logo Pig Mario Bros Wii">
+        <img src="../Images/Ressources%20mods/Pig%20Mario%20Bros%20Wii/PMBW_LD.png" alt="Apercu niveau Pig Mario Bros Wii">
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    <div class="footer-section">
+      © CreeperTV — Made with 🔥 in France.
+    </div>
+  </footer>
+
+  <audio id="bgAudio" loop>
+    <source src="https://github.com/1creepertv/1creepertv.github.io/raw/refs/heads/main/Images/Musiques/06.%20Purchase%20Software%20(3DS).mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+  const audio = document.getElementById('bgAudio');
+  const btn = document.getElementById('playPause');
+  let playing = false;
+
+  function toggleAudio() {
+    if (!playing) {
+      audio.volume = 0.28;
+      audio.play().then(() => {
+        btn.textContent = '🔊 Lecture';
+        btn.classList.add('playing');
+        playing = true;
+      }).catch(() => {
+        btn.textContent = '🔇 Erreur';
+        btn.classList.remove('playing');
+        playing = false;
+      });
+    } else {
+      audio.pause();
+      btn.textContent = '🔈 Jouer';
+      btn.classList.remove('playing');
+      playing = false;
+    }
+  }
+
+  btn.addEventListener('click', toggleAudio);
+  </script>
+  <script>
+  (function () {
+    const root = document.documentElement;
+    const header = document.querySelector('.header');
+    if (!header) return;
+
+    const syncHeaderOffset = () => {
+      root.style.setProperty('--header-offset', `${header.offsetHeight + 8}px`);
+    };
+
+    syncHeaderOffset();
+    window.addEventListener('resize', syncHeaderOffset);
+    window.addEventListener('orientationchange', syncHeaderOffset);
+    window.addEventListener('load', syncHeaderOffset);
+  })();
+  </script>
+</body>
+</html>
