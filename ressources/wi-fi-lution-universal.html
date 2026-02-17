@@ -3,7 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CreeperTV - Ressources</title>
+  <title>Wi-Fi Lution Universal - Ressources</title>
+  <meta property="og:title" content="Wi-Fi Lution Universal - Ressources" />
+  <meta property="og:description" content="WFC Loader Riivolution pour Mario Kart Wii PAL avec plusieurs services WFC compatibles." />
+  <meta property="og:image" content="https://raw.githubusercontent.com/1CreeperTV/1creepertv.github.io/refs/heads/main/Images/Ressources%20mods/Wi-Fi%20Lution%20Universal/IMG_4996.png" />
+  <meta property="og:url" content="https://1creepertv.github.io/ressources/wi-fi-lution-universal.html" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Wi-Fi Lution Universal - Ressources" />
+  <meta name="twitter:description" content="WFC Loader Riivolution pour Mario Kart Wii PAL avec plusieurs services WFC compatibles." />
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/1CreeperTV/1creepertv.github.io/refs/heads/main/Images/Ressources%20mods/Wi-Fi%20Lution%20Universal/IMG_4996.png" />
   <link rel="icon" href="https://raw.githubusercontent.com/1creepertv/1creepertv.github.io/refs/heads/main/Images/Mii%20%26%20Backgrounds/Mii.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
@@ -11,7 +20,6 @@
   <style>
     :root{
       --bg:#08060a;
-      --glass: rgba(255,255,255,0.06);
       --accent: #ff8a00;
       --accent-2: #ffd66b;
       --muted: #cfcfd6;
@@ -117,7 +125,7 @@
 
     .section-glass {
       padding: 30px;
-      margin-bottom: 40px;
+      margin-bottom: 24px;
       border-radius: 24px;
       background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
       border: 1px solid rgba(255,255,255,0.05);
@@ -125,96 +133,148 @@
       backdrop-filter: blur(10px) saturate(1.2);
     }
 
-    .main-header {
-      text-align: center;
-      margin-bottom: 40px;
+    .mod-logo {
+      width:min(460px, 100%);
+      display:block;
+      margin:0 auto 20px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,0.12);
+      box-shadow:0 12px 28px rgba(0,0,0,0.45);
     }
-    .main-header h1 {
+    .title {
+      margin:0 0 8px;
       font-family: 'Montserrat', sans-serif;
-      font-size: 3rem;
-      font-weight: 900;
-      color: var(--light-text);
-      margin: 0;
-      line-height: 1;
+      color:var(--light-text);
+      font-size:2.2rem;
+      text-align:center;
+      line-height:1.1;
     }
-    .main-header .subtitle {
-      font-size: 1.1rem;
-      color: var(--accent-2);
-      margin: 10px 0 0;
-      font-weight: 600;
+    .subtitle {
+      text-align:center;
+      margin:0 0 22px;
+      color:var(--accent-2);
+      font-weight:600;
+    }
+    .description {
+      margin:0;
+      line-height:1.7;
+      font-size:1.02rem;
     }
 
-    .category-block + .category-block {
-      margin-top: 30px;
+    .mod-meta {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+      gap:12px;
+      margin:20px 0;
     }
-    .category-title {
-      margin: 0 0 16px;
-      color: var(--light-text);
-      font-size: 1.35rem;
-      font-weight: 800;
-      display: inline-block;
-      border-bottom: 2px solid rgba(255, 138, 0, 0.5);
-      padding-bottom: 5px;
+    .meta-item {
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:12px;
+      padding:12px;
     }
-    .mods-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 24px;
+    .meta-item strong {
+      color:var(--light-text);
+      display:block;
+      margin-bottom:4px;
     }
-    .mod-card {
-      display: block;
-      text-decoration: none;
-      color: inherit;
-      border-radius: 18px;
-      overflow: hidden;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.45);
-      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+
+    .actions {
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:18px;
     }
-    .mod-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 40px rgba(255, 138, 0, 0.25);
-      border-color: rgba(255, 138, 0, 0.55);
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+      color:#1b0b00;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      padding:12px 16px;
+      border-radius:12px;
+      font-weight:700;
+      border:none;
+      transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.35);
     }
-    .mod-media {
-      position: relative;
+    .btn.secondary{
+      background:rgba(255,255,255,0.04);
+      color:var(--muted);
+      border:1px solid rgba(255,255,255,0.1);
     }
-    .mod-thumb {
+    .btn:hover{
+      transform: translateY(-4px);
+      box-shadow: 0 14px 32px rgba(0,0,0,0.5);
+      filter: brightness(1.04);
+    }
+
+    .wfc-list {
+      margin: 10px 0 0;
+      padding-left: 18px;
+      line-height: 1.7;
+    }
+    .wfc-list li {
+      margin: 0;
+    }
+
+    .widget-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 8px;
+    }
+    .discord-widget-card {
       width: 100%;
-      height: 190px;
-      object-fit: cover;
-      background: linear-gradient(45deg, #1b0b00, #331a00);
+      max-width: 760px;
+      display: grid;
+      grid-template-columns: 92px 1fr auto;
+      gap: 14px;
+      align-items: center;
+      background: linear-gradient(135deg, rgba(88,101,242,0.18), rgba(255,255,255,0.04));
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 18px;
+      padding: 14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.45);
     }
-    .mod-body { padding: 16px; }
-    .mod-title {
-      margin: 0 0 8px;
+    .discord-widget-icon {
+      width: 92px;
+      height: 92px;
+      border-radius: 16px;
+      object-fit: cover;
+      border: 2px solid rgba(255,255,255,0.14);
+    }
+    .discord-widget-title {
+      margin: 0 0 6px;
       color: var(--light-text);
       font-size: 1.2rem;
       font-weight: 800;
     }
-    .mod-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      position: absolute;
-      left: 12px;
-      bottom: 12px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(8, 6, 10, 0.75);
-      border: 1px solid rgba(255, 214, 107, 0.5);
-      color: #ffe29b;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.2px;
-      backdrop-filter: blur(2px);
-    }
-    .mod-desc {
+    .discord-widget-text {
       margin: 0;
       color: var(--muted);
-      line-height: 1.45;
-      font-size: 0.97rem;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+    .discord-widget-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      background: linear-gradient(90deg,#5865F2,#7984f4);
+      color: #fff;
+      border-radius: 12px;
+      padding: 10px 14px;
+      font-weight: 800;
+      border: 0;
+      white-space: nowrap;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .discord-widget-btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.55);
     }
 
     .footer-section {
@@ -226,7 +286,6 @@
       padding: 20px 0 10px;
       text-align: center;
     }
-
     .back-to-top {
       position: fixed;
       right: 18px;
@@ -273,20 +332,24 @@
       .nav-link { font-size: 13px; white-space: nowrap; }
       .toggle { padding: 5px 8px; font-size: 12px; }
       .container { padding: 20px 12px; padding-top: calc(var(--header-offset, 88px) + 12px); }
-      .main-header h1 { font-size: 2.2rem; }
       .section-glass { padding: 20px; border-radius: 18px; }
+      .title { font-size: 1.8rem; }
+      .discord-widget-card {
+        grid-template-columns: 68px 1fr;
+        gap: 10px;
+        padding: 12px;
+      }
+      .discord-widget-icon { width: 68px; height: 68px; border-radius: 12px; }
+      .discord-widget-btn {
+        grid-column: 1 / -1;
+        width: 100%;
+      }
       .back-to-top {
         right: 12px;
         bottom: 12px;
         font-size: 12px;
         padding: 8px 10px;
       }
-    }
-    @media (max-width: 1050px) {
-      .mods-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-    @media (max-width: 680px) {
-      .mods-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -303,64 +366,68 @@
         <a href="https://1creepertv.github.io/tutoriels" class="nav-link">Tutoriels</a>
         <a href="https://1creepertv.github.io/partenaires" class="nav-link">Partenaires</a>
         <a href="https://1creepertv.github.io/ressources" class="nav-link active">Ressources</a>
-        <a href="https://1creepertv.github.io/a-propos" class="nav-link">À Propos</a>
+        <a href="https://1creepertv.github.io/a-propos" class="nav-link">&Agrave; Propos</a>
         <a href="https://1creepertv.github.io/recrutements" class="nav-link">Recrutements</a>
       </nav>
-      <button id="playPause" class="toggle">🔈 Jouer</button>
+      <button id="playPause" class="toggle">&#128264; Jouer</button>
     </div>
   </header>
 
   <main class="container">
-    <div class="main-header">
-      <h1>Ressources Mods</h1>
-      <p class="subtitle">Liste statique des mods de la communauté de CreeperTV.</p>
-    </div>
+    <section class="section-glass">
+      <img class="mod-logo" src="../Images/Ressources%20mods/Wi-Fi%20Lution%20Universal/IMG_4996.png" alt="Wi-Fi Lution Universal">
+      <h1 class="title">Wi-Fi Lution Universal</h1>
+      <p class="subtitle">WFC Loader Riivolution pour Mario Kart Wii PAL</p>
+
+      <p class="description">
+        Wi-Fi Lution Universal est un homebrew pour Riivolution qui facilite le chargement des services WFC sur Mario Kart Wii PAL.
+      </p>
+
+      <div class="mod-meta">
+        <div class="meta-item">
+          <strong>Auteur</strong>
+          the_real_ctrl_j
+        </div>
+        <div class="meta-item">
+          <strong>Console</strong>
+          &#127918; Wii
+        </div>
+        <div class="meta-item">
+          <strong>Compatibilit&eacute;</strong>
+          Homebrew Riivolution / MKWii PAL
+        </div>
+        <div class="meta-item">
+          <strong>T&eacute;l&eacute;chargement</strong>
+          Archive ZIP disponible
+        </div>
+      </div>
+
+      <p class="description" style="margin-top:12px;"><strong>Services WFC support&eacute;s :</strong></p>
+      <ul class="wfc-list">
+        <li>Wimmfi</li>
+        <li>NewWFC</li>
+        <li>WiiLink</li>
+        <li>AltWFC</li>
+        <li>NinjaWFC</li>
+        <li>AlexisOnline</li>
+        <li>AngeloWFC</li>
+      </ul>
+
+      <div class="actions">
+        <a class="btn" href="https://github.com/1CreeperTV/1creepertv.github.io/raw/refs/heads/main/Images/Ressources%20mods/Wi-Fi%20Lution%20Universal/WIfilution.zip" target="_blank" rel="noopener noreferrer">T&eacute;l&eacute;charger</a>
+        <a class="btn secondary" href="../ressources.html">Retour &agrave; la liste</a>
+      </div>
+    </section>
 
     <section class="section-glass">
-      <div class="category-block">
-        <h2 class="category-title">Mods</h2>
-        <div class="mods-grid">
-          <a class="mod-card" href="ressources/pig-mario-bros-wii.html">
-            <div class="mod-media">
-              <img class="mod-thumb" src="Images/Ressources%20mods/Pig%20Mario%20Bros%20Wii/PMBW_LD.png" alt="Apercu Pig Mario Bros Wii">
-              <span class="mod-tag">🎮 Wii</span>
-            </div>
-            <div class="mod-body">
-              <h2 class="mod-title">Pig Mario Bros Wii</h2>
-              <p class="mod-desc">Musiques custom, niveaux inédits et cartes du monde personnalisées.</p>
-            </div>
-          </a>
-          <a class="mod-card" href="ressources/nintendo-gamecube-splash.html">
-            <div class="mod-media">
-              <img class="mod-thumb" src="https://raw.githubusercontent.com/1CreeperTV/1creepertv.github.io/refs/heads/main/Images/Ressources%20mods/Nintendo%20Gamecube%20Splash/splash.png" alt="Apercu Nintendo Gamecube Splash">
-              <span class="mod-tag">🎮 Wii U</span>
-            </div>
-            <div class="mod-body">
-              <h2 class="mod-title">Nintendo Gamecube Splash</h2>
-              <p class="mod-desc">Splash Wii U custom prêt à l'emploi.</p>
-            </div>
-          </a>
-          
-          <a class="mod-card" href="ressources/extra-super-mario-bros-3.html">
-            <div class="mod-media">
-              <img class="mod-thumb" src="Images/Ressources%20mods/Extra%20Super%20Mario%20Bros.%203/1-4_Fortress-2.png" alt="Apercu Extra Super Mario Bros. 3">
-              <span class="mod-tag">🎮 NES</span>
-            </div>
-            <div class="mod-body">
-              <h2 class="mod-title">Extra Super Mario Bros. 3</h2>
-              <p class="mod-desc">ROM Hack entièrement reconstruit avec niveaux inédits et difficulté relevée.</p>
-            </div>
-          </a>
-          <a class="mod-card" href="ressources/wi-fi-lution-universal.html">
-            <div class="mod-media">
-              <img class="mod-thumb" src="Images/Ressources%20mods/Wi-Fi%20Lution%20Universal/IMG_4996.png" alt="Apercu Wi-Fi Lution Universal">
-              <span class="mod-tag">&#127918; Wii</span>
-            </div>
-            <div class="mod-body">
-              <h2 class="mod-title">Wi-Fi Lution Universal</h2>
-              <p class="mod-desc">WFC Loader Riivolution pour Mario Kart Wii PAL avec plusieurs serveurs en ligne compatibles.</p>
-            </div>
-          </a>
+      <div class="widget-container">
+        <div class="discord-widget-card">
+          <img class="discord-widget-icon" src="https://raw.githubusercontent.com/1creepertv/1creepertv.github.io/refs/heads/main/Images/Mii%20%26%20Backgrounds/lv_0_2025112922-1764451316159.gif" alt="Logo du serveur Discord">
+          <div>
+            <h3 class="discord-widget-title">Rejoins le serveur Discord</h3>
+            <p class="discord-widget-text">Entraide modding, ressources utiles, astuces, chill (soir&eacute;es jeux) et communaut&eacute; active chaque jour.</p>
+          </div>
+          <a class="discord-widget-btn" href="https://discord.gg/AQ7w57CKk8" target="_blank" rel="noopener noreferrer">Rejoindre</a>
         </div>
       </div>
     </section>
@@ -368,7 +435,7 @@
 
   <footer class="container">
     <div class="footer-section">
-      © CreeperTV — Made with 🔥 in France.
+      &copy; CreeperTV - Made with &#128293; in France.
     </div>
   </footer>
   <button id="backToTop" class="back-to-top" aria-label="Retour en haut" title="Retour en haut">&uarr;</button>
@@ -386,17 +453,17 @@
     if (!playing) {
       audio.volume = 0.28;
       audio.play().then(() => {
-        btn.textContent = '🔊 Lecture';
+        btn.textContent = '\uD83D\uDD0A Lecture';
         btn.classList.add('playing');
         playing = true;
       }).catch(() => {
-        btn.textContent = '🔇 Erreur';
+        btn.textContent = '\uD83D\uDD07 Erreur';
         btn.classList.remove('playing');
         playing = false;
       });
     } else {
       audio.pause();
-      btn.textContent = '🔈 Jouer';
+      btn.textContent = '\uD83D\uDD08 Jouer';
       btn.classList.remove('playing');
       playing = false;
     }
@@ -444,7 +511,5 @@
   </script>
 </body>
 </html>
-
-
 
 
