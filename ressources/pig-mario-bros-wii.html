@@ -210,6 +210,51 @@
       box-shadow:0 8px 24px rgba(0,0,0,0.45);
       background:#0d0a10;
     }
+    .discord-embed-wrap {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      justify-items: center;
+    }
+    .discord-embed-title {
+      margin: 0;
+      color: var(--light-text);
+      font-size: 1.4rem;
+      font-weight: 800;
+      text-align: center;
+    }
+    .discord-embed-text {
+      margin: 0;
+      color: var(--muted);
+      text-align: center;
+      max-width: 720px;
+    }
+    .discord-embed-frame {
+      width: min(100%, 420px);
+      height: 500px;
+      border: 0;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      background: rgba(255,255,255,0.03);
+    }
+    .discord-join-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      background: linear-gradient(90deg,#5865F2,#7984f4);
+      color: #fff;
+      border-radius: 12px;
+      padding: 10px 14px;
+      font-weight: 800;
+      border: 0;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .discord-join-btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.55);
+    }
 
     .footer-section {
       display: flex;
@@ -309,6 +354,15 @@
       <div class="gallery">
         <img src="../Images/Ressources%20mods/Pig%20Mario%20Bros%20Wii/wiiMario_Title_logo_local_00.tpl-0-removebg-preview_1.png" alt="Apercu logo Pig Mario Bros Wii">
         <img src="../Images/Ressources%20mods/Pig%20Mario%20Bros%20Wii/PMBW_LD.png" alt="Apercu niveau Pig Mario Bros Wii">
+      </div>
+    </section>
+
+    <section class="section-glass">
+      <div class="discord-embed-wrap">
+        <h2 class="discord-embed-title">Rejoindre le Discord</h2>
+        <p class="discord-embed-text">Retrouvez les ressources, les annonces et l'entraide modding sur le serveur.</p>
+        <iframe class="discord-embed-frame" src="https://discord.com/widget?id=1409245512904872141&theme=dark" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts" title="Widget Discord"></iframe>
+        <a class="discord-join-btn" href="https://discord.gg/AQ7w57CKk8" target="_blank" rel="noopener noreferrer">Rejoindre le serveur</a>
       </div>
     </section>
   </main>
