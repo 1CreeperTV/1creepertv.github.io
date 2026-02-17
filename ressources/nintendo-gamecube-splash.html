@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CreeperTV - Ressources</title>
+  <title>Nintendo Gamecube Splash - Ressources</title>
   <link rel="icon" href="https://raw.githubusercontent.com/1creepertv/1creepertv.github.io/refs/heads/main/Images/Mii%20%26%20Backgrounds/Mii.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
@@ -11,7 +11,6 @@
   <style>
     :root{
       --bg:#08060a;
-      --glass: rgba(255,255,255,0.06);
       --accent: #ff8a00;
       --accent-2: #ffd66b;
       --muted: #cfcfd6;
@@ -117,7 +116,7 @@
 
     .section-glass {
       padding: 30px;
-      margin-bottom: 40px;
+      margin-bottom: 24px;
       border-radius: 24px;
       background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
       border: 1px solid rgba(255,255,255,0.05);
@@ -125,96 +124,81 @@
       backdrop-filter: blur(10px) saturate(1.2);
     }
 
-    .main-header {
-      text-align: center;
-      margin-bottom: 40px;
+    .mod-logo {
+      width:min(760px, 100%);
+      display:block;
+      margin:0 auto 20px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,0.12);
+      box-shadow:0 12px 28px rgba(0,0,0,0.45);
     }
-    .main-header h1 {
+    .title {
+      margin:0 0 8px;
       font-family: 'Montserrat', sans-serif;
-      font-size: 3rem;
-      font-weight: 900;
-      color: var(--light-text);
-      margin: 0;
-      line-height: 1;
+      color:var(--light-text);
+      font-size:2.2rem;
+      text-align:center;
+      line-height:1.1;
     }
-    .main-header .subtitle {
-      font-size: 1.1rem;
-      color: var(--accent-2);
-      margin: 10px 0 0;
-      font-weight: 600;
+    .subtitle {
+      text-align:center;
+      margin:0 0 22px;
+      color:var(--accent-2);
+      font-weight:600;
+    }
+    .description {
+      margin:0;
+      line-height:1.7;
+      font-size:1.02rem;
     }
 
-    .category-block + .category-block {
-      margin-top: 30px;
+    .mod-meta {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+      gap:12px;
+      margin:20px 0;
     }
-    .category-title {
-      margin: 0 0 16px;
-      color: var(--light-text);
-      font-size: 1.35rem;
-      font-weight: 800;
-      display: inline-block;
-      border-bottom: 2px solid rgba(255, 138, 0, 0.5);
-      padding-bottom: 5px;
+    .meta-item {
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:12px;
+      padding:12px;
     }
-    .mods-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
+    .meta-item strong {
+      color:var(--light-text);
+      display:block;
+      margin-bottom:4px;
     }
-    .mod-card {
-      display: block;
-      text-decoration: none;
-      color: inherit;
-      border-radius: 18px;
-      overflow: hidden;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.45);
-      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+
+    .actions {
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:18px;
     }
-    .mod-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 40px rgba(255, 138, 0, 0.25);
-      border-color: rgba(255, 138, 0, 0.55);
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+      color:#1b0b00;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      padding:12px 16px;
+      border-radius:12px;
+      font-weight:700;
+      border:none;
+      transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.35);
     }
-    .mod-media {
-      position: relative;
+    .btn.secondary{
+      background:rgba(255,255,255,0.04);
+      color:var(--muted);
+      border:1px solid rgba(255,255,255,0.1);
     }
-    .mod-thumb {
-      width: 100%;
-      height: 190px;
-      object-fit: cover;
-      background: linear-gradient(45deg, #1b0b00, #331a00);
-    }
-    .mod-body { padding: 16px; }
-    .mod-title {
-      margin: 0 0 8px;
-      color: var(--light-text);
-      font-size: 1.2rem;
-      font-weight: 800;
-    }
-    .mod-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      position: absolute;
-      left: 12px;
-      bottom: 12px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(8, 6, 10, 0.75);
-      border: 1px solid rgba(255, 214, 107, 0.5);
-      color: #ffe29b;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.2px;
-      backdrop-filter: blur(2px);
-    }
-    .mod-desc {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.45;
-      font-size: 0.97rem;
+    .btn:hover{
+      transform: translateY(-4px);
+      box-shadow: 0 14px 32px rgba(0,0,0,0.5);
+      filter: brightness(1.04);
     }
 
     .footer-section {
@@ -225,31 +209,6 @@
       color: rgba(255,255,255,0.45);
       padding: 20px 0 10px;
       text-align: center;
-    }
-
-    .back-to-top {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      z-index: 60;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
-      color: #1b0b00;
-      font-weight: 800;
-      font-size: 13px;
-      padding: 10px 12px;
-      border-radius: 999px;
-      cursor: pointer;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.45);
-      opacity: 0;
-      transform: translateY(8px);
-      pointer-events: none;
-      transition: opacity 0.2s ease, transform 0.2s ease;
-    }
-    .back-to-top.show {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
     }
 
     @media (max-width: 700px) {
@@ -273,14 +232,8 @@
       .nav-link { font-size: 13px; white-space: nowrap; }
       .toggle { padding: 5px 8px; font-size: 12px; }
       .container { padding: 20px 12px; padding-top: calc(var(--header-offset, 88px) + 12px); }
-      .main-header h1 { font-size: 2.2rem; }
       .section-glass { padding: 20px; border-radius: 18px; }
-      .back-to-top {
-        right: 12px;
-        bottom: 12px;
-        font-size: 12px;
-        padding: 8px 10px;
-      }
+      .title { font-size: 1.8rem; }
     }
   </style>
 </head>
@@ -305,36 +258,34 @@
   </header>
 
   <main class="container">
-    <div class="main-header">
-      <h1>Ressources Mods</h1>
-      <p class="subtitle">Liste statique des mods de la communaute.</p>
-    </div>
-
     <section class="section-glass">
-      <div class="category-block">
-        <h2 class="category-title">Mods</h2>
-        <div class="mods-grid">
-        <a class="mod-card" href="ressources/pig-mario-bros-wii.html">
-          <div class="mod-media">
-            <img class="mod-thumb" src="Images/Ressources%20mods/Pig%20Mario%20Bros%20Wii/PMBW_LD.png" alt="Apercu Pig Mario Bros Wii">
-            <span class="mod-tag">🎮 Wii</span>
-          </div>
-          <div class="mod-body">
-            <h2 class="mod-title">Pig Mario Bros Wii</h2>
-            <p class="mod-desc">Musiques custom, niveaux inedits et cartes du monde personnalisees. Cliquez pour ouvrir la fiche complete du mod.</p>
-          </div>
-        </a>
-        <a class="mod-card" href="ressources/nintendo-gamecube-splash.html">
-          <div class="mod-media">
-            <img class="mod-thumb" src="https://raw.githubusercontent.com/1CreeperTV/1creepertv.github.io/refs/heads/main/Images/Ressources%20mods/Nintendo%20Gamecube%20Splash/splash.png" alt="Apercu Nintendo Gamecube Splash">
-            <span class="mod-tag">Wii U</span>
-          </div>
-          <div class="mod-body">
-            <h2 class="mod-title">Nintendo Gamecube Splash</h2>
-            <p class="mod-desc">Splash Wii U custom pret a l'emploi. Cliquez pour voir les details et le telechargement.</p>
-          </div>
-        </a>
+      <img class="mod-logo" src="https://raw.githubusercontent.com/1CreeperTV/1creepertv.github.io/refs/heads/main/Images/Ressources%20mods/Nintendo%20Gamecube%20Splash/splash.png" alt="Nintendo Gamecube Splash">
+      <h1 class="title">Nintendo Gamecube Splash</h1>
+      <p class="subtitle">Splash custom pour Wii U</p>
+
+      <p class="description">
+        Tout est deja fait. Vous devez juste le placer dans
+        <code>SD:\wiiu\environments\aroma</code> sur votre carte SD.
+      </p>
+
+      <div class="mod-meta">
+        <div class="meta-item">
+          <strong>Auteur</strong>
+          1CreeperTV
         </div>
+        <div class="meta-item">
+          <strong>Console</strong>
+          Wii U
+        </div>
+        <div class="meta-item">
+          <strong>Type</strong>
+          Splash
+        </div>
+      </div>
+
+      <div class="actions">
+        <a class="btn" href="https://raw.githubusercontent.com/1CreeperTV/1creepertv.github.io/refs/heads/main/Images/Ressources%20mods/Nintendo%20Gamecube%20Splash/splash.png" target="_blank" rel="noopener noreferrer">Telecharger l'image</a>
+        <a class="btn secondary" href="../ressources.html">Retour a la liste</a>
       </div>
     </section>
   </main>
@@ -344,7 +295,6 @@
       © CreeperTV — Made with 🔥 in France.
     </div>
   </footer>
-  <button id="backToTop" class="back-to-top" aria-label="Retour en haut" title="Retour en haut">&uarr;</button>
 
   <audio id="bgAudio" loop>
     <source src="https://github.com/1creepertv/1creepertv.github.io/raw/refs/heads/main/Images/Musiques/06.%20Purchase%20Software%20(3DS).mp3" type="audio/mpeg">
@@ -391,28 +341,6 @@
     window.addEventListener('resize', syncHeaderOffset);
     window.addEventListener('orientationchange', syncHeaderOffset);
     window.addEventListener('load', syncHeaderOffset);
-  })();
-  </script>
-  <script>
-  (function () {
-    const topBtn = document.getElementById('backToTop');
-    if (!topBtn) return;
-
-    const syncBtn = () => {
-      if (window.scrollY > 280) {
-        topBtn.classList.add('show');
-      } else {
-        topBtn.classList.remove('show');
-      }
-    };
-
-    topBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    window.addEventListener('scroll', syncBtn, { passive: true });
-    window.addEventListener('load', syncBtn);
-    syncBtn();
   })();
   </script>
 </body>
