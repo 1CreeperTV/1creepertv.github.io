@@ -189,8 +189,51 @@
     syncBtn();
   })();
   </script>
+  <script>
+  (function () {
+    const navR = document.querySelector('.nav-links a[href="https://1creepertv.github.io/ressources"]');
+    const navP = document.querySelector('.nav-links a[href="https://1creepertv.github.io/profils"]');
+    if (!navR || !navP) return;
+
+    const setActive = (source) => {
+      navR.classList.remove('active');
+      navP.classList.remove('active');
+      if (source === 'profils') navP.classList.add('active');
+      else navR.classList.add('active');
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const fromParam = params.get('from');
+    if (fromParam === 'profils' || fromParam === 'ressources') {
+      sessionStorage.setItem('auteurs_nav_source', fromParam);
+      setActive(fromParam);
+      return;
+    }
+
+    let fromReferrer = null;
+    try {
+      if (document.referrer) {
+        const refPath = new URL(document.referrer).pathname.toLowerCase();
+        if (refPath.includes('/profils')) fromReferrer = 'profils';
+        else if (refPath.includes('/ressources')) fromReferrer = 'ressources';
+      }
+    } catch (_) {}
+
+    if (fromReferrer) {
+      sessionStorage.setItem('auteurs_nav_source', fromReferrer);
+      setActive(fromReferrer);
+      return;
+    }
+
+    const saved = sessionStorage.getItem('auteurs_nav_source');
+    if (saved === 'profils' || saved === 'ressources') {
+      setActive(saved);
+    }
+  })();
+  </script>
 </body>
 </html>
+
 
 
 
