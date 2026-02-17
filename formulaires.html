@@ -1,0 +1,1340 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CreeperTV - Formulaires</title>
+  <link rel="icon" href="https://raw.githubusercontent.com/1creepertv/1creepertv.github.io/refs/heads/main/Images/Mii%20%26%20Backgrounds/Mii.png" />
+
+  <!-- Début des balises Meta pour l'Embed Discord (Open Graph & Twitter Card) -->
+  
+  <!-- Open Graph Protocol (utilisé par Discord et Facebook) -->
+  <meta property="og:title" content="CreeperTV's Modding Server - Formulaires" />
+  <meta property="og:description" content="Vous voulez devenir Helpeur sur le Modding Server de CreeperTV ? Postulez via ce formulaire pour nous rejoindre !" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/1creepertv/1creepertv.github.io/refs/heads/main/Images/Mii%20%26%20Backgrounds/lv_0_2025112922-1764451316159.gif" />
+  <meta property="og:url" content="https://1creepertv.github.io/formulaires" />
+  <meta property="og:type" content="website" />
+  
+  <!-- Twitter Card (pour les aperçus sur Twitter, souvent lu par d'autres plateformes) -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CreeperTV's Modding Server - Formulaires">
+  <meta name="twitter:description" content="Vous voulez devenir Helpeur sur le Modding Server de CreeperTV ? Postulez via ce formulaire pour nous rejoindre !">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/1creepertv/1creepertv.github.io/refs/heads/main/Images/Mii%20%26%20Backgrounds/lv_0_2025112922-1764451316159.gif">
+  
+  <!-- Fin des balises Meta pour l'Embed Discord -->
+
+  <!-- Polices - Importées depuis la page d'accueil -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#08060a;
+      --glass: rgba(255,255,255,0.06);
+      --glass-strong: rgba(255,255,255,0.09);
+      --accent: #ff8a00; /* Orange vif */
+      --accent-2: #ffd66b; /* Jaune doux */
+      --muted: #cfcfd6;
+      --light-text: #fff;
+      --radius: 16px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior: smooth;}
+    body{
+      margin:0;
+      font-family:'Inter', system-ui, Segoe UI, Roboto, Arial, "Noto Sans", sans-serif;
+      /* Dégradé de fond personnalisé */
+      background: radial-gradient(1800px 900px at 10% 10%, rgba(255,138,0,0.1), transparent),
+                  radial-gradient(1500px 700px at 90% 60%, rgba(255,214,107,0.06), transparent),
+                  var(--bg);
+      color:var(--muted);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding: 0;
+      min-height:100vh;
+      min-height:100svh;
+    }
+
+    /* Image de fond avec filtres comme sur la page d'accueil */
+    .bg-img{
+      position:fixed;inset:0;z-index:-2;background-image:url('https://raw.githubusercontent.com/1creepertv/1creepertv.github.io/refs/heads/main/Images/Mii%20%26%20Backgrounds/background2.png');
+      background-size:cover;background-position:center;opacity:0.14;filter:none;
+    }
+
+    /* --- Barre de navigation fixe (Styles importés) --- */
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 15px 20px;
+        z-index: 10;
+        backdrop-filter:none;
+        background: rgba(8, 6, 10, 0.7);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        display: flex;
+        justify-content: center;
+    }
+    .nav-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        width: 100%;
+    }
+    .nav-home {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        flex-shrink: 0;
+    }
+    .nav-home img {
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+        border: 2px solid rgba(255, 138, 0, 0.55);
+        box-shadow: 0 4px 16px rgba(0,0,0,0.45);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .nav-home:hover img {
+        transform: translateY(-1px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.55);
+    }
+    .nav-links {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .nav-link {
+        color: var(--muted);
+        text-decoration: none;
+        font-weight: 600;
+        padding: 5px 0;
+        transition: color 0.2s, border-bottom 0.2s;
+        border-bottom: 2px solid transparent;
+    }
+    .nav-link:hover {
+        color: var(--accent-2);
+        border-bottom: 2px solid var(--accent);
+    }
+    .nav-link.active {
+        color: var(--accent);
+        border-bottom: 2px solid var(--accent);
+    }
+    /* Bouton Musique dans la nav */
+    .toggle{
+        color:#fff;cursor:pointer;padding:8px 12px;border-radius:999px;
+        background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.05); 
+        transition: background 0.2s;
+        font-weight: 600;
+        font-size: 14px;
+    }
+    .toggle:hover{background:rgba(255,255,255,0.1)}
+    .toggle.playing{background: var(--accent); color: #1b0b00; font-weight: 700; border: none;}
+    /* ----------------------------------------------------------------- */
+
+    /* Conteneur principal (Importé) */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 30px 20px;
+      padding-top: calc(var(--header-offset, 88px) + 20px); /* Espace adaptatif pour la barre de navigation fixe */
+    }
+    
+    /* Style Glassmorphism pour les sections (Importé) */
+    .section-glass {
+      padding: 30px;
+      margin-bottom: 40px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      border: 1px solid rgba(255,255,255,0.05);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+      backdrop-filter:none;
+    }
+
+    /* Titres de section (Importé) */
+    .section-title {
+        color: var(--light-text);
+        font-size: 2rem;
+        font-weight: 800;
+        margin-bottom: 25px;
+        text-align: center;
+        border-bottom: 2px solid var(--accent);
+        display: inline-block;
+        padding-bottom: 5px;
+        margin-left: auto;
+        margin-right: auto;
+        width: auto;
+    }
+
+    .main-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .main-header h1 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 3rem;
+        font-weight: 900;
+        color: var(--light-text);
+        margin: 0;
+        line-height: 1;
+    }
+    .main-header .subtitle {
+        font-size: 1.1rem;
+        color: var(--accent-2);
+        margin: 10px 0 0;
+        font-weight: 600;
+    }
+
+    .form-switcher {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: center;
+        margin: 0 0 22px;
+    }
+    .switch-btn {
+        border: 1px solid rgba(255,255,255,0.12);
+        background: rgba(255,255,255,0.05);
+        color: var(--muted);
+        font-weight: 700;
+        border-radius: 999px;
+        padding: 10px 16px;
+        cursor: pointer;
+        transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+    .switch-btn:hover {
+        border-color: rgba(255,138,0,0.5);
+        color: var(--accent-2);
+    }
+    .switch-btn.active {
+        background: linear-gradient(90deg, var(--accent), var(--accent-2));
+        color: #1b0b00;
+        border-color: transparent;
+    }
+    .section-hidden {
+        display: none;
+    }
+
+    /* --- Styles Spécifiques au Formulaire --- */
+    
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        color: var(--light-text);
+        font-weight: 600;
+        margin-bottom: 8px;
+        font-size: 1rem;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="email"],
+    /* input[type="url"], REMPLACÉ PAR TEXT */
+    input[type="date"],
+    select,
+    textarea {
+        width: 100%;
+        padding: 12px 15px;
+        border-radius: 12px;
+        border: 1px solid rgba(255,255,255,0.1);
+        background: rgba(0, 0, 0, 0.4); /* Fond sombre pour le contraste */
+        color: var(--light-text);
+        font-size: 16px;
+        transition: border-color 0.3s, box-shadow 0.3s;
+        -webkit-appearance: none; /* Pour masquer les styles par défaut sur Safari */
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+        border-color: var(--accent);
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(255, 138, 0, 0.2);
+    }
+    
+    textarea {
+        resize: vertical;
+        min-height: 120px;
+    }
+
+    select {
+        /* Style personnalisé pour les select pour mieux coller au thème */
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23cfcfd6'%3E%3Cpath d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z' clip-rule='evenodd' fill-rule='evenodd'%3E%3C/path%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 15px center;
+        padding-right: 40px;
+    }
+
+    /* Multi-select styling */
+    .multi-select-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .multi-select-group input[type="checkbox"] {
+        display: none;
+    }
+
+    .multi-select-group label.checkbox-tag {
+        cursor: pointer;
+        padding: 8px 16px;
+        border-radius: 999px;
+        background: rgba(255,255,255,0.1);
+        color: var(--muted);
+        border: 1px solid rgba(255,255,255,0.06);
+        font-weight: 500;
+        transition: background 0.2s, border-color 0.2s, color 0.2s;
+        font-size: 0.9rem;
+    }
+
+    .multi-select-group input[type="checkbox"]:checked + label.checkbox-tag {
+        background: var(--accent);
+        color: var(--bg);
+        border-color: var(--accent);
+        font-weight: 700;
+    }
+
+    /* Checkboxes obligatoires */
+    .mandatory-checkboxes {
+        border-top: 1px solid rgba(255,255,255,0.1);
+        padding-top: 25px;
+        margin-top: 25px;
+    }
+
+    .mandatory-checkboxes .form-group {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 15px;
+        cursor: pointer;
+    }
+    
+    .mandatory-checkboxes input[type="checkbox"] {
+        /* Personnalisation de la checkbox */
+        -webkit-appearance: none;
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        min-width: 20px;
+        border-radius: 6px;
+        border: 2px solid var(--muted);
+        background: transparent;
+        margin-right: 15px;
+        cursor: pointer;
+        position: relative;
+        transition: border-color 0.2s, background-color 0.2s;
+        top: 2px; /* Pour aligner avec le texte */
+    }
+
+    .mandatory-checkboxes input[type="checkbox"]:checked {
+        background-color: var(--accent);
+        border-color: var(--accent);
+    }
+    
+    .mandatory-checkboxes input[type="checkbox"]:checked:before {
+        content: '✔'; /* Symbole de coche */
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 14px;
+        color: var(--bg); /* Couleur sombre pour un bon contraste sur l'orange */
+        font-weight: 900;
+    }
+
+    .mandatory-checkboxes label {
+        font-weight: 400;
+        color: var(--muted);
+        margin-bottom: 0;
+        line-height: 1.4;
+        cursor: pointer;
+    }
+    
+    .required-star {
+        color: var(--accent); /* J'utilise l'accent couleur au lieu du rouge uni pour mieux coller au thème, mais cela indique toujours l'obligation */
+        margin-left: 5px;
+        font-weight: 700;
+    }
+    .rules-link {
+        color: var(--accent);
+        text-decoration: underline;
+        text-underline-offset: 2px;
+        font-weight: 700;
+        cursor: pointer;
+    }
+    .rules-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 1200;
+        background: rgba(8, 6, 10, 0.9);
+        backdrop-filter:none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 18px;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.22s ease, visibility 0.22s ease;
+    }
+    .rules-modal.show {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+    .rules-modal-card {
+        width: min(900px, 100%);
+        max-height: 82vh;
+        overflow: auto;
+        border-radius: 16px;
+        background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+        border: 1px solid rgba(255,255,255,0.16);
+        box-shadow: 0 16px 50px rgba(0,0,0,0.6);
+        padding: 18px 18px 14px;
+        color: var(--light-text);
+        transform: translateY(12px) scale(0.98);
+        opacity: 0.96;
+        transition: transform 0.22s ease, opacity 0.22s ease;
+        scrollbar-width: none;
+    }
+    .rules-modal-card::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+    .rules-modal.show .rules-modal-card {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    .rules-modal-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 8px;
+    }
+    .rules-modal-title {
+        margin: 0;
+        font-size: 1.35rem;
+        font-weight: 900;
+        color: var(--accent-2);
+    }
+    .rules-close {
+        border: 0;
+        background: rgba(255,255,255,0.12);
+        color: #fff;
+        width: 32px;
+        height: 32px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 18px;
+        line-height: 1;
+        font-weight: 700;
+    }
+    .rules-block h4 {
+        margin: 14px 0 8px;
+        color: var(--accent);
+        font-size: 1.02rem;
+    }
+    .rules-block ul { margin: 0; padding-left: 18px; }
+    .rules-block li {
+        margin: 0 0 8px;
+        color: var(--muted);
+        line-height: 1.45;
+    }
+    .rules-end {
+        margin-top: 12px;
+        color: var(--accent-2);
+        font-weight: 700;
+    }
+
+    /* Style du bouton d'envoi */
+    .btn-submit {
+      display: block;
+      width: 100%;
+      margin-top: 30px;
+      padding: 14px 12px; 
+      border-radius: 14px;
+      text-decoration: none;
+      color: var(--bg); /* Texte sombre sur fond clair */
+      font-weight: 700;
+      font-size: 16px;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      border: none;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      cursor: pointer;
+    }
+
+    .btn-submit:hover:not(:disabled) {
+      transform: translateY(-4px) scale(1.005);
+      box-shadow: 0 15px 40px rgba(255, 138, 0, 0.4);
+    }
+
+    .btn-submit:disabled {
+        background: #5a5a5a;
+        color: #cfcfd6;
+        cursor: not-allowed;
+    }
+
+    /* Messages de notification (Réutilisation du style glass) */
+    .notification-box {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 15px 25px;
+        border-radius: 12px;
+        font-weight: 600;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s, visibility 0.3s;
+        
+        /* Reprise du style glass */
+        background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+        border: 1px solid rgba(255,255,255,0.1);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+        backdrop-filter:none;
+    }
+    
+    .notification-box.success {
+        color: #48E890; /* Vert pour le succès */
+    }
+    .notification-box.error {
+        color: #FF5A5A; /* Rouge pour l'erreur */
+    }
+    .notification-box.show {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    /* Loading state */
+    .spinner {
+        border: 4px solid rgba(255, 255, 255, 0.3);
+        border-top: 4px solid var(--bg); /* Contraste sur le bouton */
+        border-radius: 50%;
+        width: 18px;
+        height: 18px;
+        animation: spin 1s linear infinite;
+        display: inline-block;
+        margin-left: 10px;
+    }
+    .hidden { display: none !important; }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    .footer-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 13px;
+        color: rgba(255,255,255,0.45);
+        padding: 20px 0 10px;
+        text-align: center;
+    }    /* RESPONSIVE (Importé) */
+    @media (max-width: 900px) {
+        .container { padding-top: calc(var(--header-offset, 88px) + 12px); }
+        .main-header h1 { font-size: 2.5rem; }
+        .main-header .subtitle { font-size: 1rem; }
+        .section-glass { padding: 20px; margin-bottom: 25px; border-radius: 18px; }
+    }
+    @media (max-width: 500px) {
+        /* Ajustement de la nav sur mobile */
+        .header { padding: 10px 15px; }
+        .nav-content { flex-direction: column; gap: 10px; }
+        
+    .nav-links { 
+            gap: 10px 20px; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+        }
+        .toggle { padding: 6px 10px; }
+        .main-header h1 { font-size: 2rem; }
+        .btn-submit { font-size: 15px; padding: 12px 10px; }
+    }
+      @media (max-width: 900px) {
+      .bg-img { filter:none; opacity: 0.16; }
+      .header, .section-glass, .btn { backdrop-filter: none; }
+      .widget-container iframe { width: min(100%, 350px); max-width: 100%; }
+    }
+      @media (max-width: 700px) {
+      .header { padding: 8px 10px; }
+      .nav-content {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        gap: 8px;
+        align-items: center;
+      }
+      .nav-home img { width: 28px; height: 28px; border-radius: 8px; }
+      .nav-links {
+        min-width: 0;
+        gap: 10px;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        scrollbar-width: none;
+      }
+      .nav-links::-webkit-scrollbar { display: none; }
+      .nav-link { font-size: 13px; white-space: nowrap; }
+      .toggle { padding: 5px 8px; font-size: 12px; }
+    }
+  
+    .back-to-top {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 60;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      color: #1b0b00;
+      font-weight: 800;
+      font-size: 13px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+      opacity: 0;
+      transform: translateY(8px);
+      pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+    .back-to-top.show {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    @media (max-width: 700px) {
+      .back-to-top {
+        right: 12px;
+        bottom: 12px;
+        font-size: 12px;
+        padding: 8px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-img" aria-hidden="true"></div>
+
+  <!-- Barre de navigation fixe -->
+  <header class="header">
+    <div class="nav-content">
+        <a class="nav-home" href="https://1creepertv.github.io" aria-label="Accueil">
+            <img src="https://raw.githubusercontent.com/1creepertv/1creepertv.github.io/refs/heads/main/Images/Mii%20%26%20Backgrounds/Mii.png" alt="Icone du site">
+        </a>
+        <nav class="nav-links">
+            <a href="https://1creepertv.github.io" class="nav-link">Accueil</a>
+            <a href="https://1creepertv.github.io/tutoriels" class="nav-link">Tutoriels</a>
+            <a href="https://1creepertv.github.io/partenaires" class="nav-link">Partenaires</a>
+            <a href="https://1creepertv.github.io/ressources" class="nav-link">Ressources</a>
+        <a href="https://1creepertv.github.io/profils" class="nav-link">Profils</a>
+            <a href="https://1creepertv.github.io/a-propos" class="nav-link">À Propos</a>
+            <!-- Le lien de recrutement est maintenant cette page, donc il est 'active' -->
+            <a href="https://1creepertv.github.io/formulaires" class="nav-link active">Formulaires</a>
+        </nav>
+        <!-- Bouton Musique -->
+        <button id="playPause" class="toggle">🔈 Jouer</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="main-header">
+        <h1>📝 Formulaires</h1>
+        <p class="subtitle">Choisis un formulaire : candidature Helpeur ou soumission de mod.</p>
+    </div>
+
+    <div class="form-switcher">
+      <button type="button" id="showHelperForm" class="switch-btn active">Formulaire Helpeur</button>
+      <button type="button" id="showModForm" class="switch-btn">Soumettre un Mod</button>
+    </div>
+
+    <!-- Section du Formulaire dans un conteneur Glassmorphism -->
+    <section id="helperSection" class="section-glass">
+        <h2 class="section-title">Formulaire de Candidature</h2>
+
+        <form id="recruitmentForm">
+
+            <!-- 1. Quelle est votre adresse e-mail* ? -->
+            <div class="form-group">
+                <label for="email">1. Quelle est votre adresse e-mail <span class="required-star">*</span> ?</label>
+                <input type="email" id="email" name="email" placeholder="Ex: votre@email.com" required>
+            </div>
+
+            <!-- 2. Quel est votre nom d'utilisateur Discord ? (ex: @creepertvii)* -->
+            <div class="form-group">
+                <label for="discordUsername">2. Quel est votre nom d'utilisateur Discord ? (ex: @1creepertv) <span class="required-star">*</span></label>
+                <input type="text" id="discordUsername" name="discordUsername" placeholder="Ex: @1creepertv ou votre-ancien-pseudo#0000" required>
+            </div>
+            
+            <!-- 3. Quelle est votre date de naissance ? (jj/mm/aaaa)* -->
+            <div class="form-group">
+                <label for="dob">3. Quelle est votre date de naissance ? (jj/mm/aaaa) <span class="required-star">*</span></label>
+                <input type="text" id="dob" name="dob" placeholder="Ex: 01/01/2000" required pattern="\d{2}/\d{2}/\d{4}">
+                <p id="dobError" class="text-xs text-red-400 mt-1" style="display: none;">Vous devez avoir 15 ans minimum et la date doit être au format JJ/MM/AAAA.</p>
+            </div>
+
+            <!-- 4. Dans quel(s) domaine(s) souhaitez-vous apporter votre aide ?* -->
+            <div class="form-group">
+                <label>4. Dans quel(s) domaine(s) souhaitez-vous apporter votre aide ? <span class="required-star">*</span></label>
+                <div class="multi-select-group" id="domainesAide">
+                    <input type="checkbox" id="domaine_wii" name="domaines" value="Wii">
+                    <label for="domaine_wii" class="checkbox-tag">Wii</label>
+                    
+                    <input type="checkbox" id="domaine_wiiu" name="domaines" value="Wii U">
+                    <label for="domaine_wiiu" class="checkbox-tag">Wii U</label>
+                    
+                    <input type="checkbox" id="domaine_3ds" name="domaines" value="3DS">
+                    <label for="domaine_3ds" class="checkbox-tag">3DS</label>
+                </div>
+                <p id="domaineError" class="text-xs text-red-400 mt-1" style="display: none;">Veuillez sélectionner au moins un domaine.</p>
+            </div>
+
+            <!-- 5. Pourquoi souhaitez-vous devenir Helpeur chez nous ? (Paragraphe de motivation)* -->
+            <div class="form-group">
+                <label for="motivation">5. Pourquoi souhaitez-vous devenir Helpeur chez nous ? (Paragraphe de motivation) <span class="required-star">*</span></label>
+                <textarea id="motivation" name="motivation" placeholder="Minimum 50 mots. Expliquez votre motivation, vos compétences et pourquoi vous seriez un atout pour l'équipe." required></textarea>
+                <p id="wordCount" class="text-xs text-right mt-1 text-gray-400">0 / 50 mots minimum</p>
+            </div>
+            
+            <!-- 6. Facultatif : Avez-vous une expérience dans le Staff d’un autre serveur ? Si oui, où et quel poste ? -->
+            <div class="form-group">
+                <label for="experience">6. Facultatif : Avez-vous une expérience dans le Staff d’un autre serveur ? Si oui, où et quel poste ?</label>
+                <textarea id="experience" name="experience" placeholder="Ex: Modérateur sur le serveur X de 2021 à 2022."></textarea>
+            </div>
+
+            <!-- 7. Facultatif : Lien vers vos réseaux sociaux (Twitter, YouTube, TikTok, etc.) -->
+            <div class="form-group">
+                <label for="socials">7. Facultatif : Lien vers vos réseaux sociaux (Twitter, YouTube, TikTok, etc.)</label>
+                <!-- CHANGEMENT ICI : type="url" remplacé par type="text" -->
+                <input type="text" id="socials" name="socials" placeholder="Ex: https://twitter.com/moncompte ou MonPseudoDiscord">
+            </div>
+
+            <!-- --- Cases à cocher obligatoires (Engagements) --- -->
+            <div class="mandatory-checkboxes">
+                <h3 class="text-xl font-bold mb-3 text-light-text">Engagements <span class="required-star">*</span></h3>
+
+                <div class="form-group">
+                    <input type="checkbox" id="chk_reglement" name="commitments" value="Reglement" required>
+                    <label for="chk_reglement">Je connais et respecte le <span class="rules-link" id="openRulesModal" role="button" tabindex="0">règlement</span> du serveur. <span class="required-star">*</span></label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="checkbox" id="chk_age" name="commitments" value="Age" required>
+                    <label for="chk_age">Je confirme avoir 15+ ans. <span class="required-star">*</span></label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="checkbox" id="chk_connaissances" name="commitments" value="Connaissances" required>
+                    <label for="chk_connaissances">Je confirme avoir de solides connaissances dans le(s) domaine(s) que j’ai sélectionné(s). <span class="required-star">*</span></label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="checkbox" id="chk_2fa" name="commitments" value="2FA" required>
+                    <label for="chk_2fa">L'authentification à deux facteurs est activée sur mon compte Discord. <span class="required-star">*</span></label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="checkbox" id="chk_activite" name="commitments" value="Activite" required>
+                    <label for="chk_activite">Si je suis accepté(e) en tant qu’helpeur, je m’engage à être un minimum actif(ve), notamment en vérifiant s’il y a des personnes à aider, etc. <span class="required-star">*</span></label>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-submit" id="submitButton" disabled>
+                Envoyer ma Candidature
+                <span id="loadingSpinner" class="spinner hidden"></span>
+            </button>
+            <!-- Message d'erreur générique visible en cas de validation bloquée -->
+            <p id="formError" class="text-center text-red-500 mt-3 font-semibold" style="display: none;">Veuillez vérifier les champs signalés : tous les champs obligatoires, le minimum de 50 mots, l'âge 15+ et la sélection d'un domaine.</p>
+
+        </form>
+    </section>
+
+    <section id="modSection" class="section-glass section-hidden">
+      <h2 class="section-title">Soumettre un Mod</h2>
+
+      <form id="modSubmissionForm">
+        <div class="form-group">
+          <label for="modDiscord">Nom Discord <span class="required-star">*</span></label>
+          <input type="text" id="modDiscord" name="modDiscord" placeholder="Ex: @1creepertv" required>
+        </div>
+        <div class="form-group">
+          <label for="modAuthor">Auteur du mod <span class="required-star">*</span></label>
+          <input type="text" id="modAuthor" name="modAuthor" placeholder="Ex: 1CreeperTV" required>
+        </div>
+        <div class="form-group">
+          <label for="modTitle">Titre du mod <span class="required-star">*</span></label>
+          <input type="text" id="modTitle" name="modTitle" placeholder="Ex: Mon Super Mod Wii" required>
+        </div>
+        <div class="form-group">
+          <label for="modConsole">Console / Plateforme <span class="required-star">*</span></label>
+          <input type="text" id="modConsole" name="modConsole" placeholder="Ex: Wii (Mario Kart Wii)" required>
+        </div>
+        <div class="form-group">
+          <label for="modShortDesc">Description courte <span class="required-star">*</span></label>
+          <textarea id="modShortDesc" name="modShortDesc" placeholder="Résumé court pour la carte ressources." required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="modLongDesc">Description longue <span class="required-star">*</span></label>
+          <textarea id="modLongDesc" name="modLongDesc" placeholder="Description complète de la fiche mod." required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="modIcon">Lien de l'icône <span class="required-star">*</span></label>
+          <input type="text" id="modIcon" name="modIcon" placeholder="https://..." required>
+        </div>
+        <div class="form-group">
+          <label for="modDownload">Lien de téléchargement <span class="required-star">*</span></label>
+          <input type="text" id="modDownload" name="modDownload" placeholder="https://..." required>
+        </div>
+        <div class="form-group">
+          <label for="modTrailer">Lien trailer (facultatif)</label>
+          <input type="text" id="modTrailer" name="modTrailer" placeholder="https://youtube.com/...">
+        </div>
+        <div class="form-group">
+          <label for="modPreviewImages">Images d'aperçu (facultatif)</label>
+          <textarea id="modPreviewImages" name="modPreviewImages" placeholder="Une URL par ligne (ou séparées par des virgules)."></textarea>
+        </div>
+        <div class="form-group">
+          <label for="modNotes">Notes supplémentaires (facultatif)</label>
+          <textarea id="modNotes" name="modNotes" placeholder="Infos importantes, statut, remarques, etc."></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit" id="modSubmitButton">
+          Envoyer la Soumission Mod
+          <span id="modLoadingSpinner" class="spinner hidden"></span>
+        </button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="container">
+    <div class="footer-section" style="display:flex;justify-content:center;align-items:center;text-align:center;">
+        © CreeperTV — Made with 🔥 in France.
+    </div>
+  </footer>
+  <button id="backToTop" class="back-to-top" aria-label="Retour en haut" title="Retour en haut">&uarr;</button>
+
+  <!-- Notification Box -->
+  <div id="notification" class="notification-box"></div>
+  <div id="rulesModal" class="rules-modal" aria-hidden="true">
+    <div class="rules-modal-card" role="dialog" aria-modal="true" aria-labelledby="rulesTitle">
+      <div class="rules-modal-head">
+        <h3 id="rulesTitle" class="rules-modal-title">Règlement du serveur</h3>
+        <button type="button" id="closeRulesModal" class="rules-close" aria-label="Fermer">×</button>
+      </div>
+      <div class="rules-block">
+        <h4>I. Le savoir-vivre</h4>
+        <ul>
+          <li><b>Respect avant tout</b> : pas d'insultes, de haine, de harcèlement ou de propos discriminatoires. Pas de diffusion d'informations personnelles sans accord. Les comportements toxiques, dramas et conflits sont interdits.</li>
+          <li><b>Évitez les sujets sensibles</b> : pas de politique, religion, contenu sexuel, drague, gore ou tout sujet choquant (NSFW, etc). Ne ramenez pas de conflits externes ou de dramas sur le serveur.</li>
+          <li><b>Pas de spam ni de pub sauvage</b> : le flood, le spam et la pub non autorisée (y compris en MP) sont interdits. La publicité n'est tolérée que si le staff l'autorise ou dans le salon dédié.</li>
+        </ul>
+        <h4>II. Sécurité</h4>
+        <ul>
+          <li><b>Profil approprié</b> : vos pseudos, avatars, pronoms, bios et statuts doivent rester corrects, respectueux et adaptés à tous.</li>
+          <li><b>Pas de piratage</b> : toute forme de piratage est strictement interdite. Cela inclut notamment le partage ou la demande de fichiers, de liens, de ROMs, de cracks, de clés, ainsi que la mention ou la diffusion de noms de sites permettant d'en obtenir.</li>
+          <li><b>Pas de doubles comptes ni de bypass</b> : un seul compte par personne est autorisé. Toute tentative de contourner les règles ou les sanctions entraînera une exclusion.</li>
+          <li><b>Respect des règles Discord</b> : vous devez suivre les Conditions d'Utilisation et les Community Guidelines de Discord.</li>
+        </ul>
+        <h4>III. Discussions & salons</h4>
+        <ul>
+          <li><b>Respectez les salons</b> : utilisez chaque salon pour son sujet prévu. Lisez les descriptions pour ne pas vous tromper.</li>
+          <li><b>Clarté dans vos messages</b> : soyez précis dans vos demandes ou discussions pour éviter les malentendus.</li>
+          <li><b>Pas de pings inutiles</b> : mentionnez les membres ou le staff uniquement si c'est réellement nécessaire.</li>
+          <li><b>Autorité de la modération</b> : l'équipe de modération a toujours le dernier mot. Toute contestation de sanction devra obligatoirement passer par un ticket ; aucune contestation ne sera acceptée en messages privés ou dans les salons publics.</li>
+        </ul>
+      </div>
+      <p class="rules-end">Amusez-vous bien sur le serveur et assurez-vous d'avoir bien lu le règlement !</p>
+    </div>
+  </div>
+
+  <!-- Audio de fond (Copié de l'index) -->
+  <audio id="bgAudio" loop>
+    <source src="https://github.com/1creepertv/1creepertv.github.io/raw/refs/heads/main/Images/Musiques/06.%20Purchase%20Software%20(3DS).mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    // API
+    const WEBHOOK_URL_FRAGMENT = "1433550326169862325/eE08xKgtrjcLofEHEbro8RKny6dQtsZutV9_i4A0AC4m_lJb1_z6L7BhrTUOMARDJVwu";
+    const WEBHOOK_URL = `https://discord.com/api/webhooks/${WEBHOOK_URL_FRAGMENT}`;
+    const MIN_WORDS = 50;
+    
+    const form = document.getElementById('recruitmentForm');
+    const motivationTextarea = document.getElementById('motivation');
+    const wordCountDisplay = document.getElementById('wordCount');
+    const submitButton = document.getElementById('submitButton');
+    const loadingSpinner = document.getElementById('loadingSpinner');
+    const formErrorDisplay = document.getElementById('formError');
+    const notificationBox = document.getElementById('notification');
+    const domainesAideGroup = document.getElementById('domainesAide');
+    const domaineCheckboxes = domainesAideGroup.querySelectorAll('input[type="checkbox"]');
+    const dobInput = document.getElementById('dob');
+    const dobErrorDisplay = document.getElementById('dobError');
+    const domaineErrorDisplay = document.getElementById('domaineError');
+    const helperSection = document.getElementById('helperSection');
+    const modSection = document.getElementById('modSection');
+    const showHelperFormBtn = document.getElementById('showHelperForm');
+    const showModFormBtn = document.getElementById('showModForm');
+    const modForm = document.getElementById('modSubmissionForm');
+    const modSubmitButton = document.getElementById('modSubmitButton');
+    const modLoadingSpinner = document.getElementById('modLoadingSpinner');
+
+    function showForm(which) {
+        if (!helperSection || !modSection || !showHelperFormBtn || !showModFormBtn) return;
+        const helperMode = which === 'helper';
+        helperSection.classList.toggle('section-hidden', !helperMode);
+        modSection.classList.toggle('section-hidden', helperMode);
+        showHelperFormBtn.classList.toggle('active', helperMode);
+        showModFormBtn.classList.toggle('active', !helperMode);
+    }
+
+    if (showHelperFormBtn) showHelperFormBtn.addEventListener('click', () => showForm('helper'));
+    if (showModFormBtn) showModFormBtn.addEventListener('click', () => showForm('mod'));
+
+
+    /**
+     * Affiche un message de notification temporaire.
+     * @param {string} message - Le message à afficher.
+     * @param {string} type - 'success' ou 'error'.
+     */
+    function showNotification(message, type) {
+        notificationBox.textContent = message;
+        notificationBox.className = `notification-box show ${type}`;
+        setTimeout(() => {
+            notificationBox.classList.remove('show');
+        }, 5000);
+    }
+    
+    /**
+     * Vérifie si au moins une case de domaine est cochée
+     * @returns {boolean} True si au moins un domaine est sélectionné.
+     */
+    function isDomaineSelected() {
+        return Array.from(domaineCheckboxes).some(cb => cb.checked);
+    }
+
+    /**
+     * Valide l'entrée de la date de naissance (format jj/mm/aaaa) et l'âge (15+ ans)
+     * @param {string} dobString - La chaîne de caractères de la date (jj/mm/aaaa).
+     * @returns {boolean} True si la date est valide et l'âge est 15+ ans.
+     */
+    function validateDateAndAge(dobString) {
+        const pattern = /^(\d{2})\/(\d{2})\/(\d{4})$/;
+        const match = dobString.match(pattern);
+
+        if (!match) return false;
+
+        const day = parseInt(match[1], 10);
+        const month = parseInt(match[2], 10) - 1; // Mois est basé sur 0
+        const year = parseInt(match[3], 10);
+
+        const date = new Date(year, month, day);
+
+        // Vérifie si la date est réellement valide (ex: pas le 30 février)
+        if (date.getFullYear() !== year || date.getMonth() !== month || date.getDate() !== day) {
+            return false;
+        }
+
+        // Vérification de l'âge (15 ans minimum)
+        const minAge = 15;
+        const today = new Date();
+        const minBirthDate = new Date(
+            today.getFullYear() - minAge, 
+            today.getMonth(), 
+            today.getDate()
+        );
+
+        // La date de naissance doit être avant ou égale à la date de naissance minimum pour avoir 15 ans
+        return date <= minBirthDate;
+    }
+
+    /**
+     * Compte les mots et met à jour l'affichage, et vérifie la validité du formulaire.
+     */
+    function validateForm() {
+        const text = motivationTextarea.value.trim();
+        const words = text ? text.split(/\s+/).filter(word => word.length > 0).length : 0;
+        
+        wordCountDisplay.textContent = `${words} / ${MIN_WORDS} mots minimum`;
+        wordCountDisplay.style.color = words >= MIN_WORDS ? 'var(--accent-2)' : '#FF5A5A';
+
+        // --- 1. Validation de l'Âge et de la Date (Q3) ---
+        const isAgeValid = dobInput.value.trim() === '' || validateDateAndAge(dobInput.value);
+        // Note: L'attribut pattern HTML5 sur l'input dob gère déjà le format. Ici, on gère l'âge.
+        dobInput.setCustomValidity(isAgeValid ? '' : 'Âge ou format invalide.');
+        dobErrorDisplay.style.display = (dobInput.value.trim() !== '' && !isAgeValid) ? 'block' : 'none';
+        
+        // --- 2. Validation des Domaines (Q4) ---
+        const isDomaineValid = isDomaineSelected();
+        domaineErrorDisplay.style.display = !isDomaineValid ? 'block' : 'none';
+
+        // Le premier checkbox du groupe Domaine est utilisé pour porter le message d'erreur natif
+        domaineCheckboxes[0].setCustomValidity(isDomaineValid ? '' : 'Veuillez sélectionner au moins un domaine.');
+
+        // --- 3. Validation de la Motivation (Q5) ---
+        const isWordCountMet = words >= MIN_WORDS;
+        
+        // --- 4. Validation générale et Engagements ---
+        // La question 7 (socials) est maintenant type="text", donc form.checkValidity() ne la bloquera pas si elle n'est pas une URL valide.
+        const isFormValid = form.checkValidity(); // Inclut tous les champs requis et les engagements
+        
+        // --- Détermination de l'état du bouton ---
+        const shouldBeDisabled = !(isFormValid && isWordCountMet && isDomaineValid && isAgeValid);
+        submitButton.disabled = shouldBeDisabled;
+
+        if (shouldBeDisabled) {
+            // Affiche le message d'erreur générique si le bouton est désactivé
+            formErrorDisplay.style.display = 'block';
+            formErrorDisplay.textContent = "Veuillez vérifier les champs signalés : tous les champs obligatoires, le minimum de 50 mots, l'âge 15+ et la sélection d'un domaine.";
+        } else {
+            formErrorDisplay.style.display = 'none';
+        }
+    }
+
+    /**
+     * Construit le contenu du message Discord au format Embed.
+     * @param {FormData} data - Les données du formulaire.
+     * @returns {object} Le payload pour le webhook Discord.
+     */
+    function buildDiscordPayload(data) {
+        const selectedDomains = Array.from(document.querySelectorAll('#domainesAide input[name="domaines"]:checked'))
+                                     .map(cb => cb.value)
+                                     .join(', ') || 'Aucun';
+
+        const commitments = Array.from(document.querySelectorAll('.mandatory-checkboxes input[type="checkbox"]:checked'))
+                                .map(cb => cb.parentElement.querySelector('label').textContent.trim().replace(/\s*\*\s*$/, ''))
+                                .join('\n- ') || 'Erreur : Engagements manquants';
+
+        const embed = {
+            title: `🚀 Nouvelle Candidature Helpeur`,
+            description: `Candidature reçue via le site web.`,
+            color: 16757504, // Couleur Orange (var(--accent) ~ #ff8a00)
+            timestamp: new Date().toISOString(),
+            fields: [
+                { name: "📧 E-mail", value: data.get('email') || 'N/A', inline: true },
+                { name: "👾 Nom d'utilisateur Discord", value: data.get('discordUsername') || 'N/A', inline: true },
+                { name: "🎂 Date de Naissance", value: data.get('dob') || 'N/A', inline: false },
+                { name: "🛠 Domaines d'Aide", value: selectedDomains, inline: false },
+                { name: "📝 Motivation (Paragraphe)", value: data.get('motivation') ? data.get('motivation').substring(0, 1024) : 'Aucune', inline: false }, // Limite de 1024 caractères pour Discord
+                { name: "💼 Expérience Staff (Facultatif)", value: data.get('experience') || 'Aucune', inline: false },
+                { name: "🔗 Réseaux Sociaux (Facultatif)", value: data.get('socials') || 'Aucun', inline: false },
+                { name: "✅ Engagements Confirmés", value: '- ' + commitments, inline: false },
+            ],
+            footer: {
+                text: "Envoyé par le formulaire de recrutement du site CreeperTV",
+            }
+        };
+
+        return {
+            content: "Nouveau formulaire de recrutement soumis !", // Message pour notifier les rôles
+            embeds: [embed],
+        };
+    }
+
+    function buildModSubmissionPayload(data) {
+        const trailer = (data.get('modTrailer') || '').trim();
+        const previewImagesRaw = (data.get('modPreviewImages') || '').trim();
+        const previewImages = previewImagesRaw
+            ? previewImagesRaw.split(/\n|,/).map(s => s.trim()).filter(Boolean).slice(0, 10).join('\n')
+            : 'Aucune';
+
+        const embed = {
+            title: "🎮 Nouvelle Soumission de Mod",
+            description: "Soumission reçue via le formulaire du site.",
+            color: 16757504,
+            timestamp: new Date().toISOString(),
+            fields: [
+                { name: "👾 Discord", value: data.get('modDiscord') || 'N/A', inline: true },
+                { name: "✍️ Auteur", value: data.get('modAuthor') || 'N/A', inline: true },
+                { name: "📦 Titre", value: data.get('modTitle') || 'N/A', inline: false },
+                { name: "🕹️ Console", value: data.get('modConsole') || 'N/A', inline: false },
+                { name: "🧾 Description courte", value: (data.get('modShortDesc') || 'Aucune').toString().substring(0, 1024), inline: false },
+                { name: "📚 Description longue", value: (data.get('modLongDesc') || 'Aucune').toString().substring(0, 1024), inline: false },
+                { name: "🖼️ Icône", value: data.get('modIcon') || 'Aucune', inline: false },
+                { name: "⬇️ Téléchargement", value: data.get('modDownload') || 'Aucun', inline: false },
+                { name: "🎬 Trailer", value: trailer || 'Aucun', inline: false },
+                { name: "🖼️ Images d'aperçu", value: previewImages.substring(0, 1024), inline: false },
+                { name: "📝 Notes", value: (data.get('modNotes') || 'Aucune').toString().substring(0, 1024), inline: false }
+            ],
+            footer: {
+                text: "Envoyé par le formulaire de soumission de mod du site CreeperTV",
+            }
+        };
+
+        return {
+            content: "Nouvelle soumission de mod !",
+            embeds: [embed],
+        };
+    }
+
+    /**
+     * Envoie le formulaire au webhook Discord.
+     * @param {Event} e - L'événement de soumission.
+     */
+    async function handleFormSubmit(e) {
+        e.preventDefault();
+        
+        // Re-vérifie la validité juste avant l'envoi
+        validateForm(); 
+        if (submitButton.disabled) {
+            formErrorDisplay.style.display = 'block';
+            showNotification("Veuillez remplir correctement tous les champs requis.", "error");
+            return;
+        }
+
+        submitButton.disabled = true;
+        submitButton.textContent = 'Envoi en cours...';
+        loadingSpinner.classList.remove('hidden');
+
+        const formData = new FormData(form);
+        const payload = buildDiscordPayload(formData);
+
+        // Implémentation de l'Exponential Backoff pour les requêtes
+        const MAX_RETRIES = 5;
+        let delay = 1000;
+        
+        for (let i = 0; i < MAX_RETRIES; i++) {
+            try {
+                const response = await fetch(WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (response.ok) {
+                    showNotification("✅ Candidature envoyée avec succès ! Merci.", "success");
+                    form.reset(); // Réinitialise le formulaire en cas de succès
+                    validateForm(); // Réinitialise les compteurs/validations
+                    break; // Sort de la boucle de retry
+                } else if (response.status === 429) {
+                    // Too Many Requests (Rate Limit), attendre le temps spécifié par Discord ou doubler le délai
+                    const retryAfter = response.headers.get('Retry-After');
+                    const waitTime = retryAfter ? parseInt(retryAfter) * 1000 : delay;
+                    
+                    if (i < MAX_RETRIES - 1) {
+                        await new Promise(resolve => setTimeout(resolve, waitTime));
+                        delay *= 2; // Double le délai pour le prochain essai (si pas de Retry-After)
+                    } else {
+                        throw new Error(`Échec final après ${MAX_RETRIES} tentatives (Rate Limit).`);
+                    }
+                } else {
+                    const errorText = await response.text();
+                    throw new Error(`Erreur Discord: ${response.status} - ${errorText}`);
+                }
+            } catch (error) {
+                if (i < MAX_RETRIES - 1) {
+                    // Erreur réseau ou autre, on réessaie après un délai d'attente
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                    delay *= 2;
+                } else {
+                    console.error("Erreur critique lors de l'envoi de la candidature:", error);
+                    showNotification("❌ Erreur lors de l'envoi. Veuillez réessayer plus tard.", "error");
+                }
+            }
+        }
+        
+        submitButton.disabled = false;
+        submitButton.textContent = 'Envoyer ma Candidature';
+        loadingSpinner.classList.add('hidden');
+    }
+
+    async function handleModFormSubmit(e) {
+        e.preventDefault();
+        if (!modForm || !modSubmitButton || !modLoadingSpinner) return;
+
+        if (!modForm.checkValidity()) {
+            modForm.reportValidity();
+            showNotification("Veuillez remplir les champs obligatoires du formulaire mod.", "error");
+            return;
+        }
+
+        modSubmitButton.disabled = true;
+        modSubmitButton.textContent = 'Envoi en cours...';
+        modLoadingSpinner.classList.remove('hidden');
+
+        const formData = new FormData(modForm);
+        const payload = buildModSubmissionPayload(formData);
+
+        try {
+            const response = await fetch(WEBHOOK_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            if (!response.ok) {
+                const err = await response.text();
+                throw new Error(err || `Erreur HTTP ${response.status}`);
+            }
+
+            modForm.reset();
+            showNotification("✅ Soumission du mod envoyée avec succès !", "success");
+        } catch (error) {
+            console.error("Erreur soumission mod:", error);
+            showNotification("❌ Erreur lors de l'envoi de la soumission mod.", "error");
+        } finally {
+            modSubmitButton.disabled = false;
+            modSubmitButton.textContent = 'Envoyer la Soumission Mod';
+            modLoadingSpinner.classList.add('hidden');
+        }
+    }
+    // Validation globale: couvre tous les champs (texte, textarea, select, checkboxes)
+    // et evite les cas ou le bouton reste gris faute d'evenement sur un champ donne.
+    form.addEventListener('input', validateForm);
+    form.addEventListener('change', validateForm);
+    
+    form.addEventListener('submit', handleFormSubmit);
+    if (modForm) modForm.addEventListener('submit', handleModFormSubmit);
+
+    // Initialisation après chargement
+    window.addEventListener('load', () => {
+        validateForm();
+        // Script de contrôle audio (Copié de l'index)
+        const audio = document.getElementById('bgAudio');
+        const btn = document.getElementById('playPause');
+        
+        let playing = false;
+
+        function toggleAudio() {
+            if (!playing) {
+                audio.volume = 0.28;
+                audio.play().then(() => {
+                    btn.textContent = '🔊 Lecture'; 
+                    btn.classList.add('playing');
+                    playing = true;
+                }).catch(error => {
+                    console.warn("La lecture audio a été bloquée:", error);
+                    btn.textContent = '🔇 Erreur'; 
+                    btn.classList.remove('playing');
+                    playing = false;
+                });
+                
+            } else {
+                audio.pause();
+                btn.textContent = '🔈 Jouer';
+                btn.classList.remove('playing');
+                playing = false;
+            }
+        }
+
+        btn.addEventListener('click', toggleAudio);
+        
+        audio.addEventListener('pause', () => {
+            if (playing) {
+                btn.textContent = '🔈 Jouer';
+                btn.classList.remove('playing');
+                playing = false;
+            }
+        });
+
+        if (audio.paused) {
+            btn.textContent = '🔈 Jouer';
+            btn.classList.remove('playing');
+        } else {
+            btn.textContent = '🔊 Lecture';
+            btn.classList.add('playing');
+            playing = true; 
+        }
+    });
+
+    // Validation initiale
+    document.addEventListener('DOMContentLoaded', validateForm);
+
+    // Popup règlement
+    const rulesModal = document.getElementById('rulesModal');
+    const openRulesModalBtn = document.getElementById('openRulesModal');
+    const closeRulesModalBtn = document.getElementById('closeRulesModal');
+
+    function openRulesModal() {
+        if (!rulesModal) return;
+        rulesModal.classList.add('show');
+        rulesModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeRulesModal() {
+        if (!rulesModal) return;
+        rulesModal.classList.remove('show');
+        rulesModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+    }
+
+    if (openRulesModalBtn) {
+        openRulesModalBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            openRulesModal();
+        });
+        openRulesModalBtn.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openRulesModal();
+            }
+        });
+    }
+    if (closeRulesModalBtn) closeRulesModalBtn.addEventListener('click', closeRulesModal);
+    if (rulesModal) {
+        rulesModal.addEventListener('click', (e) => {
+            if (e.target === rulesModal) closeRulesModal();
+        });
+    }
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeRulesModal();
+    });
+</script>
+<script>
+(function () {
+  const root = document.documentElement;
+  const header = document.querySelector('.header');
+  if (!header) return;
+
+  const syncHeaderOffset = () => {
+    root.style.setProperty('--header-offset', `${header.offsetHeight + 8}px`);
+  };
+
+  syncHeaderOffset();
+  window.addEventListener('resize', syncHeaderOffset);
+  window.addEventListener('orientationchange', syncHeaderOffset);
+  window.addEventListener('load', syncHeaderOffset);
+})();
+</script>
+<script>
+(function () {
+  const topBtn = document.getElementById('backToTop');
+  if (!topBtn) return;
+
+  const syncBtn = () => {
+    if (window.scrollY > 280) {
+      topBtn.classList.add('show');
+    } else {
+      topBtn.classList.remove('show');
+    }
+  };
+
+  topBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  window.addEventListener('scroll', syncBtn, { passive: true });
+  window.addEventListener('load', syncBtn);
+  syncBtn();
+})();
+</script>
+</body>
+</html>
+
+
+
+
