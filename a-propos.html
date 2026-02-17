@@ -238,6 +238,23 @@
         color: var(--role-fun); 
         font-weight: 700; 
     }
+    .staff-profile-link {
+        display: inline-flex;
+        margin-top: 10px;
+        text-decoration: none;
+        color: #1b0b00;
+        background: linear-gradient(90deg, var(--accent), var(--accent-2));
+        padding: 7px 11px;
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 800;
+        box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .staff-profile-link:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 24px rgba(0,0,0,0.45);
+    }
 
     .footer-section {
         display: flex;
@@ -393,13 +410,15 @@
     const staffData = [
         // CRÉATEUR
         { name: "CreeperTV 👑", role: "Créateur", secondaryRole: null, 
-          image: "https://github.com/1creepertv/1creepertv.github.io/blob/main/Images/Staff/creepertvii.png?raw=true" },
+          image: "https://github.com/1creepertv/1creepertv.github.io/blob/main/Images/Staff/creepertvii.png?raw=true",
+          profileUrl: "auteurs/1creepertv.html" },
         
         // ADMINISTRATEURS
         { name: "Abdelali221", role: "Administrateur", secondaryRole: null, 
           image: "https://github.com/1creepertv/1creepertv.github.io/blob/main/Images/Staff/abdelali221.png?raw=true" },
         { name: "Piggreen", role: "Administrateur", secondaryRole: "Helpeur", 
-          image: "https://github.com/1creepertv/1creepertv.github.io/blob/main/Images/Staff/piggreen.png?raw=true" },
+          image: "https://github.com/1creepertv/1creepertv.github.io/blob/main/Images/Staff/piggreen.png?raw=true",
+          profileUrl: "auteurs/piggreen34654.html" },
         { name: "Katsu", role: "Administrateur", secondaryRole: null, 
           image: "https://github.com/1creepertv/1creepertv.github.io/blob/main/Images/Staff/katsu.png?raw=true" },
 
@@ -419,13 +438,15 @@
         { name: "Hamza", role: "Helpeur", secondaryRole: null, 
           image: "https://github.com/1creepertv/1creepertv.github.io/blob/main/Images/Staff/hamza.png?raw=true" },
         { name: "Toto14Gamer", role: "Helpeur", secondaryRole: null, 
-          image: "https://github.com/1creepertv/1creepertv.github.io/blob/main/Images/Staff/toto14gamer.png?raw=true" },
+          image: "https://github.com/1creepertv/1creepertv.github.io/blob/main/Images/Staff/toto14gamer.png?raw=true",
+          profileUrl: "auteurs/toto14gamer.html" },
         { name: "Dolard128", role: "Helpeur", secondaryRole: null, 
           image: "https://github.com/1creepertv/1creepertv.github.io/blob/main/Images/Staff/dolard128.png?raw=true" },
         { name: "LoupBlank", role: "Helpeur", secondaryRole: null, 
           image: "https://raw.githubusercontent.com/1creepertv/1creepertv.github.io/refs/heads/main/Images/Staff/loupblank.png" },
         { name: "YTK", role: "Helpeur", secondaryRole: null, 
-          image: "https://github.com/1CreeperTV/1creepertv.github.io/blob/main/Images/Staff/ytk.gif?raw=true" }
+          image: "https://github.com/1CreeperTV/1creepertv.github.io/blob/main/Images/Staff/ytk.gif?raw=true",
+          profileUrl: "auteurs/ytk.html" }
     ];
 
     function getCssRole(member) {
@@ -453,6 +474,9 @@
         const secondaryRoleHtml = member.secondaryRole 
             ? `<p class="staff-secondary-role">${member.secondaryRole}</p>` 
             : '';
+        const profileLinkHtml = member.profileUrl
+            ? `<a class="staff-profile-link" href="${member.profileUrl}">Voir le profil</a>`
+            : '';
 
         const cardHtml = `
             <div class="staff-member-card role-${cssClass}">
@@ -460,6 +484,7 @@
                 <h3 class="staff-name">${member.name}</h3>
                 ${primaryRoleHtml}
                 ${secondaryRoleHtml}
+                ${profileLinkHtml}
             </div>
         `;
         return cardHtml;
