@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tomodachi Life (Night) - Ressources</title>
   <meta property="og:title" content="Tomodachi Life (Night) - Ressources" />
-  <meta property="og:description" content="ThÃ¨me custom 3DS pour le menu HOME, ambiance nocturne et musique personnalisÃ©e." />
+  <meta property="og:description" content="Thème custom 3DS pour le menu HOME, ambiance nocturne et musique personnalisée." />
   <meta property="og:image" content="https://github.com/1CreeperTV/1creepertv.github.io/blob/main/Fichiers/Ressources%20mods/3DS/Theme%20Tomodachi%20Life%20(Night)/preview.png?raw=true" />
   <meta property="og:url" content="https://1creepertv.github.io/ressources/tomodachi-life-night" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Tomodachi Life (Night) - Ressources" />
-  <meta name="twitter:description" content="ThÃ¨me custom 3DS pour le menu HOME, ambiance nocturne et musique personnalisÃ©e." />
+  <meta name="twitter:description" content="Thème custom 3DS pour le menu HOME, ambiance nocturne et musique personnalisée." />
   <meta name="twitter:image" content="https://github.com/1CreeperTV/1creepertv.github.io/blob/main/Fichiers/Ressources%20mods/3DS/Theme%20Tomodachi%20Life%20(Night)/preview.png?raw=true" />
   <link rel="icon" href="https://raw.githubusercontent.com/1creepertv/1creepertv.github.io/refs/heads/main/Fichiers/Mii%20%26%20Backgrounds/Mii.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
@@ -365,10 +365,10 @@
         <a href="https://1creepertv.github.io/partenaires" class="nav-link">Partenaires</a>
         <a href="https://1creepertv.github.io/ressources" class="nav-link active">Ressources</a>
         <a href="https://1creepertv.github.io/profils" class="nav-link">Profils</a>
-        <a href="https://1creepertv.github.io/a-propos" class="nav-link">Ã€ Propos</a>
+        <a href="https://1creepertv.github.io/a-propos" class="nav-link">À Propos</a>
         <a href="https://1creepertv.github.io/formulaires" class="nav-link">Formulaires</a>
       </nav>
-      <button id="playPause" class="toggle">ðŸ”ˆ Jouer</button>
+      <button id="playPause" class="toggle">🔈 Jouer</button>
     </div>
   </header>
 
@@ -392,8 +392,8 @@
         </div>
         <div class="meta-item">
           <strong>Console & Date</strong>
-          ðŸŽ® 3DS (Th&egrave;me custom Menu HOME)
-          <br>ðŸ“… PubliÃ© le 18/02/2026
+          🎮 3DS (Th&egrave;me custom Menu HOME)
+          <br>📅 Publié le 18/02/2026
         </div>
         <div class="meta-item">
           <strong>Type</strong>
@@ -413,7 +413,7 @@
           <img class="discord-widget-icon" src="https://raw.githubusercontent.com/1creepertv/1creepertv.github.io/refs/heads/main/Fichiers/Mii%20%26%20Backgrounds/lv_0_2025112922-1764451316159.gif" alt="Logo du serveur Discord">
           <div>
             <h3 class="discord-widget-title">Rejoins le serveur Discord</h3>
-            <p class="discord-widget-text">Entraide modding, ressources utiles, astuces, chill (soirÃ©es jeux) et communautÃ© active chaque jour.</p>
+            <p class="discord-widget-text">Entraide modding, ressources utiles, astuces, chill (soirées jeux) et communauté active chaque jour.</p>
           </div>
           <a class="discord-widget-btn" href="https://discord.gg/AQ7w57CKk8" target="_blank" rel="noopener noreferrer">Rejoindre</a>
         </div>
@@ -423,7 +423,7 @@
 
   <footer class="container">
     <div class="footer-section">
-      CreeperTV - Made with &#128293; in France â€¢ Built with AI
+      CreeperTV - Made with &#128293; in France • Built with AI
     </div>
   </footer>
   <button id="backToTop" class="back-to-top" aria-label="Retour en haut" title="Retour en haut">&uarr;</button>
@@ -441,17 +441,17 @@
     if (!playing) {
       audio.volume = 0.28;
       audio.play().then(() => {
-        btn.textContent = 'ðŸ”Š Lecture';
+        btn.textContent = '🔊 Lecture';
         btn.classList.add('playing');
         playing = true;
       }).catch(() => {
-        btn.textContent = 'ðŸ”‡ Erreur';
+        btn.textContent = '🔇 Erreur';
         btn.classList.remove('playing');
         playing = false;
       });
     } else {
       audio.pause();
-      btn.textContent = 'ðŸ”ˆ Jouer';
+      btn.textContent = '🔈 Jouer';
       btn.classList.remove('playing');
       playing = false;
     }

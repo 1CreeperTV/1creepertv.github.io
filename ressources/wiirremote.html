@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>WiiRremote - Ressources</title>
   <meta property="og:title" content="WiiRremote - Ressources" />
-  <meta property="og:description" content="Homebrew Wii permettant d'utiliser la Wii comme tÃ©lÃ©commande IR grÃ¢ce Ã  la sensor bar." />
+  <meta property="og:description" content="Homebrew Wii permettant d'utiliser la Wii comme télécommande IR grâce à la sensor bar." />
   <meta property="og:image" content="https://raw.githubusercontent.com/1CreeperTV/1creepertv.github.io/refs/heads/main/Fichiers/Ressources mods/Wii/WiiRremote/icon.png" />
   <meta property="og:url" content="https://1creepertv.github.io/ressources/wiirremote" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="WiiRremote - Ressources" />
-  <meta name="twitter:description" content="Homebrew Wii permettant d'utiliser la Wii comme tÃ©lÃ©commande IR grÃ¢ce Ã  la sensor bar." />
+  <meta name="twitter:description" content="Homebrew Wii permettant d'utiliser la Wii comme télécommande IR grâce à la sensor bar." />
   <meta name="twitter:image" content="https://raw.githubusercontent.com/1CreeperTV/1creepertv.github.io/refs/heads/main/Fichiers/Ressources mods/Wii/WiiRremote/icon.png" />
   <link rel="icon" href="https://raw.githubusercontent.com/1creepertv/1creepertv.github.io/refs/heads/main/Fichiers/Mii%20%26%20Backgrounds/Mii.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
@@ -125,7 +125,7 @@
         <div class="meta-item">
           <strong>Console & Date</strong>
           &#127918; Wii (Homebrew)
-          <br>ðŸ“… PubliÃ© le 17/02/2026
+          <br>📅 Publié le 17/02/2026
         </div>
         <div class="meta-item">
           <strong>Type</strong>
@@ -157,7 +157,7 @@
     </section>
   </main>
 
-  <footer class="container"><div class="footer-section">CreeperTV - Made with &#128293; in France â€¢ Built with AI</div></footer>
+  <footer class="container"><div class="footer-section">CreeperTV - Made with &#128293; in France • Built with AI</div></footer>
   <button id="backToTop" class="back-to-top" aria-label="Retour en haut" title="Retour en haut">&uarr;</button>
 
   <audio id="bgAudio" loop>
@@ -169,8 +169,8 @@
   const btn = document.getElementById('playPause');
   let playing = false;
   function toggleAudio() {
-    if (!playing) { audio.volume = 0.28; audio.play().then(() => { btn.textContent = 'ðŸ”Š Lecture'; btn.classList.add('playing'); playing = true; }).catch(() => { btn.textContent = 'ðŸ”‡ Erreur'; btn.classList.remove('playing'); playing = false; }); }
-    else { audio.pause(); btn.textContent = 'ðŸ”ˆ Jouer'; btn.classList.remove('playing'); playing = false; }
+    if (!playing) { audio.volume = 0.28; audio.play().then(() => { btn.textContent = '🔊 Lecture'; btn.classList.add('playing'); playing = true; }).catch(() => { btn.textContent = '🔇 Erreur'; btn.classList.remove('playing'); playing = false; }); }
+    else { audio.pause(); btn.textContent = '🔈 Jouer'; btn.classList.remove('playing'); playing = false; }
   }
   btn.addEventListener('click', toggleAudio);
   </script>
