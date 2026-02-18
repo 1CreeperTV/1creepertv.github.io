@@ -160,7 +160,6 @@
       line-height:1.7;
       font-size:1.02rem;
     }
-
     .mod-meta {
       display:grid;
       grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
@@ -178,7 +177,16 @@
       display:block;
       margin-bottom:4px;
     }
-
+    .author-link {
+      color: var(--accent);
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      transition: color .2s ease;
+    }
+    .author-link:hover {
+      color: var(--accent-2);
+    }
     .actions {
       display:flex;
       flex-wrap:wrap;
@@ -395,12 +403,12 @@
       <div class="mod-meta">
         <div class="meta-item">
           <strong>Auteur</strong>
-          <a href="../auteurs/ytk" style="color:var(--accent-2);font-weight:700;text-decoration:none;">YTK</a>
+          <a href="../auteurs/ytk" class="author-link">YTK</a>
         </div>
         <div class="meta-item">
           <strong>Console & Date</strong>
           &#127918; DS
-          <br>📅 Publié le 17/02/2026
+          <br>ðŸ“… PubliÃ© le 17/02/2026
         </div>
         <div class="meta-item">
           <strong>Statut</strong>
@@ -444,7 +452,7 @@
 
   <footer class="container">
     <div class="footer-section">
-      CreeperTV - Made with &#128293; in France • Built with AI
+      CreeperTV - Made with &#128293; in France â€¢ Built with AI
     </div>
   </footer>
   <button id="backToTop" class="back-to-top" aria-label="Retour en haut" title="Retour en haut">&uarr;</button>
@@ -520,6 +528,7 @@
   </script>
 </body>
 </html>
+
 
 
 

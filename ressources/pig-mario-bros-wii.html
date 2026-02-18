@@ -160,7 +160,6 @@
       line-height:1.7;
       font-size:1.02rem;
     }
-
     .mod-meta {
       display:grid;
       grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
@@ -178,7 +177,16 @@
       display:block;
       margin-bottom:4px;
     }
-
+    .author-link {
+      color: var(--accent);
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      transition: color .2s ease;
+    }
+    .author-link:hover {
+      color: var(--accent-2);
+    }
     .actions {
       display:flex;
       flex-wrap:wrap;
@@ -370,10 +378,10 @@
         <a href="https://1creepertv.github.io/partenaires" class="nav-link">Partenaires</a>
         <a href="https://1creepertv.github.io/ressources" class="nav-link active">Ressources</a>
         <a href="https://1creepertv.github.io/profils" class="nav-link">Profils</a>
-        <a href="https://1creepertv.github.io/a-propos" class="nav-link">À Propos</a>
+        <a href="https://1creepertv.github.io/a-propos" class="nav-link">Ã€ Propos</a>
         <a href="https://1creepertv.github.io/formulaires" class="nav-link">Formulaires</a>
       </nav>
-      <button id="playPause" class="toggle">🔈 Jouer</button>
+      <button id="playPause" class="toggle">ðŸ”ˆ Jouer</button>
     </div>
   </header>
 
@@ -384,7 +392,7 @@
       <p class="subtitle">Aventure personnalisee en cours de developpement</p>
 
       <p class="description">
-        Bienvenue dans mon aventure. Plonge dans une experience entierement revisitée avec de nombreux contenus personnalisés:
+        Bienvenue dans mon aventure. Plonge dans une experience entierement revisitÃ©e avec de nombreux contenus personnalisÃ©s:
         musiques custom pour une ambiance unique, niveaux inedits a explorer, cartes du monde personnalisees,
         et bien d'autres surprises a decouvrir.
       </p>
@@ -392,7 +400,7 @@
       <div class="mod-meta">
         <div class="meta-item">
           <strong>Auteur</strong>
-          <a href="../auteurs/piggreen34654" style="color:var(--accent-2);font-weight:700;text-decoration:none;">Piggreen34654</a>
+          <a href="../auteurs/piggreen34654" class="author-link">Piggreen34654</a>
         </div>
         <div class="meta-item">
           <strong>Statut</strong>
@@ -401,7 +409,7 @@
         <div class="meta-item">
           <strong>Console & Date</strong>
           Wii
-          <br>📅 Publié le 17/02/2026
+          <br>ðŸ“… PubliÃ© le 17/02/2026
         </div>
         <div class="meta-item">
           <strong>Telechargement</strong>
@@ -429,7 +437,7 @@
           <img class="discord-widget-icon" src="https://raw.githubusercontent.com/1creepertv/1creepertv.github.io/refs/heads/main/Fichiers/Mii%20%26%20Backgrounds/lv_0_2025112922-1764451316159.gif" alt="Logo du serveur Discord">
           <div>
             <h3 class="discord-widget-title">Rejoins le serveur Discord</h3>
-            <p class="discord-widget-text">Entraide modding, ressources utiles, astuces, chill (soirées jeux) et communauté active chaque jour.</p>
+            <p class="discord-widget-text">Entraide modding, ressources utiles, astuces, chill (soirÃ©es jeux) et communautÃ© active chaque jour.</p>
           </div>
           <a class="discord-widget-btn" href="https://discord.gg/AQ7w57CKk8" target="_blank" rel="noopener noreferrer">Rejoindre</a>
         </div>
@@ -439,7 +447,7 @@
 
   <footer class="container">
     <div class="footer-section">
-      CreeperTV - Made with &#128293; in France • Built with AI
+      CreeperTV - Made with &#128293; in France â€¢ Built with AI
     </div>
   </footer>
   <button id="backToTop" class="back-to-top" aria-label="Retour en haut" title="Retour en haut">&uarr;</button>
@@ -457,17 +465,17 @@
     if (!playing) {
       audio.volume = 0.28;
       audio.play().then(() => {
-        btn.textContent = '🔊 Lecture';
+        btn.textContent = 'ðŸ”Š Lecture';
         btn.classList.add('playing');
         playing = true;
       }).catch(() => {
-        btn.textContent = '🔇 Erreur';
+        btn.textContent = 'ðŸ”‡ Erreur';
         btn.classList.remove('playing');
         playing = false;
       });
     } else {
       audio.pause();
-      btn.textContent = '🔈 Jouer';
+      btn.textContent = 'ðŸ”ˆ Jouer';
       btn.classList.remove('playing');
       playing = false;
     }
@@ -515,6 +523,7 @@
   </script>
 </body>
 </html>
+
 
 
 

@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>WNPV - Ressources</title>
   <meta property="og:title" content="WNPV - Ressources" />
-  <meta property="og:description" content="Homebrew Wii pour consulter les profils réseau et en modifier les propriétés (SSID, clé, etc.)." />
+  <meta property="og:description" content="Homebrew Wii pour consulter les profils rÃ©seau et en modifier les propriÃ©tÃ©s (SSID, clÃ©, etc.)." />
   <meta property="og:image" content="https://raw.githubusercontent.com/1CreeperTV/1creepertv.github.io/refs/heads/main/Fichiers/Ressources mods/Wii/WNPV/icon.png" />
   <meta property="og:url" content="https://1creepertv.github.io/ressources/wnpv" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="WNPV - Ressources" />
-  <meta name="twitter:description" content="Homebrew Wii pour consulter les profils réseau et en modifier les propriétés (SSID, clé, etc.)." />
+  <meta name="twitter:description" content="Homebrew Wii pour consulter les profils rÃ©seau et en modifier les propriÃ©tÃ©s (SSID, clÃ©, etc.)." />
   <meta name="twitter:image" content="https://raw.githubusercontent.com/1CreeperTV/1creepertv.github.io/refs/heads/main/Fichiers/Ressources mods/Wii/WNPV/icon.png" />
   <link rel="icon" href="https://raw.githubusercontent.com/1creepertv/1creepertv.github.io/refs/heads/main/Fichiers/Mii%20%26%20Backgrounds/Mii.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
@@ -41,10 +41,34 @@
     .title{margin:0 0 8px;font-family:'Montserrat',sans-serif;color:var(--light-text);font-size:2.2rem;text-align:center;line-height:1.1;}
     .subtitle{text-align:center;margin:0 0 22px;color:var(--accent-2);font-weight:600;}
     .description{margin:0;line-height:1.7;font-size:1.02rem;}
-    .mod-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:20px 0;}
-    .meta-item{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:12px;}
-    .meta-item strong{color:var(--light-text);display:block;margin-bottom:4px;}
-    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px;}
+    .mod-meta {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+      gap:12px;
+      margin:20px 0;
+    }
+    .meta-item {
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:12px;
+      padding:12px;
+    }
+    .meta-item strong {
+      color:var(--light-text);
+      display:block;
+      margin-bottom:4px;
+    }
+    .author-link {
+      color: var(--accent);
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      transition: color .2s ease;
+    }
+    .author-link:hover {
+      color: var(--accent-2);
+    }
+    .actions {display:flex;flex-wrap:wrap;gap:12px;margin-top:18px;}
     .btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;color:#1b0b00;background:linear-gradient(90deg,var(--accent),var(--accent-2));padding:12px 16px;border-radius:12px;font-weight:700;border:none;transition:transform .2s ease, box-shadow .2s ease, filter .2s ease;box-shadow:0 6px 18px rgba(0,0,0,0.35);}
     .btn.secondary{background:rgba(255,255,255,0.04);color:var(--muted);border:1px solid rgba(255,255,255,0.1);}
     .btn:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(0,0,0,0.5);filter:brightness(1.04);}
@@ -96,12 +120,12 @@
       <div class="mod-meta">
         <div class="meta-item">
           <strong>Auteur</strong>
-          <a href="../auteurs/abdelali221" style="color:var(--accent-2);font-weight:700;text-decoration:none;">Abdelali221</a>
+          <a href="../auteurs/abdelali221" class="author-link">Abdelali221</a>
         </div>
         <div class="meta-item">
           <strong>Console & Date</strong>
           &#127918; Wii (Homebrew)
-          <br>📅 Publié le 17/02/2026
+          <br>ðŸ“… PubliÃ© le 17/02/2026
         </div>
         <div class="meta-item">
           <strong>Type</strong>
@@ -133,7 +157,7 @@
     </section>
   </main>
 
-  <footer class="container"><div class="footer-section">CreeperTV - Made with &#128293; in France • Built with AI</div></footer>
+  <footer class="container"><div class="footer-section">CreeperTV - Made with &#128293; in France â€¢ Built with AI</div></footer>
   <button id="backToTop" class="back-to-top" aria-label="Retour en haut" title="Retour en haut">&uarr;</button>
 
   <audio id="bgAudio" loop>
@@ -145,8 +169,8 @@
   const btn = document.getElementById('playPause');
   let playing = false;
   function toggleAudio() {
-    if (!playing) { audio.volume = 0.28; audio.play().then(() => { btn.textContent = '🔊 Lecture'; btn.classList.add('playing'); playing = true; }).catch(() => { btn.textContent = '🔇 Erreur'; btn.classList.remove('playing'); playing = false; }); }
-    else { audio.pause(); btn.textContent = '🔈 Jouer'; btn.classList.remove('playing'); playing = false; }
+    if (!playing) { audio.volume = 0.28; audio.play().then(() => { btn.textContent = 'ðŸ”Š Lecture'; btn.classList.add('playing'); playing = true; }).catch(() => { btn.textContent = 'ðŸ”‡ Erreur'; btn.classList.remove('playing'); playing = false; }); }
+    else { audio.pause(); btn.textContent = 'ðŸ”ˆ Jouer'; btn.classList.remove('playing'); playing = false; }
   }
   btn.addEventListener('click', toggleAudio);
   </script>
@@ -158,6 +182,7 @@
   </script>
 </body>
 </html>
+
 
 
 
