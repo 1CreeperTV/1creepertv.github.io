@@ -143,6 +143,33 @@
       margin: 10px 0 0;
       font-weight: 600;
     }
+    .platform-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+    .platform-filter-btn {
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.05);
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 0.92rem;
+      padding: 8px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: transform .2s ease, border-color .2s ease, color .2s ease, background .2s ease;
+    }
+    .platform-filter-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255,138,0,0.6);
+      color: var(--light-text);
+    }
+    .platform-filter-btn.active {
+      color: #1b0b00;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      border-color: rgba(255,138,0,0.8);
+    }
 
     .category-block + .category-block {
       margin-top: 30px;
@@ -318,7 +345,16 @@
     </div>
 
     <section class="section-glass">
-      <div class="category-block">
+      <div class="platform-filters" role="group" aria-label="Filtrer par plateforme">
+        <button class="platform-filter-btn active" type="button" data-filter="all">Tous</button>
+        <button class="platform-filter-btn" type="button" data-filter="wii">Wii</button>
+        <button class="platform-filter-btn" type="button" data-filter="wii-u">Wii U</button>
+        <button class="platform-filter-btn" type="button" data-filter="3ds">3DS</button>
+        <button class="platform-filter-btn" type="button" data-filter="ds">DS</button>
+        <button class="platform-filter-btn" type="button" data-filter="nes">NES</button>
+      </div>
+
+      <div class="category-block" data-platform="wii">
         <h2 class="category-title">Créations Wii</h2>
         <div class="mods-grid">
           <a class="mod-card" href="ressources/custom-track-de-piggreen">
@@ -414,7 +450,7 @@
         </div>
       </div>
 
-      <div class="category-block">
+      <div class="category-block" data-platform="wii-u">
         <h2 class="category-title">Créations Wii U</h2>
         <div class="mods-grid">
           <a class="mod-card" href="ressources/nintendo-switch-u-splash">
@@ -450,7 +486,7 @@
         </div>
       </div>
 
-      <div class="category-block">
+      <div class="category-block" data-platform="3ds">
         <h2 class="category-title">Créations 3DS</h2>
         <div class="mods-grid">
           <a class="mod-card" href="ressources/tomodachi-life-night">
@@ -466,7 +502,7 @@
         </div>
       </div>
 
-      <div class="category-block">
+      <div class="category-block" data-platform="ds">
         <h2 class="category-title">Créations DS</h2>
         <div class="mods-grid">
           <a class="mod-card" href="ressources/new-super-ytk-land-ds">
@@ -482,7 +518,7 @@
         </div>
       </div>
 
-      <div class="category-block">
+      <div class="category-block" data-platform="nes">
         <h2 class="category-title">Créations NES</h2>
         <div class="mods-grid">
           <a class="mod-card" href="ressources/extra-super-mario-bros-3">
@@ -584,6 +620,30 @@
     window.addEventListener('scroll', syncBtn, { passive: true });
     window.addEventListener('load', syncBtn);
     syncBtn();
+  })();
+  </script>
+  <script>
+  (function () {
+    const filterButtons = Array.from(document.querySelectorAll('.platform-filter-btn'));
+    const categoryBlocks = Array.from(document.querySelectorAll('.category-block[data-platform]'));
+    if (!filterButtons.length || !categoryBlocks.length) return;
+
+    const applyFilter = (platform) => {
+      categoryBlocks.forEach((block) => {
+        const blockPlatform = block.getAttribute('data-platform');
+        block.style.display = (platform === 'all' || blockPlatform === platform) ? '' : 'none';
+      });
+
+      filterButtons.forEach((btn) => {
+        btn.classList.toggle('active', btn.dataset.filter === platform);
+      });
+    };
+
+    filterButtons.forEach((btn) => {
+      btn.addEventListener('click', () => applyFilter(btn.dataset.filter || 'all'));
+    });
+
+    applyFilter('all');
   })();
   </script>
 </body>
