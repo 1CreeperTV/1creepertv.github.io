@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
@@ -47,8 +47,24 @@
     .mod-media{position:relative}
     .mod-thumb{width:100%;height:170px;object-fit:cover;background:linear-gradient(45deg,#1b0b00,#331a00)}
     .mod-tag{display:inline-flex;align-items:center;position:absolute;left:12px;bottom:12px;padding:4px 10px;border-radius:999px;background:rgba(8,6,10,.75);border:1px solid rgba(255,214,107,.5);color:#ffe29b;font-size:12px;font-weight:800;backdrop-filter:none;}
-    .mod-body{padding:14px}
+        .mod-body{padding:14px}
     .mod-title{margin:0 0 8px;color:var(--light-text);font-weight:800;font-size:1.08rem}
+    .mod-author-line {
+      margin: 0 0 8px;
+      color: #ffd66b;
+      font-size: 0.93rem;
+      font-weight: 700;
+    }
+    .mod-author-link {
+      color: var(--accent);
+      cursor: pointer;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      transition: color .2s ease;
+    }
+    .mod-author-link:hover {
+      color: var(--accent-2);
+    }
     .mod-desc{margin:0;color:var(--muted);line-height:1.45;font-size:.95rem}
     .footer-section{display:flex;justify-content:center;align-items:center;font-size:13px;color:rgba(255,255,255,.45);padding:20px 0 10px;text-align:center;}
     .back-to-top{position:fixed;right:18px;bottom:18px;z-index:60;border:1px solid rgba(255,255,255,.12);background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#1b0b00;font-weight:800;font-size:13px;padding:10px 12px;border-radius:999px;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.45);opacity:0;transform:translateY(8px);pointer-events:none;transition:opacity .2s ease,transform .2s ease;}
@@ -100,6 +116,7 @@
           </div>
           <div class="mod-body">
             <h3 class="mod-title">Creeper Circuit</h3>
+            <p class="mod-author-line">Publié par <span class="mod-author-link" role="link" tabindex="0" data-author-url="../auteurs/ytk">YTK</span></p>
             <p class="mod-desc">Custom track MKWii d&eacute;di&eacute; &agrave; CreeperTV.</p>
           </div>
         </a>
@@ -110,6 +127,7 @@
           </div>
           <div class="mod-body">
             <h3 class="mod-title">New Super YTK Bros. DS</h3>
+            <p class="mod-author-line">Publié par <span class="mod-author-link" role="link" tabindex="0" data-author-url="../auteurs/ytk">YTK</span></p>
             <p class="mod-desc">Mod NSMB DS en cours de développement.</p>
           </div>
         </a>
@@ -120,6 +138,7 @@
           </div>
           <div class="mod-body">
             <h3 class="mod-title">Weird Super Mario Bros</h3>
+            <p class="mod-author-line">Publié par <span class="mod-author-link" role="link" tabindex="0" data-author-url="../auteurs/ytk">YTK</span></p>
             <p class="mod-desc">ROM hack NES en démo avec 2 niveaux custom.</p>
           </div>
         </a>
@@ -229,6 +248,34 @@
     if (saved === 'profils' || saved === 'ressources') {
       setActive(saved);
     }
+  })();
+  </script>
+  <script>
+  (function () {
+    const authorLinks = document.querySelectorAll('.mod-author-link[data-author-url]');
+    if (!authorLinks.length) return;
+
+    authorLinks.forEach((el) => {
+      const goToAuthor = () => {
+        const url = el.getAttribute('data-author-url');
+        if (!url) return;
+        window.location.href = url;
+      };
+
+      el.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        goToAuthor();
+      });
+
+      el.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          event.stopPropagation();
+          goToAuthor();
+        }
+      });
+    });
   })();
   </script>
 </body>
