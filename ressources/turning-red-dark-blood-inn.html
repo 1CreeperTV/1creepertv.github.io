@@ -209,6 +209,19 @@
       box-shadow: 0 14px 32px rgba(0,0,0,0.5);
       filter: brightness(1.04);
     }
+    .gallery {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+      gap:14px;
+      margin-top:12px;
+    }
+    .gallery img {
+      width:100%;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,0.1);
+      box-shadow:0 8px 24px rgba(0,0,0,0.45);
+      background:#0d0a10;
+    }
     .widget-container {
       display: flex;
       justify-content: center;
@@ -394,9 +407,16 @@
 
       <div class="actions">
         <a class="btn" href="https://github.com/1CreeperTV/1creepertv.github.io/raw/refs/heads/main/Fichiers/Ressources%20mods/Wii%20U/Turning%20Red%20(Dark%20Blood%20Inn)%20%5BPaper%20Mario%20Color%20Splash%20Mod%5D/Turning%20Red%20Dark%20Blood%20Inn.rar" target="_blank" rel="noopener noreferrer">T&eacute;l&eacute;charger</a>
-        <a class="btn secondary" href="https://github.com/1CreeperTV/1creepertv.github.io/blob/main/Fichiers/Ressources%20mods/Wii%20U/Turning%20Red%20(Dark%20Blood%20Inn)%20%5BPaper%20Mario%20Color%20Splash%20Mod%5D/Capture_decran_2026-02-18_165832.png?raw=true" target="_blank" rel="noopener noreferrer">Aper&ccedil;u 2</a>
-        <a class="btn secondary" href="https://github.com/1CreeperTV/1creepertv.github.io/blob/main/Fichiers/Ressources%20mods/Wii%20U/Turning%20Red%20(Dark%20Blood%20Inn)%20%5BPaper%20Mario%20Color%20Splash%20Mod%5D/Capture_decran_2026-02-18_165855.png?raw=true" target="_blank" rel="noopener noreferrer">Aper&ccedil;u 3</a>
         <a class="btn secondary" href="../ressources">Retour &agrave; la liste</a>
+      </div>
+    </section>
+
+    <section class="section-glass">
+      <h2 style="margin-top:0;color:var(--light-text);font-size:1.6rem;">Images d'aper&ccedil;u</h2>
+      <div class="gallery">
+        <img src="https://github.com/1CreeperTV/1creepertv.github.io/blob/main/Fichiers/Ressources%20mods/Wii%20U/Turning%20Red%20(Dark%20Blood%20Inn)%20%5BPaper%20Mario%20Color%20Splash%20Mod%5D/Nouveau_projet.png?raw=true" alt="Turning Red (Dark Blood Inn) apercu 1">
+        <img src="https://github.com/1CreeperTV/1creepertv.github.io/blob/main/Fichiers/Ressources%20mods/Wii%20U/Turning%20Red%20(Dark%20Blood%20Inn)%20%5BPaper%20Mario%20Color%20Splash%20Mod%5D/Capture_decran_2026-02-18_165832.png?raw=true" alt="Turning Red (Dark Blood Inn) apercu 2">
+        <img src="https://github.com/1CreeperTV/1creepertv.github.io/blob/main/Fichiers/Ressources%20mods/Wii%20U/Turning%20Red%20(Dark%20Blood%20Inn)%20%5BPaper%20Mario%20Color%20Splash%20Mod%5D/Capture_decran_2026-02-18_165855.png?raw=true" alt="Turning Red (Dark Blood Inn) apercu 3">
       </div>
     </section>
 
