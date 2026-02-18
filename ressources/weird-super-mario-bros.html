@@ -3,7 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CreeperTV - Ressources</title>
+  <title>Weird Super Mario Bros - Ressources</title>
+  <meta property="og:title" content="Weird Super Mario Bros - Ressources" />
+  <meta property="og:description" content="ROM Hack NES par YTK. Démo disponible avec 2 niveaux pour le moment." />
+  <meta property="og:image" content="https://github.com/1CreeperTV/1creepertv.github.io/blob/main/Images/Ressources%20mods/Weird%20Super%20Mario%20Bros/image.png?raw=true" />
+  <meta property="og:url" content="https://1creepertv.github.io/ressources/weird-super-mario-bros" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Weird Super Mario Bros - Ressources" />
+  <meta name="twitter:description" content="ROM Hack NES par YTK. Démo disponible avec 2 niveaux pour le moment." />
+  <meta name="twitter:image" content="https://github.com/1CreeperTV/1creepertv.github.io/blob/main/Images/Ressources%20mods/Weird%20Super%20Mario%20Bros/image.png?raw=true" />
   <link rel="icon" href="https://raw.githubusercontent.com/1creepertv/1creepertv.github.io/refs/heads/main/Images/Mii%20%26%20Backgrounds/Mii.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
@@ -11,7 +20,6 @@
   <style>
     :root{
       --bg:#08060a;
-      --glass: rgba(255,255,255,0.06);
       --accent: #ff8a00;
       --accent-2: #ffd66b;
       --muted: #cfcfd6;
@@ -117,7 +125,7 @@
 
     .section-glass {
       padding: 30px;
-      margin-bottom: 40px;
+      margin-bottom: 24px;
       border-radius: 24px;
       background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
       border: 1px solid rgba(255,255,255,0.05);
@@ -125,96 +133,152 @@
       backdrop-filter:none;
     }
 
-    .main-header {
-      text-align: center;
-      margin-bottom: 40px;
+    .mod-logo {
+      width:min(460px, 100%);
+      display:block;
+      margin:0 auto 20px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,0.12);
+      box-shadow:0 12px 28px rgba(0,0,0,0.45);
     }
-    .main-header h1 {
+    .title {
+      margin:0 0 8px;
       font-family: 'Montserrat', sans-serif;
-      font-size: 3rem;
-      font-weight: 900;
-      color: var(--light-text);
-      margin: 0;
-      line-height: 1;
+      color:var(--light-text);
+      font-size:2.2rem;
+      text-align:center;
+      line-height:1.1;
     }
-    .main-header .subtitle {
-      font-size: 1.1rem;
-      color: var(--accent-2);
-      margin: 10px 0 0;
-      font-weight: 600;
+    .subtitle {
+      text-align:center;
+      margin:0 0 22px;
+      color:var(--accent-2);
+      font-weight:600;
+    }
+    .description {
+      margin:0;
+      line-height:1.7;
+      font-size:1.02rem;
     }
 
-    .category-block + .category-block {
-      margin-top: 30px;
+    .mod-meta {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+      gap:12px;
+      margin:20px 0;
     }
-    .category-title {
-      margin: 0 0 16px;
-      color: var(--light-text);
-      font-size: 1.35rem;
-      font-weight: 800;
-      display: inline-block;
-      border-bottom: 2px solid rgba(255, 138, 0, 0.5);
-      padding-bottom: 5px;
+    .meta-item {
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:12px;
+      padding:12px;
     }
-    .mods-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 24px;
+    .meta-item strong {
+      color:var(--light-text);
+      display:block;
+      margin-bottom:4px;
     }
-    .mod-card {
-      display: block;
-      text-decoration: none;
-      color: inherit;
-      border-radius: 18px;
-      overflow: hidden;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.45);
-      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+
+    .actions {
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:18px;
     }
-    .mod-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 40px rgba(255, 138, 0, 0.25);
-      border-color: rgba(255, 138, 0, 0.55);
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+      color:#1b0b00;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      padding:12px 16px;
+      border-radius:12px;
+      font-weight:700;
+      border:none;
+      transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.35);
     }
-    .mod-media {
-      position: relative;
+    .btn.secondary{
+      background:rgba(255,255,255,0.04);
+      color:var(--muted);
+      border:1px solid rgba(255,255,255,0.1);
     }
-    .mod-thumb {
+    .btn:hover{
+      transform: translateY(-4px);
+      box-shadow: 0 14px 32px rgba(0,0,0,0.5);
+      filter: brightness(1.04);
+    }
+
+    .gallery {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+      gap:14px;
+      margin-top:12px;
+    }
+    .gallery img {
+      width:100%;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,0.1);
+      box-shadow:0 8px 24px rgba(0,0,0,0.45);
+      background:#0d0a10;
+    }
+    .widget-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 8px;
+    }
+    .discord-widget-card {
       width: 100%;
-      height: 190px;
-      object-fit: cover;
-      background: linear-gradient(45deg, #1b0b00, #331a00);
+      max-width: 760px;
+      display: grid;
+      grid-template-columns: 92px 1fr auto;
+      gap: 14px;
+      align-items: center;
+      background: linear-gradient(135deg, rgba(88,101,242,0.18), rgba(255,255,255,0.04));
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 18px;
+      padding: 14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.45);
     }
-    .mod-body { padding: 16px; }
-    .mod-title {
-      margin: 0 0 8px;
+    .discord-widget-icon {
+      width: 92px;
+      height: 92px;
+      border-radius: 16px;
+      object-fit: cover;
+      border: 2px solid rgba(255,255,255,0.14);
+    }
+    .discord-widget-title {
+      margin: 0 0 6px;
       color: var(--light-text);
       font-size: 1.2rem;
       font-weight: 800;
     }
-    .mod-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      position: absolute;
-      left: 12px;
-      bottom: 12px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(8, 6, 10, 0.75);
-      border: 1px solid rgba(255, 214, 107, 0.5);
-      color: #ffe29b;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.2px;
-      backdrop-filter:none;
-    }
-    .mod-desc {
+    .discord-widget-text {
       margin: 0;
       color: var(--muted);
-      line-height: 1.45;
-      font-size: 0.97rem;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+    .discord-widget-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      background: linear-gradient(90deg,#5865F2,#7984f4);
+      color: #fff;
+      border-radius: 12px;
+      padding: 10px 14px;
+      font-weight: 800;
+      border: 0;
+      white-space: nowrap;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .discord-widget-btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.55);
     }
 
     .footer-section {
@@ -226,7 +290,6 @@
       padding: 20px 0 10px;
       text-align: center;
     }
-
     .back-to-top {
       position: fixed;
       right: 18px;
@@ -273,20 +336,24 @@
       .nav-link { font-size: 13px; white-space: nowrap; }
       .toggle { padding: 5px 8px; font-size: 12px; }
       .container { padding: 20px 12px; padding-top: calc(var(--header-offset, 88px) + 12px); }
-      .main-header h1 { font-size: 2.2rem; }
       .section-glass { padding: 20px; border-radius: 18px; }
+      .title { font-size: 1.8rem; }
+      .discord-widget-card {
+        grid-template-columns: 68px 1fr;
+        gap: 10px;
+        padding: 12px;
+      }
+      .discord-widget-icon { width: 68px; height: 68px; border-radius: 12px; }
+      .discord-widget-btn {
+        grid-column: 1 / -1;
+        width: 100%;
+      }
       .back-to-top {
         right: 12px;
         bottom: 12px;
         font-size: 12px;
         padding: 8px 10px;
       }
-    }
-    @media (max-width: 1050px) {
-      .mods-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-    @media (max-width: 680px) {
-      .mods-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -312,143 +379,64 @@
   </header>
 
   <main class="container">
-    <div class="main-header">
-      <h1>Ressources Mods</h1>
-      <p class="subtitle">Liste statique des mods de la communauté de CreeperTV.</p>
-    </div>
+    <section class="section-glass">
+      <img class="mod-logo" src="../Images/Ressources%20mods/Weird%20Super%20Mario%20Bros/image.png" alt="Weird Super Mario Bros">
+      <h1 class="title">Weird Super Mario Bros</h1>
+      <p class="subtitle">ROM Hack NES en démo</p>
+
+      <p class="description">
+        Weird Super Mario Bros est une petite ROM hack NES créée par YTK, pensée comme une version démo rapide à tester.
+      </p>
+      <p class="description" style="margin-top:12px;">
+        La démo propose actuellement 2 niveaux custom, avec une ambiance volontairement décalée et un level design expérimental.
+      </p>
+      <p class="description" style="margin-top:12px;">
+        Le projet sera enrichi au fil des prochaines versions, avec de nouveaux niveaux et des ajustements de gameplay.
+      </p>
+
+      <div class="mod-meta">
+        <div class="meta-item">
+          <strong>Auteur</strong>
+          <a href="../auteurs/ytk" style="color:var(--accent-2);font-weight:700;text-decoration:none;">YTK</a>
+        </div>
+        <div class="meta-item">
+          <strong>Console & Date</strong>
+          🎮 NES
+          <br>📅 Publié le 18/02/2026
+        </div>
+        <div class="meta-item">
+          <strong>Statut</strong>
+          Démo (2 niveaux)
+        </div>
+        <div class="meta-item">
+          <strong>Base ROM</strong>
+          Super Mario Bros. (Japan, USA)
+        </div>
+      </div>
+
+      <div class="actions">
+        <a class="btn" href="https://github.com/1CreeperTV/1creepertv.github.io/raw/refs/heads/main/Images/Ressources%20mods/Weird%20Super%20Mario%20Bros/Super%20Mario%20Bros.%20(Japan,%20USA).nes" target="_blank" rel="noopener noreferrer">Télécharger la démo</a>
+        <a class="btn secondary" href="../ressources">Retour à la liste</a>
+      </div>
+    </section>
 
     <section class="section-glass">
-      <div class="category-block">
-        <h2 class="category-title">Mods Wii</h2>
-        <div class="mods-grid">
-          <a class="mod-card" href="ressources/creepertv-brstm-pack-for-mario-kart-wii">
-            <div class="mod-media">
-              <img class="mod-thumb" src="https://github.com/1CreeperTV/1creepertv.github.io/blob/main/Images/Ressources%20mods/CreeperTVs%20BRSTM%20pack/CreeperTViis_BRSTM_pack.png?raw=true" alt="Apercu CreeperTV's BRSTM Pack for Mario Kart Wii">
-              <span class="mod-tag">🎮 Wii</span>
-            </div>
-            <div class="mod-body">
-              <h2 class="mod-title">CreeperTV's BRSTM Pack for Mario Kart Wii</h2>
-              <p class="mod-desc">Pack musical BRSTM avec de nombreuses musiques Nintendo pour Mario Kart Wii.</p>
-            </div>
-          </a>
-          <a class="mod-card" href="ressources/custom-track-de-piggreen">
-            <div class="mod-media">
-              <img class="mod-thumb" src="Images/Ressources%20mods/Custom%20track%20de%20piggreen/Capture_decran_2026-01-06_151505.png" alt="Apercu Custom Track de Piggreen">
-              <span class="mod-tag">🎮 Wii</span>
-            </div>
-            <div class="mod-body">
-              <h2 class="mod-title">Custom Track de Piggreen</h2>
-              <p class="mod-desc">Custom Track Mario Kart Wii qui remplace Luigi Circuit (beginner_course.szs).</p>
-            </div>
-          </a>
-          <a class="mod-card" href="ressources/niiofetch">
-            <div class="mod-media">
-              <img class="mod-thumb" src="Images/Ressources%20mods/NiioFetch/icon.png" alt="Apercu NiioFetch">
-              <span class="mod-tag">🎮 Wii</span>
-            </div>
-            <div class="mod-body">
-              <h2 class="mod-title">NiioFetch</h2>
-              <p class="mod-desc">Homebrew Wii pour afficher rapidement les infos syst&egrave;me de votre console.</p>
-            </div>
-          </a>
-          <a class="mod-card" href="ressources/pig-mario-bros-wii">
-            <div class="mod-media">
-              <img class="mod-thumb" src="Images/Ressources%20mods/Pig%20Mario%20Bros%20Wii/PMBW_LD.png" alt="Apercu Pig Mario Bros Wii">
-              <span class="mod-tag">🎮 Wii</span>
-            </div>
-            <div class="mod-body">
-              <h2 class="mod-title">Pig Mario Bros Wii</h2>
-              <p class="mod-desc">Musiques custom, niveaux inédits et cartes du monde personnalisées.</p>
-            </div>
-          </a>
-          <a class="mod-card" href="ressources/wi-fi-lution-universal">
-            <div class="mod-media">
-              <img class="mod-thumb" src="Images/Ressources%20mods/Wi-Fi%20Lution%20Universal/IMG_4996.png" alt="Apercu Wi-Fi Lution Universal">
-              <span class="mod-tag">&#127918; Wii</span>
-            </div>
-            <div class="mod-body">
-              <h2 class="mod-title">Wi-Fi Lution Universal</h2>
-              <p class="mod-desc">WFC Loader Riivolution pour Mario Kart Wii PAL avec plusieurs serveurs en ligne compatibles.</p>
-            </div>
-          </a>
-          <a class="mod-card" href="ressources/wiirremote">
-            <div class="mod-media">
-              <img class="mod-thumb" src="Images/Ressources%20mods/WiiRremote/icon.png" alt="Apercu WiiRremote">
-              <span class="mod-tag">🎮 Wii</span>
-            </div>
-            <div class="mod-body">
-              <h2 class="mod-title">WiiRremote</h2>
-              <p class="mod-desc">Homebrew Wii pour utiliser la barre capteur comme &eacute;metteur infrarouge.</p>
-            </div>
-          </a>
-          <a class="mod-card" href="ressources/wnpv">
-            <div class="mod-media">
-              <img class="mod-thumb" src="Images/Ressources%20mods/WNPV/icon.png" alt="Apercu WNPV">
-              <span class="mod-tag">🎮 Wii</span>
-            </div>
-            <div class="mod-body">
-              <h2 class="mod-title">WNPV</h2>
-              <p class="mod-desc">Homebrew Wii pour consulter et modifier les profils r&eacute;seau de la console.</p>
-            </div>
-          </a>
-        </div>
+      <h2 style="margin-top:0;color:var(--light-text);font-size:1.6rem;">Images d'aperçu</h2>
+      <div class="gallery">
+        <img src="../Images/Ressources%20mods/Weird%20Super%20Mario%20Bros/image.png" alt="Weird Super Mario Bros aperçu 1">
+        <img src="../Images/Ressources%20mods/Weird%20Super%20Mario%20Bros/image2.png" alt="Weird Super Mario Bros aperçu 2">
       </div>
+    </section>
 
-      <div class="category-block">
-        <h2 class="category-title">Mods Wii U</h2>
-        <div class="mods-grid">
-          <a class="mod-card" href="ressources/nintendo-gamecube-splash">
-            <div class="mod-media">
-              <img class="mod-thumb" src="https://raw.githubusercontent.com/1CreeperTV/1creepertv.github.io/refs/heads/main/Images/Ressources%20mods/Nintendo%20Gamecube%20Splash/splash.png" alt="Apercu Nintendo Gamecube Splash">
-              <span class="mod-tag">🎮 Wii U</span>
-            </div>
-            <div class="mod-body">
-              <h2 class="mod-title">Nintendo Gamecube Splash</h2>
-              <p class="mod-desc">Splash Wii U custom prêt à l'emploi.</p>
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <div class="category-block">
-        <h2 class="category-title">Mods DS</h2>
-        <div class="mods-grid">
-          <a class="mod-card" href="ressources/new-super-ytk-land-ds">
-            <div class="mod-media">
-              <img class="mod-thumb" src="Images/Ressources%20mods/New%20Super%20YTK%20Land%20DS/Capture_decran_2025-12-07_134125.png" alt="Apercu New Super YTK Bros. DS">
-              <span class="mod-tag">🎮 DS</span>
-            </div>
-            <div class="mod-body">
-              <h2 class="mod-title">New Super YTK Bros. DS</h2>
-              <p class="mod-desc">Mod NSMB DS avec 3 niveaux custom, dont deux niveaux orientés speedrun.</p>
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <div class="category-block">
-        <h2 class="category-title">Mods NES</h2>
-        <div class="mods-grid">
-          <a class="mod-card" href="ressources/extra-super-mario-bros-3">
-            <div class="mod-media">
-              <img class="mod-thumb" src="Images/Ressources%20mods/Extra%20Super%20Mario%20Bros.%203/1-4_Fortress-2.png" alt="Apercu Extra Super Mario Bros. 3">
-              <span class="mod-tag">🎮 NES</span>
-            </div>
-            <div class="mod-body">
-              <h2 class="mod-title">Extra Super Mario Bros. 3</h2>
-              <p class="mod-desc">ROM Hack entièrement reconstruit avec niveaux inédits et difficulté relevée.</p>
-            </div>
-          </a>
-          <a class="mod-card" href="ressources/weird-super-mario-bros">
-            <div class="mod-media">
-              <img class="mod-thumb" src="Images/Ressources%20mods/Weird%20Super%20Mario%20Bros/image.png" alt="Apercu Weird Super Mario Bros">
-              <span class="mod-tag">🎮 NES</span>
-            </div>
-            <div class="mod-body">
-              <h2 class="mod-title">Weird Super Mario Bros</h2>
-              <p class="mod-desc">Petite ROM hack NES en démo avec 2 niveaux custom pour le moment.</p>
-            </div>
-          </a>
+    <section class="section-glass">
+      <div class="widget-container">
+        <div class="discord-widget-card">
+          <img class="discord-widget-icon" src="https://raw.githubusercontent.com/1creepertv/1creepertv.github.io/refs/heads/main/Images/Mii%20%26%20Backgrounds/lv_0_2025112922-1764451316159.gif" alt="Logo du serveur Discord">
+          <div>
+            <h3 class="discord-widget-title">Rejoins le serveur Discord</h3>
+            <p class="discord-widget-text">Entraide modding, ressources utiles, astuces, chill (soirées jeux) et communauté active chaque jour.</p>
+          </div>
+          <a class="discord-widget-btn" href="https://discord.gg/AQ7w57CKk8" target="_blank" rel="noopener noreferrer">Rejoindre</a>
         </div>
       </div>
     </section>
@@ -532,7 +520,6 @@
   </script>
 </body>
 </html>
-
 
 
 
