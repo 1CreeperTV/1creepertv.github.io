@@ -429,6 +429,54 @@
         justify-content: center;
         margin-top: 18px;
     }
+    .latest-resources-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 16px;
+    }
+    .latest-resource-card {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+        border-radius: 16px;
+        overflow: hidden;
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.08);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.45);
+        transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    .latest-resource-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 15px 40px rgba(255, 138, 0, 0.25);
+        border-color: rgba(255, 138, 0, 0.55);
+    }
+    .latest-resource-thumb {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        background: linear-gradient(45deg, #1b0b00, #331a00);
+    }
+    .latest-resource-body {
+        padding: 12px;
+    }
+    .latest-resource-title {
+        margin: 0 0 8px;
+        color: var(--light-text);
+        font-size: 1rem;
+        line-height: 1.35;
+        font-weight: 700;
+    }
+    .latest-resource-meta {
+        margin: 0;
+        color: var(--accent-2);
+        font-size: .88rem;
+        font-weight: 700;
+    }
+    .latest-resources-more {
+        display: flex;
+        justify-content: center;
+        margin-top: 18px;
+    }
 
     .section-title {
         color: var(--light-text);
@@ -671,7 +719,44 @@
         </div>
     </section>
 
-    <!-- SECTION 4: WIDGET & STATS -->
+    <!-- SECTION 4: DERNIÈRES RESSOURCES -->
+    <section class="container">
+        <div class="section-glass">
+            <h2 class="section-title">3 Dernières Ressources</h2>
+
+            <div class="latest-resources-grid">
+                <a class="latest-resource-card" href="https://1creepertv.github.io/ressources/unreleased-splatoon-2-hat-port">
+                    <img class="latest-resource-thumb" src="https://github.com/1CreeperTV/1creepertv.github.io/blob/main/Fichiers/Ressources%20mods/Wii%20U/Unreleased%20Splatoon%202%20Hat%20Port/66c10b7a2a61b.jpg?raw=true" alt="Aperçu Unreleased Splatoon 2 Hat Port">
+                    <div class="latest-resource-body">
+                        <p class="latest-resource-title">Unreleased Splatoon 2 Hat Port</p>
+                        <p class="latest-resource-meta">Publié par KatsuMaki • Wii U (Mod)</p>
+                    </div>
+                </a>
+
+                <a class="latest-resource-card" href="https://1creepertv.github.io/ressources/splatoon-2-test-shoe-port">
+                    <img class="latest-resource-thumb" src="https://github.com/1CreeperTV/1creepertv.github.io/blob/main/Fichiers/Ressources%20mods/Wii%20U/Splatoon%202%20Test%20Shoe%20Port/66c20037d2007.jpg?raw=true" alt="Aperçu Splatoon 2 Test Shoe Port">
+                    <div class="latest-resource-body">
+                        <p class="latest-resource-title">Splatoon 2 Test Shoe Port</p>
+                        <p class="latest-resource-meta">Publié par KatsuMaki • Wii U (Mod)</p>
+                    </div>
+                </a>
+
+                <a class="latest-resource-card" href="https://1creepertv.github.io/ressources/inkzooka-e3-recolor-mod">
+                    <img class="latest-resource-thumb" src="https://github.com/1CreeperTV/1creepertv.github.io/blob/main/Fichiers/Ressources%20mods/Wii%20U/Inkzooka%20E3%20Recolor%20Mod/67851dba79258.jpg?raw=true" alt="Aperçu Inkzooka E3 Recolor Mod">
+                    <div class="latest-resource-body">
+                        <p class="latest-resource-title">Inkzooka E3 Recolor Mod</p>
+                        <p class="latest-resource-meta">Publié par KatsuMaki • Wii U (Mod)</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="latest-resources-more">
+                <a class="btn primary" href="https://1creepertv.github.io/ressources">Voir plus</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: WIDGET & STATS -->
     <section class="container">
         <div class="section-glass">
             <h2 class="section-title">3 Derniers Tutoriels</h2>
