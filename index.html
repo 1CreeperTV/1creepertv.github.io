@@ -339,6 +339,96 @@
         justify-content: center;
         margin-top: 18px;
     }
+    .home-partners-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 16px;
+    }
+    .home-partner-card {
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 16px;
+        padding: 16px;
+        text-align: center;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.45);
+        transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    .home-partner-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 15px 40px rgba(255, 138, 0, 0.25);
+        border-color: rgba(255, 138, 0, 0.55);
+    }
+    .home-partner-logo {
+        width: 72px;
+        height: 72px;
+        border-radius: 14px;
+        object-fit: cover;
+        border: 2px solid rgba(255,214,107,0.6);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+    }
+    .home-partner-name {
+        margin: 10px 0 6px;
+        color: var(--light-text);
+        font-size: 1.2rem;
+        font-weight: 800;
+    }
+    .home-partner-owner {
+        margin: 0 0 10px;
+        font-size: .9rem;
+        color: var(--muted);
+        font-weight: 600;
+    }
+    .home-partner-tags {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        margin-bottom: 12px;
+    }
+    .home-partner-tags span {
+        font-size: 12px;
+        padding: 5px 10px;
+        border-radius: 999px;
+        background: rgba(255,255,255,0.08);
+        color: var(--accent-2);
+        border: 1px solid rgba(255,255,255,0.06);
+        font-weight: 700;
+        white-space: nowrap;
+    }
+    .home-partner-actions {
+        display: grid;
+        gap: 8px;
+    }
+    .home-partner-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        border-radius: 12px;
+        padding: 10px 12px;
+        font-weight: 800;
+        font-size: 14px;
+        transition: transform .2s ease, box-shadow .2s ease;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+    }
+    .home-partner-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 26px rgba(0,0,0,0.45);
+    }
+    .home-partner-btn.discord {
+        color: #fff;
+        background: linear-gradient(90deg,#5865F2,#7984f4);
+    }
+    .home-partner-btn.site {
+        color: var(--muted);
+        border: 1px solid rgba(255,255,255,0.1);
+        background: rgba(255,255,255,0.04);
+    }
+    .home-partners-more {
+        display: flex;
+        justify-content: center;
+        margin-top: 18px;
+    }
 
     .section-title {
         color: var(--light-text);
@@ -560,7 +650,62 @@
         </div>
     </section>
 
-    <!-- SECTION 4: WIDGET & STATS -->
+    <!-- SECTION 4: PARTENAIRES -->
+    <section class="container">
+        <div class="section-glass">
+            <h2 class="section-title">Nos Partenaires</h2>
+
+            <div class="home-partners-grid">
+                <article class="home-partner-card">
+                    <img class="home-partner-logo" src="https://github.com/1creepertv/1creepertv.github.io/blob/main/Fichiers/Partenaires/ad2e93e3097c5d7c4dff1dd0c9c99396.png?raw=true" alt="Logo LB'XMB">
+                    <h3 class="home-partner-name">LB'XMB</h3>
+                    <p class="home-partner-owner">Owner: <b>LoupBlank</b></p>
+                    <div class="home-partner-tags"><span>#Jailbreak</span><span>#Communauté</span><span>#Ressources</span></div>
+                    <div class="home-partner-actions">
+                        <a class="home-partner-btn discord" href="https://discord.gg/zH5VSDYYyy" target="_blank" rel="noopener noreferrer">Rejoindre Discord</a>
+                        <a class="home-partner-btn site" href="https://lbxmb.fr" target="_blank" rel="noopener noreferrer">Visiter le site</a>
+                    </div>
+                </article>
+
+                <article class="home-partner-card">
+                    <img class="home-partner-logo" src="https://github.com/1creepertv/1creepertv.github.io/blob/main/Fichiers/Partenaires/12eebed03077766831c7ed3f5b9ccac5.png?raw=true" alt="Logo Stelare">
+                    <h3 class="home-partner-name">Stelare</h3>
+                    <p class="home-partner-owner">Owner: <b>benjamincm</b></p>
+                    <div class="home-partner-tags"><span>#Support</span><span>#Guides</span><span>#Site-web</span></div>
+                    <div class="home-partner-actions">
+                        <a class="home-partner-btn discord" href="https://discord.gg/6vJSyhngck" target="_blank" rel="noopener noreferrer">Rejoindre Discord</a>
+                        <a class="home-partner-btn site" href="https://stelare.org/" target="_blank" rel="noopener noreferrer">Visiter le site</a>
+                    </div>
+                </article>
+
+                <article class="home-partner-card">
+                    <img class="home-partner-logo" src="https://github.com/1creepertv/1creepertv.github.io/blob/main/Fichiers/Partenaires/5e7eb99ac0efa4748024ff206a151e92.png?raw=true" alt="Logo NDS Shop">
+                    <h3 class="home-partner-name">NDS Shop</h3>
+                    <p class="home-partner-owner">Owner: <b>Rinzler & CreeperTV</b></p>
+                    <div class="home-partner-tags"><span>#Universal-DB</span><span>#Shop</span><span>#3DS</span></div>
+                    <div class="home-partner-actions">
+                        <a class="home-partner-btn discord" href="https://discord.gg/e5jh4btyGF" target="_blank" rel="noopener noreferrer">Rejoindre Discord</a>
+                    </div>
+                </article>
+
+                <article class="home-partner-card">
+                    <img class="home-partner-logo" src="https://github.com/1creepertv/1creepertv.github.io/blob/main/Fichiers/Partenaires/780a67d2bff041d4f097e3811729d7cf.png?raw=true" alt="Logo Vintage Players">
+                    <h3 class="home-partner-name">Vintage Players</h3>
+                    <p class="home-partner-owner">Owner: <b>"Lolo" Vintage Players</b></p>
+                    <div class="home-partner-tags"><span>#Rétro</span><span>#Bons-plans</span><span>#Japon</span></div>
+                    <div class="home-partner-actions">
+                        <a class="home-partner-btn discord" href="https://discord.gg/faWh6X9BNa" target="_blank" rel="noopener noreferrer">Rejoindre Discord</a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="home-partners-more">
+                <a class="btn primary" href="https://1creepertv.github.io/partenaires">Voir tous les partenaires</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: WIDGET & STATS -->
     <section class="container">
         <div class="section-glass">
             <h2 class="section-title">Activité & Communauté</h2>
