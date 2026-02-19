@@ -299,40 +299,40 @@
 
     .latest-videos-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 16px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
     }
     .latest-video-card {
         display: block;
         text-decoration: none;
         color: inherit;
-        border-radius: 16px;
+        border-radius: 18px;
         overflow: hidden;
         background: rgba(255,255,255,0.04);
         border: 1px solid rgba(255,255,255,0.08);
         box-shadow: 0 8px 25px rgba(0,0,0,0.45);
-        transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+        transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
     }
     .latest-video-card:hover {
-        transform: translateY(-4px);
+        transform: translateY(-5px);
         box-shadow: 0 15px 40px rgba(255, 138, 0, 0.25);
         border-color: rgba(255, 138, 0, 0.55);
     }
     .latest-video-thumb {
         width: 100%;
-        height: 150px;
+        height: 190px;
         object-fit: cover;
         background: linear-gradient(45deg, #1b0b00, #331a00);
     }
     .latest-video-body {
-        padding: 12px;
+        padding: 16px;
     }
     .latest-video-title {
         margin: 0;
         color: var(--light-text);
-        font-size: 1rem;
-        line-height: 1.35;
-        font-weight: 700;
+        font-size: 1.2rem;
+        line-height: 1.4;
+        font-weight: 800;
     }
     .latest-videos-more {
         display: flex;
@@ -431,46 +431,83 @@
     }
     .latest-resources-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 16px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
     }
-    .latest-resource-card {
+    .latest-resources-grid .mod-card {
         display: block;
         text-decoration: none;
         color: inherit;
-        border-radius: 16px;
+        border-radius: 18px;
         overflow: hidden;
         background: rgba(255,255,255,0.04);
         border: 1px solid rgba(255,255,255,0.08);
         box-shadow: 0 8px 25px rgba(0,0,0,0.45);
-        transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+        transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
     }
-    .latest-resource-card:hover {
-        transform: translateY(-4px);
+    .latest-resources-grid .mod-card:hover {
+        transform: translateY(-5px);
         box-shadow: 0 15px 40px rgba(255, 138, 0, 0.25);
         border-color: rgba(255, 138, 0, 0.55);
     }
-    .latest-resource-thumb {
+    .latest-resources-grid .mod-media { position: relative; }
+    .latest-resources-grid .mod-thumb {
         width: 100%;
-        height: 150px;
+        height: 190px;
         object-fit: cover;
         background: linear-gradient(45deg, #1b0b00, #331a00);
     }
-    .latest-resource-body {
-        padding: 12px;
+    .latest-resources-grid .mod-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        position: absolute;
+        left: 12px;
+        bottom: 12px;
+        padding: 4px 10px;
+        border-radius: 999px;
+        background: rgba(8, 6, 10, 0.75);
+        border: 1px solid rgba(255, 214, 107, 0.5);
+        color: #ffe29b;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.2px;
+        backdrop-filter: none;
     }
-    .latest-resource-title {
+    .latest-resources-grid .mod-body { padding: 16px; }
+    .latest-resources-grid .mod-title {
         margin: 0 0 8px;
         color: var(--light-text);
-        font-size: 1rem;
-        line-height: 1.35;
+        font-size: 1.2rem;
+        font-weight: 800;
+    }
+    .latest-resources-grid .mod-author-line {
+        margin: 0 0 8px;
+        color: #ffd66b;
+        font-size: 0.93rem;
         font-weight: 700;
     }
-    .latest-resource-meta {
-        margin: 0;
+    .latest-resources-grid .mod-author-link {
+        color: var(--accent);
+        cursor: pointer;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+        transition: color .2s ease;
+    }
+    .latest-resources-grid .mod-author-link:hover {
         color: var(--accent-2);
-        font-size: .88rem;
-        font-weight: 700;
+    }
+    .latest-resources-grid .mod-desc {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.45;
+        font-size: 0.97rem;
+    }
+    @media (max-width: 1050px) {
+        .latest-resources-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 700px) {
+        .latest-resources-grid { grid-template-columns: 1fr; }
     }
     .latest-resources-more {
         display: flex;
@@ -508,6 +545,7 @@
         .hero { padding: calc(var(--header-offset, 88px) + 20px) 10px 50px; }
         .container { padding: 15px 10px; }
         .section-glass { padding: 20px; margin-bottom: 25px; border-radius: 18px; }
+        .latest-videos-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
     @media (max-width: 500px) {
         .hero-title { font-size: 2rem; }
@@ -725,27 +763,39 @@
             <h2 class="section-title">3 Dernières Ressources</h2>
 
             <div class="latest-resources-grid">
-                <a class="latest-resource-card" href="https://1creepertv.github.io/ressources/unreleased-splatoon-2-hat-port">
-                    <img class="latest-resource-thumb" src="https://github.com/1CreeperTV/1creepertv.github.io/blob/main/Fichiers/Ressources%20mods/Wii%20U/Unreleased%20Splatoon%202%20Hat%20Port/66c10b7a2a61b.jpg?raw=true" alt="Aperçu Unreleased Splatoon 2 Hat Port">
-                    <div class="latest-resource-body">
-                        <p class="latest-resource-title">Unreleased Splatoon 2 Hat Port</p>
-                        <p class="latest-resource-meta">Publié par KatsuMaki • Wii U (Mod)</p>
+                <a class="mod-card" href="https://1creepertv.github.io/ressources/unreleased-splatoon-2-hat-port">
+                    <div class="mod-media">
+                        <img class="mod-thumb" src="https://github.com/1CreeperTV/1creepertv.github.io/blob/main/Fichiers/Ressources%20mods/Wii%20U/Unreleased%20Splatoon%202%20Hat%20Port/66c10b7a2a61b.jpg?raw=true" alt="Aperçu Unreleased Splatoon 2 Hat Port">
+                        <span class="mod-tag">🎮 Wii U · Mod</span>
+                    </div>
+                    <div class="mod-body">
+                        <h3 class="mod-title">Unreleased Splatoon 2 Hat Port</h3>
+                        <p class="mod-author-line">Publié par <span class="mod-author-link" role="link" tabindex="0" data-author-url="https://1creepertv.github.io/auteurs/katsumaki">KatsuMaki</span></p>
+                        <p class="mod-desc">Port d'un chapeau issu de contenu non publié de Splatoon 2.</p>
                     </div>
                 </a>
 
-                <a class="latest-resource-card" href="https://1creepertv.github.io/ressources/splatoon-2-test-shoe-port">
-                    <img class="latest-resource-thumb" src="https://github.com/1CreeperTV/1creepertv.github.io/blob/main/Fichiers/Ressources%20mods/Wii%20U/Splatoon%202%20Test%20Shoe%20Port/66c20037d2007.jpg?raw=true" alt="Aperçu Splatoon 2 Test Shoe Port">
-                    <div class="latest-resource-body">
-                        <p class="latest-resource-title">Splatoon 2 Test Shoe Port</p>
-                        <p class="latest-resource-meta">Publié par KatsuMaki • Wii U (Mod)</p>
+                <a class="mod-card" href="https://1creepertv.github.io/ressources/splatoon-2-test-shoe-port">
+                    <div class="mod-media">
+                        <img class="mod-thumb" src="https://github.com/1CreeperTV/1creepertv.github.io/blob/main/Fichiers/Ressources%20mods/Wii%20U/Splatoon%202%20Test%20Shoe%20Port/66c20037d2007.jpg?raw=true" alt="Aperçu Splatoon 2 Test Shoe Port">
+                        <span class="mod-tag">🎮 Wii U · Mod</span>
+                    </div>
+                    <div class="mod-body">
+                        <h3 class="mod-title">Splatoon 2 Test Shoe Port</h3>
+                        <p class="mod-author-line">Publié par <span class="mod-author-link" role="link" tabindex="0" data-author-url="https://1creepertv.github.io/auteurs/katsumaki">KatsuMaki</span></p>
+                        <p class="mod-desc">Port d'équipement depuis les fichiers inutilisés de Splatoon 2.</p>
                     </div>
                 </a>
 
-                <a class="latest-resource-card" href="https://1creepertv.github.io/ressources/inkzooka-e3-recolor-mod">
-                    <img class="latest-resource-thumb" src="https://github.com/1CreeperTV/1creepertv.github.io/blob/main/Fichiers/Ressources%20mods/Wii%20U/Inkzooka%20E3%20Recolor%20Mod/67851dba79258.jpg?raw=true" alt="Aperçu Inkzooka E3 Recolor Mod">
-                    <div class="latest-resource-body">
-                        <p class="latest-resource-title">Inkzooka E3 Recolor Mod</p>
-                        <p class="latest-resource-meta">Publié par KatsuMaki • Wii U (Mod)</p>
+                <a class="mod-card" href="https://1creepertv.github.io/ressources/inkzooka-e3-recolor-mod">
+                    <div class="mod-media">
+                        <img class="mod-thumb" src="https://github.com/1CreeperTV/1creepertv.github.io/blob/main/Fichiers/Ressources%20mods/Wii%20U/Inkzooka%20E3%20Recolor%20Mod/67851dba79258.jpg?raw=true" alt="Aperçu Inkzooka E3 Recolor Mod">
+                        <span class="mod-tag">🎮 Wii U · Mod</span>
+                    </div>
+                    <div class="mod-body">
+                        <h3 class="mod-title">Inkzooka E3 Recolor Mod</h3>
+                        <p class="mod-author-line">Publié par <span class="mod-author-link" role="link" tabindex="0" data-author-url="https://1creepertv.github.io/auteurs/katsumaki">KatsuMaki</span></p>
+                        <p class="mod-desc">Remplace la texture de l'Inkzooka par une recréation d'un design violet.</p>
                     </div>
                 </a>
             </div>
@@ -951,6 +1001,34 @@
   window.addEventListener('scroll', syncBtn, { passive: true });
   window.addEventListener('load', syncBtn);
   syncBtn();
+})();
+</script>
+<script>
+(function () {
+  const authorLinks = document.querySelectorAll('.mod-author-link[data-author-url]');
+  if (!authorLinks.length) return;
+
+  authorLinks.forEach((el) => {
+    const goToAuthor = () => {
+      const url = el.getAttribute('data-author-url');
+      if (!url) return;
+      window.location.href = url;
+    };
+
+    el.addEventListener('click', (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      goToAuthor();
+    });
+
+    el.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        event.stopPropagation();
+        goToAuthor();
+      }
+    });
+  });
 })();
 </script>
 </body>
