@@ -1,9 +1,16 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
+
+  
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CreeperTV - Tutoriels</title>
+  
+  <title>tutoriels</title>
+  
+  <link rel="canonical" href="https://1creepertv.github.io/tutoriels" />
+  
+  <meta name="description" content="Site communautaire CreeperTV: ressources, tutoriels, profils auteurs et formulaires." />
   <link rel="icon" href="https://raw.githubusercontent.com/1creepertv/1creepertv.github.io/refs/heads/main/Fichiers/Mii%20%26%20Backgrounds/Mii.png" />
 
   <!-- Polices -->
@@ -450,7 +457,7 @@
 
         return `
             <a href="${videoUrl}" target="_blank" class="video-card">
-                <img src="${thumbnailUrl}" alt="Miniature pour ${video.title}" class="video-thumbnail" onerror="this.style.display='none';">
+                <img loading="lazy" decoding="async" src="${thumbnailUrl}" alt="Miniature pour ${video.title}" class="video-thumbnail" onerror="this.style.display='none';">
                 <div class="video-info">
                     <h3 class="video-title">${video.title}</h3>
                     <p class="video-meta">${video.channel}</p>

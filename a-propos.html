@@ -1,9 +1,16 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
+
+  
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>À Propos & Staff - CreeperTV</title>
+  
+  <title>a propos</title>
+  
+  <link rel="canonical" href="https://1creepertv.github.io/a-propos" />
+  
+  <meta name="description" content="Site communautaire CreeperTV: ressources, tutoriels, profils auteurs et formulaires." />
   <link rel="icon" href="https://raw.githubusercontent.com/1creepertv/1creepertv.github.io/refs/heads/main/Fichiers/Mii%20%26%20Backgrounds/Mii.png" />
 
   <!-- Polices -->
@@ -468,7 +475,7 @@
 
         const cardHtml = `
             <div class="staff-member-card role-${cssClass}">
-                <img src="${member.image}" alt="Photo de ${member.name}" class="staff-photo">
+                <img loading="lazy" decoding="async" src="${member.image}" alt="Photo de ${member.name}" class="staff-photo">
                 <h3 class="staff-name">${member.name}</h3>
                 ${primaryRoleHtml}
                 ${secondaryRoleHtml}
