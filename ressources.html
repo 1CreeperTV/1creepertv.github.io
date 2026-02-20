@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
@@ -335,29 +335,16 @@
 </head>
 <body>
   <div class="bg-img" aria-hidden="true"></div>
-
-  <header class="header">
-    <div class="nav-content">
-      <a class="nav-home" href="https://1creepertv.github.io" aria-label="Accueil">
-        <img src="https://raw.githubusercontent.com/1creepertv/1creepertv.github.io/refs/heads/main/Fichiers/Mii%20%26%20Backgrounds/Mii.png" alt="Icone du site">
-      </a>
-      <nav class="nav-links">
-        <a href="https://1creepertv.github.io" class="nav-link">Accueil</a>
-        <a href="https://1creepertv.github.io/tutoriels" class="nav-link">Tutoriels</a>
-        <a href="https://1creepertv.github.io/partenaires" class="nav-link">Partenaires</a>
-        <a href="https://1creepertv.github.io/ressources" class="nav-link active">Ressources</a>
-        <a href="https://1creepertv.github.io/profils" class="nav-link">Profils</a>
-        <a href="https://1creepertv.github.io/a-propos" class="nav-link">À Propos</a>
-        <a href="https://1creepertv.github.io/formulaires" class="nav-link">Formulaires</a>
-      </nav>
-      <button id="playPause" class="toggle">🔈 Jouer</button>
-    </div>
-  </header>
+  <div id="site-header"></div>
+  <script src="./assets/js/site-partials.js"></script>
+  <script>
+    window.CreeperPartials.renderHeader({ targetId: 'site-header', active: 'ressources' });
+  </script>
 
   <main class="container">
     <div class="main-header">
-      <h1>Ressources Créations</h1>
-      <p class="subtitle">Liste statique des mods de la communauté de CreeperTV.</p>
+      <h1>Ressources CrÃ©ations</h1>
+      <p class="subtitle">Liste statique des mods de la communautÃ© de CreeperTV.</p>
     </div>
 
     <section class="section-glass">
@@ -371,104 +358,104 @@
       </div>
 
       <div class="category-block" data-platform="wii">
-        <h2 class="category-title">Créations Wii</h2>
+        <h2 class="category-title">CrÃ©ations Wii</h2>
         <div class="mods-grid">
           <a class="mod-card" href="ressources/custom-track-de-piggreen">
             <div class="mod-media">
               <img class="mod-thumb" src="Fichiers/Ressources%20mods/Wii/Custom%20track%20de%20piggreen/Capture_decran_2026-01-06_151505.png" alt="Apercu Custom Track de Piggreen">
-              <span class="mod-tag">🎮 Wii · Custom Track</span>
+              <span class="mod-tag">ðŸŽ® Wii Â· Custom Track</span>
             </div>
             <div class="mod-body">
               <h2 class="mod-title">Custom Track de Piggreen</h2>
-              <p class="mod-author-line">Publié par <span class="mod-author-link" role="link" tabindex="0" data-author-url="auteurs/piggreen34654">Piggreen34654</span></p>
+              <p class="mod-author-line">PubliÃ© par <span class="mod-author-link" role="link" tabindex="0" data-author-url="auteurs/piggreen34654">Piggreen34654</span></p>
               <p class="mod-desc">Custom Track Mario Kart Wii qui remplace Luigi Circuit (beginner_course.szs).</p>
             </div>
           </a>
           <a class="mod-card" href="ressources/creeper-circuit">
             <div class="mod-media">
               <img class="mod-thumb" src="Fichiers/Ressources%20mods/Wii/Creeper%20Circuit/Capture_decran_2026-01-12_104707.png" alt="Apercu Creeper Circuit">
-              <span class="mod-tag">🎮 Wii · Custom Track</span>
+              <span class="mod-tag">ðŸŽ® Wii Â· Custom Track</span>
             </div>
             <div class="mod-body">
               <h2 class="mod-title">Creeper Circuit</h2>
-              <p class="mod-author-line">Publié par <span class="mod-author-link" role="link" tabindex="0" data-author-url="auteurs/ytk">YTK</span></p>
+              <p class="mod-author-line">PubliÃ© par <span class="mod-author-link" role="link" tabindex="0" data-author-url="auteurs/ytk">YTK</span></p>
               <p class="mod-desc">Custom track Mario Kart Wii d&eacute;di&eacute; &agrave; CreeperTV, rempla&ccedil;ant Luigi Circuit.</p>
             </div>
           </a>
           <a class="mod-card" href="ressources/creepertv-brstm-pack-for-mario-kart-wii">
             <div class="mod-media">
               <img class="mod-thumb" src="https://github.com/1CreeperTV/1creepertv.github.io/blob/main/Fichiers/Ressources%20mods/Wii/CreeperTVs%20BRSTM%20pack/CreeperTViis_BRSTM_pack.png?raw=true" alt="Apercu CreeperTV's BRSTM Pack for Mario Kart Wii">
-              <span class="mod-tag">🎮 Wii · BRSTM</span>
+              <span class="mod-tag">ðŸŽ® Wii Â· BRSTM</span>
             </div>
             <div class="mod-body">
               <h2 class="mod-title">CreeperTV's BRSTM Pack for Mario Kart Wii</h2>
-              <p class="mod-author-line">Publié par <span class="mod-author-link" role="link" tabindex="0" data-author-url="auteurs/1creepertv">1CreeperTV</span></p>
+              <p class="mod-author-line">PubliÃ© par <span class="mod-author-link" role="link" tabindex="0" data-author-url="auteurs/1creepertv">1CreeperTV</span></p>
               <p class="mod-desc">Pack musical BRSTM avec de nombreuses musiques Nintendo pour Mario Kart Wii.</p>
             </div>
           </a>
           <a class="mod-card" href="ressources/pig-mario-bros-wii">
             <div class="mod-media">
               <img class="mod-thumb" src="Fichiers/Ressources%20mods/Wii/Pig%20Mario%20Bros%20Wii/PMBW_LD.png" alt="Apercu Pig Mario Bros Wii">
-              <span class="mod-tag">🎮 Wii · ROM Hack</span>
+              <span class="mod-tag">ðŸŽ® Wii Â· ROM Hack</span>
             </div>
             <div class="mod-body">
               <h2 class="mod-title">Pig Mario Bros Wii</h2>
-              <p class="mod-author-line">Publié par <span class="mod-author-link" role="link" tabindex="0" data-author-url="auteurs/piggreen34654">Piggreen34654</span></p>
-              <p class="mod-desc">Musiques custom, niveaux inédits et cartes du monde personnalisées.</p>
+              <p class="mod-author-line">PubliÃ© par <span class="mod-author-link" role="link" tabindex="0" data-author-url="auteurs/piggreen34654">Piggreen34654</span></p>
+              <p class="mod-desc">Musiques custom, niveaux inÃ©dits et cartes du monde personnalisÃ©es.</p>
             </div>
           </a>
           <a class="mod-card" href="ressources/niiofetch">
             <div class="mod-media">
               <img class="mod-thumb" src="Fichiers/Ressources%20mods/Wii/NiioFetch/icon.png" alt="Apercu NiioFetch">
-              <span class="mod-tag">🎮 Wii · Homebrew</span>
+              <span class="mod-tag">ðŸŽ® Wii Â· Homebrew</span>
             </div>
             <div class="mod-body">
               <h2 class="mod-title">NiioFetch</h2>
-              <p class="mod-author-line">Publié par <span class="mod-author-link" role="link" tabindex="0" data-author-url="auteurs/abdelali221">Abdelali221</span></p>
+              <p class="mod-author-line">PubliÃ© par <span class="mod-author-link" role="link" tabindex="0" data-author-url="auteurs/abdelali221">Abdelali221</span></p>
               <p class="mod-desc">Homebrew Wii pour afficher rapidement les infos syst&egrave;me de votre console.</p>
             </div>
           </a>
           <a class="mod-card" href="ressources/snakewii">
             <div class="mod-media">
               <img class="mod-thumb" src="Fichiers/Ressources%20mods/Wii/SnakeWii/icon.png" alt="Apercu SnakeWii">
-              <span class="mod-tag">🎮 Wii · Homebrew</span>
+              <span class="mod-tag">ðŸŽ® Wii Â· Homebrew</span>
             </div>
             <div class="mod-body">
               <h2 class="mod-title">SnakeWii</h2>
-              <p class="mod-author-line">Publié par <span class="mod-author-link" role="link" tabindex="0" data-author-url="auteurs/abdelali221">Abdelali221</span></p>
+              <p class="mod-author-line">PubliÃ© par <span class="mod-author-link" role="link" tabindex="0" data-author-url="auteurs/abdelali221">Abdelali221</span></p>
               <p class="mod-desc">Le jeu Snake en version Homebrew Wii, avec options de maniabilit&eacute; et vitesse.</p>
             </div>
           </a>
           <a class="mod-card" href="ressources/wi-fi-lution-universal">
             <div class="mod-media">
               <img class="mod-thumb" src="Fichiers/Ressources%20mods/Wii/Wi-Fi%20Lution%20Universal/IMG_4996.png" alt="Apercu Wi-Fi Lution Universal">
-              <span class="mod-tag">&#127918; Wii · Riivolution</span>
+              <span class="mod-tag">&#127918; Wii Â· Riivolution</span>
             </div>
             <div class="mod-body">
               <h2 class="mod-title">Wi-Fi Lution Universal</h2>
-              <p class="mod-author-line">Publié par <span class="mod-author-link" role="link" tabindex="0" data-author-url="auteurs/ctrl_j">CTRL_J</span></p>
+              <p class="mod-author-line">PubliÃ© par <span class="mod-author-link" role="link" tabindex="0" data-author-url="auteurs/ctrl_j">CTRL_J</span></p>
               <p class="mod-desc">WFC Loader Riivolution pour Mario Kart Wii PAL avec plusieurs serveurs en ligne compatibles.</p>
             </div>
           </a>
           <a class="mod-card" href="ressources/wiirremote">
             <div class="mod-media">
               <img class="mod-thumb" src="Fichiers/Ressources%20mods/Wii/WiiRremote/icon.png" alt="Apercu WiiRremote">
-              <span class="mod-tag">🎮 Wii · Homebrew</span>
+              <span class="mod-tag">ðŸŽ® Wii Â· Homebrew</span>
             </div>
             <div class="mod-body">
               <h2 class="mod-title">WiiRremote</h2>
-              <p class="mod-author-line">Publié par <span class="mod-author-link" role="link" tabindex="0" data-author-url="auteurs/abdelali221">Abdelali221</span></p>
+              <p class="mod-author-line">PubliÃ© par <span class="mod-author-link" role="link" tabindex="0" data-author-url="auteurs/abdelali221">Abdelali221</span></p>
               <p class="mod-desc">Homebrew Wii pour utiliser la barre capteur comme &eacute;metteur infrarouge.</p>
             </div>
           </a>
           <a class="mod-card" href="ressources/wnpv">
             <div class="mod-media">
               <img class="mod-thumb" src="Fichiers/Ressources%20mods/Wii/WNPV/icon.png" alt="Apercu WNPV">
-              <span class="mod-tag">🎮 Wii · Homebrew</span>
+              <span class="mod-tag">ðŸŽ® Wii Â· Homebrew</span>
             </div>
             <div class="mod-body">
               <h2 class="mod-title">WNPV</h2>
-              <p class="mod-author-line">Publié par <span class="mod-author-link" role="link" tabindex="0" data-author-url="auteurs/abdelali221">Abdelali221</span></p>
+              <p class="mod-author-line">PubliÃ© par <span class="mod-author-link" role="link" tabindex="0" data-author-url="auteurs/abdelali221">Abdelali221</span></p>
               <p class="mod-desc">Homebrew Wii pour consulter et modifier les profils r&eacute;seau de la console.</p>
             </div>
           </a>
@@ -476,110 +463,110 @@
       </div>
 
       <div class="category-block" data-platform="wii-u">
-        <h2 class="category-title">Créations Wii U</h2>
+        <h2 class="category-title">CrÃ©ations Wii U</h2>
         <div class="mods-grid">
           <a class="mod-card" href="ressources/emperor-gear-set-port">
             <div class="mod-media">
               <img class="mod-thumb" src="https://github.com/1CreeperTV/1creepertv.github.io/blob/main/Fichiers/Ressources%20mods/Wii%20U/Emperor%20Gear%20Set%20Port/66c0f5827b2c9.jpg?raw=true" alt="Apercu Emperor Gear Set Port">
-              <span class="mod-tag">🎮 Wii U · Mod</span>
+              <span class="mod-tag">ðŸŽ® Wii U Â· Mod</span>
             </div>
             <div class="mod-body">
               <h2 class="mod-title">Emperor Gear Set Port</h2>
-              <p class="mod-author-line">Publié par <span class="mod-author-link" role="link" tabindex="0" data-author-url="auteurs/katsumaki">KatsuMaki</span></p>
-              <p class="mod-desc">Port du set Emperor avec un grand shoutout à Orbost pour la veste, incluant les pièces gear et un layout.pack.</p>
+              <p class="mod-author-line">PubliÃ© par <span class="mod-author-link" role="link" tabindex="0" data-author-url="auteurs/katsumaki">KatsuMaki</span></p>
+              <p class="mod-desc">Port du set Emperor avec un grand shoutout Ã  Orbost pour la veste, incluant les piÃ¨ces gear et un layout.pack.</p>
             </div>
           </a>
           <a class="mod-card" href="ressources/unreleased-splatoon-2-hat-port">
             <div class="mod-media">
               <img class="mod-thumb" src="https://github.com/1CreeperTV/1creepertv.github.io/blob/main/Fichiers/Ressources%20mods/Wii%20U/Unreleased%20Splatoon%202%20Hat%20Port/66c10b7a2a61b.jpg?raw=true" alt="Apercu Unreleased Splatoon 2 Hat Port">
-              <span class="mod-tag">🎮 Wii U · Mod</span>
+              <span class="mod-tag">ðŸŽ® Wii U Â· Mod</span>
             </div>
             <div class="mod-body">
               <h2 class="mod-title">Unreleased Splatoon 2 Hat Port</h2>
-              <p class="mod-author-line">Publié par <span class="mod-author-link" role="link" tabindex="0" data-author-url="auteurs/katsumaki">KatsuMaki</span></p>
-              <p class="mod-desc">Port d'un chapeau issu de contenu non publié de Splatoon 2, créé sur un coup de tête.</p>
+              <p class="mod-author-line">PubliÃ© par <span class="mod-author-link" role="link" tabindex="0" data-author-url="auteurs/katsumaki">KatsuMaki</span></p>
+              <p class="mod-desc">Port d'un chapeau issu de contenu non publiÃ© de Splatoon 2, crÃ©Ã© sur un coup de tÃªte.</p>
             </div>
           </a>
           <a class="mod-card" href="ressources/splatoon-2-test-shoe-port">
             <div class="mod-media">
               <img class="mod-thumb" src="https://github.com/1CreeperTV/1creepertv.github.io/blob/main/Fichiers/Ressources%20mods/Wii%20U/Splatoon%202%20Test%20Shoe%20Port/66c20037d2007.jpg?raw=true" alt="Apercu Splatoon 2 Test Shoe Port">
-              <span class="mod-tag">🎮 Wii U · Mod</span>
+              <span class="mod-tag">ðŸŽ® Wii U Â· Mod</span>
             </div>
             <div class="mod-body">
               <h2 class="mod-title">Splatoon 2 Test Shoe Port</h2>
-              <p class="mod-author-line">Publié par <span class="mod-author-link" role="link" tabindex="0" data-author-url="auteurs/katsumaki">KatsuMaki</span></p>
-              <p class="mod-desc">Port d'équipement depuis les fichiers inutilisés de Splatoon 2, avec Shoe SZS et Layout.pack.</p>
+              <p class="mod-author-line">PubliÃ© par <span class="mod-author-link" role="link" tabindex="0" data-author-url="auteurs/katsumaki">KatsuMaki</span></p>
+              <p class="mod-desc">Port d'Ã©quipement depuis les fichiers inutilisÃ©s de Splatoon 2, avec Shoe SZS et Layout.pack.</p>
             </div>
           </a>
           <a class="mod-card" href="ressources/inkzooka-e3-recolor-mod">
             <div class="mod-media">
               <img class="mod-thumb" src="https://github.com/1CreeperTV/1creepertv.github.io/blob/main/Fichiers/Ressources%20mods/Wii%20U/Inkzooka%20E3%20Recolor%20Mod/67851dba79258.jpg?raw=true" alt="Apercu Inkzooka E3 Recolor Mod">
-              <span class="mod-tag">🎮 Wii U · Mod</span>
+              <span class="mod-tag">ðŸŽ® Wii U Â· Mod</span>
             </div>
             <div class="mod-body">
               <h2 class="mod-title">Inkzooka E3 Recolor Mod</h2>
-              <p class="mod-author-line">Publié par <span class="mod-author-link" role="link" tabindex="0" data-author-url="auteurs/katsumaki">KatsuMaki</span></p>
-              <p class="mod-desc">Remplace la texture de l'Inkzooka par une recréation inspirée d'un ancien modèle violet foncé.</p>
+              <p class="mod-author-line">PubliÃ© par <span class="mod-author-link" role="link" tabindex="0" data-author-url="auteurs/katsumaki">KatsuMaki</span></p>
+              <p class="mod-desc">Remplace la texture de l'Inkzooka par une recrÃ©ation inspirÃ©e d'un ancien modÃ¨le violet foncÃ©.</p>
             </div>
           </a>
           <a class="mod-card" href="ressources/splatoon-text-replacement">
             <div class="mod-media">
               <img class="mod-thumb" src="https://github.com/1CreeperTV/1creepertv.github.io/blob/main/Fichiers/Ressources%20mods/Wii%20U/Splatoon%20Text%20Replacement/67708f411bd3c.jpg?raw=true" alt="Apercu Splatoon Text Replacement">
-              <span class="mod-tag">🎮 Wii U · Custom Text</span>
+              <span class="mod-tag">ðŸŽ® Wii U Â· Custom Text</span>
             </div>
             <div class="mod-body">
               <h2 class="mod-title">Splatoon Text Replacement</h2>
-              <p class="mod-author-line">Publié par <span class="mod-author-link" role="link" tabindex="0" data-author-url="auteurs/katsumaki">KatsuMaki</span></p>
-              <p class="mod-desc">Pack de textes personnalisés pour Splatoon Wii U, conçu pour US/EN et adaptable aux autres régions.</p>
+              <p class="mod-author-line">PubliÃ© par <span class="mod-author-link" role="link" tabindex="0" data-author-url="auteurs/katsumaki">KatsuMaki</span></p>
+              <p class="mod-desc">Pack de textes personnalisÃ©s pour Splatoon Wii U, conÃ§u pour US/EN et adaptable aux autres rÃ©gions.</p>
             </div>
           </a>
           <a class="mod-card" href="ressources/nintendo-switch-u-splash">
             <div class="mod-media">
               <img class="mod-thumb" src="https://github.com/1CreeperTV/1creepertv.github.io/blob/main/Fichiers/Ressources%20mods/Wii%20U/Nintendo%20Switch%20U%20Splash/splash.png?raw=true" alt="Apercu Nintendo Switch U Splash">
-              <span class="mod-tag">🎮 Wii U · Splash</span>
+              <span class="mod-tag">ðŸŽ® Wii U Â· Splash</span>
             </div>
             <div class="mod-body">
               <h2 class="mod-title">Nintendo Switch U Splash</h2>
-              <p class="mod-author-line">Publié par <span class="mod-author-link" role="link" tabindex="0" data-author-url="auteurs/toto14gamer">Toto14Gamer</span></p>
+              <p class="mod-author-line">PubliÃ© par <span class="mod-author-link" role="link" tabindex="0" data-author-url="auteurs/toto14gamer">Toto14Gamer</span></p>
               <p class="mod-desc">Splash Wii U custom &agrave; placer dans SD:\wiiu\environments\aroma.</p>
             </div>
           </a>
           <a class="mod-card" href="ressources/turning-red-dark-bloo-inn">
             <div class="mod-media">
               <img class="mod-thumb" src="https://github.com/1CreeperTV/1creepertv.github.io/blob/main/Fichiers/Ressources%20mods/Wii%20U/Turning%20Red%20(Dark%20Blood%20Inn)%20%5BPaper%20Mario%20Color%20Splash%20Mod%5D/Nouveau_projet.png?raw=true" alt="Apercu Turning Red (Dark Bloo Inn)">
-              <span class="mod-tag">🎮 Wii U · Texture Mod</span>
+              <span class="mod-tag">ðŸŽ® Wii U Â· Texture Mod</span>
             </div>
             <div class="mod-body">
               <h2 class="mod-title">Turning Red (Dark Bloo Inn)</h2>
-              <p class="mod-author-line">Publié par <span class="mod-author-link" role="link" tabindex="0" data-author-url="auteurs/piggreen34654">Piggreen34654</span></p>
-              <p class="mod-desc">Mod texture pour Paper Mario Color Splash dans l'Hôtel Octan.</p>
+              <p class="mod-author-line">PubliÃ© par <span class="mod-author-link" role="link" tabindex="0" data-author-url="auteurs/piggreen34654">Piggreen34654</span></p>
+              <p class="mod-desc">Mod texture pour Paper Mario Color Splash dans l'HÃ´tel Octan.</p>
             </div>
           </a>
           <a class="mod-card" href="ressources/nintendo-gamecube-splash">
             <div class="mod-media">
               <img class="mod-thumb" src="https://raw.githubusercontent.com/1CreeperTV/1creepertv.github.io/refs/heads/main/Fichiers/Ressources%20mods/Wii%20U/Nintendo%20Gamecube%20Splash/splash.png" alt="Apercu Nintendo Gamecube Splash">
-              <span class="mod-tag">🎮 Wii U · Splash</span>
+              <span class="mod-tag">ðŸŽ® Wii U Â· Splash</span>
             </div>
             <div class="mod-body">
               <h2 class="mod-title">Nintendo Gamecube Splash</h2>
-              <p class="mod-author-line">Publié par <span class="mod-author-link" role="link" tabindex="0" data-author-url="auteurs/1creepertv">1CreeperTV</span></p>
-              <p class="mod-desc">Splash Wii U custom prêt à l'emploi.</p>
+              <p class="mod-author-line">PubliÃ© par <span class="mod-author-link" role="link" tabindex="0" data-author-url="auteurs/1creepertv">1CreeperTV</span></p>
+              <p class="mod-desc">Splash Wii U custom prÃªt Ã  l'emploi.</p>
             </div>
           </a>
         </div>
       </div>
 
       <div class="category-block" data-platform="3ds">
-        <h2 class="category-title">Créations 3DS</h2>
+        <h2 class="category-title">CrÃ©ations 3DS</h2>
         <div class="mods-grid">
           <a class="mod-card" href="ressources/tomodachi-life-night">
             <div class="mod-media">
               <img class="mod-thumb" src="Fichiers/Ressources%20mods/3DS/Theme%20Tomodachi%20Life%20(Night)/preview.png" alt="Apercu Tomodachi Life (Night)">
-              <span class="mod-tag">🎮 3DS · Thème</span>
+              <span class="mod-tag">ðŸŽ® 3DS Â· ThÃ¨me</span>
             </div>
             <div class="mod-body">
               <h2 class="mod-title">Tomodachi Life (Night)</h2>
-              <p class="mod-author-line">Publié par <span class="mod-author-link" role="link" tabindex="0" data-author-url="auteurs/1creepertv">1CreeperTV</span></p>
+              <p class="mod-author-line">PubliÃ© par <span class="mod-author-link" role="link" tabindex="0" data-author-url="auteurs/1creepertv">1CreeperTV</span></p>
               <p class="mod-desc">Th&egrave;me custom 3DS &agrave; ambiance nocturne avec musique personnalis&eacute;e.</p>
             </div>
           </a>
@@ -587,57 +574,55 @@
       </div>
 
       <div class="category-block" data-platform="ds">
-        <h2 class="category-title">Créations DS</h2>
+        <h2 class="category-title">CrÃ©ations DS</h2>
         <div class="mods-grid">
           <a class="mod-card" href="ressources/new-super-ytk-land-ds">
             <div class="mod-media">
               <img class="mod-thumb" src="Fichiers/Ressources%20mods/DS/New%20Super%20YTK%20Land%20DS/Capture_decran_2025-12-07_134125.png" alt="Apercu New Super YTK Bros. DS">
-              <span class="mod-tag">🎮 DS · ROM Hack</span>
+              <span class="mod-tag">ðŸŽ® DS Â· ROM Hack</span>
             </div>
             <div class="mod-body">
               <h2 class="mod-title">New Super YTK Bros. DS</h2>
-              <p class="mod-author-line">Publié par <span class="mod-author-link" role="link" tabindex="0" data-author-url="auteurs/ytk">YTK</span></p>
-              <p class="mod-desc">Mod NSMB DS avec 3 niveaux custom, dont deux niveaux orientés speedrun.</p>
+              <p class="mod-author-line">PubliÃ© par <span class="mod-author-link" role="link" tabindex="0" data-author-url="auteurs/ytk">YTK</span></p>
+              <p class="mod-desc">Mod NSMB DS avec 3 niveaux custom, dont deux niveaux orientÃ©s speedrun.</p>
             </div>
           </a>
         </div>
       </div>
 
       <div class="category-block" data-platform="nes">
-        <h2 class="category-title">Créations NES</h2>
+        <h2 class="category-title">CrÃ©ations NES</h2>
         <div class="mods-grid">
           <a class="mod-card" href="ressources/extra-super-mario-bros-3">
             <div class="mod-media">
               <img class="mod-thumb" src="Fichiers/Ressources%20mods/NES/Extra%20Super%20Mario%20Bros.%203/1-4_Fortress-2.png" alt="Apercu Extra Super Mario Bros. 3">
-              <span class="mod-tag">🎮 NES · ROM Hack</span>
+              <span class="mod-tag">ðŸŽ® NES Â· ROM Hack</span>
             </div>
             <div class="mod-body">
               <h2 class="mod-title">Extra Super Mario Bros. 3</h2>
-              <p class="mod-author-line">Publié par <span class="mod-author-link" role="link" tabindex="0" data-author-url="auteurs/toto14gamer">Toto14Gamer</span></p>
-              <p class="mod-desc">ROM Hack entièrement reconstruit avec niveaux inédits et difficulté relevée.</p>
+              <p class="mod-author-line">PubliÃ© par <span class="mod-author-link" role="link" tabindex="0" data-author-url="auteurs/toto14gamer">Toto14Gamer</span></p>
+              <p class="mod-desc">ROM Hack entiÃ¨rement reconstruit avec niveaux inÃ©dits et difficultÃ© relevÃ©e.</p>
             </div>
           </a>
           <a class="mod-card" href="ressources/weird-super-mario-bros">
             <div class="mod-media">
               <img class="mod-thumb" src="Fichiers/Ressources%20mods/NES/Weird%20Super%20Mario%20Bros/image.png" alt="Apercu Weird Super Mario Bros">
-              <span class="mod-tag">🎮 NES · ROM Hack</span>
+              <span class="mod-tag">ðŸŽ® NES Â· ROM Hack</span>
             </div>
             <div class="mod-body">
               <h2 class="mod-title">Weird Super Mario Bros</h2>
-              <p class="mod-author-line">Publié par <span class="mod-author-link" role="link" tabindex="0" data-author-url="auteurs/ytk">YTK</span></p>
-              <p class="mod-desc">Petite ROM hack NES en démo avec 2 niveaux custom pour le moment.</p>
+              <p class="mod-author-line">PubliÃ© par <span class="mod-author-link" role="link" tabindex="0" data-author-url="auteurs/ytk">YTK</span></p>
+              <p class="mod-desc">Petite ROM hack NES en dÃ©mo avec 2 niveaux custom pour le moment.</p>
             </div>
           </a>
         </div>
       </div>
     </section>
   </main>
-
-  <footer class="container">
-    <div class="footer-section">
-      CreeperTV - Made with &#128293; in France • Built with AI
-    </div>
-  </footer>
+  <div id="site-footer"></div>
+  <script>
+    window.CreeperPartials.renderFooter({ targetId: 'site-footer' });
+  </script>
   <button id="backToTop" class="back-to-top" aria-label="Retour en haut" title="Retour en haut">&uarr;</button>
 
   <audio id="bgAudio" loop>
@@ -653,17 +638,17 @@
     if (!playing) {
       audio.volume = 0.28;
       audio.play().then(() => {
-        btn.textContent = '🔊 Lecture';
+        btn.textContent = 'ðŸ”Š Lecture';
         btn.classList.add('playing');
         playing = true;
       }).catch(() => {
-        btn.textContent = '🔇 Erreur';
+        btn.textContent = 'ðŸ”‡ Erreur';
         btn.classList.remove('playing');
         playing = false;
       });
     } else {
       audio.pause();
-      btn.textContent = '🔈 Jouer';
+      btn.textContent = 'ðŸ”ˆ Jouer';
       btn.classList.remove('playing');
       playing = false;
     }
@@ -760,6 +745,9 @@
   </script>
 </body>
 </html>
+
+
+
 
 
 

@@ -371,28 +371,11 @@
   <div class="bg-img" aria-hidden="true"></div>
 
   <!-- Barre de navigation fixe (Copiée de l'index) -->
-  <header class="header">
-    <div class="nav-content">
-        <a class="nav-home" href="https://1creepertv.github.io" aria-label="Accueil">
-            <img src="https://raw.githubusercontent.com/1creepertv/1creepertv.github.io/refs/heads/main/Fichiers/Mii%20%26%20Backgrounds/Mii.png" alt="Icone du site">
-        </a>
-        <nav class="nav-links">
-            <!-- Mise à jour des classes 'active' -->
-            <a href="https://1creepertv.github.io" class="nav-link">Accueil</a>
-            <!-- Lien Tutoriels -->
-            <a href="https://1creepertv.github.io/tutoriels" class="nav-link">Tutoriels</a>
-            <a href="https://1creepertv.github.io/partenaires" class="nav-link active">Partenaires</a>
-            <a href="https://1creepertv.github.io/ressources" class="nav-link">Ressources</a>
-        <a href="https://1creepertv.github.io/profils" class="nav-link">Profils</a>
-            <!-- NOUVEAU LIEN AJOUTÉ : À propos -->
-            <a href="https://1creepertv.github.io/a-propos" class="nav-link">À Propos</a>
-            <!-- LIEN Recrutements -->
-            <a href="https://1creepertv.github.io/formulaires" class="nav-link">Formulaires</a>
-        </nav>
-        <!-- Bouton Musique -->
-        <button id="playPause" class="toggle">🔈 Jouer</button>
-    </div>
-  </header>
+  <div id="site-header"></div>
+  <script src="./assets/js/site-partials.js"></script>
+  <script>
+    window.CreeperPartials.renderHeader({ targetId: 'site-header', active: 'partenaires' });
+  </script>
 
   <main class="container">
     <div class="main-header">
@@ -443,12 +426,10 @@
         </div>
     </section>
   </main>
-
-  <footer class="container">
-    <div class="footer-section">
-        CreeperTV - Made with &#128293; in France • Built with AI
-    </div>
-  </footer>
+  <div id="site-footer"></div>
+  <script>
+    window.CreeperPartials.renderFooter({ targetId: 'site-footer' });
+  </script>
   <button id="backToTop" class="back-to-top" aria-label="Retour en haut" title="Retour en haut">&uarr;</button>
 
   <!-- Audio de fond (Copié de l'index) -->
@@ -552,6 +533,9 @@
 </script>
 </body>
 </html>
+
+
+
 
 
 

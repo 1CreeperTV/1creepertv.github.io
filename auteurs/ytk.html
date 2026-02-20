@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
@@ -75,24 +75,11 @@
 </head>
 <body>
   <div class="bg-img" aria-hidden="true"></div>
-
-  <header class="header">
-    <div class="nav-content">
-      <a class="nav-home" href="https://1creepertv.github.io" aria-label="Accueil">
-        <img src="https://raw.githubusercontent.com/1creepertv/1creepertv.github.io/refs/heads/main/Fichiers/Mii%20%26%20Backgrounds/Mii.png" alt="Icone du site">
-      </a>
-      <nav class="nav-links">
-        <a href="https://1creepertv.github.io" class="nav-link">Accueil</a>
-        <a href="https://1creepertv.github.io/tutoriels" class="nav-link">Tutoriels</a>
-        <a href="https://1creepertv.github.io/partenaires" class="nav-link">Partenaires</a>
-        <a href="https://1creepertv.github.io/ressources" class="nav-link active">Ressources</a>
-        <a href="https://1creepertv.github.io/profils" class="nav-link">Profils</a>
-        <a href="https://1creepertv.github.io/a-propos" class="nav-link">&Agrave; Propos</a>
-        <a href="https://1creepertv.github.io/formulaires" class="nav-link">Formulaires</a>
-      </nav>
-      <button id="playPause" class="toggle">&#128264; Jouer</button>
-    </div>
-  </header>
+  <div id="site-header"></div>
+  <script src="../assets/js/site-partials.js"></script>
+  <script>
+    window.CreeperPartials.renderHeader({ targetId: 'site-header', active: 'ressources' });
+  </script>
 
   <main class="container">
     <section class="section-glass">
@@ -111,44 +98,44 @@
       <div class="mods-grid">
         <a class="mod-card" href="../ressources/creeper-circuit">
           <div class="mod-media">
-            <img class="mod-thumb" src="../Fichiers/Ressources%20mods/Wii/Creeper%20Circuit/Capture_decran_2026-01-12_104707.png" alt="Aperçu Creeper Circuit">
-            <span class="mod-tag">🎮 Wii · Custom Track</span>
+            <img class="mod-thumb" src="../Fichiers/Ressources%20mods/Wii/Creeper%20Circuit/Capture_decran_2026-01-12_104707.png" alt="AperÃ§u Creeper Circuit">
+            <span class="mod-tag">ðŸŽ® Wii Â· Custom Track</span>
           </div>
           <div class="mod-body">
             <h3 class="mod-title">Creeper Circuit</h3>
-            <p class="mod-author-line">Publié par <span class="mod-author-link" role="link" tabindex="0" data-author-url="../auteurs/ytk">YTK</span></p>
+            <p class="mod-author-line">PubliÃ© par <span class="mod-author-link" role="link" tabindex="0" data-author-url="../auteurs/ytk">YTK</span></p>
             <p class="mod-desc">Custom track MKWii d&eacute;di&eacute; &agrave; CreeperTV.</p>
           </div>
         </a>
         <a class="mod-card" href="../ressources/new-super-ytk-land-ds">
           <div class="mod-media">
-            <img class="mod-thumb" src="../Fichiers/Ressources%20mods/DS/New%20Super%20YTK%20Land%20DS/Capture_decran_2025-12-07_134125.png" alt="Aperçu New Super YTK Bros. DS">
-            <span class="mod-tag">🎮 DS · ROM Hack</span>
+            <img class="mod-thumb" src="../Fichiers/Ressources%20mods/DS/New%20Super%20YTK%20Land%20DS/Capture_decran_2025-12-07_134125.png" alt="AperÃ§u New Super YTK Bros. DS">
+            <span class="mod-tag">ðŸŽ® DS Â· ROM Hack</span>
           </div>
           <div class="mod-body">
             <h3 class="mod-title">New Super YTK Bros. DS</h3>
-            <p class="mod-author-line">Publié par <span class="mod-author-link" role="link" tabindex="0" data-author-url="../auteurs/ytk">YTK</span></p>
-            <p class="mod-desc">Mod NSMB DS en cours de développement.</p>
+            <p class="mod-author-line">PubliÃ© par <span class="mod-author-link" role="link" tabindex="0" data-author-url="../auteurs/ytk">YTK</span></p>
+            <p class="mod-desc">Mod NSMB DS en cours de dÃ©veloppement.</p>
           </div>
         </a>
         <a class="mod-card" href="../ressources/weird-super-mario-bros">
           <div class="mod-media">
-            <img class="mod-thumb" src="../Fichiers/Ressources%20mods/NES/Weird%20Super%20Mario%20Bros/image.png" alt="Aperçu Weird Super Mario Bros">
-            <span class="mod-tag">🎮 NES · ROM Hack</span>
+            <img class="mod-thumb" src="../Fichiers/Ressources%20mods/NES/Weird%20Super%20Mario%20Bros/image.png" alt="AperÃ§u Weird Super Mario Bros">
+            <span class="mod-tag">ðŸŽ® NES Â· ROM Hack</span>
           </div>
           <div class="mod-body">
             <h3 class="mod-title">Weird Super Mario Bros</h3>
-            <p class="mod-author-line">Publié par <span class="mod-author-link" role="link" tabindex="0" data-author-url="../auteurs/ytk">YTK</span></p>
-            <p class="mod-desc">ROM hack NES en démo avec 2 niveaux custom.</p>
+            <p class="mod-author-line">PubliÃ© par <span class="mod-author-link" role="link" tabindex="0" data-author-url="../auteurs/ytk">YTK</span></p>
+            <p class="mod-desc">ROM hack NES en dÃ©mo avec 2 niveaux custom.</p>
           </div>
         </a>
       </div>
     </section>
   </main>
-
-  <footer class="container">
-    <div class="footer-section">CreeperTV - Made with &#128293; in France • Built with AI</div>
-  </footer>
+  <div id="site-footer"></div>
+  <script>
+    window.CreeperPartials.renderFooter({ targetId: 'site-footer' });
+  </script>
   <button id="backToTop" class="back-to-top" aria-label="Retour en haut" title="Retour en haut">&uarr;</button>
 
   <audio id="bgAudio" loop>
@@ -163,17 +150,17 @@
     if (!playing) {
       audio.volume = 0.28;
       audio.play().then(() => {
-        btn.textContent = '🔊 Lecture';
+        btn.textContent = 'ðŸ”Š Lecture';
         btn.classList.add('playing');
         playing = true;
       }).catch(() => {
-        btn.textContent = '🔇 Erreur';
+        btn.textContent = 'ðŸ”‡ Erreur';
         btn.classList.remove('playing');
         playing = false;
       });
     } else {
       audio.pause();
-      btn.textContent = '🔈 Jouer';
+      btn.textContent = 'ðŸ”ˆ Jouer';
       btn.classList.remove('playing');
       playing = false;
     }
@@ -280,6 +267,8 @@
   </script>
 </body>
 </html>
+
+
 
 
 
