@@ -6,7 +6,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <title>CreeperTV - Ã€ Propos</title>
+  <title>CreeperTV - À Propos</title>
   
   <link rel="canonical" href="https://1creepertv.github.io/a-propos" />
   
@@ -28,7 +28,7 @@
       --muted: #cfcfd6;
       --light-text: #fff;
       --radius: 16px;
-      /* Couleurs de RÃ´le */
+      /* Couleurs de Rôle */
       --role-creator: #ff8a00;
       --role-admin: #e04b4b; 
       --role-mod: #5c62ec; 
@@ -201,9 +201,9 @@
         border-color: var(--accent);
     }
 
-    .role-CrÃ©ateur { border-left: 5px solid var(--role-creator); }
+    .role-Créateur { border-left: 5px solid var(--role-creator); }
     .role-Administrateur { border-left: 5px solid var(--role-admin); }
-    .role-ModÃ©rateur { border-left: 5px solid var(--role-mod); }
+    .role-Modérateur { border-left: 5px solid var(--role-mod); }
     .role-Helpeur { border-left: 5px solid var(--role-helper); }
     .role-Fun { border-left: 5px solid var(--role-fun); } 
     
@@ -218,7 +218,7 @@
     }
 
     .staff-member-card.role-Administrateur .staff-photo { border-color: var(--role-admin); box-shadow: 0 0 15px var(--role-admin); }
-    .staff-member-card.role-ModÃ©rateur .staff-photo { border-color: var(--role-mod); box-shadow: 0 0 15px var(--role-mod); }
+    .staff-member-card.role-Modérateur .staff-photo { border-color: var(--role-mod); box-shadow: 0 0 15px var(--role-mod); }
     .staff-member-card.role-Helpeur .staff-photo { border-color: var(--role-helper); box-shadow: 0 0 15px var(--role-helper); }
     .staff-member-card.role-Fun .staff-photo { border-color: var(--role-fun); box-shadow: 0 0 15px var(--role-fun); }
 
@@ -376,15 +376,15 @@
 
   <main class="container">
     <div class="main-header">
-        <h1>ðŸ‘¥ Ã€ Propos</h1>
-        <p class="subtitle">DÃ©couvrez les membres dÃ©vouÃ©s du staff et l'Ã©quipe qui fait vivre la communautÃ©.</p>
+        <h1>👥 À Propos</h1>
+        <p class="subtitle">Découvrez les membres dévoués du staff et l'équipe qui fait vivre la communauté.</p>
     </div>
 
     <section class="section-glass">
-        <h2 class="section-title">Notre Ã‰quipe</h2>
+        <h2 class="section-title">Notre Équipe</h2>
 
         <div id="staffGrid" class="staff-grid">
-            <!-- Les cartes des membres du staff seront gÃ©nÃ©rÃ©es ici par JavaScript -->
+            <!-- Les cartes des membres du staff seront générées ici par JavaScript -->
         </div>
 
       </div>
@@ -401,10 +401,10 @@
   </audio>
 
   <script>
-    // --- DonnÃ©es du Staff ---
+    // --- Données du Staff ---
     const staffData = [
-        // CRÃ‰ATEUR
-        { name: "CreeperTV ðŸ‘‘", role: "CrÃ©ateur", secondaryRole: null, 
+        // CRÉATEUR
+        { name: "CreeperTV 👑", role: "Créateur", secondaryRole: null, 
           image: "https://github.com/1creepertv/1creepertv.github.io/blob/main/Fichiers/Staff/creepertvii.png?raw=true&v=20260218",
           profileUrl: "auteurs/1creepertv" },
         
@@ -419,14 +419,14 @@
           image: "https://github.com/1creepertv/1creepertv.github.io/blob/main/Fichiers/Staff/katsu.png?raw=true",
           profileUrl: "auteurs/katsumaki" },
 
-        // MODÃ‰RATEURS
-        { name: "Possemelius", role: "ModÃ©rateur", secondaryRole: "Helpeur", 
+        // MODÉRATEURS
+        { name: "Possemelius", role: "Modérateur", secondaryRole: "Helpeur", 
           image: "https://github.com/1creepertv/1creepertv.github.io/blob/main/Fichiers/Staff/possemelius.png?raw=true" },
-        { name: "Kader Channel", role: "ModÃ©rateur", secondaryRole: null, 
+        { name: "Kader Channel", role: "Modérateur", secondaryRole: null, 
           image: "https://github.com/1creepertv/1creepertv.github.io/blob/main/Fichiers/Staff/kaderchannel.png?raw=true" },
-        { name: "MOMO", role: "ModÃ©rateur", secondaryRole: "Helpeur", 
+        { name: "MOMO", role: "Modérateur", secondaryRole: "Helpeur", 
           image: "https://github.com/1creepertv/1creepertv.github.io/blob/main/Fichiers/Staff/momo.png?raw=true" },
-        { name: "Captaincat200", role: "ModÃ©rateur", secondaryRole: null, 
+        { name: "Captaincat200", role: "Modérateur", secondaryRole: null, 
           image: "https://raw.githubusercontent.com/1creepertv/1creepertv.github.io/refs/heads/main/Fichiers/Staff/captaincat.png" },
 
         // HELPEURS
@@ -459,9 +459,9 @@
         
         let roleColor = 'var(--accent-2)'; 
         if (member.customRole === 'Fun') roleColor = 'var(--role-fun)';
-        else if (member.role && member.role.includes('CrÃ©ateur')) roleColor = 'var(--role-creator)';
+        else if (member.role && member.role.includes('Créateur')) roleColor = 'var(--role-creator)';
         else if (member.role && member.role.includes('Administrateur')) roleColor = 'var(--role-admin)';
-        else if (member.role && member.role.includes('ModÃ©rateur')) roleColor = 'var(--role-mod)';
+        else if (member.role && member.role.includes('Modérateur')) roleColor = 'var(--role-mod)';
         else if (member.role && member.role.includes('Helpeur')) roleColor = 'var(--role-helper)';
         else if (!member.role && member.secondaryRole) roleColor = 'var(--role-fun)';
 
@@ -492,7 +492,7 @@
         const gridContainer = document.getElementById('staffGrid');
         gridContainer.innerHTML = ''; 
 
-        const rankOrder = ["CrÃ©ateur", "Administrateur", "ModÃ©rateur", "Helpeur", "Fun"];
+        const rankOrder = ["Créateur", "Administrateur", "Modérateur", "Helpeur", "Fun"];
         
         staffData.sort((a, b) => {
             const roleA = a.customRole || a.role;
@@ -523,18 +523,18 @@
         if (!playing) {
             audio.volume = 0.28;
             audio.play().then(() => {
-                btn.textContent = 'ðŸ”Š Lecture'; 
+                btn.textContent = '🔊 Lecture'; 
                 btn.classList.add('playing');
                 playing = true;
             }).catch(error => {
-                console.warn("La lecture audio a Ã©tÃ© bloquÃ©e:", error);
-                btn.textContent = 'ðŸ”‡ Erreur'; 
+                console.warn("La lecture audio a été bloquée:", error);
+                btn.textContent = '🔇 Erreur'; 
                 btn.classList.remove('playing');
                 playing = false;
             });
         } else {
             audio.pause();
-            btn.textContent = 'ðŸ”ˆ Jouer'; 
+            btn.textContent = '🔈 Jouer'; 
             btn.classList.remove('playing');
             playing = false;
         }
@@ -544,7 +544,7 @@
     
     audio.addEventListener('pause', () => {
         if (playing) { 
-            btn.textContent = 'ðŸ”ˆ Jouer'; 
+            btn.textContent = '🔈 Jouer'; 
             btn.classList.remove('playing');
             playing = false;
         }
@@ -552,14 +552,14 @@
 
     audio.addEventListener('play', () => {
         if (!playing) { 
-            btn.textContent = 'ðŸ”Š Lecture'; 
+            btn.textContent = '🔊 Lecture'; 
             btn.classList.add('playing');
             playing = true;
         }
     });
     
     document.addEventListener('DOMContentLoaded', () => {
-        btn.textContent = 'ðŸ”ˆ Jouer'; 
+        btn.textContent = '🔈 Jouer'; 
         btn.classList.remove('playing');
         playing = false;
     });
@@ -604,6 +604,8 @@
 </script>
 </body>
 </html>
+
+
 
 
 

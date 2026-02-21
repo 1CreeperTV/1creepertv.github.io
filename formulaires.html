@@ -13,16 +13,16 @@
   <meta name="description" content="Vous voulez devenir Helpeur sur le Modding Server de CreeperTV ? Postulez via ce formulaire pour nous rejoindre !" />
   <link rel="icon" href="https://raw.githubusercontent.com/1creepertv/1creepertv.github.io/refs/heads/main/Fichiers/Mii%20%26%20Backgrounds/Mii.png" />
 
-  <!-- DÃ©but des balises Meta pour l'Embed Discord (Open Graph & Twitter Card) -->
+  <!-- Début des balises Meta pour l'Embed Discord (Open Graph & Twitter Card) -->
   
-  <!-- Open Graph Protocol (utilisÃ© par Discord et Facebook) -->
+  <!-- Open Graph Protocol (utilisé par Discord et Facebook) -->
   <meta property="og:title" content="CreeperTV's Modding Server - Formulaires" />
   <meta property="og:description" content="Vous voulez devenir Helpeur sur le Modding Server de CreeperTV ? Postulez via ce formulaire pour nous rejoindre !" />
   <meta property="og:image" content="https://raw.githubusercontent.com/1creepertv/1creepertv.github.io/refs/heads/main/Fichiers/Mii%20%26%20Backgrounds/lv_0_2025112922-1764451316159.gif" />
   <meta property="og:url" content="https://1creepertv.github.io/formulaires" />
   <meta property="og:type" content="website" />
   
-  <!-- Twitter Card (pour les aperÃ§us sur Twitter, souvent lu par d'autres plateformes) -->
+  <!-- Twitter Card (pour les aperçus sur Twitter, souvent lu par d'autres plateformes) -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="CreeperTV's Modding Server - Formulaires">
   <meta name="twitter:description" content="Vous voulez devenir Helpeur sur le Modding Server de CreeperTV ? Postulez via ce formulaire pour nous rejoindre !">
@@ -30,7 +30,7 @@
   
   <!-- Fin des balises Meta pour l'Embed Discord -->
 
-  <!-- Polices - ImportÃ©es depuis la page d'accueil -->
+  <!-- Polices - Importées depuis la page d'accueil -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
 
@@ -51,7 +51,7 @@
     body{
       margin:0;
       font-family:'Inter', system-ui, Segoe UI, Roboto, Arial, "Noto Sans", sans-serif;
-      /* DÃ©gradÃ© de fond personnalisÃ© */
+      /* Dégradé de fond personnalisé */
       background: radial-gradient(1800px 900px at 10% 10%, rgba(255,138,0,0.1), transparent),
                   radial-gradient(1500px 700px at 90% 60%, rgba(255,214,107,0.06), transparent),
                   var(--bg);
@@ -71,7 +71,7 @@
       background-size:cover;background-position:center;opacity:0.14;filter:none;
     }
 
-    /* --- Barre de navigation fixe (Styles importÃ©s) --- */
+    /* --- Barre de navigation fixe (Styles importés) --- */
     .header {
         position: fixed;
         top: 0;
@@ -145,7 +145,7 @@
     .toggle.playing{background: var(--accent); color: #1b0b00; font-weight: 700; border: none;}
     /* ----------------------------------------------------------------- */
 
-    /* Conteneur principal (ImportÃ©) */
+    /* Conteneur principal (Importé) */
     .container {
       width: 100%;
       max-width: 1200px;
@@ -154,7 +154,7 @@
       padding-top: calc(var(--header-offset, 88px) + 20px); /* Espace adaptatif pour la barre de navigation fixe */
     }
     
-    /* Style Glassmorphism pour les sections (ImportÃ©) */
+    /* Style Glassmorphism pour les sections (Importé) */
     .section-glass {
       padding: 30px;
       margin-bottom: 40px;
@@ -165,7 +165,7 @@
       backdrop-filter:none;
     }
 
-    /* Titres de section (ImportÃ©) */
+    /* Titres de section (Importé) */
     .section-title {
         color: var(--light-text);
         font-size: 2rem;
@@ -229,7 +229,7 @@
         display: none;
     }
 
-    /* --- Styles SpÃ©cifiques au Formulaire --- */
+    /* --- Styles Spécifiques au Formulaire --- */
     
     .form-group {
         margin-bottom: 20px;
@@ -246,7 +246,7 @@
     input[type="text"],
     input[type="number"],
     input[type="email"],
-    /* input[type="url"], REMPLACÃ‰ PAR TEXT */
+    /* input[type="url"], REMPLACÉ PAR TEXT */
     input[type="date"],
     select,
     textarea {
@@ -258,7 +258,7 @@
         color: var(--light-text);
         font-size: 16px;
         transition: border-color 0.3s, box-shadow 0.3s;
-        -webkit-appearance: none; /* Pour masquer les styles par dÃ©faut sur Safari */
+        -webkit-appearance: none; /* Pour masquer les styles par défaut sur Safari */
     }
 
     input:focus,
@@ -275,7 +275,7 @@
     }
 
     select {
-        /* Style personnalisÃ© pour les select pour mieux coller au thÃ¨me */
+        /* Style personnalisé pour les select pour mieux coller au thème */
         appearance: none;
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23cfcfd6'%3E%3Cpath d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z' clip-rule='evenodd' fill-rule='evenodd'%3E%3C/path%3E%3C/svg%3E");
         background-repeat: no-repeat;
@@ -352,7 +352,7 @@
     }
     
     .mandatory-checkboxes input[type="checkbox"]:checked:before {
-        content: 'âœ”'; /* Symbole de coche */
+        content: '✔'; /* Symbole de coche */
         display: block;
         position: absolute;
         top: 50%;
@@ -374,7 +374,7 @@
     }
     
     .required-star {
-        color: var(--accent); /* J'utilise l'accent couleur au lieu du rouge uni pour mieux coller au thÃ¨me, mais cela indique toujours l'obligation */
+        color: var(--accent); /* J'utilise l'accent couleur au lieu du rouge uni pour mieux coller au thème, mais cela indique toujours l'obligation */
         margin-left: 5px;
         font-weight: 700;
     }
@@ -501,7 +501,7 @@
         cursor: not-allowed;
     }
 
-    /* Messages de notification (RÃ©utilisation du style glass) */
+    /* Messages de notification (Réutilisation du style glass) */
     .notification-box {
         position: fixed;
         bottom: 20px;
@@ -523,7 +523,7 @@
     }
     
     .notification-box.success {
-        color: #48E890; /* Vert pour le succÃ¨s */
+        color: #48E890; /* Vert pour le succès */
     }
     .notification-box.error {
         color: #FF5A5A; /* Rouge pour l'erreur */
@@ -561,7 +561,7 @@
         color: rgba(255,255,255,0.45);
         padding: 20px 0 10px;
         text-align: center;
-    }    /* RESPONSIVE (ImportÃ©) */
+    }    /* RESPONSIVE (Importé) */
     @media (max-width: 900px) {
         .container { padding-top: calc(var(--header-offset, 88px) + 12px); }
         .main-header h1 { font-size: 2.5rem; }
@@ -655,7 +655,7 @@
 
   <main class="container">
     <div class="main-header">
-        <h1>ðŸ“ Formulaires</h1>
+        <h1>📝 Formulaires</h1>
         <p class="subtitle">Choisis un formulaire : candidature Helpeur ou soumission de mod.</p>
     </div>
 
@@ -686,7 +686,7 @@
             <div class="form-group">
                 <label for="dob">3. Quelle est votre date de naissance ? (jj/mm/aaaa) <span class="required-star">*</span></label>
                 <input type="text" id="dob" name="dob" placeholder="Ex: 01/01/2000" required pattern="\d{2}/\d{2}/\d{4}">
-                <p id="dobError" class="text-xs text-red-400 mt-1" style="display: none;">Vous devez avoir 15 ans minimum et la date doit Ãªtre au format JJ/MM/AAAA.</p>
+                <p id="dobError" class="text-xs text-red-400 mt-1" style="display: none;">Vous devez avoir 15 ans minimum et la date doit être au format JJ/MM/AAAA.</p>
             </div>
 
             <!-- 4. Dans quel(s) domaine(s) souhaitez-vous apporter votre aide ?* -->
@@ -702,36 +702,36 @@
                     <input type="checkbox" id="domaine_3ds" name="domaines" value="3DS">
                     <label for="domaine_3ds" class="checkbox-tag">3DS</label>
                 </div>
-                <p id="domaineError" class="text-xs text-red-400 mt-1" style="display: none;">Veuillez sÃ©lectionner au moins un domaine.</p>
+                <p id="domaineError" class="text-xs text-red-400 mt-1" style="display: none;">Veuillez sélectionner au moins un domaine.</p>
             </div>
 
             <!-- 5. Pourquoi souhaitez-vous devenir Helpeur chez nous ? (Paragraphe de motivation)* -->
             <div class="form-group">
                 <label for="motivation">5. Pourquoi souhaitez-vous devenir Helpeur chez nous ? (Paragraphe de motivation) <span class="required-star">*</span></label>
-                <textarea id="motivation" name="motivation" placeholder="Minimum 50 mots. Expliquez votre motivation, vos compÃ©tences et pourquoi vous seriez un atout pour l'Ã©quipe." required></textarea>
+                <textarea id="motivation" name="motivation" placeholder="Minimum 50 mots. Expliquez votre motivation, vos compétences et pourquoi vous seriez un atout pour l'équipe." required></textarea>
                 <p id="wordCount" class="text-xs text-right mt-1 text-gray-400">0 / 50 mots minimum</p>
             </div>
             
-            <!-- 6. Facultatif : Avez-vous une expÃ©rience dans le Staff dâ€™un autre serveur ? Si oui, oÃ¹ et quel poste ? -->
+            <!-- 6. Facultatif : Avez-vous une expérience dans le Staff d’un autre serveur ? Si oui, où et quel poste ? -->
             <div class="form-group">
-                <label for="experience">6. Facultatif : Avez-vous une expÃ©rience dans le Staff dâ€™un autre serveur ? Si oui, oÃ¹ et quel poste ?</label>
-                <textarea id="experience" name="experience" placeholder="Ex: ModÃ©rateur sur le serveur X de 2021 Ã  2022."></textarea>
+                <label for="experience">6. Facultatif : Avez-vous une expérience dans le Staff d’un autre serveur ? Si oui, où et quel poste ?</label>
+                <textarea id="experience" name="experience" placeholder="Ex: Modérateur sur le serveur X de 2021 à 2022."></textarea>
             </div>
 
-            <!-- 7. Facultatif : Lien vers vos rÃ©seaux sociaux (Twitter, YouTube, TikTok, etc.) -->
+            <!-- 7. Facultatif : Lien vers vos réseaux sociaux (Twitter, YouTube, TikTok, etc.) -->
             <div class="form-group">
-                <label for="socials">7. Facultatif : Lien vers vos rÃ©seaux sociaux (Twitter, YouTube, TikTok, etc.)</label>
-                <!-- CHANGEMENT ICI : type="url" remplacÃ© par type="text" -->
+                <label for="socials">7. Facultatif : Lien vers vos réseaux sociaux (Twitter, YouTube, TikTok, etc.)</label>
+                <!-- CHANGEMENT ICI : type="url" remplacé par type="text" -->
                 <input type="text" id="socials" name="socials" placeholder="Ex: https://twitter.com/moncompte ou MonPseudoDiscord">
             </div>
 
-            <!-- --- Cases Ã  cocher obligatoires (Engagements) --- -->
+            <!-- --- Cases à cocher obligatoires (Engagements) --- -->
             <div class="mandatory-checkboxes">
                 <h3 class="text-xl font-bold mb-3 text-light-text">Engagements <span class="required-star">*</span></h3>
 
                 <div class="form-group">
                     <input type="checkbox" id="chk_reglement" name="commitments" value="Reglement" required>
-                    <label for="chk_reglement">Je connais et respecte le <span class="rules-link" id="openRulesModal" role="button" tabindex="0">rÃ¨glement</span> du serveur. <span class="required-star">*</span></label>
+                    <label for="chk_reglement">Je connais et respecte le <span class="rules-link" id="openRulesModal" role="button" tabindex="0">règlement</span> du serveur. <span class="required-star">*</span></label>
                 </div>
                 
                 <div class="form-group">
@@ -741,17 +741,17 @@
                 
                 <div class="form-group">
                     <input type="checkbox" id="chk_connaissances" name="commitments" value="Connaissances" required>
-                    <label for="chk_connaissances">Je confirme avoir de solides connaissances dans le(s) domaine(s) que jâ€™ai sÃ©lectionnÃ©(s). <span class="required-star">*</span></label>
+                    <label for="chk_connaissances">Je confirme avoir de solides connaissances dans le(s) domaine(s) que j’ai sélectionné(s). <span class="required-star">*</span></label>
                 </div>
                 
                 <div class="form-group">
                     <input type="checkbox" id="chk_2fa" name="commitments" value="2FA" required>
-                    <label for="chk_2fa">L'authentification Ã  deux facteurs est activÃ©e sur mon compte Discord. <span class="required-star">*</span></label>
+                    <label for="chk_2fa">L'authentification à deux facteurs est activée sur mon compte Discord. <span class="required-star">*</span></label>
                 </div>
                 
                 <div class="form-group">
                     <input type="checkbox" id="chk_activite" name="commitments" value="Activite" required>
-                    <label for="chk_activite">Si je suis acceptÃ©(e) en tant quâ€™helpeur, je mâ€™engage Ã  Ãªtre un minimum actif(ve), notamment en vÃ©rifiant sâ€™il y a des personnes Ã  aider, etc. <span class="required-star">*</span></label>
+                    <label for="chk_activite">Si je suis accepté(e) en tant qu’helpeur, je m’engage à être un minimum actif(ve), notamment en vérifiant s’il y a des personnes à aider, etc. <span class="required-star">*</span></label>
                 </div>
             </div>
 
@@ -759,8 +759,8 @@
                 Envoyer ma Candidature
                 <span id="loadingSpinner" class="spinner hidden"></span>
             </button>
-            <!-- Message d'erreur gÃ©nÃ©rique visible en cas de validation bloquÃ©e -->
-            <p id="formError" class="text-center text-red-500 mt-3 font-semibold" style="display: none;">Veuillez vÃ©rifier les champs signalÃ©s : tous les champs obligatoires, le minimum de 50 mots, l'Ã¢ge 15+ et la sÃ©lection d'un domaine.</p>
+            <!-- Message d'erreur générique visible en cas de validation bloquée -->
+            <p id="formError" class="text-center text-red-500 mt-3 font-semibold" style="display: none;">Veuillez vérifier les champs signalés : tous les champs obligatoires, le minimum de 50 mots, l'âge 15+ et la sélection d'un domaine.</p>
 
         </form>
     </section>
@@ -787,18 +787,18 @@
         </div>
         <div class="form-group">
           <label for="modShortDesc">Description courte <span class="required-star">*</span></label>
-          <textarea id="modShortDesc" name="modShortDesc" placeholder="RÃ©sumÃ© court pour la carte ressources." required></textarea>
+          <textarea id="modShortDesc" name="modShortDesc" placeholder="Résumé court pour la carte ressources." required></textarea>
         </div>
         <div class="form-group">
           <label for="modLongDesc">Description longue <span class="required-star">*</span></label>
-          <textarea id="modLongDesc" name="modLongDesc" placeholder="Description complÃ¨te de la fiche mod." required></textarea>
+          <textarea id="modLongDesc" name="modLongDesc" placeholder="Description complète de la fiche mod." required></textarea>
         </div>
         <div class="form-group">
-          <label for="modIcon">Lien de l'icÃ´ne <span class="required-star">*</span></label>
+          <label for="modIcon">Lien de l'icône <span class="required-star">*</span></label>
           <input type="text" id="modIcon" name="modIcon" placeholder="https://..." required>
         </div>
         <div class="form-group">
-          <label for="modDownload">Lien de tÃ©lÃ©chargement <span class="required-star">*</span></label>
+          <label for="modDownload">Lien de téléchargement <span class="required-star">*</span></label>
           <input type="text" id="modDownload" name="modDownload" placeholder="https://..." required>
         </div>
         <div class="form-group">
@@ -806,11 +806,11 @@
           <input type="text" id="modTrailer" name="modTrailer" placeholder="https://youtube.com/...">
         </div>
         <div class="form-group">
-          <label for="modPreviewImages">Images d'aperÃ§u (facultatif)</label>
-          <textarea id="modPreviewImages" name="modPreviewImages" placeholder="Une URL par ligne (ou sÃ©parÃ©es par des virgules)."></textarea>
+          <label for="modPreviewImages">Images d'aperçu (facultatif)</label>
+          <textarea id="modPreviewImages" name="modPreviewImages" placeholder="Une URL par ligne (ou séparées par des virgules)."></textarea>
         </div>
         <div class="form-group">
-          <label for="modNotes">Notes supplÃ©mentaires (facultatif)</label>
+          <label for="modNotes">Notes supplémentaires (facultatif)</label>
           <textarea id="modNotes" name="modNotes" placeholder="Infos importantes, statut, remarques, etc."></textarea>
         </div>
 
@@ -832,36 +832,36 @@
   <div id="rulesModal" class="rules-modal" aria-hidden="true">
     <div class="rules-modal-card" role="dialog" aria-modal="true" aria-labelledby="rulesTitle">
       <div class="rules-modal-head">
-        <h3 id="rulesTitle" class="rules-modal-title">RÃ¨glement du serveur</h3>
-        <button type="button" id="closeRulesModal" class="rules-close" aria-label="Fermer">Ã—</button>
+        <h3 id="rulesTitle" class="rules-modal-title">Règlement du serveur</h3>
+        <button type="button" id="closeRulesModal" class="rules-close" aria-label="Fermer">×</button>
       </div>
       <div class="rules-block">
         <h4>I. Le savoir-vivre</h4>
         <ul>
-          <li><b>Respect avant tout</b> : pas d'insultes, de haine, de harcÃ¨lement ou de propos discriminatoires. Pas de diffusion d'informations personnelles sans accord. Les comportements toxiques, dramas et conflits sont interdits.</li>
-          <li><b>Ã‰vitez les sujets sensibles</b> : pas de politique, religion, contenu sexuel, drague, gore ou tout sujet choquant (NSFW, etc). Ne ramenez pas de conflits externes ou de dramas sur le serveur.</li>
-          <li><b>Pas de spam ni de pub sauvage</b> : le flood, le spam et la pub non autorisÃ©e (y compris en MP) sont interdits. La publicitÃ© n'est tolÃ©rÃ©e que si le staff l'autorise ou dans le salon dÃ©diÃ©.</li>
+          <li><b>Respect avant tout</b> : pas d'insultes, de haine, de harcèlement ou de propos discriminatoires. Pas de diffusion d'informations personnelles sans accord. Les comportements toxiques, dramas et conflits sont interdits.</li>
+          <li><b>Évitez les sujets sensibles</b> : pas de politique, religion, contenu sexuel, drague, gore ou tout sujet choquant (NSFW, etc). Ne ramenez pas de conflits externes ou de dramas sur le serveur.</li>
+          <li><b>Pas de spam ni de pub sauvage</b> : le flood, le spam et la pub non autorisée (y compris en MP) sont interdits. La publicité n'est tolérée que si le staff l'autorise ou dans le salon dédié.</li>
         </ul>
-        <h4>II. SÃ©curitÃ©</h4>
+        <h4>II. Sécurité</h4>
         <ul>
-          <li><b>Profil appropriÃ©</b> : vos pseudos, avatars, pronoms, bios et statuts doivent rester corrects, respectueux et adaptÃ©s Ã  tous.</li>
-          <li><b>Pas de piratage</b> : toute forme de piratage est strictement interdite. Cela inclut notamment le partage ou la demande de fichiers, de liens, de ROMs, de cracks, de clÃ©s, ainsi que la mention ou la diffusion de noms de sites permettant d'en obtenir.</li>
-          <li><b>Pas de doubles comptes ni de bypass</b> : un seul compte par personne est autorisÃ©. Toute tentative de contourner les rÃ¨gles ou les sanctions entraÃ®nera une exclusion.</li>
-          <li><b>Respect des rÃ¨gles Discord</b> : vous devez suivre les Conditions d'Utilisation et les Community Guidelines de Discord.</li>
+          <li><b>Profil approprié</b> : vos pseudos, avatars, pronoms, bios et statuts doivent rester corrects, respectueux et adaptés à tous.</li>
+          <li><b>Pas de piratage</b> : toute forme de piratage est strictement interdite. Cela inclut notamment le partage ou la demande de fichiers, de liens, de ROMs, de cracks, de clés, ainsi que la mention ou la diffusion de noms de sites permettant d'en obtenir.</li>
+          <li><b>Pas de doubles comptes ni de bypass</b> : un seul compte par personne est autorisé. Toute tentative de contourner les règles ou les sanctions entraînera une exclusion.</li>
+          <li><b>Respect des règles Discord</b> : vous devez suivre les Conditions d'Utilisation et les Community Guidelines de Discord.</li>
         </ul>
         <h4>III. Discussions & salons</h4>
         <ul>
-          <li><b>Respectez les salons</b> : utilisez chaque salon pour son sujet prÃ©vu. Lisez les descriptions pour ne pas vous tromper.</li>
-          <li><b>ClartÃ© dans vos messages</b> : soyez prÃ©cis dans vos demandes ou discussions pour Ã©viter les malentendus.</li>
-          <li><b>Pas de pings inutiles</b> : mentionnez les membres ou le staff uniquement si c'est rÃ©ellement nÃ©cessaire.</li>
-          <li><b>AutoritÃ© de la modÃ©ration</b> : l'Ã©quipe de modÃ©ration a toujours le dernier mot. Toute contestation de sanction devra obligatoirement passer par un ticket ; aucune contestation ne sera acceptÃ©e en messages privÃ©s ou dans les salons publics.</li>
+          <li><b>Respectez les salons</b> : utilisez chaque salon pour son sujet prévu. Lisez les descriptions pour ne pas vous tromper.</li>
+          <li><b>Clarté dans vos messages</b> : soyez précis dans vos demandes ou discussions pour éviter les malentendus.</li>
+          <li><b>Pas de pings inutiles</b> : mentionnez les membres ou le staff uniquement si c'est réellement nécessaire.</li>
+          <li><b>Autorité de la modération</b> : l'équipe de modération a toujours le dernier mot. Toute contestation de sanction devra obligatoirement passer par un ticket ; aucune contestation ne sera acceptée en messages privés ou dans les salons publics.</li>
         </ul>
       </div>
-      <p class="rules-end">Amusez-vous bien sur le serveur et assurez-vous d'avoir bien lu le rÃ¨glement !</p>
+      <p class="rules-end">Amusez-vous bien sur le serveur et assurez-vous d'avoir bien lu le règlement !</p>
     </div>
   </div>
 
-  <!-- Audio de fond (CopiÃ© de l'index) -->
+  <!-- Audio de fond (Copié de l'index) -->
   <audio id="bgAudio" loop>
     <source src="https://github.com/1creepertv/1creepertv.github.io/raw/refs/heads/main/Fichiers/Musiques/06.%20Purchase%20Software%20(3DS).mp3" type="audio/mpeg">
   </audio>
@@ -907,7 +907,7 @@
 
     /**
      * Affiche un message de notification temporaire.
-     * @param {string} message - Le message Ã  afficher.
+     * @param {string} message - Le message à afficher.
      * @param {string} type - 'success' ou 'error'.
      */
     function showNotification(message, type) {
@@ -920,17 +920,17 @@ otification-box show ${type}`;
     }
     
     /**
-     * VÃ©rifie si au moins une case de domaine est cochÃ©e
-     * @returns {boolean} True si au moins un domaine est sÃ©lectionnÃ©.
+     * Vérifie si au moins une case de domaine est cochée
+     * @returns {boolean} True si au moins un domaine est sélectionné.
      */
     function isDomaineSelected() {
         return Array.from(domaineCheckboxes).some(cb => cb.checked);
     }
 
     /**
-     * Valide l'entrÃ©e de la date de naissance (format jj/mm/aaaa) et l'Ã¢ge (15+ ans)
-     * @param {string} dobString - La chaÃ®ne de caractÃ¨res de la date (jj/mm/aaaa).
-     * @returns {boolean} True si la date est valide et l'Ã¢ge est 15+ ans.
+     * Valide l'entrée de la date de naissance (format jj/mm/aaaa) et l'âge (15+ ans)
+     * @param {string} dobString - La chaîne de caractères de la date (jj/mm/aaaa).
+     * @returns {boolean} True si la date est valide et l'âge est 15+ ans.
      */
     function validateDateAndAge(dobString) {
         const pattern = /^(\d{2})\/(\d{2})\/(\d{4})$/;
@@ -939,17 +939,17 @@ otification-box show ${type}`;
         if (!match) return false;
 
         const day = parseInt(match[1], 10);
-        const month = parseInt(match[2], 10) - 1; // Mois est basÃ© sur 0
+        const month = parseInt(match[2], 10) - 1; // Mois est basé sur 0
         const year = parseInt(match[3], 10);
 
         const date = new Date(year, month, day);
 
-        // VÃ©rifie si la date est rÃ©ellement valide (ex: pas le 30 fÃ©vrier)
+        // Vérifie si la date est réellement valide (ex: pas le 30 février)
         if (date.getFullYear() !== year || date.getMonth() !== month || date.getDate() !== day) {
             return false;
         }
 
-        // VÃ©rification de l'Ã¢ge (15 ans minimum)
+        // Vérification de l'âge (15 ans minimum)
         const minAge = 15;
         const today = new Date();
         const minBirthDate = new Date(
@@ -958,12 +958,12 @@ otification-box show ${type}`;
             today.getDate()
         );
 
-        // La date de naissance doit Ãªtre avant ou Ã©gale Ã  la date de naissance minimum pour avoir 15 ans
+        // La date de naissance doit être avant ou égale à la date de naissance minimum pour avoir 15 ans
         return date <= minBirthDate;
     }
 
     /**
-     * Compte les mots et met Ã  jour l'affichage, et vÃ©rifie la validitÃ© du formulaire.
+     * Compte les mots et met à jour l'affichage, et vérifie la validité du formulaire.
      */
     function validateForm() {
         const text = motivationTextarea.value.trim();
@@ -972,34 +972,34 @@ otification-box show ${type}`;
         wordCountDisplay.textContent = `${words} / ${MIN_WORDS} mots minimum`;
         wordCountDisplay.style.color = words >= MIN_WORDS ? 'var(--accent-2)' : '#FF5A5A';
 
-        // --- 1. Validation de l'Ã‚ge et de la Date (Q3) ---
+        // --- 1. Validation de l'ge et de la Date (Q3) ---
         const isAgeValid = dobInput.value.trim() === '' || validateDateAndAge(dobInput.value);
-        // Note: L'attribut pattern HTML5 sur l'input dob gÃ¨re dÃ©jÃ  le format. Ici, on gÃ¨re l'Ã¢ge.
-        dobInput.setCustomValidity(isAgeValid ? '' : 'Ã‚ge ou format invalide.');
+        // Note: L'attribut pattern HTML5 sur l'input dob gère déjà le format. Ici, on gère l'âge.
+        dobInput.setCustomValidity(isAgeValid ? '' : 'ge ou format invalide.');
         dobErrorDisplay.style.display = (dobInput.value.trim() !== '' && !isAgeValid) ? 'block' : 'none';
         
         // --- 2. Validation des Domaines (Q4) ---
         const isDomaineValid = isDomaineSelected();
         domaineErrorDisplay.style.display = !isDomaineValid ? 'block' : 'none';
 
-        // Le premier checkbox du groupe Domaine est utilisÃ© pour porter le message d'erreur natif
-        domaineCheckboxes[0].setCustomValidity(isDomaineValid ? '' : 'Veuillez sÃ©lectionner au moins un domaine.');
+        // Le premier checkbox du groupe Domaine est utilisé pour porter le message d'erreur natif
+        domaineCheckboxes[0].setCustomValidity(isDomaineValid ? '' : 'Veuillez sélectionner au moins un domaine.');
 
         // --- 3. Validation de la Motivation (Q5) ---
         const isWordCountMet = words >= MIN_WORDS;
         
-        // --- 4. Validation gÃ©nÃ©rale et Engagements ---
+        // --- 4. Validation générale et Engagements ---
         // La question 7 (socials) est maintenant type="text", donc form.checkValidity() ne la bloquera pas si elle n'est pas une URL valide.
         const isFormValid = form.checkValidity(); // Inclut tous les champs requis et les engagements
         
-        // --- DÃ©termination de l'Ã©tat du bouton ---
+        // --- Détermination de l'état du bouton ---
         const shouldBeDisabled = !(isFormValid && isWordCountMet && isDomaineValid && isAgeValid);
         submitButton.disabled = shouldBeDisabled;
 
         if (shouldBeDisabled) {
-            // Affiche le message d'erreur gÃ©nÃ©rique si le bouton est dÃ©sactivÃ©
+            // Affiche le message d'erreur générique si le bouton est désactivé
             formErrorDisplay.style.display = 'block';
-            formErrorDisplay.textContent = "Veuillez vÃ©rifier les champs signalÃ©s : tous les champs obligatoires, le minimum de 50 mots, l'Ã¢ge 15+ et la sÃ©lection d'un domaine.";
+            formErrorDisplay.textContent = "Veuillez vérifier les champs signalés : tous les champs obligatoires, le minimum de 50 mots, l'âge 15+ et la sélection d'un domaine.";
         } else {
             formErrorDisplay.style.display = 'none';
         }
@@ -1007,7 +1007,7 @@ otification-box show ${type}`;
 
     /**
      * Construit le contenu du message Discord au format Embed.
-     * @param {FormData} data - Les donnÃ©es du formulaire.
+     * @param {FormData} data - Les données du formulaire.
      * @returns {object} Le payload pour le webhook Discord.
      */
     function buildDiscordPayload(data) {
@@ -1020,27 +1020,27 @@ otification-box show ${type}`;
                                 .join('\n- ') || 'Erreur : Engagements manquants';
 
         const embed = {
-            title: `ðŸš€ Nouvelle Candidature Helpeur`,
-            description: `Candidature reÃ§ue via le site web.`,
+            title: `🚀 Nouvelle Candidature Helpeur`,
+            description: `Candidature reçue via le site web.`,
             color: 16757504, // Couleur Orange (var(--accent) ~ #ff8a00)
             timestamp: new Date().toISOString(),
             fields: [
-                { name: "ðŸ“§ E-mail", value: data.get('email') || 'N/A', inline: true },
-                { name: "ðŸ‘¾ Nom d'utilisateur Discord", value: data.get('discordUsername') || 'N/A', inline: true },
-                { name: "ðŸŽ‚ Date de Naissance", value: data.get('dob') || 'N/A', inline: false },
-                { name: "ðŸ›  Domaines d'Aide", value: selectedDomains, inline: false },
-                { name: "ðŸ“ Motivation (Paragraphe)", value: data.get('motivation') ? data.get('motivation').substring(0, 1024) : 'Aucune', inline: false }, // Limite de 1024 caractÃ¨res pour Discord
-                { name: "ðŸ’¼ ExpÃ©rience Staff (Facultatif)", value: data.get('experience') || 'Aucune', inline: false },
-                { name: "ðŸ”— RÃ©seaux Sociaux (Facultatif)", value: data.get('socials') || 'Aucun', inline: false },
-                { name: "âœ… Engagements ConfirmÃ©s", value: '- ' + commitments, inline: false },
+                { name: "📧 E-mail", value: data.get('email') || 'N/A', inline: true },
+                { name: "👾 Nom d'utilisateur Discord", value: data.get('discordUsername') || 'N/A', inline: true },
+                { name: "🎂 Date de Naissance", value: data.get('dob') || 'N/A', inline: false },
+                { name: "🛠 Domaines d'Aide", value: selectedDomains, inline: false },
+                { name: "📝 Motivation (Paragraphe)", value: data.get('motivation') ? data.get('motivation').substring(0, 1024) : 'Aucune', inline: false }, // Limite de 1024 caractères pour Discord
+                { name: "💼 Expérience Staff (Facultatif)", value: data.get('experience') || 'Aucune', inline: false },
+                { name: "🔗 Réseaux Sociaux (Facultatif)", value: data.get('socials') || 'Aucun', inline: false },
+                { name: "✅ Engagements Confirmés", value: '- ' + commitments, inline: false },
             ],
             footer: {
-                text: "EnvoyÃ© par le formulaire de recrutement du site CreeperTV",
+                text: "Envoyé par le formulaire de recrutement du site CreeperTV",
             }
         };
 
         return {
-            content: "Nouveau formulaire de recrutement soumis !", // Message pour notifier les rÃ´les
+            content: "Nouveau formulaire de recrutement soumis !", // Message pour notifier les rôles
             embeds: [embed],
         };
     }
@@ -1053,25 +1053,25 @@ otification-box show ${type}`;
             : 'Aucune';
 
         const embed = {
-            title: "ðŸŽ® Nouvelle Soumission de Mod",
-            description: "Soumission reÃ§ue via le formulaire du site.",
+            title: "🎮 Nouvelle Soumission de Mod",
+            description: "Soumission reçue via le formulaire du site.",
             color: 16757504,
             timestamp: new Date().toISOString(),
             fields: [
-                { name: "ðŸ‘¾ Discord", value: data.get('modDiscord') || 'N/A', inline: true },
+                { name: "👾 Discord", value: data.get('modDiscord') || 'N/A', inline: true },
                 { name: "âœï¸ Auteur", value: data.get('modAuthor') || 'N/A', inline: true },
-                { name: "ðŸ“¦ Titre", value: data.get('modTitle') || 'N/A', inline: false },
-                { name: "ðŸ•¹ï¸ Console", value: data.get('modConsole') || 'N/A', inline: false },
-                { name: "ðŸ§¾ Description courte", value: (data.get('modShortDesc') || 'Aucune').toString().substring(0, 1024), inline: false },
-                { name: "ðŸ“š Description longue", value: (data.get('modLongDesc') || 'Aucune').toString().substring(0, 1024), inline: false },
-                { name: "ðŸ–¼ï¸ IcÃ´ne", value: data.get('modIcon') || 'Aucune', inline: false },
-                { name: "â¬‡ï¸ TÃ©lÃ©chargement", value: data.get('modDownload') || 'Aucun', inline: false },
-                { name: "ðŸŽ¬ Trailer", value: trailer || 'Aucun', inline: false },
-                { name: "ðŸ–¼ï¸ Images d'aperÃ§u", value: previewImages.substring(0, 1024), inline: false },
-                { name: "ðŸ“ Notes", value: (data.get('modNotes') || 'Aucune').toString().substring(0, 1024), inline: false }
+                { name: "📦 Titre", value: data.get('modTitle') || 'N/A', inline: false },
+                { name: "🕹️ Console", value: data.get('modConsole') || 'N/A', inline: false },
+                { name: "🧾 Description courte", value: (data.get('modShortDesc') || 'Aucune').toString().substring(0, 1024), inline: false },
+                { name: "📚 Description longue", value: (data.get('modLongDesc') || 'Aucune').toString().substring(0, 1024), inline: false },
+                { name: "🖼️ Icône", value: data.get('modIcon') || 'Aucune', inline: false },
+                { name: "⬇️ Téléchargement", value: data.get('modDownload') || 'Aucun', inline: false },
+                { name: "🎬 Trailer", value: trailer || 'Aucun', inline: false },
+                { name: "🖼️ Images d'aperçu", value: previewImages.substring(0, 1024), inline: false },
+                { name: "📝 Notes", value: (data.get('modNotes') || 'Aucune').toString().substring(0, 1024), inline: false }
             ],
             footer: {
-                text: "EnvoyÃ© par le formulaire de soumission de mod du site CreeperTV",
+                text: "Envoyé par le formulaire de soumission de mod du site CreeperTV",
             }
         };
 
@@ -1083,12 +1083,12 @@ otification-box show ${type}`;
 
     /**
      * Envoie le formulaire au webhook Discord.
-     * @param {Event} e - L'Ã©vÃ©nement de soumission.
+     * @param {Event} e - L'événement de soumission.
      */
     async function handleFormSubmit(e) {
         e.preventDefault();
         
-        // Re-vÃ©rifie la validitÃ© juste avant l'envoi
+        // Re-vérifie la validité juste avant l'envoi
         validateForm(); 
         if (submitButton.disabled) {
             formErrorDisplay.style.display = 'block';
@@ -1103,7 +1103,7 @@ otification-box show ${type}`;
         const formData = new FormData(form);
         const payload = buildDiscordPayload(formData);
 
-        // ImplÃ©mentation de l'Exponential Backoff pour les requÃªtes
+        // Implémentation de l'Exponential Backoff pour les requêtes
         const MAX_RETRIES = 5;
         let delay = 1000;
         
@@ -1116,20 +1116,20 @@ otification-box show ${type}`;
                 });
 
                 if (response.ok) {
-                    showNotification("âœ… Candidature envoyÃ©e avec succÃ¨s ! Merci.", "success");
-                    form.reset(); // RÃ©initialise le formulaire en cas de succÃ¨s
-                    validateForm(); // RÃ©initialise les compteurs/validations
+                    showNotification("✅ Candidature envoyée avec succès ! Merci.", "success");
+                    form.reset(); // Réinitialise le formulaire en cas de succès
+                    validateForm(); // Réinitialise les compteurs/validations
                     break; // Sort de la boucle de retry
                 } else if (response.status === 429) {
-                    // Too Many Requests (Rate Limit), attendre le temps spÃ©cifiÃ© par Discord ou doubler le dÃ©lai
+                    // Too Many Requests (Rate Limit), attendre le temps spécifié par Discord ou doubler le délai
                     const retryAfter = response.headers.get('Retry-After');
                     const waitTime = retryAfter ? parseInt(retryAfter) * 1000 : delay;
                     
                     if (i < MAX_RETRIES - 1) {
                         await new Promise(resolve => setTimeout(resolve, waitTime));
-                        delay *= 2; // Double le dÃ©lai pour le prochain essai (si pas de Retry-After)
+                        delay *= 2; // Double le délai pour le prochain essai (si pas de Retry-After)
                     } else {
-                        throw new Error(`Ã‰chec final aprÃ¨s ${MAX_RETRIES} tentatives (Rate Limit).`);
+                        throw new Error(`Échec final après ${MAX_RETRIES} tentatives (Rate Limit).`);
                     }
                 } else {
                     const errorText = await response.text();
@@ -1137,12 +1137,12 @@ otification-box show ${type}`;
                 }
             } catch (error) {
                 if (i < MAX_RETRIES - 1) {
-                    // Erreur rÃ©seau ou autre, on rÃ©essaie aprÃ¨s un dÃ©lai d'attente
+                    // Erreur réseau ou autre, on réessaie après un délai d'attente
                     await new Promise(resolve => setTimeout(resolve, delay));
                     delay *= 2;
                 } else {
                     console.error("Erreur critique lors de l'envoi de la candidature:", error);
-                    showNotification("âŒ Erreur lors de l'envoi. Veuillez rÃ©essayer plus tard.", "error");
+                    showNotification("❌ Erreur lors de l'envoi. Veuillez réessayer plus tard.", "error");
                 }
             }
         }
@@ -1182,10 +1182,10 @@ otification-box show ${type}`;
             }
 
             modForm.reset();
-            showNotification("âœ… Soumission du mod envoyÃ©e avec succÃ¨s !", "success");
+            showNotification("✅ Soumission du mod envoyée avec succès !", "success");
         } catch (error) {
             console.error("Erreur soumission mod:", error);
-            showNotification("âŒ Erreur lors de l'envoi de la soumission mod.", "error");
+            showNotification("❌ Erreur lors de l'envoi de la soumission mod.", "error");
         } finally {
             modSubmitButton.disabled = false;
             modSubmitButton.textContent = 'Envoyer la Soumission Mod';
@@ -1200,10 +1200,10 @@ otification-box show ${type}`;
     form.addEventListener('submit', handleFormSubmit);
     if (modForm) modForm.addEventListener('submit', handleModFormSubmit);
 
-    // Initialisation aprÃ¨s chargement
+    // Initialisation après chargement
     window.addEventListener('load', () => {
         validateForm();
-        // Script de contrÃ´le audio (CopiÃ© de l'index)
+        // Script de contrôle audio (Copié de l'index)
         const audio = document.getElementById('bgAudio');
         const btn = document.getElementById('playPause');
         
@@ -1213,19 +1213,19 @@ otification-box show ${type}`;
             if (!playing) {
                 audio.volume = 0.28;
                 audio.play().then(() => {
-                    btn.textContent = 'ðŸ”Š Lecture'; 
+                    btn.textContent = '🔊 Lecture'; 
                     btn.classList.add('playing');
                     playing = true;
                 }).catch(error => {
-                    console.warn("La lecture audio a Ã©tÃ© bloquÃ©e:", error);
-                    btn.textContent = 'ðŸ”‡ Erreur'; 
+                    console.warn("La lecture audio a été bloquée:", error);
+                    btn.textContent = '🔇 Erreur'; 
                     btn.classList.remove('playing');
                     playing = false;
                 });
                 
             } else {
                 audio.pause();
-                btn.textContent = 'ðŸ”ˆ Jouer';
+                btn.textContent = '🔈 Jouer';
                 btn.classList.remove('playing');
                 playing = false;
             }
@@ -1235,17 +1235,17 @@ otification-box show ${type}`;
         
         audio.addEventListener('pause', () => {
             if (playing) {
-                btn.textContent = 'ðŸ”ˆ Jouer';
+                btn.textContent = '🔈 Jouer';
                 btn.classList.remove('playing');
                 playing = false;
             }
         });
 
         if (audio.paused) {
-            btn.textContent = 'ðŸ”ˆ Jouer';
+            btn.textContent = '🔈 Jouer';
             btn.classList.remove('playing');
         } else {
-            btn.textContent = 'ðŸ”Š Lecture';
+            btn.textContent = '🔊 Lecture';
             btn.classList.add('playing');
             playing = true; 
         }
@@ -1254,7 +1254,7 @@ otification-box show ${type}`;
     // Validation initiale
     document.addEventListener('DOMContentLoaded', validateForm);
 
-    // Popup rÃ¨glement
+    // Popup règlement
     const rulesModal = document.getElementById('rulesModal');
     const openRulesModalBtn = document.getElementById('openRulesModal');
     const closeRulesModalBtn = document.getElementById('closeRulesModal');
@@ -1336,6 +1336,8 @@ otification-box show ${type}`;
 </script>
 </body>
 </html>
+
+
 
 
 
