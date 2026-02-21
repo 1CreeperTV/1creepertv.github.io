@@ -94,8 +94,8 @@
         </div>
         <div class="meta-item">
           <strong>Console &amp; Date</strong>
-          ðŸŽ® 3DS (Mod)
-          <br>ðŸ“… Publi&eacute; le 21/02/2026
+          🎮 3DS (Mod)
+          <br>📅 Publi&eacute; le 21/02/2026
         </div>
         <div class="meta-item">
           <strong>T&eacute;l&eacute;chargement</strong>
@@ -148,17 +148,17 @@
     if (!playing) {
       audio.volume = 0.28;
       audio.play().then(() => {
-        btn.textContent = 'ðŸ”Š Lecture';
+        btn.textContent = '🔊 Lecture';
         btn.classList.add('playing');
         playing = true;
       }).catch(() => {
-        btn.textContent = 'ðŸ”‡ Erreur';
+        btn.textContent = '🔇 Erreur';
         btn.classList.remove('playing');
         playing = false;
       });
     } else {
       audio.pause();
-      btn.textContent = 'ðŸ”ˆ Jouer';
+      btn.textContent = '🔈 Jouer';
       btn.classList.remove('playing');
       playing = false;
     }
@@ -206,4 +206,5 @@
   </script>
 </body>
 </html>
+
 
