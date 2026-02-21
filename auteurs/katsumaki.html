@@ -51,6 +51,10 @@
     .title-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
     .subtitle{margin:8px 0 0;color:var(--accent-2);font-weight:600}
     .role-tag{display:inline-flex;align-items:center;padding:4px 10px;border-radius:999px;background:rgba(255,138,0,.16);border:1px solid rgba(255,214,107,.45);color:#ffe29b;font-weight:800;font-size:12px;letter-spacing:.2px}
+    .social-links{display:flex;gap:10px;align-items:center;margin-top:10px}
+    .social-link{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+    .social-link:hover{transform:translateY(-2px);border-color:rgba(255,214,107,.65);box-shadow:0 10px 20px rgba(0,0,0,.35)}
+    .social-link img{width:20px;height:20px;object-fit:contain}
     .mods-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;}
     .mod-card{display:block;text-decoration:none;color:inherit;border-radius:16px;overflow:hidden;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);box-shadow:0 8px 25px rgba(0,0,0,.45);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;}
     .mod-card:hover{transform:translateY(-4px);box-shadow:0 15px 40px rgba(255,138,0,.25);border-color:rgba(255,138,0,.55)}
@@ -87,7 +91,12 @@
             <h1 class="title">KatsuMaki</h1>
             <span class="role-tag">Administrateur</span>
           </div>
-          <p class="subtitle">Membre depuis le 19/02/2026 </p>
+          <p class="subtitle">Membre depuis le 19/02/2026</p>
+          <div class="social-links" aria-label="R&eacute;seaux sociaux de KatsuMaki">
+            <a class="social-link" href="https://www.tiktok.com/@cplk" target="_blank" rel="noopener noreferrer" aria-label="TikTok" title="TikTok">
+              <img src="../Fichiers/Icones/R&eacute;seaux/tiktok.png" alt="Ic&ocirc;ne TikTok">
+            </a>
+          </div>
           
         </div>
       </div>
@@ -286,6 +295,7 @@
   </script>
 </body>
 </html>
+
 
 
 
