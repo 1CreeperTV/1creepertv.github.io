@@ -912,8 +912,7 @@
      */
     function showNotification(message, type) {
         notificationBox.textContent = message;
-        notificationBox.className = 
-otification-box show ${type}`;
+        notificationBox.className = `notification-box show ${type}`;
         setTimeout(() => {
             notificationBox.classList.remove('show');
         }, 5000);
