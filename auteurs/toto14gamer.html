@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
@@ -27,7 +27,9 @@
     :root{--bg:#08060a;--accent:#ff8a00;--accent-2:#ffd66b;--muted:#cfcfd6;--light-text:#fff;}
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0;font-family:'Inter',system-ui,Segoe UI,Roboto,Arial,"Noto Sans",sans-serif;background:radial-gradient(1800px 900px at 10% 10%, rgba(255,138,0,0.1), transparent),radial-gradient(1500px 700px at 90% 60%, rgba(255,214,107,0.06), transparent),var(--bg);color:var(--muted);min-height:100vh;min-height:100svh;}
+    body{margin:0;font-family:'Inter',system-ui,Segoe UI,Roboto,Arial,"Noto Sans",sans-serif;background:radial-gradient(1800px 900px at 10% 10%, rgba(255,138,0,0.1), transparent),radial-gradient(1500px 700px at 90% 60%, rgba(255,214,107,0.06), transparent),var(--bg);
+      background-repeat: no-repeat, no-repeat, no-repeat;
+      background-attachment: fixed, fixed, fixed;color:var(--muted);min-height:100vh;min-height:100svh;}
     .bg-img{position:fixed;inset:0;z-index:-2;background-image:url('https://github.com/1CreeperTV/1creepertv.github.io/blob/main/Fichiers/Banni%C3%A8res%20de%20profils/toto14gamer.png?raw=true');background-size:cover;background-position:center;opacity:.2;filter:none;}
     .header{position:fixed;top:0;left:0;width:100%;padding:15px 20px;z-index:10;backdrop-filter:none;background:rgba(8,6,10,.7);border-bottom:1px solid rgba(255,255,255,.05);display:flex;justify-content:center;}
     .nav-content{display:flex;justify-content:space-between;align-items:center;max-width:1200px;width:100%;}
@@ -105,24 +107,24 @@
       <div class="mods-grid">
         <a class="mod-card" href="../ressources/nintendo-switch-u-splash">
           <div class="mod-media">
-            <img loading="lazy" decoding="async" class="mod-thumb" src="../Fichiers/Ressources%20mods/Wii%20U/Nintendo%20Switch%20U%20Splash/splash.png" alt="Aperçu Nintendo Switch U Splash">
-            <span class="mod-tag">🎮 Wii U · Splash</span>
+            <img loading="lazy" decoding="async" class="mod-thumb" src="../Fichiers/Ressources%20mods/Wii%20U/Nintendo%20Switch%20U%20Splash/splash.png" alt="AperÃ§u Nintendo Switch U Splash">
+            <span class="mod-tag">ðŸŽ® Wii U Â· Splash</span>
           </div>
           <div class="mod-body">
             <h3 class="mod-title">Nintendo Switch U Splash</h3>
-            <p class="mod-author-line">Publié par <span class="mod-author-link" role="link" tabindex="0" data-author-url="../auteurs/toto14gamer">Toto14Gamer</span></p>
+            <p class="mod-author-line">PubliÃ© par <span class="mod-author-link" role="link" tabindex="0" data-author-url="../auteurs/toto14gamer">Toto14Gamer</span></p>
             <p class="mod-desc">Splash Wii U custom &agrave; placer dans SD:\wiiu\environments\aroma.</p>
           </div>
         </a>
         <a class="mod-card" href="../ressources/extra-super-mario-bros-3">
           <div class="mod-media">
-            <img loading="lazy" decoding="async" class="mod-thumb" src="../Fichiers/Ressources%20mods/NES/Extra%20Super%20Mario%20Bros.%203/1-4_Fortress-2.png" alt="Aperçu Extra Super Mario Bros. 3">
-            <span class="mod-tag">🎮 NES · ROM Hack</span>
+            <img loading="lazy" decoding="async" class="mod-thumb" src="../Fichiers/Ressources%20mods/NES/Extra%20Super%20Mario%20Bros.%203/1-4_Fortress-2.png" alt="AperÃ§u Extra Super Mario Bros. 3">
+            <span class="mod-tag">ðŸŽ® NES Â· ROM Hack</span>
           </div>
           <div class="mod-body">
             <h3 class="mod-title">Extra Super Mario Bros. 3</h3>
-            <p class="mod-author-line">Publié par <span class="mod-author-link" role="link" tabindex="0" data-author-url="../auteurs/toto14gamer">Toto14Gamer</span></p>
-            <p class="mod-desc">ROM Hack NES avec niveaux inédits et difficulté relevée.</p>
+            <p class="mod-author-line">PubliÃ© par <span class="mod-author-link" role="link" tabindex="0" data-author-url="../auteurs/toto14gamer">Toto14Gamer</span></p>
+            <p class="mod-desc">ROM Hack NES avec niveaux inÃ©dits et difficultÃ© relevÃ©e.</p>
           </div>
         </a>
       </div>
@@ -146,17 +148,17 @@
     if (!playing) {
       audio.volume = 0.28;
       audio.play().then(() => {
-        btn.textContent = '🔊 Lecture';
+        btn.textContent = 'ðŸ”Š Lecture';
         btn.classList.add('playing');
         playing = true;
       }).catch(() => {
-        btn.textContent = '🔇 Erreur';
+        btn.textContent = 'ðŸ”‡ Erreur';
         btn.classList.remove('playing');
         playing = false;
       });
     } else {
       audio.pause();
-      btn.textContent = '🔈 Jouer';
+      btn.textContent = 'ðŸ”ˆ Jouer';
       btn.classList.remove('playing');
       playing = false;
     }
@@ -263,6 +265,7 @@
   </script>
 </body>
 </html>
+
 
 
 

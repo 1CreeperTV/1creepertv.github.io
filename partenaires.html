@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
@@ -13,7 +13,7 @@
   <meta name="description" content="Site communautaire CreeperTV: ressources, tutoriels, profils auteurs et formulaires." />
   <link rel="icon" href="https://raw.githubusercontent.com/1creepertv/1creepertv.github.io/refs/heads/main/Fichiers/Mii%20%26%20Backgrounds/Mii.png" />
 
-  <!-- Polices - Importées depuis la page d'accueil -->
+  <!-- Polices - ImportÃ©es depuis la page d'accueil -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
 
@@ -34,10 +34,12 @@
     body{
       margin:0;
       font-family:'Inter', system-ui, Segoe UI, Roboto, Arial, "Noto Sans", sans-serif;
-      /* Dégradé de fond personnalisé */
+      /* DÃ©gradÃ© de fond personnalisÃ© */
       background: radial-gradient(1800px 900px at 10% 10%, rgba(255,138,0,0.1), transparent),
                   radial-gradient(1500px 700px at 90% 60%, rgba(255,214,107,0.06), transparent),
                   var(--bg);
+      background-repeat: no-repeat, no-repeat, no-repeat;
+      background-attachment: fixed, fixed, fixed;
       color:var(--muted);
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
@@ -52,7 +54,7 @@
       background-size:cover;background-position:center;opacity:0.14;filter:none;
     }
 
-    /* --- Barre de navigation fixe (Styles importés) --- */
+    /* --- Barre de navigation fixe (Styles importÃ©s) --- */
     .header {
         position: fixed;
         top: 0;
@@ -126,7 +128,7 @@
     .toggle.playing{background: var(--accent); color: #1b0b00; font-weight: 700; border: none;}
     /* ----------------------------------------------------------------- */
 
-    /* Conteneur principal (Importé) */
+    /* Conteneur principal (ImportÃ©) */
     .container {
       width: 100%;
       max-width: 1200px;
@@ -135,7 +137,7 @@
       padding-top: calc(var(--header-offset, 88px) + 20px); /* Espace adaptatif pour la barre de navigation fixe */
     }
     
-    /* Style Glassmorphism pour les sections (Importé) */
+    /* Style Glassmorphism pour les sections (ImportÃ©) */
     .section-glass {
       padding: 30px;
       margin-bottom: 40px;
@@ -146,7 +148,7 @@
       backdrop-filter:none;
     }
 
-    /* Titres de section (Importé) */
+    /* Titres de section (ImportÃ©) */
     .section-title {
         color: var(--light-text);
         font-size: 2rem;
@@ -181,19 +183,19 @@
     }
 
 
-    /* --- Styles des partenaires (Adaptés) --- */
+    /* --- Styles des partenaires (AdaptÃ©s) --- */
     .partners{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); /* Légèrement plus large pour l'esthétique */
-      gap:25px; /* Écart plus grand */
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); /* LÃ©gÃ¨rement plus large pour l'esthÃ©tique */
+      gap:25px; /* Ã‰cart plus grand */
       margin-top:20px;
     }
 
     .partner-card{
-      /* Réutilisation du style glass pour unifier */
+      /* RÃ©utilisation du style glass pour unifier */
       background:linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); 
       border:1px solid rgba(255,255,255,0.05);
-      border-radius:20px; /* Arrondi légèrement plus prononcé */
+      border-radius:20px; /* Arrondi lÃ©gÃ¨rement plus prononcÃ© */
       padding:25px;
       text-align:center;
       transition:transform .3s ease, box-shadow .3s ease, border-color .3s;
@@ -214,7 +216,7 @@
       object-fit:cover;
       margin-bottom:15px;
       box-shadow:0 8px 25px rgba(0,0,0,.8);
-      border: 3px solid var(--accent-2); /* Ajout d'une bordure accentuée */
+      border: 3px solid var(--accent-2); /* Ajout d'une bordure accentuÃ©e */
     }
 
     .partner-card h3{margin:6px 0 0;color:var(--light-text); font-weight: 800; font-size: 1.4rem;}
@@ -228,7 +230,7 @@
       margin-bottom:15px;
     }
 
-    /* Style des tags amélioré (similaire aux chips de la page d'accueil) */
+    /* Style des tags amÃ©liorÃ© (similaire aux chips de la page d'accueil) */
     .tags span{
       font-size:12px;
       padding:6px 12px;
@@ -240,12 +242,12 @@
       white-space: nowrap;
     }
     
-    /* Style des boutons (Importé et adapté) */
+    /* Style des boutons (ImportÃ© et adaptÃ©) */
     .btn{
       display:block;
       width:100%;
       margin-top:10px;
-      padding:14px 12px; /* Padding augmenté */
+      padding:14px 12px; /* Padding augmentÃ© */
       border-radius:14px;
       text-decoration:none;
       color:white;
@@ -261,7 +263,7 @@
       box-shadow:0 15px 40px rgba(0,0,0,0.7);
     }
     
-    /* Boutons Discord et Secondary adaptés aux couleurs de la page d'accueil */
+    /* Boutons Discord et Secondary adaptÃ©s aux couleurs de la page d'accueil */
     .btn.discord-main{background:linear-gradient(90deg,#5865F2,#7984f4);}
     .btn.secondary{
       background: linear-gradient(180deg,var(--glass), rgba(255,255,255,0.02));
@@ -274,7 +276,7 @@
     }
 
 
-    /* Footer (Importé) */
+    /* Footer (ImportÃ©) */
     .footer-section {
         display: flex;
         justify-content: center;
@@ -285,7 +287,7 @@
         text-align: center;
     }
     
-    /* RESPONSIVE (Importé) */
+    /* RESPONSIVE (ImportÃ©) */
     @media (max-width: 900px) {
         .container { padding-top: calc(var(--header-offset, 88px) + 12px); }
         .main-header h1 { font-size: 2.5rem; }
@@ -298,12 +300,12 @@
         .header { padding: 10px 15px; }
         .nav-content { flex-direction: column; gap: 10px; }
         
-        /* CORRECTION DU BUG DÉBORDEMENT: Ajout de flex-wrap */
+        /* CORRECTION DU BUG DÃ‰BORDEMENT: Ajout de flex-wrap */
         
     .nav-links { 
             gap: 10px 20px; /* Ajustement du gap pour l'espace entre les liens */
-            flex-wrap: wrap; /* Permet aux liens de passer à la ligne */
-            justify-content: center; /* Centre les liens sur petit écran */
+            flex-wrap: wrap; /* Permet aux liens de passer Ã  la ligne */
+            justify-content: center; /* Centre les liens sur petit Ã©cran */
         }
         
         .toggle { padding: 6px 10px; }
@@ -377,7 +379,7 @@
 <body>
   <div class="bg-img" aria-hidden="true"></div>
 
-  <!-- Barre de navigation fixe (Copiée de l'index) -->
+  <!-- Barre de navigation fixe (CopiÃ©e de l'index) -->
   <div id="site-header"></div>
   <script src="./assets/js/site-partials.js"></script>
   <script>
@@ -386,8 +388,8 @@
 
   <main class="container">
     <div class="main-header">
-        <h1>🤝 Nos Partenaires</h1>
-        <p class="subtitle">Des communautés et projets de confiance qui partagent notre passion pour le modding et l'entraide.</p>
+        <h1>ðŸ¤ Nos Partenaires</h1>
+        <p class="subtitle">Des communautÃ©s et projets de confiance qui partagent notre passion pour le modding et l'entraide.</p>
     </div>
 
     <!-- Section des partenaires dans un conteneur Glassmorphism -->
@@ -398,9 +400,9 @@
               <img loading="lazy" decoding="async" src="https://github.com/1creepertv/1creepertv.github.io/blob/main/Fichiers/Partenaires/ad2e93e3097c5d7c4dff1dd0c9c99396.png?raw=true" class="partner-logo" alt="[Logo LB'XMB]">
               <h3>LB'XMB</h3>
               <p class="owner">Owner : <b>LoupBlank</b></p>
-              <div class="tags"><span>#Jailbreak</span><span>#Communauté</span><span>#Ressources</span><span>#Entraide</span></div>
-              <a class="btn discord-main" href="https://discord.gg/zH5VSDYYyy" target="_blank">💬 Rejoindre Discord</a>
-              <a class="btn secondary" href="https://lbxmb.fr" target="_blank">🌐 Visiter le Site</a>
+              <div class="tags"><span>#Jailbreak</span><span>#CommunautÃ©</span><span>#Ressources</span><span>#Entraide</span></div>
+              <a class="btn discord-main" href="https://discord.gg/zH5VSDYYyy" target="_blank">ðŸ’¬ Rejoindre Discord</a>
+              <a class="btn secondary" href="https://lbxmb.fr" target="_blank">ðŸŒ Visiter le Site</a>
             </div>
 
             <!-- Carte Partenaire 2 -->
@@ -409,8 +411,8 @@
               <h3>Stelare</h3>
               <p class="owner">Owner : <b>benjamincm</b></p>
               <div class="tags"><span>#Support</span><span>#Guides</span><span>#Site-web</span><span>#Jailbreak</span></div>
-              <a class="btn discord-main" href="https://discord.gg/6vJSyhngck" target="_blank">💬 Rejoindre Discord</a>
-              <a class="btn secondary" href="https://stelare.org/" target="_blank">🌐 Visiter le Site</a>
+              <a class="btn discord-main" href="https://discord.gg/6vJSyhngck" target="_blank">ðŸ’¬ Rejoindre Discord</a>
+              <a class="btn secondary" href="https://stelare.org/" target="_blank">ðŸŒ Visiter le Site</a>
             </div>
 
             <!-- Carte Partenaire 3 -->
@@ -419,7 +421,7 @@
               <h3>NDS Shop</h3>
               <p class="owner">Owner : <b>Rinzler & CreeperTV</b></p>
               <div class="tags"><span>#Universal-DB</span><span>#Shop</span><span>#3DS</span></div>
-              <a class="btn discord-main" href="https://discord.gg/e5jh4btyGF" target="_blank">💬 Rejoindre Discord</a>
+              <a class="btn discord-main" href="https://discord.gg/e5jh4btyGF" target="_blank">ðŸ’¬ Rejoindre Discord</a>
             </div>
 
             <!-- Carte Partenaire 4 -->
@@ -427,8 +429,8 @@
               <img loading="lazy" decoding="async" src="https://github.com/1creepertv/1creepertv.github.io/blob/main/Fichiers/Partenaires/780a67d2bff041d4f097e3811729d7cf.png?raw=true" class="partner-logo" alt="[Logo Vintage Players]">
               <h3>Vintage Players</h3>
               <p class="owner">Owner : <b>"Lolo" Vintage Players</b></p>
-              <div class="tags"><span>#Rétro</span><span>#Bons-plans</span><span>#Japon</span><span>#Modding</span></div>
-              <a class="btn discord-main" href="https://discord.gg/faWh6X9BNa" target="_blank">💬 Rejoindre Discord</a>
+              <div class="tags"><span>#RÃ©tro</span><span>#Bons-plans</span><span>#Japon</span><span>#Modding</span></div>
+              <a class="btn discord-main" href="https://discord.gg/faWh6X9BNa" target="_blank">ðŸ’¬ Rejoindre Discord</a>
             </div>
         </div>
     </section>
@@ -439,13 +441,13 @@
   </script>
   <button id="backToTop" class="back-to-top" aria-label="Retour en haut" title="Retour en haut">&uarr;</button>
 
-  <!-- Audio de fond (Copié de l'index) -->
+  <!-- Audio de fond (CopiÃ© de l'index) -->
   <audio id="bgAudio" loop>
     <source src="https://github.com/1creepertv/1creepertv.github.io/raw/refs/heads/main/Fichiers/Musiques/06.%20Purchase%20Software%20(3DS).mp3" type="audio/mpeg">
   </audio>
 
   <script>
-  // Script de contrôle audio (Copié de l'index)
+  // Script de contrÃ´le audio (CopiÃ© de l'index)
   const audio = document.getElementById('bgAudio');
   const btn = document.getElementById('playPause');
   
@@ -455,22 +457,22 @@
     if (!playing) {
       audio.volume = 0.28;
       audio.play().then(() => {
-        // Changement de 'Playing' à 'Lecture'
-        btn.textContent = '🔊 Lecture'; 
+        // Changement de 'Playing' Ã  'Lecture'
+        btn.textContent = 'ðŸ”Š Lecture'; 
         btn.classList.add('playing');
         playing = true;
       }).catch(error => {
-        console.warn("La lecture audio a été bloquée:", error);
-        // Changement de 'Erreur' à 'Erreur' (déjà en français)
-        btn.textContent = '🔇 Erreur'; 
+        console.warn("La lecture audio a Ã©tÃ© bloquÃ©e:", error);
+        // Changement de 'Erreur' Ã  'Erreur' (dÃ©jÃ  en franÃ§ais)
+        btn.textContent = 'ðŸ”‡ Erreur'; 
         btn.classList.remove('playing');
         playing = false;
       });
       
     } else {
       audio.pause();
-      // Changement de 'Play' à 'Jouer'
-      btn.textContent = '🔈 Jouer';
+      // Changement de 'Play' Ã  'Jouer'
+      btn.textContent = 'ðŸ”ˆ Jouer';
       btn.classList.remove('playing');
       playing = false;
     }
@@ -480,8 +482,8 @@
   
   audio.addEventListener('pause', () => {
     if (playing) {
-        // Changement de 'Play' à 'Jouer'
-        btn.textContent = '🔈 Jouer';
+        // Changement de 'Play' Ã  'Jouer'
+        btn.textContent = 'ðŸ”ˆ Jouer';
         btn.classList.remove('playing');
         playing = false;
     }
@@ -489,12 +491,12 @@
 
   window.addEventListener('load', () => {
       if (audio.paused) {
-          // Changement de 'Play' à 'Jouer'
-          btn.textContent = '🔈 Jouer';
+          // Changement de 'Play' Ã  'Jouer'
+          btn.textContent = 'ðŸ”ˆ Jouer';
           btn.classList.remove('playing');
       } else {
-          // Changement de 'Playing' à 'Lecture'
-          btn.textContent = '🔊 Lecture';
+          // Changement de 'Playing' Ã  'Lecture'
+          btn.textContent = 'ðŸ”Š Lecture';
           btn.classList.add('playing');
           playing = true; 
       }
@@ -540,6 +542,7 @@
 </script>
 </body>
 </html>
+
 
 
 

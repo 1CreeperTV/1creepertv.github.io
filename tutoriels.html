@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
@@ -35,10 +35,12 @@
     body{
       margin:0;
       font-family:'Inter', system-ui, Segoe UI, Roboto, Arial, "Noto Sans", sans-serif;
-      /* Dégradé de fond personnalisé (grand, pour le défilement) */
+      /* DÃ©gradÃ© de fond personnalisÃ© (grand, pour le dÃ©filement) */
       background: radial-gradient(1800px 900px at 10% 10%, rgba(255,138,0,0.1), transparent),
                   radial-gradient(1500px 700px at 90% 60%, rgba(255,214,107,0.06), transparent),
                   var(--bg);
+      background-repeat: no-repeat, no-repeat, no-repeat;
+      background-attachment: fixed, fixed, fixed;
       color:var(--muted);
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
@@ -61,7 +63,7 @@
         padding: 15px 20px;
         z-index: 10;
         backdrop-filter:none;
-        background: rgba(8, 6, 10, 0.7); /* Fond légèrement opaque */
+        background: rgba(8, 6, 10, 0.7); /* Fond lÃ©gÃ¨rement opaque */
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         display: flex;
         justify-content: center;
@@ -125,7 +127,7 @@
     .toggle:hover{background:rgba(255,255,255,0.1)}
     .toggle.playing{background: var(--accent); color: #1b0b00; font-weight: 700; border: none;}
 
-    /* Conteneur principal pour le contenu défilant */
+    /* Conteneur principal pour le contenu dÃ©filant */
     .container {
       width: 100%;
       max-width: 1200px;
@@ -206,7 +208,7 @@
     .tutorial-grid { display: block; }
     .category-block + .category-block { margin-top: 30px; }
 
-    /* Titre de Catégorie */
+    /* Titre de CatÃ©gorie */
     .category-title {
         margin: 0 0 16px;
         color: var(--light-text);
@@ -217,7 +219,7 @@
         padding-bottom: 5px;
     }
     
-    /* GRILLE spécifique pour chaque catégorie */
+    /* GRILLE spÃ©cifique pour chaque catÃ©gorie */
     .category-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -378,8 +380,8 @@
 
   <main class="container">
     <div class="main-header">
-        <h1>📚 Mes Tutoriels</h1>
-        <p class="subtitle">Retrouvez ici tous mes guides et tutoriels vidéo pour le modding et l'homebrew.</p>
+        <h1>ðŸ“š Mes Tutoriels</h1>
+        <p class="subtitle">Retrouvez ici tous mes guides et tutoriels vidÃ©o pour le modding et l'homebrew.</p>
     </div>
 
     <section class="section-glass">
@@ -394,7 +396,7 @@
         </div>
 
         <div id="tutorialGrid" class="tutorial-grid">
-            <!-- Injecté par JS -->
+            <!-- InjectÃ© par JS -->
         </div>
     </section>
   </main>
@@ -414,41 +416,41 @@
         // Wii
         { title: "Comment hacker sa Nintendo Wii en 2025+ [Tutoriel Guide complet FR]", channel: "CreeperTV", videoId: "c6xCFiRjsis", date: "01/01/2024", category: "Wii" },
         { title: "Comment INSTALLER et JOUER au mod Insane Kart Wii ISO sur Dolphin TUTO FR", channel: "CreeperTV", videoId: "tCNoTWjzhUw", date: "02/01/2024", category: "Wii" },
-        { title: "Comment Télecharger et Jouer au mod Newer Super Mario Bros Wii sans le disque original TUTO FR", channel: "CreeperTV", videoId: "6bmOVybghAk", date: "03/01/2024", category: "Wii" },
-        { title: "Comment avoir la chaîne boutique Wii en 2025 avec WiiMart ! TUTO FR", channel: "CreeperTV", videoId: "JdtjVrESXKo", date: "04/01/2024", category: "Wii" },
-        { title: "Comment Télécharger/Installer les cIOS sur Wii avec D2X cIOS Installer ! TUTO FR", channel: "CreeperTV", videoId: "1Sy-v7fUjvE", date: "05/01/2024", category: "Wii" },
-        { title: "Comment Télécharger & Utiliser Wii Backup Manager en 2025+ TUTO FR", channel: "CreeperTV", videoId: "_QabrNDg2IQ", date: "06/01/2024", category: "Wii" },
+        { title: "Comment TÃ©lecharger et Jouer au mod Newer Super Mario Bros Wii sans le disque original TUTO FR", channel: "CreeperTV", videoId: "6bmOVybghAk", date: "03/01/2024", category: "Wii" },
+        { title: "Comment avoir la chaÃ®ne boutique Wii en 2025 avec WiiMart ! TUTO FR", channel: "CreeperTV", videoId: "JdtjVrESXKo", date: "04/01/2024", category: "Wii" },
+        { title: "Comment TÃ©lÃ©charger/Installer les cIOS sur Wii avec D2X cIOS Installer ! TUTO FR", channel: "CreeperTV", videoId: "1Sy-v7fUjvE", date: "05/01/2024", category: "Wii" },
+        { title: "Comment TÃ©lÃ©charger & Utiliser Wii Backup Manager en 2025+ TUTO FR", channel: "CreeperTV", videoId: "_QabrNDg2IQ", date: "06/01/2024", category: "Wii" },
         { title: "Comment changer la musique de fond du Homebrew Browser sur la Wii/vWii ! TUTO FR", channel: "CreeperTV", videoId: "9vuXsl8xupE", date: "07/01/2024", category: "Wii" },
         { title: "Comment convertir un jeu Wii RVZ en un jeu ISO ! TUTO FR", channel: "CreeperTV", videoId: "fGWE1yNl-CU", date: "08/01/2024", category: "Wii" },
         { title: "Comment installer Retro Rewind sur Wii/vWii TUTO FR (Mod Mario Kart Wii)", channel: "CreeperTV", videoId: "T0M5xRKM-Gw", date: "09/01/2024", category: "Wii" },
         { title: "Comment faire des backups/restaurer ses sauvegardes Wii avec SaveGame Manager GX !", channel: "CreeperTV", videoId: "J6hDtuuGGVw", date: "10/01/2024", category: "Wii" },
         { title: "Comment installer WiiLink (Riiconnect24) sur Wii et vWii en 2024 !", channel: "CreeperTV", videoId: "rJvUcm5qBJw", date: "11/01/2024", category: "Wii" },
-        { title: "Comment jouer à des jeux Nintendo 64 sur Wii/vWii FR !", channel: "CreeperTV", videoId: "sctO7lCDJao", date: "12/01/2024", category: "Wii" },
+        { title: "Comment jouer Ã  des jeux Nintendo 64 sur Wii/vWii FR !", channel: "CreeperTV", videoId: "sctO7lCDJao", date: "12/01/2024", category: "Wii" },
         { title: "Comment installer CTGP revolution sur sa Wii en 2024 ! | Tuto FR", channel: "CreeperTV", videoId: "Gz3_tA1Zegg", date: "13/01/2024", category: "Wii" },
         
         // Wii U
-        { title: "Comment regarder YouTube sur sa Wii U à nouveau TUTO FR", channel: "CreeperTV", videoId: "OUAcMpcs5_g", date: "14/01/2024", category: "Wii U" },
-        { title: "Comment mettre un custom thème sur sa Wii U 2025+ TUTO FR", channel: "CreeperTV", videoId: "_EinQz49IKw", date: "15/01/2024", category: "Wii U" },
+        { title: "Comment regarder YouTube sur sa Wii U Ã  nouveau TUTO FR", channel: "CreeperTV", videoId: "OUAcMpcs5_g", date: "14/01/2024", category: "Wii U" },
+        { title: "Comment mettre un custom thÃ¨me sur sa Wii U 2025+ TUTO FR", channel: "CreeperTV", videoId: "_EinQz49IKw", date: "15/01/2024", category: "Wii U" },
         { title: "Comment jailbreak sa Nintendo Wii U avec Aroma en 2025+ TUTO FR", channel: "CreeperTV", videoId: "OxT05k1SqHQ", date: "16/01/2024", category: "Wii U" },
         { title: "Comment dump la NAND de sa vWii (pour jouer en Online sur Dolphin) TUTO FR", channel: "CreeperTV", videoId: "nwYTfqblIbc", date: "16/01/2024-B", category: "Wii U" },
-        { title: "Comment installer Pretendo sur une Wii U jailbreakée FR !", channel: "CreeperTV", videoId: "ofkOrJD3UeA", date: "17/01/2024", category: "Wii U" },
-        { title: "Comment mettre à jour Aroma sur Wii U (Aroma Updater)", channel: "CreeperTV", videoId: "clvwfb__X68", date: "18/01/2024", category: "Wii U" },
+        { title: "Comment installer Pretendo sur une Wii U jailbreakÃ©e FR !", channel: "CreeperTV", videoId: "ofkOrJD3UeA", date: "17/01/2024", category: "Wii U" },
+        { title: "Comment mettre Ã  jour Aroma sur Wii U (Aroma Updater)", channel: "CreeperTV", videoId: "clvwfb__X68", date: "18/01/2024", category: "Wii U" },
         { title: "[Guide complet] Comment hacker sa vWii en 2024 FR !", channel: "CreeperTV", videoId: "7uv4BUUPlMc", date: "19/01/2024", category: "Wii U" },
         { title: "Comment installer Homebrew Channel sur vWii ! (Wii U)", channel: "CreeperTV", videoId: "5m2L5Rvhydo", date: "20/01/2024", category: "Wii U" },
         { title: "Comment installer Mario Kart Generations sur Wii U 2024 FR !", channel: "CreeperTV", videoId: "qAXKx9lXoD0", date: "21/01/2024", category: "Wii U" },
 
         // 3DS
-        { title: "Comment avoir des pièces de jeux en illimité/maximum sur la 3DS/2DS TUTO FR !", channel: "CreeperTV", videoId: "qvyArpPLPsA", date: "22/01/2024", category: "3DS" },
+        { title: "Comment avoir des piÃ¨ces de jeux en illimitÃ©/maximum sur la 3DS/2DS TUTO FR !", channel: "CreeperTV", videoId: "qvyArpPLPsA", date: "22/01/2024", category: "3DS" },
         { title: "Comment installer homebrew launcher sur son menu home 3DS/2DS ! TUTO", channel: "CreeperTV", videoId: "Z-Bc9iDSqoE", date: "23/01/2024", category: "3DS" },
         { title: "Comment installer et utiliser Twilight menu ++ sur 3DS/2DS", channel: "CreeperTV", videoId: "iI36QqS5MfA", date: "24/01/2024", category: "3DS" },
         { title: "Comment Installer/Utiliser Universal Updater sur 3DS/2DS !", channel: "CreeperTV", videoId: "BlYOklbZECg", date: "25/01/2024", category: "3DS" },
-        { title: "Comment installer Pretendo sur votre Nintendo 3DS/2DS en 2024 ! TUTO JOUER EN LIGNE après AVRIL 2024", channel: "CreeperTV", videoId: "g6O4VFdtLMo", date: "26/01/2024", category: "3DS" },
+        { title: "Comment installer Pretendo sur votre Nintendo 3DS/2DS en 2024 ! TUTO JOUER EN LIGNE aprÃ¨s AVRIL 2024", channel: "CreeperTV", videoId: "g6O4VFdtLMo", date: "26/01/2024", category: "3DS" },
         
         // PS3
-        { title: "Comment jailbreak sa PS3 avec le HEN en 4.92 (Téléchargement du HEN officiel)", channel: "CreeperTV", videoId: "v_SdUsID4P4", date: "27/01/2024", category: "PS3" },
+        { title: "Comment jailbreak sa PS3 avec le HEN en 4.92 (TÃ©lÃ©chargement du HEN officiel)", channel: "CreeperTV", videoId: "v_SdUsID4P4", date: "27/01/2024", category: "PS3" },
         { title: "Comment installer des PKG/Homebrews sur sa PS3 (Multiman, Webman MOD, PKGi etc)", channel: "CreeperTV", videoId: "3XrVse48MuQ", date: "28/01/2024", category: "PS3" },
-        { title: "Comment télécharger des jeux PS3 grâce à PKGi (Télécharger PKGi)", channel: "CreeperTV", videoId: "XpEb1IWz8gc", date: "29/01/2024", category: "PS3" },
-        { title: "Comment jouer en ligne à la PS3 jailbreak (PSN) sans être sur la dernière version du firmware TUTO", channel: "CreeperTV", videoId: "rQMU0hq9wtw", date: "30/01/2024", category: "PS3" }
+        { title: "Comment tÃ©lÃ©charger des jeux PS3 grÃ¢ce Ã  PKGi (TÃ©lÃ©charger PKGi)", channel: "CreeperTV", videoId: "XpEb1IWz8gc", date: "29/01/2024", category: "PS3" },
+        { title: "Comment jouer en ligne Ã  la PS3 jailbreak (PSN) sans Ãªtre sur la derniÃ¨re version du firmware TUTO", channel: "CreeperTV", videoId: "rQMU0hq9wtw", date: "30/01/2024", category: "PS3" }
     ];
 
     function createVideoCard(video) {
@@ -559,16 +561,16 @@
         if (!playing) {
             audio.volume = 0.28;
             audio.play().then(() => {
-                btn.textContent = '🔊 Lecture'; 
+                btn.textContent = 'ðŸ”Š Lecture'; 
                 btn.classList.add('playing');
                 playing = true;
             }).catch(e => {
-                btn.textContent = '🔇 Erreur'; 
+                btn.textContent = 'ðŸ”‡ Erreur'; 
                 playing = false;
             });
         } else {
             audio.pause();
-            btn.textContent = '🔈 Jouer'; 
+            btn.textContent = 'ðŸ”ˆ Jouer'; 
             btn.classList.remove('playing');
             playing = false;
         }
@@ -577,7 +579,7 @@
     btn.addEventListener('click', toggleAudio);
     audio.addEventListener('pause', () => {
         if (playing) { 
-            btn.textContent = '🔈 Jouer'; 
+            btn.textContent = 'ðŸ”ˆ Jouer'; 
             btn.classList.remove('playing');
             playing = false;
         }
@@ -585,10 +587,10 @@
 
     window.addEventListener('load', () => {
         if (audio.paused) {
-            btn.textContent = '🔈 Jouer';
+            btn.textContent = 'ðŸ”ˆ Jouer';
             btn.classList.remove('playing');
         } else {
-            btn.textContent = '🔊 Lecture';
+            btn.textContent = 'ðŸ”Š Lecture';
             btn.classList.add('playing');
             playing = true; 
         }
@@ -634,6 +636,7 @@
 </script>
 </body>
 </html>
+
 
 
 

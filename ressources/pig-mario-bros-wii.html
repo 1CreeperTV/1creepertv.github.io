@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
@@ -41,6 +41,8 @@
       background: radial-gradient(1800px 900px at 10% 10%, rgba(255,138,0,0.1), transparent),
                   radial-gradient(1500px 700px at 90% 60%, rgba(255,214,107,0.06), transparent),
                   var(--bg);
+      background-repeat: no-repeat, no-repeat, no-repeat;
+      background-attachment: fixed, fixed, fixed;
       color:var(--muted);
       min-height:100vh;
       min-height:100svh;
@@ -386,7 +388,7 @@
       <p class="subtitle">Aventure personnalisee en cours de developpement</p>
 
       <p class="description">
-        Bienvenue dans mon aventure. Plonge dans une experience entierement revisitée avec de nombreux contenus personnalisés:
+        Bienvenue dans mon aventure. Plonge dans une experience entierement revisitÃ©e avec de nombreux contenus personnalisÃ©s:
         musiques custom pour une ambiance unique, niveaux inedits a explorer, cartes du monde personnalisees,
         et bien d'autres surprises a decouvrir.
       </p>
@@ -403,7 +405,7 @@
         <div class="meta-item">
           <strong>Console & Date</strong>
           Wii
-          <br>📅 Publié le 17/02/2026
+          <br>ðŸ“… PubliÃ© le 17/02/2026
         </div>
         <div class="meta-item">
           <strong>Telechargement</strong>
@@ -431,7 +433,7 @@
           <img loading="lazy" decoding="async" class="discord-widget-icon" src="https://raw.githubusercontent.com/1creepertv/1creepertv.github.io/refs/heads/main/Fichiers/Mii%20%26%20Backgrounds/lv_0_2025112922-1764451316159.gif" alt="Logo du serveur Discord">
           <div>
             <h3 class="discord-widget-title">Rejoins le serveur Discord</h3>
-            <p class="discord-widget-text">Entraide modding, ressources utiles, astuces, chill (soirées jeux) et communauté active chaque jour.</p>
+            <p class="discord-widget-text">Entraide modding, ressources utiles, astuces, chill (soirÃ©es jeux) et communautÃ© active chaque jour.</p>
           </div>
           <a class="discord-widget-btn" href="https://discord.gg/AQ7w57CKk8" target="_blank" rel="noopener noreferrer">Rejoindre</a>
         </div>
@@ -457,17 +459,17 @@
     if (!playing) {
       audio.volume = 0.28;
       audio.play().then(() => {
-        btn.textContent = '🔊 Lecture';
+        btn.textContent = 'ðŸ”Š Lecture';
         btn.classList.add('playing');
         playing = true;
       }).catch(() => {
-        btn.textContent = '🔇 Erreur';
+        btn.textContent = 'ðŸ”‡ Erreur';
         btn.classList.remove('playing');
         playing = false;
       });
     } else {
       audio.pause();
-      btn.textContent = '🔈 Jouer';
+      btn.textContent = 'ðŸ”ˆ Jouer';
       btn.classList.remove('playing');
       playing = false;
     }
@@ -515,6 +517,7 @@
   </script>
 </body>
 </html>
+
 
 
 
