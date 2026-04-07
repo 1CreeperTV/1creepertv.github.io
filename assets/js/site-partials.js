@@ -41,7 +41,7 @@
 
     target.innerHTML = `
   <footer class="container">
-    <div class="footer-section">CreeperTV - Made with &#128293; in France &#8226; Built with AI</div>
+    <div class="footer-section">Loannnnnn - Made with &#128293; in France &#8226; Built with AI</div>
   </footer>`;
   }
 
