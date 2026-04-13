@@ -1,12 +1,12 @@
 ﻿(function () {
   const NAV_ITEMS = [
-    { key: "home", href: "https://loannnnnn2659.github.io", label: "Accueil" },
-    { key: "tutoriels", href: "https://loannnnnn2659.github.io/tutoriels", label: "Tutoriels" },
-    { key: "partenaires", href: "https://loannnnnn2659.github.io/partenaires", label: "Partenaires" },
-    { key: "ressources", href: "https://loannnnnn2659.github.io/ressources", label: "Ressources" },
-    { key: "profils", href: "https://loannnnnn2659.github.io/profils", label: "Profils" },
-    { key: "a-propos", href: "https://loannnnnn2659.github.io/a-propos", label: "À Propos" },
-    { key: "formulaires", href: "https://loannnnnn2659.github.io/formulaires", label: "Formulaires" }
+    { key: "home", href: "https://loannmkw.github.io", label: "Accueil" },
+    { key: "tutoriels", href: "https://loannmkw.github.io/tutoriels", label: "Tutoriels" },
+    { key: "partenaires", href: "https://loannmkw.github.io/partenaires", label: "Partenaires" },
+    { key: "ressources", href: "https://loannmkw.github.io/ressources", label: "Ressources" },
+    { key: "profils", href: "https://loannmkw.github.io/profils", label: "Profils" },
+    { key: "a-propos", href: "https://loannmkw.github.io/a-propos", label: "À Propos" },
+    { key: "formulaires", href: "https://loannmkw.github.io/formulaires", label: "Formulaires" }
   ];
 
   function renderHeader(opts) {
@@ -23,8 +23,8 @@
     target.innerHTML = `
   <header class="header">
     <div class="nav-content">
-      <a class="nav-home" href="https://loannnnnn2659.github.io" aria-label="Accueil">
-        <img src="https://raw.githubusercontent.com/Loannnnnn2659/loannnnnn2659.github.io/refs/heads/main/Fichiers/Mii%20%26%20Backgrounds/Mii.png" alt="Icone du site">
+      <a class="nav-home" href="https://loannmkw.github.io" aria-label="Accueil">
+        <img src="https://raw.githubusercontent.com/LoannMKW/loannmkw.github.io/refs/heads/main/Fichiers/Mii%20%26%20Backgrounds/Mii.png" alt="Icone du site">
       </a>
       <nav class="nav-links">
         ${navLinks}

@@ -1,4 +1,4 @@
 ﻿User-agent: *
 Allow: /
 
-Sitemap: https://loannnnnn2659.github.io/sitemap.xml
+Sitemap: https://loannmkw.github.io/sitemap.xml
